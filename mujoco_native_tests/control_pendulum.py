@@ -137,9 +137,10 @@ cam.azimuth = 90.0
 cam.distance = 5.0
 cam.elevation = -5
 cam.lookat = np.array([0.012768, -0.000000, 1.254336])
+# cam.lookat = np.array([0, 0, 0])
 
 #set the controller
-actuator_type = "torque"
+actuator_type = "torque" # this is the name defined inside the .xml file
 mj.set_mjcb_control(controller)
 
 while not glfw.window_should_close(window):
