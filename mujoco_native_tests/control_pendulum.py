@@ -97,7 +97,7 @@ def mouse_move(window, xpos, ypos):
 
 def scroll(window, xoffset, yoffset):
     action = mj.mjtMouse.mjMOUSE_ZOOM
-    mj.mjv_moveCamera(model, action, 0.0, -0.05 *
+    mj.mjv_moveCamera(model, action, 0.0, -0.5 *
                       yoffset, scene, cam)
 
 #get the full path
