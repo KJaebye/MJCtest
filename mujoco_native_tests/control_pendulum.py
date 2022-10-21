@@ -3,15 +3,7 @@ from mujoco.glfw import glfw
 import numpy as np
 import os
 
-xml_path = '../assets/robot_models/mjcf/pendulume.xml'
-simend = 5
 
-# For callback functions
-button_left = False
-button_middle = False
-button_right = False
-lastx = 0
-lasty = 0
 
 def controller(model, data):
     """
@@ -100,72 +92,84 @@ def scroll(window, xoffset, yoffset):
     mj.mjv_moveCamera(model, action, 0.0, -0.5 *
                       yoffset, scene, cam)
 
-#get the full path
-# dirname = os.path.dirname(__file__)
-# abspath = os.path.join(dirname + "/" + xml_path)
-# xml_path = abspath
 
-# MuJoCo data structures
-model = mj.MjModel.from_xml_path(xml_path)  # MuJoCo model
-data = mj.MjData(model)                # MuJoCo data
-cam = mj.MjvCamera()                        # Abstract camera
-opt = mj.MjvOption()                        # visualization options
+if __name__ == '__main__':
+    xml_path = '../assets/robot_models/mjcf/pendulume.xml'
+    simend = 5
 
-# Init GLFW, create window, make OpenGL context current, request v-sync
-glfw.init()
-window = glfw.create_window(1200, 900, "Demo", None, None)
-glfw.make_context_current(window)
-glfw.swap_interval(1)
+    # For callback functions
+    button_left = False
+    button_middle = False
+    button_right = False
+    lastx = 0
+    lasty = 0
 
-# initialize visualization data structures
-mj.mjv_defaultCamera(cam)
-mj.mjv_defaultOption(opt)
-scene = mj.MjvScene(model, maxgeom=10000)
-context = mj.MjrContext(model, mj.mjtFontScale.mjFONTSCALE_150.value)
+    #get the full path
+    # dirname = os.path.dirname(__file__)
+    # abspath = os.path.join(dirname + "/" + xml_path)
+    # xml_path = abspath
 
-# install GLFW mouse and keyboard callbacks
-glfw.set_key_callback(window, keyboard)
-glfw.set_cursor_pos_callback(window, mouse_move)
-glfw.set_mouse_button_callback(window, mouse_button)
-glfw.set_scroll_callback(window, scroll)
+    # MuJoCo data structures
+    model = mj.MjModel.from_xml_path(xml_path)  # MuJoCo model
+    data = mj.MjData(model)                # MuJoCo data
+    cam = mj.MjvCamera()                        # Abstract camera
+    opt = mj.MjvOption()                        # visualization options
 
-#set initial conditions
-data.qpos[0] = np.pi/2
+    # Init GLFW, create window, make OpenGL context current, request v-sync
+    glfw.init()
+    window = glfw.create_window(1200, 900, "Demo", None, None)
+    glfw.make_context_current(window)
+    glfw.swap_interval(1)
 
-# Set camera configuration
-cam.azimuth = 90.0
-cam.distance = 5.0
-cam.elevation = -5
-cam.lookat = np.array([0.012768, -0.000000, 1.254336])
-# cam.lookat = np.array([0, 0, 0])
+    # initialize visualization data structures
+    mj.mjv_defaultCamera(cam)
+    mj.mjv_defaultOption(opt)
+    scene = mj.MjvScene(model, maxgeom=10000)
+    context = mj.MjrContext(model, mj.mjtFontScale.mjFONTSCALE_150.value)
 
-#set the controller
-actuator_type = "torque" # this is the name defined inside the .xml file
-mj.set_mjcb_control(controller)
+    # install GLFW mouse and keyboard callbacks
+    glfw.set_key_callback(window, keyboard)
+    glfw.set_cursor_pos_callback(window, mouse_move)
+    glfw.set_mouse_button_callback(window, mouse_button)
+    glfw.set_scroll_callback(window, scroll)
 
-while not glfw.window_should_close(window):
-    simstart = data.time
+    #set initial conditions
+    data.qpos[0] = np.pi/2
 
-    while (data.time - simstart < 1.0/60.0):
-        mj.mj_step(model, data)
+    # Set camera configuration
+    cam.azimuth = 90.0
+    cam.distance = 5.0
+    cam.elevation = -5
+    cam.lookat = np.array([0.012768, -0.000000, 1.254336])
+    # cam.lookat = np.array([0, 0, 0])
 
-    if (data.time>=simend):
-        break;
+    #set the controller
+    actuator_type = "torque" # this is the name defined inside the .xml file
+    mj.set_mjcb_control(controller)
 
-    # get framebuffer viewport
-    viewport_width, viewport_height = glfw.get_framebuffer_size(
-        window)
-    viewport = mj.MjrRect(0, 0, viewport_width, viewport_height)
+    while not glfw.window_should_close(window):
+        simstart = data.time
 
-    # Update scene and render
-    mj.mjv_updateScene(model, data, opt, None, cam,
-                       mj.mjtCatBit.mjCAT_ALL.value, scene)
-    mj.mjr_render(viewport, scene, context)
+        while (data.time - simstart < 1.0/60.0):
+            mj.mj_step(model, data)
 
-    # swap OpenGL buffers (blocking call due to v-sync)
-    glfw.swap_buffers(window)
+        if (data.time>=simend):
+            break
 
-    # process pending GUI events, call GLFW callbacks
-    glfw.poll_events()
+        # get framebuffer viewport
+        viewport_width, viewport_height = glfw.get_framebuffer_size(
+            window)
+        viewport = mj.MjrRect(0, 0, viewport_width, viewport_height)
 
-glfw.terminate()
+        # Update scene and render
+        mj.mjv_updateScene(model, data, opt, None, cam,
+                           mj.mjtCatBit.mjCAT_ALL.value, scene)
+        mj.mjr_render(viewport, scene, context)
+
+        # swap OpenGL buffers (blocking call due to v-sync)
+        glfw.swap_buffers(window)
+
+        # process pending GUI events, call GLFW callbacks
+        glfw.poll_events()
+
+    glfw.terminate()
