@@ -3,6 +3,13 @@ from mujoco.glfw import glfw
 import numpy as np
 import os
 
+"""
+    mujoco native python bindings are different from mujoco-py. 
+    
+    mujoco-py is developed by OpenAI and it encapsulates the native mujoco
+    api, and makes it easier to use. However, using mujoco can help programmers
+    better understand how MuJoCo simulator works.
+"""
 
 
 def controller(model, data):
