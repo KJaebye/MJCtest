@@ -134,11 +134,11 @@ if __name__ == '__main__':
     scene = mj.MjvScene(model, maxgeom=10000)
     context = mj.MjrContext(model, mj.mjtFontScale.mjFONTSCALE_150.value)
 
-    # install GLFW mouse and keyboard callbacks
-    glfw.set_key_callback(window, keyboard)
-    glfw.set_cursor_pos_callback(window, mouse_move)
-    glfw.set_mouse_button_callback(window, mouse_button)
-    glfw.set_scroll_callback(window, scroll)
+    # # install GLFW mouse and keyboard callbacks
+    # glfw.set_key_callback(window, keyboard)
+    # glfw.set_cursor_pos_callback(window, mouse_move)
+    # glfw.set_mouse_button_callback(window, mouse_button)
+    # glfw.set_scroll_callback(window, scroll)
 
     #set initial conditions
     data.qpos[0] = np.pi/2
@@ -154,9 +154,12 @@ if __name__ == '__main__':
     actuator_type = "torque" # this is the name defined inside the .xml file
     mj.set_mjcb_control(controller)
 
+    time_start = data.time
+
     while not glfw.window_should_close(window):
         simstart = data.time
 
+        # this helps to control rendering frequency
         while (data.time - simstart < 1.0/60.0):
             mj.mj_step(model, data)
 
@@ -178,5 +181,8 @@ if __name__ == '__main__':
 
         # process pending GUI events, call GLFW callbacks
         glfw.poll_events()
+
+    duration = data.time - time_start
+    print(duration)
 
     glfw.terminate()
