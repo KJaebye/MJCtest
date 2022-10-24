@@ -12,7 +12,6 @@ import os
     better understand how MuJoCo simulator works.
 """
 
-
 def controller(model, data):
     """
     This function implements a PD controller
@@ -23,20 +22,22 @@ def controller(model, data):
     gravity is turned off.
     """
     if actuator_type == "torque":
-        model.actuator_gainprm[0, 0] = 1
+        # set the controller gain
+        model.actuator_gainprm[0, 0] = 5
+        # set the ctrl value
         data.ctrl[0] = -10 * \
             (data.sensordata[0] - 0.0) - \
             1 * (data.sensordata[1] - 0.0)
-    elif actuator_type == "servo":
-        kp = 10.0
-        model.actuator_gainprm[1, 0] = kp
-        model.actuator_biasprm[1, 1] = -kp
-        data.ctrl[1] = -0.5
-
-        kv = 1.0
-        model.actuator_gainprm[2, 0] = kv
-        model.actuator_biasprm[2, 2] = -kv
-        data.ctrl[2] = 0.0
+    # elif actuator_type == "servo":
+    #     kp = 10.0
+    #     model.actuator_gainprm[1, 0] = kp
+    #     model.actuator_biasprm[1, 1] = -kp
+    #     data.ctrl[1] = -0.5
+    #
+    #     kv = 1.0
+    #     model.actuator_gainprm[2, 0] = kv
+    #     model.actuator_biasprm[2, 2] = -kv
+    #     data.ctrl[2] = 0.0
 
 # def keyboard(window, key, scancode, act, mods):
 #     if act == glfw.PRESS and key == glfw.KEY_BACKSPACE:
@@ -105,12 +106,12 @@ if __name__ == '__main__':
     xml_path = '../assets/robot_models/mjcf/pendulume.xml'
     simend = 5
 
-    # For callback functions
-    button_left = False
-    button_middle = False
-    button_right = False
-    lastx = 0
-    lasty = 0
+    # # For callback functions
+    # button_left = False
+    # button_middle = False
+    # button_right = False
+    # lastx = 0
+    # lasty = 0
 
     #get the full path
     # dirname = os.path.dirname(__file__)
@@ -149,7 +150,6 @@ if __name__ == '__main__':
     cam.distance = 5.0
     cam.elevation = -5
     cam.lookat = np.array([0.012768, -0.000000, 1.254336])
-    # cam.lookat = np.array([0, 0, 0])
 
     #set the controller
     actuator_type = "torque" # this is the name defined inside the .xml file
