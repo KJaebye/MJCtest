@@ -1,6 +1,6 @@
 # --------------------------------------------------------------------------------
 #   @description: This file parses running arguments from terminal.
-#   @author: Modified from Github:WilsonWangTHU/NerveNet, by Kangyao Huang
+#   @author: Kangyao Huang
 #   @create date: 24.Oct.2022
 # --------------------------------------------------------------------------------
 
