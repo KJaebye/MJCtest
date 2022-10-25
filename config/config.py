@@ -7,7 +7,7 @@
 """
     This file is to load all optional settings of scenes and environments from a .yml file.
     Meanwhile, it creates output directories for log files, tensorboard summary, checkpoints and models. Results of
-    training are saved at /tmp in default, well-trained results are then moved to /results. Unless setting '--tmp' to
+    training are saved at /tmp in default, well-trained results are then moved to /results. Unless, setting '--tmp' to
     False can save results in /results directly.
 """
 
@@ -17,18 +17,18 @@ import yaml
 from datetime import datetime
 
 class Config:
-    def __init__(self, domain, tmp, task, cfg_dir=None):
+    def __init__(self, domain, tmp, task, cfg_dict=None):
         self.domain = domain
         self.task = task
 
         # load .yml
-        if cfg_dir is not None:
-            cfg_path = cfg_dir
+        if cfg_dict is not None:
+            cfg = cfg_dict
         else:
             cfg_path = '../config/cfg/**/%s/%s.yml' % (domain, task)
-        files = glob.glob(cfg_path, recursive=True)
-        assert len(files) == 1
-        cfg = yaml.safe_load(open(files[0], 'r'))
+            files = glob.glob(cfg_path, recursive=True)
+            assert len(files) == 1
+            cfg = yaml.safe_load(open(files[0], 'r'))
 
         # create directories
         output_dir = '../tmp' if tmp else '../results'
@@ -41,3 +41,13 @@ class Config:
         os.makedirs(self.model_dir, exist_ok=False)
         os.makedirs(self.log_dir, exist_ok=False)
         os.makedirs(self.tb_dir, exist_ok=False)
+
+        # training config
+
+        # env
+        self.env_name = cfg.get('env_name')
+        self.task_complexity = cfg.get('task_complexity')
+
+        # robot
+        self.robot_param_scale = cfg.get('robot_param_scale', 0.1)
+        self.robot_cfg = cfg.get('robot', dict())
