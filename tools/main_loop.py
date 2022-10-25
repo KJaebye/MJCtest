@@ -1,8 +1,25 @@
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------------- #
 #   @description: The main file of training an agent.
 #   @author: Kangyao Huang
-#   @create date: 23.Oct.2022
-# --------------------------------------------------------------------------------
+#   @created date: 23.Oct.2022
+# ------------------------------------------------------------------------------------------------------------------- #
 
-import mujoco as mj
-from mujoco.glfw import glfw
+from config.parse_args import parse_args
+import logging
+
+args = parse_args()
+if args.render:
+    args.num_threads = 1
+
+
+
+
+
+
+def main_loop():
+    pass
+
+main_loop()
+
+
+
