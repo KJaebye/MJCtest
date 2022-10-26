@@ -4,19 +4,14 @@
 #   @created date: 24.Oct.2022
 # ------------------------------------------------------------------------------------------------------------------- #
 
-
 import argparse
-
 
 def get_args():
     # create a parser
     parser = argparse.ArgumentParser(description="Write in user's arguments from terminal.")
-    mode = parser.add_mutually_exclusive_group()
 
     # the experiment settings
-    mode.add_argument('--train', action='store_true')
-    mode.add_argument('--eval', action='store_true')
-
+    parser.add_argument('--type', type=str, default='train', help='train or evaluation')
     parser.add_argument('--domain', type=str, default='centipede', help='mujoco domain')
     parser.add_argument('--task', type=str, default='easy', help='task complexity')
     parser.add_argument('--algo', type=str, default='PPO', help='algorithm to train the agent')

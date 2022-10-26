@@ -6,10 +6,8 @@
 
 """
     This file is to load all optional settings of scenes and environments from a .yml file.
-    Meanwhile, it creates output directories for log files, tensorboard summary, checkpoints and models. Results of
-    training are saved at /tmp in default, well-trained results are then moved to /results. Unless, setting '--tmp' to
-    False can save results in /results directly.
-    Output files structure (centipede_four as example):
+    Meanwhile, it creates output directories for log files, tensorboard summary, checkpoints and models.
+    Output files structure (centipede_four as example) likes this:
     /tmp(results)
         /centipede_four
             /easy
@@ -22,6 +20,8 @@
                     /model
                     /log
                     /tb
+    Results of the training are saved at /tmp in default, well-trained results are then moved to /results. Unless,
+    setting '--tmp' to False can save results in /results directly.
 """
 
 import glob
@@ -29,8 +29,9 @@ import os
 import yaml
 from datetime import datetime
 
+
 class Config:
-    def __init__(self, domain, tmp, task, cfg_dict=None):
+    def __init__(self, domain, task, tmp, cfg_dict=None):
         self.domain = domain
         self.task = task
 
@@ -38,15 +39,16 @@ class Config:
         if cfg_dict is not None:
             cfg = cfg_dict
         else:
-            cfg_path = '../config/cfg/**/%s/%s.yml' % (domain, task)
+            cfg_path = './config/cfg/**/%s/%s.yml' % (domain, task)
             files = glob.glob(cfg_path, recursive=True)
             assert len(files) == 1
             cfg = yaml.safe_load(open(files[0], 'r'))
 
         # create directories
-        output_dir = '../tmp' if tmp else '../results'
+        output_dir = './tmp' if tmp else './results'
         subdir = '/%s/%s' % (domain, task)
-        target_dir = '/' + datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.time_str = datetime.now().strftime("%Y%m%d_%H%M%S")
+        target_dir = '/' + self.time_str
         self.output_dir = output_dir + subdir + target_dir
         self.model_dir = '%s/models' % self.output_dir
         self.log_dir = '%s/log' % self.output_dir
@@ -56,6 +58,7 @@ class Config:
         os.makedirs(self.tb_dir, exist_ok=False)
 
         # training config
+        self.seed = cfg.get('seed')
 
         # env
         self.env_name = cfg.get('env_name')

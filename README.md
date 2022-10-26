@@ -21,6 +21,7 @@ Learning records and tips are located at Notion https://www.notion.so/huangkangy
 
 # Environment
 - python==3.9
+- mujoco==2.3.0
 - dm_control==1.0.8
 - glfw==2.5.5
 - mujoco-python-viewer==0.1.2
