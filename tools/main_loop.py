@@ -12,14 +12,8 @@ if args.render:
     args.num_threads = 1
 
 
-
-
-
-
 def main_loop():
     pass
 
+
 main_loop()
-
-
-
