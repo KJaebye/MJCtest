@@ -3,7 +3,6 @@
     Double-click on a geom and hold Ctrl to apply forces (using right mouse button) and torques (using left mouse button).
 """
 
-
 from dm_control import suite
 from dm_control import viewer
 import numpy as np
