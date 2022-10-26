@@ -9,6 +9,19 @@
     Meanwhile, it creates output directories for log files, tensorboard summary, checkpoints and models. Results of
     training are saved at /tmp in default, well-trained results are then moved to /results. Unless, setting '--tmp' to
     False can save results in /results directly.
+    Output files structure (centipede_four as example):
+    /tmp(results)
+        /centipede_four
+            /easy
+                /20221025_235032
+                    /model
+                    /log
+                    /tb
+            /hard
+                /20221025_235548
+                    /model
+                    /log
+                    /tb
 """
 
 import glob
