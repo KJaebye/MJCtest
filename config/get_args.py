@@ -7,7 +7,8 @@
 
 import argparse
 
-def parse_args():
+
+def get_args():
     # create a parser
     parser = argparse.ArgumentParser(description="Write in user's arguments from terminal.")
     mode = parser.add_mutually_exclusive_group()
@@ -23,7 +24,6 @@ def parse_args():
     parser.add_argument('--use_cuda', type=bool, default=False)
     parser.add_argument('--render', type=bool, default=False)
 
-
     # training configuration
     parser.add_argument('--gamma', type=float, default=.99, help='discount factor for value function')
     parser.add_argument('--num_episodes', type=int, default=1000, help='number of episodes')
@@ -34,7 +34,6 @@ def parse_args():
 
     # parsing and return args
     return parser.parse_args()
-
 
 
 if __name__ == '__main__':

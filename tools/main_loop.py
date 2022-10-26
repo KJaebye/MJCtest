@@ -4,10 +4,10 @@
 #   @created date: 23.Oct.2022
 # ------------------------------------------------------------------------------------------------------------------- #
 
-from config.parse_args import parse_args
+from config.get_args import get_args
 import logging
 
-args = parse_args()
+args = get_args()
 if args.render:
     args.num_threads = 1
 
