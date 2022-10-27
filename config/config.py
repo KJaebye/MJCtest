@@ -44,22 +44,10 @@ class Config:
             assert len(files) == 1
             cfg = yaml.safe_load(open(files[0], 'r'))
 
-        # # create directories
-        # output_dir = './tmp' if tmp else './results'
-        # subdir = '/%s/%s' % (domain, task)
-        # self.time_str = datetime.now().strftime("%Y%m%d_%H%M%S")
-        # target_dir = '/' + self.time_str
-        # self.output_dir = output_dir + subdir + target_dir
-        # self.model_dir = '%s/models' % self.output_dir
-        # self.log_dir = '%s/log' % self.output_dir
-        # self.tb_dir = '%s/tb' % self.output_dir
-        # os.makedirs(self.model_dir, exist_ok=False)
-        # os.makedirs(self.log_dir, exist_ok=False)
-        # os.makedirs(self.tb_dir, exist_ok=False)
-
         # training config
         self.seed = cfg.get('seed')
         self.min_batch_size = cfg.get('min_batch_size')
+        self.max_timesteps = cfg.get('max_timesteps')  # maximum timestep per episode
 
         # env
         self.env_name = cfg.get('env_name')

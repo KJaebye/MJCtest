@@ -7,6 +7,7 @@
 import platform
 import os
 from utils.memory import Memory
+from utils.torch import *
 
 
 if platform.system() != "Linux":
@@ -16,7 +17,7 @@ os.environ["OMP_NUM_THREADS"] = "1"
 
 
 class Agent:
-    def __init__(self, env, policy_net, value_net, dtype, logger, device, gamma,
+    def __init__(self, env, policy_net, value_net, dtype, logger, cfg, device, gamma,
                  custom_reward=None, end_reward=False, running_state=None,
                  num_threads=1):
         self.env = env
@@ -24,6 +25,7 @@ class Agent:
         self.value_net = value_net
         self.dtype = dtype
         self.logger = logger
+        self.cfg = cfg
         self.device = device
         self.gamma = gamma
         self.custom_reward = custom_reward
@@ -44,8 +46,14 @@ class Agent:
             if self.running_state is not None:
                 state = self.running_state(state)
             self.logger.start_episode(self.env)
+            self.pre_episode()
+
+            for _ in range(self.cfg.max_timesteps):
+                state_var = tensor(state).unsqueeze(0)
 
 
+    def pre_episode(self):
+        return
 
     def seed_worker(self, pid):
         if pid > 0:
