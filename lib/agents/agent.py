@@ -15,10 +15,9 @@ os.environ["OMP_NUM_THREADS"] = "1"
 
 
 class Agent:
-    def __init__(self, env, policy_net, value_net, dtype, device, gamma, \
-                 custom_reward=None, end_reward=False, running_state=None, \
-                 num_threads=1, logger_cls=LoggerRL, logger_kwargs=None, \
-                 traj_cls=TrajBatch):
+    def __init__(self, env, policy_net, value_net, dtype, logger, device, gamma,
+                 custom_reward=None, end_reward=False, running_state=None,
+                 num_threads=1):
         self.env = env
         self.policy_net = policy_net
         self.value_net = value_net
@@ -30,8 +29,14 @@ class Agent:
         self.running_state = running_state
         self.num_threads = num_threads
         self.noise_rate = 1.0
-        self.traj_cls = traj_cls
-        self.logger_cls = logger_cls
-        self.logger_kwargs = dict() if logger_kwargs is None else logger_kwargs
+        self.logger = logger
         self.sample_modules = [policy_net]
         self.update_modules = [policy_net, value_net]
+
+    def sample_worker(self, pid, queue, min_batch_size, mean_action, render):
+        self.seed_worker(pid)
+
+
+
+    def seed_worker(self, pid):
+        if pid > 0:
