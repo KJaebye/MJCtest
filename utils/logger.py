@@ -18,10 +18,7 @@ LOGGING_METHOD = ['info', 'warning', 'error', 'critical',
 
 
 class MyFormatter(logging.Formatter):
-    """
-         A class to make preference format.
-    """
-
+    """ A class to make preference format. """
     def format(self, record):
         date = colored('[%(asctime)s @%(filename)s:%(lineno)d]', 'green')
         msg = '%(message)s'
@@ -73,19 +70,14 @@ class Logger(logging.Logger):
         return
 
     def set_output_handler(self):
-        """
-            set the console output handler
-        """
+        """ Set the console output handler. """
         con_handler = logging.StreamHandler(sys.stdout)
         con_handler.setFormatter(MyFormatter(datefmt='%Y%m%d %H:%M:%S'))
         self.addHandler(con_handler)
         return
 
     def set_file_handler(self):
-        """
-            create and save log file
-            set the log file handler
-        """
+        """ Create and save log file. Set the log file handler. """
         # create directories
         os.makedirs(self.model_dir, exist_ok=False)
         os.makedirs(self.log_dir, exist_ok=False)

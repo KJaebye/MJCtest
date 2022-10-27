@@ -6,6 +6,7 @@
 
 import argparse
 
+
 def get_args():
     # create a parser
     parser = argparse.ArgumentParser(description="Write in user's arguments from terminal.")
