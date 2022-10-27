@@ -6,6 +6,7 @@
 
 import platform
 import os
+from utils.memory import Memory
 
 
 if platform.system() != "Linux":
@@ -22,6 +23,7 @@ class Agent:
         self.policy_net = policy_net
         self.value_net = value_net
         self.dtype = dtype
+        self.logger = logger
         self.device = device
         self.gamma = gamma
         self.custom_reward = custom_reward
@@ -29,12 +31,19 @@ class Agent:
         self.running_state = running_state
         self.num_threads = num_threads
         self.noise_rate = 1.0
-        self.logger = logger
         self.sample_modules = [policy_net]
         self.update_modules = [policy_net, value_net]
 
     def sample_worker(self, pid, queue, min_batch_size, mean_action, render):
+        """ Sample min_batch_size of data. """
         self.seed_worker(pid)
+        memory = Memory()
+
+        while self.logger.num_steps < min_batch_size:
+            state = self.env.reset()
+            if self.running_state is not None:
+                state = self.running_state(state)
+            self.logger.start_episode(self.env)
 
 
 

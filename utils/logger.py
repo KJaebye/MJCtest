@@ -11,7 +11,6 @@ from termcolor import colored
 import platform
 from datetime import datetime
 
-
 NOTSET = 0
 LOGGING_METHOD = ['info', 'warning', 'error', 'critical',
                   'warn', 'exception', 'debug']
@@ -19,17 +18,15 @@ LOGGING_METHOD = ['info', 'warning', 'error', 'critical',
 
 class MyFormatter(logging.Formatter):
     """ A class to make preference format. """
+
     def format(self, record):
         date = colored('[%(asctime)s @%(filename)s:%(lineno)d]', 'green')
         msg = '%(message)s'
 
         if record.levelno == logging.WARNING:
-            fmt = date + ' ' + \
-                  colored('WRN', 'red', attrs=[]) + ' ' + msg
-        elif record.levelno == logging.ERROR or \
-                record.levelno == logging.CRITICAL:
-            fmt = date + ' ' + \
-                  colored('ERR', 'red', attrs=['underline']) + ' ' + msg
+            fmt = date + ' ' + colored('WRN', 'red', attrs=[]) + ' ' + msg
+        elif record.levelno == logging.ERROR or record.levelno == logging.CRITICAL:
+            fmt = date + ' ' + colored('ERR', 'red', attrs=['underline']) + ' ' + msg
         else:
             fmt = date + ' ' + msg
 
@@ -42,6 +39,7 @@ class MyFormatter(logging.Formatter):
 
 
 class Logger(logging.Logger):
+    """ Logger to record everything about training. """
 
     def __init__(self, name, args=None, cfg=None, level=NOTSET):
         super(Logger, self).__init__(name, level)
@@ -60,6 +58,11 @@ class Logger(logging.Logger):
         # log output file
         self.prefix = cfg.domain + '_' + cfg.task + '-'
         self.file_name = self.prefix + self.time_str + '.log'
+        # training related attributes
+        self.num_steps = 0
+        self.episode_len = 0
+        self.episode_reward = 0
+        self.episode_c_reward = 0  # custom reward
 
     def print_system_info(self):
         # print necessary info
@@ -92,3 +95,9 @@ class Logger(logging.Logger):
         self.addHandler(file_handler)
         self.info('Log file set to {}'.format(self.file_path))
         return
+
+    # Training related methods
+    def start_episode(self, env):
+        self.episode_len = 0
+        self.episode_reward = 0
+        self.episode_c_reward = 0

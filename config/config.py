@@ -59,6 +59,7 @@ class Config:
 
         # training config
         self.seed = cfg.get('seed')
+        self.min_batch_size = cfg.get('min_batch_size')
 
         # env
         self.env_name = cfg.get('env_name')
