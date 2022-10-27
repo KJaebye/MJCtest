@@ -27,13 +27,13 @@
 import glob
 import os
 import yaml
-from datetime import datetime
 
 
 class Config:
-    def __init__(self, domain, task, tmp, cfg_dict=None):
+    def __init__(self, domain, task, tmp=True, cfg_dict=None):
         self.domain = domain
         self.task = task
+        self.tmp = tmp
 
         # load .yml
         if cfg_dict is not None:
@@ -44,18 +44,18 @@ class Config:
             assert len(files) == 1
             cfg = yaml.safe_load(open(files[0], 'r'))
 
-        # create directories
-        output_dir = './tmp' if tmp else './results'
-        subdir = '/%s/%s' % (domain, task)
-        self.time_str = datetime.now().strftime("%Y%m%d_%H%M%S")
-        target_dir = '/' + self.time_str
-        self.output_dir = output_dir + subdir + target_dir
-        self.model_dir = '%s/models' % self.output_dir
-        self.log_dir = '%s/log' % self.output_dir
-        self.tb_dir = '%s/tb' % self.output_dir
-        os.makedirs(self.model_dir, exist_ok=False)
-        os.makedirs(self.log_dir, exist_ok=False)
-        os.makedirs(self.tb_dir, exist_ok=False)
+        # # create directories
+        # output_dir = './tmp' if tmp else './results'
+        # subdir = '/%s/%s' % (domain, task)
+        # self.time_str = datetime.now().strftime("%Y%m%d_%H%M%S")
+        # target_dir = '/' + self.time_str
+        # self.output_dir = output_dir + subdir + target_dir
+        # self.model_dir = '%s/models' % self.output_dir
+        # self.log_dir = '%s/log' % self.output_dir
+        # self.tb_dir = '%s/tb' % self.output_dir
+        # os.makedirs(self.model_dir, exist_ok=False)
+        # os.makedirs(self.log_dir, exist_ok=False)
+        # os.makedirs(self.tb_dir, exist_ok=False)
 
         # training config
         self.seed = cfg.get('seed')

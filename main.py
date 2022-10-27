@@ -34,13 +34,16 @@ if __name__ == "__main__":
     logger = Logger(name='current', args=args, cfg=cfg)
     logger.propagate = False
     logger.setLevel(logging.INFO)
-    # set output and logfile
+    # set output
     logger.set_output_handler()
-    logger.set_file_handler()
-    # print info
     logger.print_system_info()
 
-    # if args.train:
+    if args.type == 'train':
+        # only training generates log file
+        logger.info('Type of current running: {}'.format('Training'))
+        logger.set_file_handler()
+    else:
+        logger.info('Type of current running: {}. No log file will be created'.format('Evaluation'))
 
     """create agent"""
 
