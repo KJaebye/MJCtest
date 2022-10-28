@@ -8,6 +8,9 @@ import platform
 import os
 import time
 import torch
+import math
+import multiprocessing
+import numpy as np
 
 from lib.core.memory import Memory
 from lib.core import torch_wrapper as torper
@@ -63,7 +66,7 @@ class Agent:
             self.pre_episode()
             # sample an episode
             for _ in range(self.cfg.max_timesteps):
-                state_var = tensor(state).unsqueeze(0)
+                state_var = torper.tensor(state).unsqueeze(0)
                 trans_out = self.trans_policy(state_var)
                 # sample an action
                 use_mean_action = mean_action or torch.bernoulli(torch.tensor([1 - self.noise_rate])).item()
@@ -128,6 +131,25 @@ class Agent:
         torper.to_eval(*self.sample_modules)
         with torper.to_cpu(*self.sample_modules):
             with torch.no_grad():
+                # multiprocess sampling
+                thread_batch_size = int(math.floor(min_batch_size / nthreads))
+                queue = multiprocessing.Queue()
+                memories = [None] * nthreads
+                loggers = [None] * nthreads
+
+                for i in range(nthreads-1):
+                    worker_args = (i+1, queue, thread_batch_size, mean_action, render)
+                    worker = multiprocessing.Process(target=self.sample_worker, args=worker_args)
+                    worker.start()
+                # save results from first worker pid 0
+                memories[0], loggers[0] = self.sample_worker(0, None, thread_batch_size, mean_action, render)
+                # save results from other workers
+                for i in range(nthreads - 1):
+                    pid, worker_memory, worker_logger = queue.get()
+                    memories[pid] = worker_memory
+                    loggers[pid] = worker_logger
+
+                traj_batch = self.traj_cls(memories)
 
 
 
