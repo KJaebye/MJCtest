@@ -17,9 +17,9 @@ from lib.core.logger_rl import LoggerRL
 from lib.core.traj_batch import TrajBatch
 from lib.core import torch_wrapper as torper
 
-
 if platform.system() != "Linux":
     from multiprocessing import set_start_method
+
     set_start_method("fork")
 os.environ["OMP_NUM_THREADS"] = "1"
 
@@ -51,14 +51,62 @@ class Agent:
         self.sample_modules = [policy_net]
         self.update_modules = [policy_net, value_net]
 
-    def sample_worker(self, pid, queue, min_batch_size, mean_action, render):
-        """ Sample min_batch_size of data. """
+    def sample(self, min_batch_size, mean_action=False, render=False, nthreads=None):
+        """
+        Sample a batch of data.
+        :param min_batch_size: minimum batch size
+        :param mean_action: bool type
+        :param render: bool type
+        :param nthreads: number of threads
+        :return:
+        """
+        if nthreads is None:
+            nthreads = self.num_threads
+        t_start = time.time()
+        torper.to_eval(*self.sample_modules)
+
+        with torper.to_cpu(*self.sample_modules):
+            with torch.no_grad():
+                # multiprocess sampling
+                thread_batch_size = int(math.floor(min_batch_size / nthreads))
+                queue = multiprocessing.Queue()
+                memories = [None] * nthreads
+                loggers = [None] * nthreads
+
+                for i in range(nthreads - 1):
+                    worker_args = (i + 1, queue, thread_batch_size, mean_action, render)
+                    worker = multiprocessing.Process(target=self.sample_worker, args=worker_args)
+                    worker.start()
+                # save sample data from first worker pid 0
+                memories[0], loggers[0] = self.sample_worker(0, None, thread_batch_size, mean_action, render)
+                # save sample data from other workers
+                for i in range(nthreads - 1):
+                    pid, worker_memory, worker_logger = queue.get()
+                    memories[pid] = worker_memory
+                    loggers[pid] = worker_logger
+
+                traj_batch = self.traj_cls(memories)
+                logger = self.logger_cls.merge(loggers, **self.logger_kwargs)
+
+        logger.sample_duration = time.time() - t_start
+        return traj_batch, logger
+
+    def sample_worker(self, pid, queue, thread_batch_size, mean_action, render):
+        """
+        Sample min_batch_size of data.
+        :param pid: work index
+        :param queue: for multiprocessing
+        :param thread_batch_size: how many batches of data should be collected by worker
+        :param mean_action: bool type
+        :param render: bool type
+        :return:
+        """
         self.seed_worker(pid)
         memory = Memory()
         logger = self.logger_cls(**self.logger_kwargs)
 
         # sample a batch data
-        while logger.num_steps < min_batch_size:
+        while logger.num_steps < thread_batch_size:
             state = self.env.reset()
             # preprocess state if needed
             if self.running_state is not None:
@@ -129,45 +177,13 @@ class Agent:
             if hasattr(self.env, 'np_random'):
                 self.env.np_random.seed(self.env.np_random.randint(5000) * pid)
 
-    def sample(self, min_batch_size, mean_action=False, render=False, nthreads=None):
-        if nthreads is None:
-            nthreads = self.num_threads
-        t_start = time.time()
-        torper.to_eval(*self.sample_modules)
+    def trans_policy(self, states):
+        """transform states before going into policy net"""
+        return states
 
-        with torper.to_cpu(*self.sample_modules):
-            with torch.no_grad():
-                # multiprocess sampling
-                thread_batch_size = int(math.floor(min_batch_size / nthreads))
-                queue = multiprocessing.Queue()
-                memories = [None] * nthreads
-                loggers = [None] * nthreads
-
-                for i in range(nthreads-1):
-                    worker_args = (i+1, queue, thread_batch_size, mean_action, render)
-                    worker = multiprocessing.Process(target=self.sample_worker, args=worker_args)
-                    worker.start()
-                # save sample data from first worker pid 0
-                memories[0], loggers[0] = self.sample_worker(0, None, thread_batch_size, mean_action, render)
-                # save sample data from other workers
-                for i in range(nthreads - 1):
-                    pid, worker_memory, worker_logger = queue.get()
-                    memories[pid] = worker_memory
-                    loggers[pid] = worker_logger
-
-                traj_batch = self.traj_cls(memories)
-                logger = self.logger_cls.merge(loggers, **self.logger_kwargs)
-
-        logger.sample_duration = time.time() - t_start
-        return traj_batch, logger
-
-
-
-
-
-
-
-
+    def trans_value(self, states):
+        """transform states before going into value net"""
+        return states
 
     def pre_episode(self):
         return
