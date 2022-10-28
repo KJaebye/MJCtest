@@ -134,7 +134,7 @@ class Agent:
             nthreads = self.num_threads
         t_start = time.time()
         torper.to_eval(*self.sample_modules)
-        # only use cpu during evaluation
+
         with torper.to_cpu(*self.sample_modules):
             with torch.no_grad():
                 # multiprocess sampling
@@ -147,9 +147,9 @@ class Agent:
                     worker_args = (i+1, queue, thread_batch_size, mean_action, render)
                     worker = multiprocessing.Process(target=self.sample_worker, args=worker_args)
                     worker.start()
-                # save results from first worker pid 0
+                # save sample data from first worker pid 0
                 memories[0], loggers[0] = self.sample_worker(0, None, thread_batch_size, mean_action, render)
-                # save results from other workers
+                # save sample data from other workers
                 for i in range(nthreads - 1):
                     pid, worker_memory, worker_logger = queue.get()
                     memories[pid] = worker_memory

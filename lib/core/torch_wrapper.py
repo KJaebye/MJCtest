@@ -55,7 +55,7 @@ class to_device:
 
 class to_eval:
     """
-        Class to define the evaluation.
+        Class to disable batch normalisation and dropout.
     """
     def __init__(self, *models):
         self.models = list(filter(lambda x: x is not None, models))
@@ -75,7 +75,7 @@ class to_eval:
 
 class to_train:
     """
-        Class to define the training.
+        Class to enable batch normalisation and dropout.
     """
     def __init__(self, *models):
         self.models = list(filter(lambda x: x is not None, models))
