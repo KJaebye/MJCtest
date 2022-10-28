@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------------------------------------- #
-#   @description: Stats logger.
+#   @description: Class StatsLogger.
 #   @author: From khrylib by Ye Yuan.
 #   @created date: 28.Oct.2022
 # ------------------------------------------------------------------------------------------------------------------- #
@@ -9,7 +9,9 @@ import numpy as np
 
 
 class StatsLogger:
-
+    """
+        Actually this class is not for logging, but recording and processing the variable values during the training.
+    """
     def __init__(self, is_nparray=False):
         self.is_nparray = is_nparray
         self.total_val = 0

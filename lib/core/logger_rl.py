@@ -1,14 +1,26 @@
+# ------------------------------------------------------------------------------------------------------------------- #
+#   @description: Class LoggerRL.
+#   @author: From khrylib by Ye Yuan.
+#   @created date: 28.Oct.2022
+# ------------------------------------------------------------------------------------------------------------------- #
+
 import math
 from lib.core.stats_logger import StatsLogger
 
 
 class LoggerRL:
-
+    """
+        Actually this class is not for logging, but recording the variable values during the training.
+    """
     def __init__(self, init_stats_logger=True, use_c_reward=False):
         self.use_c_reward = use_c_reward
         self.num_steps = 0
         self.num_episodes = 0
         self.sample_time = 0
+        self.episode_len = 0
+        self.episode_reward = 0
+        self.episode_c_reward = 0
+
         self.stats_names = ['episode_len', 'reward', 'episode_reward']
         self.stats_nparray = []
         if self.use_c_reward:
