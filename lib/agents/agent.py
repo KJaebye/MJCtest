@@ -6,8 +6,12 @@
 
 import platform
 import os
+import time
+import torch
+
 from lib.core.memory import Memory
-from lib.core.torch import *
+from lib.core import torch_wrapper as torper
+from lib.core.logger_rl import LoggerRL
 
 
 if platform.system() != "Linux":
@@ -17,22 +21,29 @@ os.environ["OMP_NUM_THREADS"] = "1"
 
 
 class Agent:
-    def __init__(self, env, policy_net, value_net, dtype, logger, cfg, device, gamma,
-                 custom_reward=None, end_reward=False, running_state=None,
+    def __init__(self, env, policy_net, value_net, dtype, cfg, device, gamma,
+                 custom_reward=None, logger_cls=LoggerRL, logger_kwargs=None,
+                 end_reward=False, running_state=None, traj_cls=TrajBatch,
                  num_threads=1):
         self.env = env
         self.policy_net = policy_net
         self.value_net = value_net
         self.dtype = dtype
-        self.logger = logger
         self.cfg = cfg
         self.device = device
         self.gamma = gamma
+
         self.custom_reward = custom_reward
         self.end_reward = end_reward
         self.running_state = running_state
+
         self.num_threads = num_threads
         self.noise_rate = 1.0
+
+        self.traj_cls = traj_cls
+        self.logger_cls = logger_cls
+        self.logger_kwargs = dict() if logger_kwargs is None else logger_kwargs
+
         self.sample_modules = [policy_net]
         self.update_modules = [policy_net, value_net]
 
@@ -40,15 +51,17 @@ class Agent:
         """ Sample min_batch_size of data. """
         self.seed_worker(pid)
         memory = Memory()
+        logger = self.logger_cls(**self.logger_kwargs)
 
-        while self.logger.num_steps < min_batch_size:
+        # sample a batch data
+        while logger.num_steps < min_batch_size:
             state = self.env.reset()
             # preprocess state if needed
             if self.running_state is not None:
                 state = self.running_state(state)
-            self.logger.start_episode(self.env)
+            logger.start_episode(self.env)
             self.pre_episode()
-
+            # sample an episode
             for _ in range(self.cfg.max_timesteps):
                 state_var = tensor(state).unsqueeze(0)
                 trans_out = self.trans_policy(state_var)
@@ -62,6 +75,7 @@ class Agent:
                 # preprocess state if needed
                 if self.running_state is not None:
                     next_state = self.running_state(next_state)
+
                 # use custom or env reward
                 if self.custom_reward is not None:
                     c_reward, c_info = self.custom_reward(self.env, state, action, env_reward, info)
@@ -72,12 +86,55 @@ class Agent:
                 # add env reward
                 if self.end_reward and info.get('end', False):
                     reward += self.env.end_reward
-                # logging
+                # record variables' changes
+                logger.step(self.env, env_reward, c_reward, c_info, info)
+
+                mask = 0 if done else 1
+                exp = 1 - use_mean_action
+                self.push_memory(memory, state, action, mask, next_state, reward, exp)
+
+                ########
+                #######
+                ### render function ######
+                ### should be changed with mujoco-native bindings
+                if pid == 0 and render:
+                    self.env.render()
+                if done:
+                    # end this episode
+                    break
+                state = next_state
+
+            logger.end_episode(self.env)
+        logger.end_sampling()
+
+        if queue is not None:
+            queue.put([pid, memory, logger])
+        else:
+            return memory, logger
+
+    def seed_worker(self, pid):
+        if pid > 0:
+            torch.manual_seed(torch.randint(0, 5000, (1,)) * pid)
+            #########
+            ### env.np_random is from gym.utils
+            # need use mojoco python bindings to replace gym.seeding
+            if hasattr(self.env, 'np_random'):
+                self.env.np_random.seed(self.env.np_random.randint(5000) * pid)
+
+    def sample(self, min_batch_size, mean_action=False, render=False, nthreads=None):
+        if nthreads is None:
+            nthreads = self.num_threads
+        t_start = time.time()
+        torper.to_test(*self.sample_modules)
+
+
+
+
 
 
 
     def pre_episode(self):
         return
 
-    def seed_worker(self, pid):
-        if pid > 0:
+    def push_memory(self, memory, state, action, mask, next_state, reward, exp):
+        memory.push(state, action, mask, next_state, reward, exp)

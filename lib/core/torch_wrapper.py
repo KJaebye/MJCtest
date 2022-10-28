@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------------------------------------- #
-#   @description: Torch wrapper.
+#   @description: Torch wrapper (import as torper).
 #   @author: From khrylib by Ye Yuan.
 #   @created date: 27.Oct.2022
 # ------------------------------------------------------------------------------------------------------------------- #
@@ -56,6 +56,7 @@ class to_test:
 
     def __init__(self, *models):
         self.models = list(filter(lambda x: x is not None, models))
+        # training attribute is a
         self.prev_modes = [x.training for x in self.models]
         for x in self.models:
             x.train(False)

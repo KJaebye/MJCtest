@@ -97,13 +97,3 @@ class Logger(logging.Logger):
         self.addHandler(file_handler)
         self.info('Log file set to {}'.format(self.file_path))
         return
-
-    # Training related methods
-    def start_episode(self, env):
-        self.episode_len = 0
-        self.episode_reward = 0
-        self.episode_c_reward = 0
-
-    def step(self, env, reward, c_reward, c_info, info):
-        self.episode_len += 1
-        self.episode_reward += reward
