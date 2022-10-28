@@ -13,8 +13,9 @@ import multiprocessing
 import numpy as np
 
 from lib.core.memory import Memory
-from lib.core import torch_wrapper as torper
 from lib.core.logger_rl import LoggerRL
+from lib.core.traj_batch import TrajBatch
+from lib.core import torch_wrapper as torper
 
 
 if platform.system() != "Linux":
@@ -96,11 +97,15 @@ class Agent:
                 exp = 1 - use_mean_action
                 self.push_memory(memory, state, action, mask, next_state, reward, exp)
 
-                ########
-                #######
-                ### render function ######
-                ### should be changed with mujoco-native bindings
+                # only render the first worker pid 0
+                """ 
+                    Only one glfw window can be displayed. However, there are "self.num_threads" number of
+                    workers created and running simultaneously when we use multiprocessing method. Thus,
+                    when user sets parameter render to be True and num_threads > 1, we only display the first
+                    worker's action in simulator.
+                """
                 if pid == 0 and render:
+                    ############## env.render should be replaced by mujoco native python bindings
                     self.env.render()
                 if done:
                     # end this episode
@@ -129,6 +134,7 @@ class Agent:
             nthreads = self.num_threads
         t_start = time.time()
         torper.to_eval(*self.sample_modules)
+        # only use cpu during evaluation
         with torper.to_cpu(*self.sample_modules):
             with torch.no_grad():
                 # multiprocess sampling
@@ -150,6 +156,11 @@ class Agent:
                     loggers[pid] = worker_logger
 
                 traj_batch = self.traj_cls(memories)
+                logger = self.logger_cls.merge(loggers, **self.logger_kwargs)
+
+        logger.sample_duration = time.time() - t_start
+        return traj_batch, logger
+
 
 
 

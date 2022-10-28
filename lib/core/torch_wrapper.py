@@ -1,6 +1,7 @@
 # ------------------------------------------------------------------------------------------------------------------- #
 #   @description: Torch wrapper (import as torper).
-#   @author: From khrylib by Ye Yuan.
+#   @author: From khrylib by Ye Yuan, modified by Kangyao Huang.
+#   @changes: Update the file name to torch_wrapper.py
 #   @created date: 27.Oct.2022
 # ------------------------------------------------------------------------------------------------------------------- #
 

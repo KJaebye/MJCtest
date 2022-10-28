@@ -1,6 +1,7 @@
 # ------------------------------------------------------------------------------------------------------------------- #
 #   @description: Class LoggerRL.
-#   @author: From khrylib by Ye Yuan.
+#   @author: From khrylib by Ye Yuan, modified by Kangyao Huang.
+#   @changes: Use self.sample_duration to replace self.sample_time.
 #   @created date: 28.Oct.2022
 # ------------------------------------------------------------------------------------------------------------------- #
 
@@ -16,7 +17,7 @@ class LoggerRL:
         self.use_c_reward = use_c_reward
         self.num_steps = 0
         self.num_episodes = 0
-        self.sample_time = 0
+        self.sample_duration = 0
         self.episode_len = 0
         self.episode_reward = 0
         self.episode_c_reward = 0
