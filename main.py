@@ -9,7 +9,7 @@ import numpy as np
 from config.get_args import get_args
 from config.config import Config
 from utils.logger import Logger
-from lib.agents.agent import Agent
+# from lib.agents.agent import Agent
 
 
 if __name__ == "__main__":
@@ -49,5 +49,5 @@ if __name__ == "__main__":
         logger.info('Type of current running: {}. No log file will be created'.format('Evaluation'))
 
     """create agent"""
-    agent = Agent(env, policy_net, value_net, dtype, logger, cfg, device, gamma)
+    # agent = Agent(env, policy_net, value_net, dtype, logger, cfg, device, gamma)
 

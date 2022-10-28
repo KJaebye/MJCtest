@@ -9,6 +9,7 @@ import sys
 import os
 from termcolor import colored
 import platform
+import socket
 from datetime import datetime
 
 NOTSET = 0
@@ -67,6 +68,7 @@ class Logger(logging.Logger):
     def print_system_info(self):
         # print necessary info
         self.info('Hardware info: {}'.format(platform.machine()))
+        self.info('Device info: {}'.format(socket.gethostname()))
         self.info('Platform info: {}'.format(platform.platform()))
         self.info('System info: {}'.format(platform.system()))
         self.info('Current Python version: {}'.format(platform.python_version()))
@@ -101,3 +103,7 @@ class Logger(logging.Logger):
         self.episode_len = 0
         self.episode_reward = 0
         self.episode_c_reward = 0
+
+    def step(self, env, reward, c_reward, c_info, info):
+        self.episode_len += 1
+        self.episode_reward += reward
