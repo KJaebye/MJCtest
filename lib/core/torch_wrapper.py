@@ -52,12 +52,14 @@ class to_device:
         return False
 
 
-class to_test:
-
+class to_eval:
+    """
+        Class to define the evaluation.
+    """
     def __init__(self, *models):
         self.models = list(filter(lambda x: x is not None, models))
-        # training attribute is a
         self.prev_modes = [x.training for x in self.models]
+        # disable batch normalisation and dropout
         for x in self.models:
             x.train(False)
 
@@ -71,10 +73,13 @@ class to_test:
 
 
 class to_train:
-
+    """
+        Class to define the training.
+    """
     def __init__(self, *models):
         self.models = list(filter(lambda x: x is not None, models))
         self.prev_modes = [x.training for x in self.models]
+        # enable batch normalisation and dropout
         for x in self.models:
             x.train(True)
 

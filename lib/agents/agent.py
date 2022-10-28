@@ -125,7 +125,10 @@ class Agent:
         if nthreads is None:
             nthreads = self.num_threads
         t_start = time.time()
-        torper.to_test(*self.sample_modules)
+        torper.to_eval(*self.sample_modules)
+        with torper.to_cpu(*self.sample_modules):
+            with torch.no_grad():
+
 
 
 
