@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------------------------------------- #
-#   @description: Set configurations of training or evaluation.
+#   @description: Set configurations of training or evaluation
 #   @author: Kangyao Huang
 #   @created date: 25.Oct.2022
 # ------------------------------------------------------------------------------------------------------------------- #
