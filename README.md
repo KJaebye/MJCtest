@@ -11,11 +11,18 @@ Learning records and tips are located at Notion https://www.notion.so/huangkangy
 
 **/dm_control_tests** directory provides examples using dm_control.
 
+
+
 **/assets** directory includes all robots models in .urdf, .xml, .mjb, .txt formats.
 
 **/config** directory include all environment configurations and settings .yml files for training, located at **/config/cfg**. Besides, **parse_args.py** parses commands from terminal, **config.py** loads .yml files.
 
-**/tools** includes main function.
+**/utils** includes useful modules but less related to RL core algorithm.
+
+**/lib** includes all RL related core modules.
+
+**/tmp** is the logging file directory.
+
 
 > Please note that: results are generated in **/tmp** in default, but well-trained results will be moved to **/results** manually.
 
