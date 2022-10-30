@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------------------------------------- #
-#   @description: Class TrajBatch.
-#   @author: From khrylib by Ye Yuan, modified by Kangyao Huang.
+#   @description: Class TrajBatch
+#   @author: From khrylib by Ye Yuan, modified by Kangyao Huang
 #   @changes: Update the file name to traj_batch.py
 #   @created date: 29.Oct.2022
 # ------------------------------------------------------------------------------------------------------------------- #
