@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------------------------------------------- #
-#   @description: Class LoggerRL.
-#   @author: From khrylib by Ye Yuan, modified by Kangyao Huang.
-#   @changes: Use self.sample_duration to replace self.sample_time.
+#   @description: Class LoggerRL
+#   @author: From khrylib by Ye Yuan, modified by Kangyao Huang
+#   @changes: Use self.sample_duration to replace self.sample_time
 #   @created date: 28.Oct.2022
 # ------------------------------------------------------------------------------------------------------------------- #
 
