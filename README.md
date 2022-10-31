@@ -1,8 +1,10 @@
 # Introduction
 This repo is for MuJoCo learning and testing (based on the architecture of **Transform2Act** and **NerveNet** works)
 
+
 Learning records and tips are located at Notion https://www.notion.so/huangkangyao/Transform2Act-Reconstruction-6edeb95a2aea449fa016282a7f990e22
 
+----
 # Description
 
 **/mujoco_native_tests** directory provides examples using **MuJoCo official python bindings** API.
@@ -11,7 +13,7 @@ Learning records and tips are located at Notion https://www.notion.so/huangkangy
 
 **/dm_control_tests** directory provides examples using dm_control.
 
-
+---
 
 **/assets** directory includes all robots models in .urdf, .xml, .mjb, .txt formats.
 
@@ -25,7 +27,7 @@ Learning records and tips are located at Notion https://www.notion.so/huangkangy
 
 
 > Please note that: results are generated in **/tmp** in default, but well-trained results will be moved to **/results** manually.
-
+----------------------
 # Environment
 - python==3.9
 - mujoco==2.3.0
