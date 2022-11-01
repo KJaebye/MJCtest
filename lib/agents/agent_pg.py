@@ -15,4 +15,10 @@ class AgentPG(Agent):
         self.optimizer_policy = optimizer_policy
         self.optimizer_value = optimizer_value
         self.opt_num_epoches = opt_num_epoches
-        self.value_opt_niter = value_opt_niter
+        self.value_opt_niter = value_opt_niter # value optimizer number of iteration?
+
+    def update_value(self, states, returns):
+        """ Update Critic"""
+        for _ in range(self.value_opt_niter):
+            value_predict = self.value_net(self.trans_value(states))
+            value_loss = (value_predict - returns).pow(2).mean()
