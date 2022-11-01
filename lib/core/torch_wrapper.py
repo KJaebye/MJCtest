@@ -57,6 +57,7 @@ class to_eval:
     """
         Class to disable batch normalisation and dropout.
     """
+
     def __init__(self, *models):
         self.models = list(filter(lambda x: x is not None, models))
         self.prev_modes = [x.training for x in self.models]
@@ -77,6 +78,7 @@ class to_train:
     """
         Class to enable batch normalisation and dropout.
     """
+
     def __init__(self, *models):
         self.models = list(filter(lambda x: x is not None, models))
         self.prev_modes = [x.training for x in self.models]
@@ -99,7 +101,7 @@ def batch_to(dst, *args):
 
 def get_flat_params_from(models):
     if not hasattr(models, '__iter__'):
-        models = (models, )
+        models = (models,)
     params = []
     for model in models:
         for param in model.parameters():
@@ -173,11 +175,35 @@ def filter_state_dict(state_dict, filter_keys):
                 break
 
 
+def estimate_advantages(rewards, masks, values, gamma, tau):
+    device = rewards.device
+    rewards, masks, values = batch_to(torch.device('cpu'), rewards, masks, values)
+    tensor_type = type(rewards)
+    deltas = tensor_type(rewards.size(0), 1)
+    advantages = tensor_type(rewards.size(0), 1)
+
+    prev_value = 0
+    prev_advantage = 0
+    for i in reversed(range(rewards.size(0))):
+        deltas[i] = rewards[i] + gamma * prev_value * masks[i] - values[i]
+        advantages[i] = deltas[i] + gamma * tau * prev_advantage * masks[i]
+
+        prev_value = values[i, 0]
+        prev_advantage = advantages[i, 0]
+
+    returns = values + advantages
+    advantages = (advantages - advantages.mean()) / advantages.std()
+
+    advantages, returns = batch_to(device, advantages, returns)
+    return advantages, returns
+
+
 def get_scheduler(optimizer, policy, nepoch_fix=None, nepoch=None, decay_step=None):
     if policy == 'lambda':
         def lambda_rule(epoch):
             lr_l = 1.0 - max(0, epoch - nepoch_fix) / float(nepoch - nepoch_fix + 1)
             return lr_l
+
         scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda_rule)
     elif policy == 'step':
         scheduler = lr_scheduler.StepLR(
@@ -207,7 +233,8 @@ class StepParamScheduler(nn.Module):
         self.cur_epoch.fill_(epoch)
 
     def val(self):
-        return self.start_val * self.gamma ** (self.cur_epoch / self.step_size if self.smooth else self.cur_epoch // self.step_size)
+        return self.start_val * self.gamma ** (
+            self.cur_epoch / self.step_size if self.smooth else self.cur_epoch // self.step_size)
 
 
 class LinearParamScheduler(nn.Module):
@@ -227,4 +254,6 @@ class LinearParamScheduler(nn.Module):
         self.cur_epoch.fill_(epoch)
 
     def val(self):
-        return self.start_val + ((self.cur_epoch - self.start_epoch) / (self.end_epoch - self.start_epoch)).clamp(0.0, 1.0) * (self.end_val - self.start_val)
+        return self.start_val + ((self.cur_epoch - self.start_epoch) / (self.end_epoch - self.start_epoch)).clamp(0.0,
+                                                                                                                  1.0) * (
+                           self.end_val - self.start_val)
