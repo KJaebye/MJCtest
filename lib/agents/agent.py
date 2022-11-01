@@ -17,10 +17,11 @@ from lib.core.logger_rl import LoggerRL
 from lib.core.traj_batch import TrajBatch
 from lib.core import torch_wrapper as torper
 
+
 if platform.system() != "Linux":
     from multiprocessing import set_start_method
-
     set_start_method("fork")
+
 os.environ["OMP_NUM_THREADS"] = "1"
 
 
