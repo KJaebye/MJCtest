@@ -27,8 +27,8 @@ class AgentPG(Agent):
     def update_value(self, states, returns):
         """ Update Critic """
         for _ in range(self.value_optim_num_iter):
-            value_predict = self.value_net(self.trans_value(states))
-            value_loss = (value_predict - returns).pow(2).mean()
+            value_pred = self.value_net(self.trans_value(states))
+            value_loss = (value_pred - returns).pow(2).mean()
             self.optimizer_value.zero_grad()
             value_loss.backward()
             self.optimizer_value.step()
