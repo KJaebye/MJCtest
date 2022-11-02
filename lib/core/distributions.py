@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------------------------------------- #
 #   @description: Class distributions (three distributions classes)
-#   @author: Modified from khrylib by Ye Yuan, modified by Kangyao Huang
+#   @author: Copied from khrylib by Ye Yuan, modified by Kangyao Huang
 #   @created date: 02.Nov.2022
 # ------------------------------------------------------------------------------------------------------------------- #
 
