@@ -4,7 +4,6 @@
 #   @created date: 02.Nov.2022
 # ------------------------------------------------------------------------------------------------------------------- #
 import math
-
 import torch
 import numpy as np
 
@@ -22,7 +21,7 @@ class AgentPPO(AgentPG):
         self.policy_grad_clip_value = policy_grad_clip_value
 
     def update_policy(self, states, actions, returns, advantages, exps):
-        """ Update policy """
+        """ Update the policy """
         with torper.to_eval(*self.update_modules):
             with torch.no_grad():
                 fixed_log_probs = self.policy_net.get_log_prob(self.trans_policy(states), actions)
@@ -74,6 +73,6 @@ class AgentPPO(AgentPG):
         ratio = torch.exp(log_probs - fixd_log_probs[index])
         advantages = advantages[index]
         surr_1 = ratio * advantages
-        surr_2 = torch.clamp(ratio, 1.0 - self.clip_epsilon, 1,0 + self.clip_epsilon) * advantages
+        surr_2 = torch.clamp(ratio, 1.0 - self.clip_epsilon, 1.0 + self.clip_epsilon) * advantages
         surr_loss = - torch.min(surr_1, surr_2).mean()
         return surr_loss
