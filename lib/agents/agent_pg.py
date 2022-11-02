@@ -12,6 +12,9 @@ import torch
 
 
 class AgentPG(Agent):
+    """
+
+    """
     def __init__(self, tau=0.95, optimizer_policy=None, optimizer_value=None,
                  optim_num_epoches=1, value_opt_niter=1, **kwargs):
         super().__init__(**kwargs)
