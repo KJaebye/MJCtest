@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------------------------------------- #
-#   @description: Class AgentPG
+#   @description: Class AgentPG (use A2C by default)
 #   @author: Modified from khrylib by Ye Yuan, modified by Kangyao Huang
 #   @created date: 01.Nov.2022
 #   @changes: Changed same variables' name
