@@ -16,17 +16,17 @@ class AgentPG(Agent):
         Policy Gradient Agent.
     """
     def __init__(self, tau=0.95, optimizer_policy=None, optimizer_value=None,
-                 optim_num_epoches=1, value_opt_niter=1, **kwargs):
+                 optim_num_epoches=1, value_optim_num_iter=1, **kwargs):
         super().__init__(**kwargs)
         self.tau = tau
         self.optimizer_policy = optimizer_policy
         self.optimizer_value = optimizer_value
         self.optim_num_epochs = optim_num_epoches
-        self.value_opt_niter = value_opt_niter # value optimizer number of iteration?
+        self.value_optim_num_iter = value_optim_num_iter # value optimizer number of iteration?
 
     def update_value(self, states, returns):
         """ Update Critic """
-        for _ in range(self.value_opt_niter):
+        for _ in range(self.value_optim_num_iter):
             value_predict = self.value_net(self.trans_value(states))
             value_loss = (value_predict - returns).pow(2).mean()
             self.optimizer_value.zero_grad()
