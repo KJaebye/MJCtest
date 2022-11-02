@@ -50,7 +50,7 @@ class AgentPPO(AgentPG):
 
                     # update value by using the current batch
                     self.update_value(states_b, returns_b)
-                    surr_loss = self.ppo_loss(states_b, actions_b, returns_b, advantages_b, fixed_log_probs_b, index)
+                    surr_loss = self.ppo_loss(states_b, actions_b, advantages_b, fixed_log_probs_b, index)
                     self.optimizer_policy.zero_grad()
                     surr_loss.backward()
                     self.clip_policy_grad()
@@ -68,3 +68,12 @@ class AgentPPO(AgentPG):
         if self.policy_grad_clip_value is not None:
             for params, max_norm in self.policy_grad_clip_value:
                 torch.nn.utils.clip_grad_norm_(params, max_norm)
+
+    def ppo_loss(self, states, actions, advantages, fixd_log_probs, index):
+        log_probs = self.policy_net.get_log_prob(self.trans_policy(states)[index], actions[index])
+        ratio = torch.exp(log_probs - fixd_log_probs[index])
+        advantages = advantages[index]
+        surr_1 = ratio * advantages
+        surr_2 = torch.clamp(ratio, 1.0 - self.clip_epsilon, 1,0 + self.clip_epsilon) * advantages
+        surr_loss = - torch.min(surr_1, surr_2).mean()
+        return surr_loss
