@@ -40,7 +40,7 @@ class AgentPPO(AgentPG):
                 optim_iter_num = int(math.floor(states.shape[0] / self.mini_batch_size))
                 for i in range(optim_iter_num):
                     # index denotes data range of the current batch
-                    index = slice(i * self.mini_batch_size, min((i+1) * self.mini_batch_size, states.shape[0]))
+                    index = slice(i * self.mini_batch_size, min((i + 1) * self.mini_batch_size, states.shape[0]))
 
                     # intercept the current batch data
                     states_b, actions_b, returns_b, advantages_b, fixed_log_probs_b, exps_b = \
@@ -64,5 +64,7 @@ class AgentPPO(AgentPG):
                 self.clip_policy_grad()
                 self.optimizer_policy.step()
 
-
-
+    def clip_policy_grad(self):
+        if self.policy_grad_clip_value is not None:
+            for params, max_norm in self.policy_grad_clip_value:
+                torch.nn.utils.clip_grad_norm_(params, max_norm)
