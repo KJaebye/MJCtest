@@ -27,6 +27,6 @@ class Policy(nn.Module):
         dist = self.forward(x)
         return dist.kl()
 
-    def get_log_prob(self, x, action):
+    def get_log_prob(self, x, actions):
         dist = self.forward(x)
-        return dist.log_prob(action)
+        return dist.log_prob(actions)
