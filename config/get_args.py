@@ -26,7 +26,7 @@ def get_args():
     parser.add_argument('--timesteps_per_episode', type=int, default=2050, help='number of steps per rollout(episode)')
 
     # settings for networks
-    parser.add_argument('--use_ggnn', type=bool, default=False, help='use NerveNet(GGNN) as policy network')
+    parser.add_argument('--use_ggnn', type=bool, default=False, help='use NerveNet(GGNN) as policy networks')
 
     # parsing and return args
     return parser.parse_args()

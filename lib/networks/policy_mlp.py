@@ -6,7 +6,7 @@
 
 import torch
 
-from lib.network.policy import Policy
+from lib.networks.policy import Policy
 from lib.core.distributions import DiagGaussian
 
 
