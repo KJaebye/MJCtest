@@ -5,7 +5,9 @@
 # ------------------------------------------------------------------------------------------------------------------- #
 
 from lib.agents.agent_ppo import AgentPPO
-from structural_control.envs import env_dict
+from structural_control.envs import domain_dict
+from structural_control.envs import task_dict
+from dm_control.rl.control import Environment
 
 
 class StructuralControlAgent(AgentPPO):
@@ -32,8 +34,9 @@ class StructuralControlAgent(AgentPPO):
 
 
     def setup_env(self):
-        domain = self.cfg.domain
-        task = self.cfg.task
         domain_class = domain_dict[self.cfg.domain]
-        self.env = env = env_class(self.cfg, self)
-        self.obs_dim =
+        task_class = task_dict[self.cfg.task]
+        physics = domain_class(self.cfg)
+        task = task_class(self.cfg)
+        self.env = Environment(physics, task, n_sub_steps=1)
+

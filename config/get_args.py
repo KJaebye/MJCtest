@@ -13,7 +13,7 @@ def get_args():
 
     # the experiment settings
     parser.add_argument('--type', type=str, default='train', help='train or evaluation')
-    parser.add_argument('--domain', type=str, default='centipede', help='mujoco domain')
+    parser.add_argument('--domains', type=str, default='domains', help='mujoco domains')
     parser.add_argument('--task', type=str, default='easy', help='task complexity')
     parser.add_argument('--algo', type=str, default='PPO', help='algorithm to train the agent')
     parser.add_argument('--tmp', type=bool, default=True)

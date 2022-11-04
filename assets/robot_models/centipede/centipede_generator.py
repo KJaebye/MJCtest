@@ -8,7 +8,7 @@
 
 import numpy as np
 MUJOCO_XML_HEAD = '''
-<mujoco model="centipede">
+<mujoco model="domains">
   <compiler angle="degree" coordinate="local" inertiafromgeom="true"/>
 
   <option integrator="RK4" timestep="0.01"/>
