@@ -4,8 +4,14 @@
 #   @created date: 04.Nov.2022
 # ------------------------------------------------------------------------------------------------------------------- #
 
-from dm_control import suite
+from dm_control.rl.control import Environment
+from dm_control.rl.control import Physics
+from dm_control.rl.control import Task
 
-suite.load()
+class Centipede(Physics):
+    def __int__(self):
 
-class CentipedeEnv(mujoco):
+
+
+class Walk(Task):
+

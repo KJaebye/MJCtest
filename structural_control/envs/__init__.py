@@ -1,10 +1,10 @@
-from centipede import CentipedeFourEnv
+from structural_control.envs.centipede.centipede import Centipede
 
 
-env_dict = {
-    # 'hopper': HopperEnv,
-    # 'swimmer': SwimmerEnv,
-    # 'ant': AntEnv,
-    # 'gap':GapEnv,
-    'centipede': CentipedeEnv
+domain_dict = {
+    # 'hopper': Hopper,
+    # 'swimmer': Swimmer,
+    # 'ant': Ant,
+    # 'gap':Gap,
+    'centipede': Centipede
 }

@@ -32,6 +32,8 @@ class StructuralControlAgent(AgentPPO):
 
 
     def setup_env(self):
-        env_class = env_dict[self.cfg.env_name]
+        domain = self.cfg.domain
+        task = self.cfg.task
+        domain_class = domain_dict[self.cfg.domain]
         self.env = env = env_class(self.cfg, self)
         self.obs_dim =

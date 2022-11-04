@@ -49,9 +49,10 @@ class Config:
         self.min_batch_size = cfg.get('min_batch_size')
         self.max_timesteps = cfg.get('max_timesteps')  # maximum timestep per episode
 
+
         # environment
-        self.env_name = cfg.get('env_name')
-        self.task_complexity = cfg.get('task_complexity')
+        self.domain = cfg.get('domain')
+        self.task = cfg.get('task')
 
         # robot
         self.robot_param_scale = cfg.get('robot_param_scale', 0.1)
