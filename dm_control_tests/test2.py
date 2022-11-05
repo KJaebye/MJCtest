@@ -4,13 +4,13 @@
 """
 import numpy as np
 import collections
-import os
 from dm_control import viewer
 from dm_control.utils import rewards
 from dm_control.suite.utils import randomizers
 from dm_control.utils import containers
-import mujoco_env2
-# import origin.envs.mujoco_env as mujoco_env2
+import sys
+sys.path.append('..')
+import lib.envs.mujoco_env as mujoco_env
 
 SUITE = containers.TaggedTasks()
 
@@ -26,15 +26,15 @@ _STAND_HEIGHT = 0.6
 _HOP_SPEED = 2
 
 
-
-class HopperEnv(mujoco_env2.MujocoEnv):
+class HopperEnv(mujoco_env.MujocoEnv):
     def __init__(self, cfg):
         self.mujoco_xml_path = 'hopper.xml'
         physics = HopperPhysics.from_xml_path(self.mujoco_xml_path)
         task = HopperTask(True)
         super().__init__(cfg, physics, task)
 
-class HopperPhysics(mujoco_env2.MujocoPhysics):
+
+class HopperPhysics(mujoco_env.MujocoPhysics):
     def height(self):
         """Returns height of torso with respect to foot."""
         return (self.named.data.xipos['torso', 'z'] -
@@ -48,7 +48,8 @@ class HopperPhysics(mujoco_env2.MujocoPhysics):
         """Returns the signals from two foot touch sensors."""
         return np.log1p(self.named.data.sensordata[['touch_toe', 'touch_heel']])
 
-class HopperTask(mujoco_env2.MujocoTask):
+
+class HopperTask(mujoco_env.MujocoTask):
     def __init__(self, hopping, random=None):
         """Initialize an instance of `Hopper`.
 
@@ -104,5 +105,3 @@ def random_policy(time_step):
 
 
 viewer.launch(env, policy=random_policy)
-
-
