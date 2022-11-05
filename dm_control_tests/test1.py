@@ -4,86 +4,28 @@
 """
 import numpy as np
 
-from dm_control import suite, viewer
-from lib.envs.mujoco_env import MujocoEnv
+from dm_control import viewer
+import mujoco_env
 
-mujoco_xml_string = """
-<mujoco model="planar hopper">
-  <include file="./common/skybox.xml"/>
-  <include file="./common/visual.xml"/>
-  <include file="./common/materials.xml"/>
-
-  <statistic extent="2" center="0 0 .5"/>
-
-  <default>
-    <default class="hopper">
-      <joint type="hinge" axis="0 1 0" limited="true" damping=".05" armature=".2"/>
-      <geom type="capsule" material="self"/>
-      <site type="sphere" size="0.05" group="3"/>
-    </default>
-    <default class="free">
-      <joint limited="false" damping="0" armature="0" stiffness="0"/>
-    </default>
-    <motor ctrlrange="-1 1" ctrllimited="true"/>
-  </default>
-
-  <option timestep="0.005"/>
-
-  <worldbody>
-    <camera name="cam0" pos="0 -2.8 0.8" euler="90 0 0" mode="trackcom"/>
-    <camera name="back" pos="-2 -.2 1.2" xyaxes="0.2 -1 0 .5 0 2" mode="trackcom"/>
-    <geom name="floor" type="plane" conaffinity="1" pos="48 0 0" size="50 1 .2" material="grid"/>
-    <body name="torso" pos="0 0 1" childclass="hopper">
-      <light name="top" pos="0 0 2" mode="trackcom"/>
-      <joint name="rootx" type="slide" axis="1 0 0" class="free"/>
-      <joint name="rootz" type="slide" axis="0 0 1" class="free"/>
-      <joint name="rooty" type="hinge" axis="0 1 0" class="free"/>
-      <geom name="torso" fromto="0 0 -.05 0 0 .2" size="0.0653"/>
-      <geom name="nose" fromto=".08 0 .13 .15 0 .14" size="0.03"/>
-      <body name="pelvis" pos="0 0 -.05">
-        <joint name="waist" range="-30 30"/>
-        <geom name="pelvis" fromto="0 0 0 0 0 -.15" size="0.065"/>
-        <body name="thigh" pos="0 0 -.2">
-          <joint name="hip" range="-170 10"/>
-          <geom name="thigh" fromto="0 0 0 0 0 -.33" size="0.04"/>
-          <body name="calf" pos="0 0 -.33">
-            <joint name="knee" range="5 150"/>
-            <geom name="calf" fromto="0 0 0 0 0 -.32" size="0.03"/>
-            <body name="foot" pos="0 0 -.32">
-              <joint name="ankle" range="-45 45"/>
-              <geom name="foot" fromto="-.08 0 0 .17 0 0" size="0.04"/>
-              <site name="touch_toe" pos=".17 0 0"/>
-              <site name="touch_heel" pos="-.08 0 0"/>
-            </body>
-          </body>
-        </body>
-      </body>
-    </body>
-  </worldbody>
-
-  <sensor>
-    <subtreelinvel name="torso_subtreelinvel" body="torso"/>
-    <touch name="touch_toe" site="touch_toe"/>
-    <touch name="touch_heel" site="touch_heel"/>
-  </sensor>
-
-  <actuator>
-    <motor name="waist" joint="waist" gear="30"/>
-    <motor name="hip" joint="hip" gear="40"/>
-    <motor name="knee" joint="knee" gear="30"/>
-    <motor name="ankle" joint="ankle" gear="10"/>
-  </actuator>
-</mujoco>
-"""
+class HopperEnv(mujoco_env.MujocoEnv):
+    def __init__(self, cfg):
+        self.mujoco_xml_path = 'hopper_.xml'
+        import hopper
+        Physics_cls = hopper.Physics
+        Task_cls = hopper.Hopper
+        super().__init__(cfg, Physics_cls, Task_cls, mujoco_xml_path=self.mujoco_xml_path)
 
 
-env = MujocoEnv(None, mujoco_xml_string=mujoco_xml_string)
+env = HopperEnv(None)
 # env = suite.hopper.hop()
 spec = env.action_spec()
+
 
 def random_policy(time_step):
     return np.random.uniform(spec.minimum, spec.maximum, spec.shape)
 
 
 viewer.launch(env, policy=random_policy)
+
+
 
