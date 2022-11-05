@@ -5,11 +5,11 @@
 import numpy as np
 
 from dm_control import viewer
-import mujoco_env
+import mujoco_env1
 
-class HopperEnv(mujoco_env.MujocoEnv):
+class HopperEnv(mujoco_env1.MujocoEnv):
     def __init__(self, cfg):
-        self.mujoco_xml_path = 'hopper_.xml'
+        self.mujoco_xml_path = 'hopper.xml'
         import hopper
         Physics_cls = hopper.Physics
         Task_cls = hopper.Hopper
@@ -26,6 +26,5 @@ def random_policy(time_step):
 
 
 viewer.launch(env, policy=random_policy)
-
 
 

@@ -1,7 +1,13 @@
+# ------------------------------------------------------------------------------------------------------------------- #
+#   @description: Class CentipedeEnv
+#   @author: by Kangyao Huang
+#   @created date: 05.Nov.2022
+# ------------------------------------------------------------------------------------------------------------------- #
+
 from lib.envs.mujoco_env import MujocoEnv
 
 
-class Centipede(MujocoEnv):
+class CentipedeEnv(MujocoEnv):
     def __init__(self, cfg):
         self.cfg = cfg
         self.mujoco_xml_string = None
