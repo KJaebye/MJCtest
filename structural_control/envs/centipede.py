@@ -1,10 +1,20 @@
 # ------------------------------------------------------------------------------------------------------------------- #
-#   @description: Class CentipedeEnv
+#   @description: Class CentipedeEnv, CentipedePhysics, CentipedeTask
 #   @author: by Kangyao Huang
 #   @created date: 05.Nov.2022
 # ------------------------------------------------------------------------------------------------------------------- #
+"""
+    When creating an environment for MuJoCo, three classes should be defined.
+    Use centipede as an example:
+    1. Class CentipedeEnv: inherit from MujocoEnv
+    2. Class CentipedePhysics: inherit from MujocoPhysics
+    3. Class CentipedeTask: inherit from MujocoTask
+    Instantiate CentipedeEnv will also instantiate CentipedePhysics and
+    CentipedeTask. Besides, Instantiated Physics and Task will be passed as
+    parameters to lower level wrapper Environment located at dm_control.rl.control
+"""
 
-from lib.envs.mujoco_env import MujocoEnv
+from lib.envs.mujoco_env import MujocoEnv, MujocoPhysics, MujocoTask
 
 
 class CentipedeEnv(MujocoEnv):
