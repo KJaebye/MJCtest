@@ -35,6 +35,7 @@ Learning records and tips are located at Notion https://www.notion.so/huangkangy
 - glfw==2.5.5
 - mujoco-python-viewer==0.1.2
 - numpy==1.23.3
+- gym==0.26.2
 ### mac m1
 - torch==1.12.1
 - torchvision==0.13.1

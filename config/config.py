@@ -50,7 +50,8 @@ class Config:
         self.max_timesteps = cfg.get('max_timesteps')  # maximum timestep per episode
 
         # environment
-        self.physics_path = cfg.get('physics_path')
+
+
 
         # robot
         self.robot_param_scale = cfg.get('robot_param_scale', 0.1)
