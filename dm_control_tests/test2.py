@@ -101,11 +101,11 @@ class HopperTask(mujoco_env.MujocoTask, ABC):
             return standing * small_control
 
 
-# env = HopperEnv(None)
-# spec = env.action_spec()
-
-env = hopper.hop()
+env = HopperEnv(None)
 spec = env.action_spec()
+
+# env = hopper.hop()
+# spec = env.action_spec()
 
 def random_policy(time_step):
     return np.random.uniform(spec.minimum, spec.maximum, spec.shape)

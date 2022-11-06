@@ -61,5 +61,17 @@ class CentipedePhysics(MujocoPhysics):
 
 
 class CentipedeTask(MujocoTask):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, random=None):
+        """ Initialize an instance of `Hopper`."""
+        super().__init__(random=None)
+
+    def initialize_episode(self, physics):
+        pass
+
+    def get_observation(self, physics):
+        pass
+
+    def get_reward(self, physics):
+        pass
+
+
