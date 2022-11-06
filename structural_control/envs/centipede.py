@@ -66,12 +66,12 @@ class CentipedeTask(MujocoTask):
         super().__init__(random=None)
 
     def initialize_episode(self, physics):
-        pass
+
+
+        super().initialize_episode(physics)
 
     def get_observation(self, physics):
         pass
 
     def get_reward(self, physics):
         pass
-
-
