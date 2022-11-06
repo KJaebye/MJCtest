@@ -5,6 +5,7 @@
 # ------------------------------------------------------------------------------------------------------------------- #
 
 from lib.agents.agent_ppo import AgentPPO
+from structural_control.envs.centipede import CentipedeEnv
 
 
 class StructuralControlAgent(AgentPPO):
@@ -27,7 +28,5 @@ class StructuralControlAgent(AgentPPO):
         self.setup_env()
         super(AgentPPO).__init__()
 
-
     def setup_env(self):
-        pass
-
+        env = CentipedeEnv(self.cfg)

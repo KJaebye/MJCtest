@@ -2,6 +2,8 @@
     The render should pop up and the simulation should be running.
     Double-click on a geom and hold Ctrl to apply forces (using right mouse button) and torques (using left mouse button).
 """
+from abc import ABC
+
 import numpy as np
 import collections
 from dm_control import viewer
@@ -11,6 +13,7 @@ from dm_control.utils import containers
 import sys
 sys.path.append('..')
 import lib.envs.mujoco_env as mujoco_env
+import hopper
 
 SUITE = containers.TaggedTasks()
 
@@ -31,8 +34,10 @@ class HopperEnv(mujoco_env.MujocoEnv):
         self.mujoco_xml_path = 'hopper.xml'
         physics = HopperPhysics.from_xml_path(self.mujoco_xml_path)
         task = HopperTask(True)
-        super().__init__(cfg, physics, task)
+        super().__init__(physics, task)
 
+    def reset(self):
+        pass
 
 class HopperPhysics(mujoco_env.MujocoPhysics):
     def height(self):
@@ -49,7 +54,7 @@ class HopperPhysics(mujoco_env.MujocoPhysics):
         return np.log1p(self.named.data.sensordata[['touch_toe', 'touch_heel']])
 
 
-class HopperTask(mujoco_env.MujocoTask):
+class HopperTask(mujoco_env.MujocoTask, ABC):
     def __init__(self, hopping, random=None):
         """Initialize an instance of `Hopper`.
 
@@ -96,9 +101,11 @@ class HopperTask(mujoco_env.MujocoTask):
             return standing * small_control
 
 
-env = HopperEnv(None)
-spec = env.action_spec()
+# env = HopperEnv(None)
+# spec = env.action_spec()
 
+env = hopper.hop()
+spec = env.action_spec()
 
 def random_policy(time_step):
     return np.random.uniform(spec.minimum, spec.maximum, spec.shape)
