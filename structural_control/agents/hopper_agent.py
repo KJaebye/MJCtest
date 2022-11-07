@@ -6,6 +6,7 @@
 
 from lib.agents.agent_ppo import AgentPPO
 from structural_control.envs.hopper import HopperEnv
+from lib.core.logger_rl import LoggerRL
 
 """
     This agent is an example for training a robot.
@@ -26,3 +27,9 @@ class HopperAgent(AgentPPO):
 
     def setup_env(self):
         self.env = HopperEnv(self.cfg)
+
+    def sample_worker(self, pid, queue, thread_batch_size, mean_action, render):
+        self.seed_worker(pid)
+
+
+

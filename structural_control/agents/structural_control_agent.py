@@ -6,7 +6,8 @@
 
 from lib.agents.agent_ppo import AgentPPO
 from structural_control.envs.centipede import CentipedeEnv
-
+from lib.core.logger_rl import LoggerRL
+from lib.core.traj_batch import TrajBatch
 
 class StructuralControlAgent(AgentPPO):
     """
@@ -23,10 +24,17 @@ class StructuralControlAgent(AgentPPO):
         self.cfg = cfg
         self.dtype = dtype
         self.device = device
-        self.loss_iter = 0
-
+        self.seed = seed
+        self.num_threads = num_threads
+        self.training = training
+        self.checkpoint = checkpoint
         self.setup_env()
-        super(AgentPPO).__init__()
+
+        super(AgentPPO).__init__(env=self.env, dtype=self.dtype, cfg=self.cfg, device=self.device,
+                                 policy_net=self.policy_net, value_net=self.value_net, gamma=self.gamma,
+                                 custom_reward=None, logger_cls=LoggerRL, traj_cls=TrajBatch,
+                                 logger_kwargs=None, end_reward=False, running_state=None,
+                                 num_threads=self.num_threads)
 
     def setup_env(self):
         env = CentipedeEnv(self.cfg)
