@@ -7,6 +7,7 @@
 from lib.agents.agent_ppo import AgentPPO
 from structural_control.envs.hopper import HopperEnv
 from lib.core.logger_rl import LoggerRL
+from lib.core.traj_batch import TrajBatch
 
 """
     This agent is an example for training a robot.
@@ -23,7 +24,11 @@ class HopperAgent(AgentPPO):
         self.checkpoint = checkpoint
         self.setup_env()
 
-        super(AgentPPO).__init__()
+        super(AgentPPO).__init__(env=self.env, dtype=self.dtype, cfg=self.cfg, device=self.device,
+                                 policy_net=self.policy_net, value_net=self.value_net, gamma=self.gamma,
+                                 custom_reward=None, logger_cls=LoggerRL, traj_cls=TrajBatch,
+                                 logger_kwargs=None, end_reward=False, running_state=None,
+                                 num_threads=self.num_threads)
 
     def setup_env(self):
         self.env = HopperEnv(self.cfg)
