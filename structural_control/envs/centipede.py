@@ -24,7 +24,7 @@ class CentipedeEnv(MujocoEnv):
     def __init__(self, cfg):
         self.cfg = cfg
         self.mujoco_xml_string = None
-        self.mujoco_xml_path = "./assets/robot_models/centipede/centipede_four.xml"
+        self.mujoco_xml_path = "./assets/robot_models/mjcf/centipede_four.xml"
         self._physics = CentipedePhysics.from_xml_path(self.mujoco_xml_path)
         self._task = CentipedeTask()
         super().__init__(self._physics, self._task, flat_observation=False)
@@ -66,7 +66,7 @@ class CentipedeTask(MujocoTask):
         super().__init__(random=None)
 
     def initialize_episode(self, physics):
-
+        physics.named.data.qpos[''] = 0.0
 
         super().initialize_episode(physics)
 

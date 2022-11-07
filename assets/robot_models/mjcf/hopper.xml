@@ -1,41 +1,66 @@
-<mujoco model="hopper">
-  <compiler angle="degree" coordinate="global" inertiafromgeom="true"/>
+<mujoco model="planar hopper">
+  <include file="../../common/skybox.xml"/>
+  <include file="../../common/visual.xml"/>
+  <include file="../../common/materials.xml"/>
+
+  <statistic extent="2" center="0 0 .5"/>
+
   <default>
-    <joint armature="1" damping="1" limited="true"/>
-    <geom conaffinity="1" condim="1" contype="1" margin="0.001" rgba=".98 .54 .56 1." solimp=".8 .8 .01" solref=".02 1"/>
-    <motor ctrllimited="true" ctrlrange="-.4 .4"/>
+    <default class="hopper">
+      <joint type="hinge" axis="0 1 0" limited="true" damping=".05" armature=".2"/>
+      <geom type="capsule" material="self"/>
+      <site type="sphere" size="0.05" group="3"/>
+    </default>
+    <default class="free">
+      <joint limited="false" damping="0" armature="0" stiffness="0"/>
+    </default>
+    <motor ctrlrange="-1 1" ctrllimited="true"/>
   </default>
-  <option integrator="RK4" timestep="0.002"/>
-  <visual>
-    <headlight ambient=".1 .1 .1" diffuse=".6 .6 .6" specular="0.3 0.3 0.3"/>
-    <map znear=".01"/>
-    <quality shadowsize="16384"/>
-  </visual>
+
+  <option timestep="0.005"/>
+
   <worldbody>
-    <light cutoff="100" diffuse="1 1 1" dir="-1 0 -1.3" directional="true" exponent="1" pos="1 0 1.3" specular=".1 .1 .1" castshadow="true"/>
-    <geom conaffinity="1" condim="3" name="floor" pos="0 0 0" rgba="0.8 0.9 0.8 1" size="200 200 .125" type="plane" material="grid_new"/>
-    <body name="0" pos="0 0 1.25">
-      <camera name="track" mode="trackcom" pos="0 -3 1" xyaxes="1 0 0 0 0 1"/>
-      <joint armature="0" axis="1 0 0" damping="0" limited="false" name="rootx" pos="0 0 0" stiffness="0" type="slide"/>
-      <joint armature="0" axis="0 0 1" damping="0" limited="false" name="rootz" pos="0 0 0" ref="1.25" stiffness="0" type="slide"/>
-      <joint armature="0" axis="0 1 0" damping="0" limited="false" name="0_joint" pos="0 0 1.25" stiffness="0" type="hinge"/>
-      <geom friction="0.9" fromto="-0 0 1.45 0 0 1.05" size="0.05" type="capsule"/>
-      <body name="1" pos="0 0 1.05">
-        <joint axis="0 -1 0" name="1_joint" pos="0 0 1.05" range="-360 360" type="hinge"/>
-        <geom friction="2.0" fromto="0 0 1.05 0 0 0.6" size="0.05" type="capsule"/>
+    <camera name="cam0" pos="0 -2.8 0.8" euler="90 0 0" mode="trackcom"/>
+    <camera name="back" pos="-2 -.2 1.2" xyaxes="0.2 -1 0 .5 0 2" mode="trackcom"/>
+    <geom name="floor" type="plane" conaffinity="1" pos="48 0 0" size="50 1 .2" material="grid"/>
+    <body name="torso" pos="0 0 1" childclass="hopper">
+      <light name="top" pos="0 0 2" mode="trackcom"/>
+      <joint name="rootx" type="slide" axis="1 0 0" class="free"/>
+      <joint name="rootz" type="slide" axis="0 0 1" class="free"/>
+      <joint name="rooty" type="hinge" axis="0 1 0" class="free"/>
+      <geom name="torso" fromto="0 0 -.05 0 0 .2" size="0.0653"/>
+      <geom name="nose" fromto=".08 0 .13 .15 0 .14" size="0.03"/>
+      <body name="pelvis" pos="0 0 -.05">
+        <joint name="waist" range="-30 30"/>
+        <geom name="pelvis" fromto="0 0 0 0 0 -.15" size="0.065"/>
+        <body name="thigh" pos="0 0 -.2">
+          <joint name="hip" range="-170 10"/>
+          <geom name="thigh" fromto="0 0 0 0 0 -.33" size="0.04"/>
+          <body name="calf" pos="0 0 -.33">
+            <joint name="knee" range="5 150"/>
+            <geom name="calf" fromto="0 0 0 0 0 -.32" size="0.03"/>
+            <body name="foot" pos="0 0 -.32">
+              <joint name="ankle" range="-45 45"/>
+              <geom name="foot" fromto="-.08 0 0 .17 0 0" size="0.04"/>
+              <site name="touch_toe" pos=".17 0 0"/>
+              <site name="touch_heel" pos="-.08 0 0"/>
+            </body>
+          </body>
+        </body>
       </body>
     </body>
   </worldbody>
+
+  <sensor>
+    <subtreelinvel name="torso_subtreelinvel" body="torso"/>
+    <touch name="touch_toe" site="touch_toe"/>
+    <touch name="touch_heel" site="touch_heel"/>
+  </sensor>
+
   <actuator>
-    <motor ctrllimited="true" ctrlrange="-1.0 1.0" gear="200" joint="1_joint" name="1_joint"/>
+    <motor name="waist" joint="waist" gear="30"/>
+    <motor name="hip" joint="hip" gear="40"/>
+    <motor name="knee" joint="knee" gear="30"/>
+    <motor name="ankle" joint="ankle" gear="10"/>
   </actuator>
-  <asset>
-    <texture type="skybox" builtin="gradient" rgb1=".4 .5 .6" rgb2="0 0 0" width="100" height="100"/>
-    <texture builtin="flat" height="1278" mark="cross" markrgb="1 1 1" name="texgeom" random="0.01" rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" type="cube" width="127"/>
-    <texture builtin="checker" height="100" name="texplane" rgb1="0 0 0" rgb2="0.8 0.8 0.8" type="2d" width="100"/>
-    <material name="MatPlane" reflectance="0.5" shininess="1" specular="1" texrepeat="60 60" texture="texplane"/>
-    <material name="geom" texture="texgeom" texuniform="true"/>
-    <texture name="grid_new" type="2d" builtin="checker" rgb1=".1 .3 .2" rgb2=".2 .4 .3" width="1000" height="1000" mark="none" markrgb=".8 .6 .4"/>
-    <material name="grid_new" texture="grid_new" texrepeat="0.2 0.2" texuniform="true" reflectance=".2"/>
-  </asset>
 </mujoco>
