@@ -23,9 +23,3 @@ class MujocoEnv(Environment):
                 self._physics = Physics.from_xml_path(mujoco_xml_path)
         self._task = MujocoTask(cfg)
         super(MujocoEnv, self).__init__(self._physics, self._task, *args, **kwargs)
-
-
-class MujocoTask(base.Task):
-    def __init__(self, cfg):
-        self.cfg = cfg
-        super().__init__()

@@ -11,7 +11,6 @@ from dm_control.utils import rewards
 from dm_control.suite.utils import randomizers
 from lib.envs.mujoco_env import MujocoEnv, MujocoPhysics, MujocoTask
 
-
 _CONTROL_TIMESTEP = .02  # (Seconds)
 
 # Default duration of an episode, in seconds.
@@ -26,7 +25,7 @@ _HOP_SPEED = 2
 
 class HopperEnv(MujocoEnv):
     def __init__(self, cfg):
-        self.mujoco_xml_path = 'assets/robot_models/mjcf/hopper.xml'
+        self.mujoco_xml_path = '../assets/robot_models/mjcf/hopper.xml'
         physics = HopperPhysics.from_xml_path(self.mujoco_xml_path)
         task = HopperTask(True)
         super().__init__(physics, task)

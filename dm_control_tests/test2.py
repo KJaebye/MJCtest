@@ -3,7 +3,7 @@
     Double-click on a geom and hold Ctrl to apply forces (using right mouse button) and torques (using left mouse button).
 """
 from abc import ABC
-
+from dm_control.mujoco import Physics
 import numpy as np
 import collections
 from dm_control import viewer
@@ -11,9 +11,10 @@ from dm_control.utils import rewards
 from dm_control.suite.utils import randomizers
 from dm_control.utils import containers
 import sys
+
 sys.path.append('..')
-import lib.envs.mujoco_env as mujoco_env
-import hopper
+# import lib.envs.mujoco_env as mujoco_env
+import mujoco_env2 as mujoco_env
 
 SUITE = containers.TaggedTasks()
 
@@ -31,15 +32,19 @@ _HOP_SPEED = 2
 
 class HopperEnv(mujoco_env.MujocoEnv):
     def __init__(self, cfg):
+        # self.mujoco_xml_path = '../assets/robot_models/mjcf/hopper.xml'
         self.mujoco_xml_path = 'hopper.xml'
         physics = HopperPhysics.from_xml_path(self.mujoco_xml_path)
         task = HopperTask(True)
-        super().__init__(physics, task)
+        super().__init__(cfg, physics, task)
 
     def reset(self):
         pass
 
+
 class HopperPhysics(mujoco_env.MujocoPhysics):
+    """Physics simulation with additional features for the Hopper domain."""
+
     def height(self):
         """Returns height of torso with respect to foot."""
         return (self.named.data.xipos['torso', 'z'] -
@@ -65,6 +70,7 @@ class HopperTask(mujoco_env.MujocoTask, ABC):
             integer seed for creating a new `RandomState`, or None to select a seed
             automatically (default).
         """
+        self._timeout_progress = None
         self._hopping = hopping
         super().__init__()
 
@@ -104,8 +110,6 @@ class HopperTask(mujoco_env.MujocoTask, ABC):
 env = HopperEnv(None)
 spec = env.action_spec()
 
-# env = hopper.hop()
-# spec = env.action_spec()
 
 def random_policy(time_step):
     return np.random.uniform(spec.minimum, spec.maximum, spec.shape)
