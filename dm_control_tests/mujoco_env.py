@@ -17,6 +17,12 @@ class MujocoEnv(Environment):
     """
 
     def __init__(self, cfg, physics, task, *args, **kwargs):
+        """
+        :param physics: Instance of Physics.
+        :param task: Instance of Task.
+        :param args: ...
+        :param kwargs: ...
+        """
         self.cfg = cfg
         super(MujocoEnv, self).__init__(physics, task, *args, **kwargs)
 

@@ -5,9 +5,9 @@
 import numpy as np
 
 from dm_control import viewer
-import mujoco_env1
+import mujoco_env_use_class as mujoco_env
 
-class HopperEnv(mujoco_env1.MujocoEnv):
+class HopperEnv(mujoco_env.MujocoEnv):
     def __init__(self, cfg):
         self.mujoco_xml_path = 'hopper.xml'
         import hopper

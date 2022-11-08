@@ -21,5 +21,5 @@ class MujocoEnv(Environment):
                 raise IOError('XML file %s does not exist!' % mujoco_xml_path)
             else:
                 self._physics = Physics.from_xml_path(mujoco_xml_path)
-        self._task = MujocoTask(cfg)
+        self._task = MujocoTask(True)
         super(MujocoEnv, self).__init__(self._physics, self._task, *args, **kwargs)
