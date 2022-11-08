@@ -27,11 +27,8 @@ class HopperEnv(MujocoEnv):
     def __init__(self, cfg):
         self.mujoco_xml_path = '../assets/robot_models/mjcf/hopper.xml'
         physics = HopperPhysics.from_xml_path(self.mujoco_xml_path)
-        task = HopperTask(True)
-        super().__init__(physics, task)
-
-    def reset(self):
-        pass
+        task = HopperTask(True, random=None)
+        super().__init__(cfg, physics, task)
 
 
 class HopperPhysics(MujocoPhysics):

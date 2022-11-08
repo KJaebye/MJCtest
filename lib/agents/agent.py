@@ -101,6 +101,8 @@ class Agent:
         :param mean_action: bool type
         :param render: bool type
         :return:
+
+        time_step is the instantiation of dm_env.TimeStep
         """
         self.seed_worker(pid)
         memory = Memory()
@@ -108,15 +110,16 @@ class Agent:
 
         # sample a batch data
         while logger.num_steps < thread_batch_size:
-            state = self.env.reset()
+            time_step = self.env.reset()
             # preprocess state if needed
             if self.running_state is not None:
-                state = self.running_state(state)
+                time_step = self.running_state(time_step)
             logger.start_episode(self.env)
             self.pre_episode()
+
             # sample an episode
             for _ in range(self.cfg.max_timesteps):
-                state_var = torper.tensor(state).unsqueeze(0)
+                state_var = torper.tensor(time_step.observation).unsqueeze(0)
                 trans_out = self.trans_policy(state_var)
                 # sample an action
                 use_mean_action = mean_action or torch.bernoulli(torch.tensor([1 - self.noise_rate])).item()
