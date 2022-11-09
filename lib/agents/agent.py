@@ -16,6 +16,7 @@ from lib.core.memory import Memory
 from lib.core.logger_rl import LoggerRL
 from lib.core.traj_batch import TrajBatch
 from lib.core import torch_wrapper as torper
+from lib.core import utils
 
 
 if platform.system() != "Linux":
@@ -111,43 +112,37 @@ class Agent:
         # sample a batch data
         while logger.num_steps < thread_batch_size:
             time_step = self.env.reset()
+            cur_state = torper.tensor([utils.get_state(time_step.observation)], device=self.device)
+
             # preprocess state if needed
             if self.running_state is not None:
-                time_step = self.running_state(time_step)
+                time_step.observation = self.running_state(time_step.observation)
             logger.start_episode(self.env)
             self.pre_episode()
 
             # sample an episode
-            for _ in range(self.cfg.max_timesteps):
-                state_var = torper.tensor(time_step.observation).unsqueeze(0)
-                trans_out = self.trans_policy(state_var)
+            while not time_step.last():
+                # use trans_policy before entering the policy network
+                cur_state = self.trans_policy(cur_state)
+
                 # sample an action
                 use_mean_action = mean_action or torch.bernoulli(torch.tensor([1 - self.noise_rate])).item()
-                action = self.policy_net.select_action(trans_out, use_mean_action)[0].numpy()
+                action = self.policy_net.select_action(cur_state, use_mean_action)
                 action = int(action) if self.policy_net.type == 'discrete' else action.astype(np.float64)
+
                 # apply this action and get env feedback
-                next_state, env_reward, done, info = self.env.step(action)
+                time_step = self.env.step(action)
+                reward = time_step.reward
+                next_state = torper.tensor([utils.get_state(time_step.observation)], device=self.device)
 
                 # preprocess state if needed
                 if self.running_state is not None:
                     next_state = self.running_state(next_state)
 
-                # use custom or env reward
-                if self.custom_reward is not None:
-                    c_reward, c_info = self.custom_reward(self.env, state, action, env_reward, info)
-                    reward = c_reward
-                else:
-                    c_reward, c_info = .0, np.array([.0])
-                    reward = env_reward
-                # add env reward
-                if self.end_reward and info.get('end', False):
-                    reward += self.env.end_reward
-                # record variables' changes
-                logger.step(self.env, env_reward, c_reward, c_info, info)
-
-                mask = 0 if done else 1
-                exp = 1 - use_mean_action
-                self.push_memory(memory, state, action, mask, next_state, reward, exp)
+                # record reward
+                logger.step(reward)
+                self.push_memory(memory, cur_state, action, next_state, reward)
+                cur_state = next_state
 
                 # only render the first worker pid 0
                 """ 
@@ -159,12 +154,10 @@ class Agent:
                 if pid == 0 and render:
                     ############## env.render should be replaced by mujoco native python bindings
                     self.env.render()
-                if done:
-                    # end this episode
+                if time_step.last():
                     break
-                state = next_state
 
-            logger.end_episode(self.env)
+            logger.end_episode()
         logger.end_sampling()
 
         if queue is not None:
@@ -192,5 +185,5 @@ class Agent:
     def pre_episode(self):
         return
 
-    def push_memory(self, memory, state, action, mask, next_state, reward, exp):
-        memory.push(state, action, mask, next_state, reward, exp)
+    def push_memory(self, memory, cur_state, action, next_state, reward):
+        memory.push(memory, cur_state, action, next_state, reward)

@@ -24,9 +24,6 @@ class LoggerRL:
 
         self.stats_names = ['episode_len', 'reward', 'episode_reward']
         self.stats_nparray = []
-        if self.use_c_reward:
-            self.stats_nparray += ['c_info']
-            self.stats_names += ['c_reward', 'episode_c_reward', 'c_info']
         if init_stats_logger:
             self.stats_loggers = {x: StatsLogger(is_nparray=x in self.stats_nparray) for x in self.stats_names}
 
@@ -35,22 +32,16 @@ class LoggerRL:
         self.episode_reward = 0
         self.episode_c_reward = 0
 
-    def step(self, env, reward, c_reward, c_info, info):
+    def step(self, reward):
         self.episode_len += 1
         self.episode_reward += reward
         self.stats_loggers['reward'].log(reward)
-        if self.use_c_reward:
-            self.episode_c_reward += c_reward
-            self.stats_loggers['c_reward'].log(c_reward)
-            self.stats_loggers['c_info'].log(c_info)
 
-    def end_episode(self, env):
+    def end_episode(self):
         self.num_steps += self.episode_len
         self.num_episodes += 1
         self.stats_loggers['episode_len'].log(self.episode_len)
         self.stats_loggers['episode_reward'].log(self.episode_reward)
-        if self.use_c_reward:
-            self.stats_loggers['episode_c_reward'].log(self.episode_c_reward)
 
     def end_sampling(self):
         pass
