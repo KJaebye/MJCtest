@@ -15,6 +15,8 @@ from lib.core.memory import Memory
 
 class HopperAgent(AgentPPO):
     def __init__(self, cfg, dtype, device, seed, num_threads, training=True, checkpoint=0):
+        self.action_dim = None
+        self.observation_dim = None
         self.cfg = cfg
         self.dtype = dtype
         self.device = device
@@ -31,8 +33,8 @@ class HopperAgent(AgentPPO):
 
     def setup_env(self):
         self.env = HopperEnv(self.cfg)
-        self.observation_dim =
-        self.action_dim =
+        self.observation_dim = len(self.env.observation_spec())
+        self.action_dim = len(self.env.action_spec())
         self.running_state = None
 
 
