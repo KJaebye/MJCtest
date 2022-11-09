@@ -16,8 +16,7 @@ from lib.core.memory import Memory
 from lib.core.logger_rl import LoggerRL
 from lib.core.traj_batch import TrajBatch
 from lib.core import torch_wrapper as torper
-from lib.core import utils
-
+from lib.utils import utils
 
 if platform.system() != "Linux":
     from multiprocessing import set_start_method
