@@ -43,6 +43,28 @@ class HopperAgent(AgentPPO):
     def setup_value(self):
         self.value_net =
 
+    def setup_logger(self):
+
+    def load_checkpoint(self, checkpoint):
+        if isinstance(checkpoint, int):
+
+
+    def save_checkpoint(self, epoch):
+        def save(checkpoint_path):
+
+
+    def pre_epoch_update(self, epoch):
+
+
+    def optimize(self, epoch):
+
+
+    def optimize_policy(self, epoch):
+
+
+    def update_policy(self, states, actions, returns, advantages, exps):
+
+
 
 
 
