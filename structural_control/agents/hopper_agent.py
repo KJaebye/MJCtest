@@ -37,6 +37,14 @@ class HopperAgent(AgentPPO):
         self.action_dim = len(self.env.action_spec())
         self.running_state = None
 
+    def setup_policy(self):
+        self.policy_net =
+
+    def setup_value(self):
+        self.value_net =
+
+
+
 
 
 

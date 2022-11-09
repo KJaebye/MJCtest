@@ -26,6 +26,8 @@ class MujocoEnv(Environment):
         self.cfg = cfg
         super(MujocoEnv, self).__init__(physics, task, *args, **kwargs)
 
+    def seed(self, seed=None):
+        self.np_random, seed = seeding
 
 class MujocoPhysics(Physics):
     pass
