@@ -26,27 +26,15 @@ class HopperAgent(AgentPPO):
 
         super(AgentPPO).__init__(env=self.env, dtype=self.dtype, cfg=self.cfg, device=self.device,
                                  policy_net=self.policy_net, value_net=self.value_net, gamma=self.gamma,
-                                 custom_reward=None, logger_cls=LoggerRL, traj_cls=TrajBatch,
-                                 logger_kwargs=None, end_reward=False, running_state=None,
-                                 num_threads=self.num_threads)
+                                 logger_cls=LoggerRL, traj_cls=TrajBatch, logger_kwargs=None,
+                                 running_state=None, num_threads=self.num_threads)
 
     def setup_env(self):
         self.env = HopperEnv(self.cfg)
+        self.observation_dim =
+        self.action_dim =
+        self.running_state = None
 
-    def sample_worker(self, pid, queue, thread_batch_size, mean_action, render):
-        self.seed_worker(pid)
-        memory = Memory()
-        logger = self.logger_cls(**self.logger_kwargs)
-
-        while logger.num_steps < thread_batch_size:
-            time_step = self.env.reset()
-            if self.running_state is not None:
-                time_step = self.running_state(time_step)
-                logger.start_episode(self.env)
-                self.pre_episode()
-
-                for t in range(self.cfg.max_timesteps):
-                    pass
 
 
 
