@@ -11,6 +11,7 @@ from lib.agents.agent_ppo import AgentPPO
 from structural_control.envs.hopper import HopperEnv
 from lib.core.logger_rl import LoggerRL
 from lib.core.traj_batch import TrajBatch
+from structural_control.models.structural_policy import StruturalPolicy
 from lib.core.memory import Memory
 
 class HopperAgent(AgentPPO):
@@ -38,7 +39,7 @@ class HopperAgent(AgentPPO):
         self.running_state = None
 
     def setup_policy(self):
-        self.policy_net =
+        self.policy_net = StruturalPolicy(self.cfg.policy_specs, self)
 
     def setup_value(self):
         self.value_net =
