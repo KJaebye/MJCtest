@@ -111,6 +111,27 @@ class HopperAgent(AgentPPO):
 
     def save_checkpoint(self, epoch):
         def save(checkpoint_path):
+            with torper.to_cpu(self.policy_net, self.value_net):
+                model_checkpoint = \
+                {
+                    'policy_dict': self.policy_net.state_dict(),
+                    'value_dict': self.value_net.state_dict(),
+                    'running_state': self.running_state,
+                    'loss_iter': self.loss_iter,
+                    'best_rewards': self.best_rewards,
+                    'epoch': epoch
+                }
+                pickle.dump(model_checkpoint, open(checkpoint_path, 'wb'))
+
+        additional_saves = self.cfg.agent_spec.get('additional_saves', None)
+        if (self.cfg.save_model_interval > 0 and (epoch+1) % self.cfg.save_model_interval == 0) or \
+            (additional_saves is not None and (epoch+1) % additional_saves[0] == 0 and epoch+1 <= additional_saves[1]):
+            self.tb_logger.flush()
+            save('%s/epoch_%04d.p' % (self.cfg.model_dir, epoch+1))
+        if self.save_best_flag:
+            self.tb_logger.flush()
+            self.logger.critical(f'Save best checkpoint with rewards {self.best_rewards:.2f}')
+            save('%s/best.p' % self.cfg.model_dir)
 
 
     def pre_epoch_update(self, epoch):

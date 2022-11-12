@@ -43,10 +43,10 @@ if __name__ == "__main__":
 
     if args.type == 'training':
         # only training generates log file
-        logger.critical('Type of current running: {}'.format('Training'))
+        logger.critical('Type of current running: Training')
         logger.set_file_handler()
     else:
-        logger.info('Type of current running: {}. No log file will be created'.format('Evaluation'))
+        logger.info('Type of current running: Evaluation. No log file will be created')
 
     """create agent"""
     # agent = Agent(env, policy_net, value_net, dtype, logger, cfg, device, gamma)
