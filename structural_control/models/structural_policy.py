@@ -4,7 +4,7 @@
 #   @created date: 11.Nov.2022
 # ------------------------------------------------------------------------------------------------------------------- #
 
-from lib.core.policy import Policy
+from lib.core.actor import Policy
 from lib.models.mlp import MLP
 from lib.core.running_norm import RunningNorm
 from lib.utils.tools import init_fc_weights
@@ -41,6 +41,9 @@ class StruturalPolicy(Policy):
         self.control_action_log_std = \
             torch.nn.Parameter(torch.ones(1, self.action_dim) * self.cfg_spec['control_log_std'],
                                requires_grad=not cfg_spec['fix_control_std'])
+
+    def batch_data(self):
+        pass
 
     def forward(self, x):
         x = self.control_norm(self.observation)

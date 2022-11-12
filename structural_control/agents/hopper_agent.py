@@ -6,6 +6,7 @@
 """
     This agent is an example for training a robot.
 """
+import torch.optim
 
 from lib.agents.agent_ppo import AgentPPO
 from lib.core.logger_rl import LoggerRL
@@ -52,8 +53,29 @@ class HopperAgent(AgentPPO):
 
     def setup_value(self):
         self.value_net = StructuralValue(self.cfg.policy_spec, self)
+        torper.to_device(self.device, self.value_net)
+
+    def setup_optimizer(self):
+        cfg = self.cfg
+        # actor optimizer
+        if cfg.policy_optimizer == 'Adam':
+            self.optimizer_policy = \
+                torch.optim.Adam(self.policy_net.parameters(), lr=cfg.policy_lr, weight_decay=cfg.policy_weight_decay)
+        else:
+            self.optimizer_policy = \
+                torch.optim.SGD(self.policy_net.parameters(), lr=cfg.policy_lr, momentum=cfg.policy_momentum,
+                                                    weight_decay=cfg.policy_weight_decay)
+        # critic optimizer
+        if cfg.value_optimizer == 'Adam':
+            self.optimizer_value = \
+                torch.optim.Adam(self.value_net.parameters(), lr=cfg.value_lr, weight_decay=cfg.value_weight_decay)
+        else:
+            self.optimizer_value = \
+                torch.optim.SGD(self.value_net.parameters(), lr=cfg.value_lr, momentum=cfg.value_momentum,
+                                weight_decay=cfg.value_weight_decay)
 
     def setup_logger(self):
+
 
     def load_checkpoint(self, checkpoint):
         if isinstance(checkpoint, int):
