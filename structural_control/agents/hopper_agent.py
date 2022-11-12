@@ -8,11 +8,13 @@
 """
 
 from lib.agents.agent_ppo import AgentPPO
-from structural_control.envs.hopper import HopperEnv
 from lib.core.logger_rl import LoggerRL
 from lib.core.traj_batch import TrajBatch
+from lib.core import torch_wrapper as torper
+from structural_control.envs.hopper import HopperEnv
 from structural_control.models.structural_policy import StruturalPolicy
 from lib.core.memory import Memory
+
 
 class HopperAgent(AgentPPO):
     def __init__(self, cfg, dtype, device, seed, num_threads, training=True, checkpoint=0):
@@ -40,9 +42,10 @@ class HopperAgent(AgentPPO):
 
     def setup_policy(self):
         self.policy_net = StruturalPolicy(self.cfg.policy_specs, self)
+        torper.to_device(self.device, self.policy_net)
 
     def setup_value(self):
-        self.value_net =
+        self.value_net = StructuralCritic()
 
     def setup_logger(self):
 

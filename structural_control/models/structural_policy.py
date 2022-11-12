@@ -4,7 +4,7 @@
 #   @created date: 11.Nov.2022
 # ------------------------------------------------------------------------------------------------------------------- #
 
-from lib.models.policy import Policy
+from lib.core.policy import Policy
 from lib.models.mlp import MLP
 from lib.core.running_norm import RunningNorm
 from lib.utils.tools import init_fc_weights
@@ -54,3 +54,5 @@ class StruturalPolicy(Policy):
         control_action_std = self.control_action_log_std.expand_as(control_action_mean).exp()
         control_dist = DiagGaussian(control_action_mean, control_action_std)
         return control_dist, x[0][0].device
+
+

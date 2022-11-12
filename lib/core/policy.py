@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------------------------------------- #
-#   @description: Class Policy
+#   @description: Class Policy, templet for any policy network
 #   @author: Modified from khrylib by Ye Yuan, modified by Kangyao Huang
 #   @created date: 02.Nov.2022
 # ------------------------------------------------------------------------------------------------------------------- #
