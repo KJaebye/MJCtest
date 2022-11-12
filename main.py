@@ -41,9 +41,9 @@ if __name__ == "__main__":
     logger.set_output_handler()
     logger.print_system_info()
 
-    if args.type == 'train':
+    if args.type == 'training':
         # only training generates log file
-        logger.info('Type of current running: {}'.format('Training'))
+        logger.critical('Type of current running: {}'.format('Training'))
         logger.set_file_handler()
     else:
         logger.info('Type of current running: {}. No log file will be created'.format('Evaluation'))

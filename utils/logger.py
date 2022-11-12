@@ -25,9 +25,11 @@ class MyFormatter(logging.Formatter):
         msg = '%(message)s'
 
         if record.levelno == logging.WARNING:
-            fmt = date + ' ' + colored('WRN', 'red', attrs=[]) + ' ' + msg
-        elif record.levelno == logging.ERROR or record.levelno == logging.CRITICAL:
+            fmt = date + ' ' + colored('WRN', 'yellow', attrs=[]) + ' ' + msg
+        elif record.levelno == logging.ERROR:
             fmt = date + ' ' + colored('ERR', 'red', attrs=['underline']) + ' ' + msg
+        elif record.levelno == logging.CRITICAL:
+            fmt = date + ' ' + colored('CRITICAL', 'blue', attrs=['underline']) + ' ' + msg
         else:
             fmt = date + ' ' + msg
 
@@ -56,6 +58,11 @@ class Logger(logging.Logger):
         self.model_dir = '%s/models' % self.output_dir
         self.log_dir = '%s/log' % self.output_dir
         self.tb_dir = '%s/tb' % self.output_dir
+        # add paths to cfg
+        setattr(cfg, 'model_dir', self.model_dir)
+        setattr(cfg, 'log_dir', self.log_dir)
+        setattr(cfg, 'tb_dir', self.tb_dir)
+
         # log output file
         self.prefix = cfg.domain + '_' + cfg.task + '-'
         self.file_name = self.prefix + self.time_str + '.log'

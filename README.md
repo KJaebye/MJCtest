@@ -36,6 +36,8 @@ Learning records and tips are located at Notion https://www.notion.so/huangkangy
 - mujoco-python-viewer==0.1.2
 - numpy==1.23.3
 - gym==0.26.2
+- tensorboard==2.11.0
+- protobuf==3.20.3
 ### mac m1
 - torch==1.12.1
 - torchvision==0.13.1
