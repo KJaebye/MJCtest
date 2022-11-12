@@ -13,6 +13,7 @@ from lib.core.traj_batch import TrajBatch
 from lib.core import torch_wrapper as torper
 from structural_control.envs.hopper import HopperEnv
 from structural_control.models.structural_policy import StruturalPolicy
+from structural_control.models.structural_critic import StructuralValue
 from lib.core.memory import Memory
 
 
@@ -27,7 +28,12 @@ class HopperAgent(AgentPPO):
         self.num_threads = num_threads
         self.training = training
         self.checkpoint = checkpoint
+
         self.setup_env()
+        self.setup_logger()
+        self.setup_policy()
+        self.setup_value()
+        self.setup_optimizer()
 
         super(AgentPPO).__init__(env=self.env, dtype=self.dtype, cfg=self.cfg, device=self.device,
                                  policy_net=self.policy_net, value_net=self.value_net, gamma=self.gamma,
@@ -41,11 +47,11 @@ class HopperAgent(AgentPPO):
         self.running_state = None
 
     def setup_policy(self):
-        self.policy_net = StruturalPolicy(self.cfg.policy_specs, self)
+        self.policy_net = StruturalPolicy(self.cfg.policy_spec, self)
         torper.to_device(self.device, self.policy_net)
 
     def setup_value(self):
-        self.value_net = StructuralCritic()
+        self.value_net = StructuralValue(self.cfg.policy_spec, self)
 
     def setup_logger(self):
 

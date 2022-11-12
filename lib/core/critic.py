@@ -6,6 +6,7 @@
 
 import torch
 
+
 class Value(torch.nn.Module):
     def __init__(self, net, net_output_dim=None):
         super().__init__()
@@ -20,4 +21,3 @@ class Value(torch.nn.Module):
         x = self.net(x)
         value = self.value_head(x)
         return value
-
