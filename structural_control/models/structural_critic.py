@@ -25,7 +25,7 @@ class StructuralValue(torch.nn.Module):
             cur_dim = self.gnn.out_dim
         else:
             self.gnn = None
-        if 'mlp' in cfg:
+        if 'mlp' in cfg_spec:
             self.mlp = MLP(cur_dim, cfg_spec['mlp'], cfg_spec['htype'])
             cur_dim = self.mlp.output_dim
         else:
