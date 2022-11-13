@@ -39,6 +39,7 @@ class HopperAgent(AgentPPO):
         self.setup_policy()
         self.setup_value()
         self.setup_optimizer()
+        self.setup_param_scheduler()
 
         super(AgentPPO).__init__(env=self.env, dtype=self.dtype, cfg=self.cfg, device=self.device,
                                  policy_net=self.policy_net, value_net=self.value_net, gamma=self.gamma,
@@ -90,6 +91,16 @@ class HopperAgent(AgentPPO):
         self.best_rewards = -1000
         self.save_best_flag = False
 
+    def setup_param_scheduler(self):
+        self.scheduled_params = {}
+        for name, specs in self.cfg.scheduled_params.items():
+            if specs['type'] == 'step':
+                self.scheduled_params[name] = torper.StepParamScheduler(specs['start_val'], specs['step_size'],
+                                                                       specs['gamma'], specs.get('smooth', False))
+            elif specs['type'] == 'linear':
+                self.scheduled_params[name] = torper.LinearParamScheduler(specs['start_val'], specs['end_val'],
+                                                                         specs['start_epoch'], specs['end_epoch'])
+
     def load_checkpoint(self, checkpoint):
         if isinstance(checkpoint, int):
             checkpoint_path = '%s/epoch_%04d.p' % (self.cfg.model_dir, checkpoint)
@@ -135,6 +146,8 @@ class HopperAgent(AgentPPO):
 
 
     def pre_epoch_update(self, epoch):
+        for param in self.scheduled_params.values()
+            param.set_epoch(epoch)
 
 
     def optimize(self, epoch):
