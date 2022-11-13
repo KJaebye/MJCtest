@@ -11,7 +11,7 @@ from lib.core.stats_logger import StatsLogger
 
 class LoggerRL:
     """
-        Actually this class is not for logging, but recording the variable values during the training.
+        Actually this class is not for logging, but record the variable values during the training.
     """
     def __init__(self, init_stats_logger=True, use_c_reward=False):
         self.use_c_reward = use_c_reward

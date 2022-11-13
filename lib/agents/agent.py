@@ -140,7 +140,9 @@ class Agent:
 
                 # record reward
                 logger.step(reward)
-                self.push_memory(memory, cur_state, action, next_state, reward)
+                mask = 0 if time_step.last() else 1
+                exp = 1 - use_mean_action
+                self.push_memory(memory, cur_state, action, next_state, reward, mask, exp)
                 cur_state = next_state
 
                 # only render the first worker pid 0
@@ -184,5 +186,5 @@ class Agent:
     def pre_episode(self):
         return
 
-    def push_memory(self, memory, cur_state, action, next_state, reward):
-        memory.push(memory, cur_state, action, next_state, reward)
+    def push_memory(self, memory, cur_state, action, next_state, reward, mask, exp):
+        memory.push(memory, cur_state, action, next_state, reward, mask, exp)
