@@ -227,6 +227,13 @@ class HopperAgent(AgentPPO):
         :param exps:
         :return:
         """
+        with torper.to_eval(*self.update_modules):
+            with torch.no_grad():
+                fixed_log_probs = []
+                chunk = 10000
+                for i in range(0, len(states), chunk):
+                    states_i = states[i:min(i + chunk, len(states))]
+                    actions_i = actions[i:min(i + chunk, len(states))]
 
 
 
