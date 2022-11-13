@@ -218,6 +218,15 @@ class HopperAgent(AgentPPO):
 
 
     def update_policy(self, states, actions, returns, advantages, exps):
+        """
+        Update policy.
+        :param states:
+        :param actions:
+        :param returns:
+        :param advantages:
+        :param exps:
+        :return:
+        """
 
 
 
