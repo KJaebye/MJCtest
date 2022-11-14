@@ -6,15 +6,18 @@
 """
     This agent is an example for training a robot.
 """
+import math
 import pickle
 import time
 
+import numpy as np
 import torch
 from lib.agents.agent_ppo import AgentPPO
 from lib.core.logger_rl import LoggerRL
 from lib.core.traj_batch import TrajBatch
 from lib.core import torch_wrapper as torper
 from lib.core.common import estimate_advantages
+from lib.utils.tools import *
 from structural_control.envs.hopper import HopperEnv
 from structural_control.models.structural_policy import StruturalPolicy
 from structural_control.models.structural_critic import StructuralValue
@@ -41,9 +44,10 @@ class HopperAgent(AgentPPO):
         self.num_threads = num_threads
         self.training = training
         self.checkpoint = checkpoint
+        self.t_start = time.time()
 
         self.setup_env()
-        self.setup_logger()
+        self.setup_tb_logger()
         self.setup_policy()
         self.setup_value()
         self.setup_optimizer()
@@ -96,7 +100,7 @@ class HopperAgent(AgentPPO):
                                 momentum=self.cfg.value_momentum,
                                 weight_decay=self.cfg.value_weight_decay)
 
-    def setup_logger(self):
+    def setup_tb_logger(self):
         self.tb_logger = SummaryWriter(self.cfg.tb_dir) if self.args.type == 'training' else None
         self.best_rewards = -1000
         self.save_best_flag = False
@@ -161,8 +165,13 @@ class HopperAgent(AgentPPO):
 
     def optimize(self, epoch):
         self.pre_epoch_update(epoch)
-        info = self.optimize_policy(epoch)
-        self.log_optimize_policy(epoch, info)
+        self.logger.info('------------------------ Iteration {} --------------------------'.format(epoch))
+        log, log_eval = self.optimize_policy(epoch)
+
+        t_cur = time.time()
+        self.logger.info('Total time: {}'.format(t_cur - self.t_start))
+        self.logger.info('{} total steps have happened'.format(self.))
+
 
 
     def optimize_policy(self, epoch):
@@ -174,21 +183,26 @@ class HopperAgent(AgentPPO):
         t_0 = time.time()
         # sample a batch of data
         batch, log = self.sample(self.cfg.min_batch_size)
+        t_1 = time.time()
+        self.logger.info('Sample time: {}'.format(t_0 - t_1))
 
         # update networks
-        t_1 = time.time()
         self.update_params(batch)
         t_2 = time.time()
+        self.logger.info('Update time: {}'.format(t_2 - t_1))
 
         # evaluate policy
         _, log_eval = self.sample(self.cfg.eval_batch_size, mean_action=True)
         t_3 = time.time()
+        self.logger.info('Evaluation time: {}'.format(t_3 - t_2))
+
+        self.logger.info('')
 
         info = {
             'log': log, 'log_eval': log_eval, 'sample_time': t_1-t_0, 'update_time': t_2-t_1,
             'eval_time': t_3-t_2, 'total_time': t_3-t_0
         }
-        return info
+        return log, log_eval
 
     def update_params(self, batch):
         torper.to_train(*self.update_modules)
@@ -217,6 +231,14 @@ class HopperAgent(AgentPPO):
         return
 
 
+    def get_perm_batch_design(self, states):
+        inds = [[], [], []]
+        for i, x in enumerate(states):
+            use_transform_action = x[2]
+            inds[use_transform_action.item()].append(i)
+        perm = np.array(inds[0] + inds[1] + inds[2])
+        return perm, torper.LongTensor(perm).to(self.device)
+
     def update_policy(self, states, actions, returns, advantages, exps):
         """
         Update policy.
@@ -234,6 +256,67 @@ class HopperAgent(AgentPPO):
                 for i in range(0, len(states), chunk):
                     states_i = states[i:min(i + chunk, len(states))]
                     actions_i = actions[i:min(i + chunk, len(states))]
+                    fixed_log_probs_i = self.policy_net.get_log_prob(self.trans_policy(states_i), actions_i)
+                    fixed_log_probs.append(fixed_log_probs_i)
+                fixed_log_probs = torch.cat(fixed_log_probs)
+        num_state = len(states)
+
+        for _ in range(self.optim_num_epochs):
+            if self.use_mini_batch:
+                perm_np = np.arange(num_state)
+                np.random.shuffle(perm_np)
+                perm = torper.LongTensor(perm_np).to(self.device)
+
+                states, actions, returns, advantages, fixed_log_probs, exps = \
+                    index_select_list(states, perm_np), \
+                    index_select_list(actions, perm_np), \
+                    returns[perm].clone(), \
+                    advantages[perm].clone(), \
+                    fixed_log_probs[perm].clone(), \
+                    exps[perm].clone()
+
+                # design?
+                if self.cfg.agent_spec.get('batch_design', False):
+                    perm_design_np, perm_design = self.get_perm_batch_design(states)
+                    states, actions, returns, advantages, fixed_log_probs, exps = \
+                        index_select_list(states, perm_design_np), \
+                        index_select_list(actions, perm_design_np), \
+                        returns[perm_design].clone(), \
+                        advantages[perm_design].clone(), \
+                        fixed_log_probs[perm_design].clone(), \
+                        exps[perm_design].clone()
+
+                optim_iter_num = int(math.floor(num_state / self.mini_batch_size))
+                for i in range(optim_iter_num):
+                    index = slice(i * self.mini_batch_size, min((i + 1) * self.mini_batch_size, num_state))
+                    states_b, actions_b, advantages_b, returns_b, fixed_log_probs_b, exps_b = \
+                        states[index], actions[index], advantages[index], returns[index], fixed_log_probs[index], exps[index]
+                    self.update_value(states_b, returns_b)
+                    surr_loss = self.ppo_loss(states_b, actions_b, advantages_b, fixed_log_probs_b)
+                    self.optimizer_policy.zero_grad()
+                    surr_loss.backward()
+                    self.clip_policy_grad()
+                    self.optimizer_policy.step()
+            else:
+                index = exps.nonzero(as_tuple=False).squeeze(1)
+                self.update_value(states, returns)
+                surr_loss = self.ppo_loss(states, actions, advantages, fixed_log_probs)
+                self.optimizer_policy.zero_grad()
+                surr_loss.backward()
+                self.clip_policy_grad()
+                self.optimizer_policy.step()
+
+    def ppo_loss(self, states, actions, advantages, fixed_log_probs):
+        log_probs = self.policy_net.get_log_prob(self.trans_policy(states), actions)
+        ratio = torch.exp(log_probs - fixed_log_probs)
+        advantages = advantages
+        surr_1 = ratio * advantages
+        surr_2 = torch.clamp(ratio, 1.0 - self.clip_epsilon, 1.0 + self.clip_epsilon) * advantages
+        surr_loss = -torch.min(surr_1, surr_2).mean()
+        return surr_loss
+
+
+
 
 
 

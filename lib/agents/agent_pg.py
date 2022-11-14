@@ -45,22 +45,22 @@ class AgentPG(Agent):
             policy_loss.backward()
             self.optimizer_policy.step()
 
-    # def update_params(self, batch):
-    #     t_start = time.time()
-    #     torper.to_train(*self.update_modules)
-    #     states = torch.from_numpy(batch.states).to(self.dtype).to(self.device)
-    #     actions = torch.from_numpy(batch.actions).to(self.dtype).to(self.device)
-    #     rewards = torch.from_numpy(batch.rewards).to(self.dtype).to(self.device)
-    #     masks = torch.from_numpy(batch.masks).to(self.dtype).to(self.device)
-    #     exps = torch.from_numpy(batch.exps).to(self.dtype).to(self.device)
-    #
-    #     with torper.to_eval(*self.update_modules):
-    #         with torch.no_grad():
-    #             values = self.value_net(self.trans_value(states))
-    #
-    #     """get advantage estimation from the trajectories"""
-    #     advantages, returns = torper.estimate_advantages(rewards, masks, values, self.gamma, self.tau)
-    #
-    #     self.update_policy(states, actions, returns, advantages, exps)
-    #
-    #     return time.time() - t_start
+    def update_params(self, batch):
+        t_start = time.time()
+        torper.to_train(*self.update_modules)
+        states = torch.from_numpy(batch.states).to(self.dtype).to(self.device)
+        actions = torch.from_numpy(batch.actions).to(self.dtype).to(self.device)
+        rewards = torch.from_numpy(batch.rewards).to(self.dtype).to(self.device)
+        masks = torch.from_numpy(batch.masks).to(self.dtype).to(self.device)
+        exps = torch.from_numpy(batch.exps).to(self.dtype).to(self.device)
+
+        with torper.to_eval(*self.update_modules):
+            with torch.no_grad():
+                values = self.value_net(self.trans_value(states))
+
+        """get advantage estimation from the trajectories"""
+        advantages, returns = torper.estimate_advantages(rewards, masks, values, self.gamma, self.tau)
+
+        self.update_policy(states, actions, returns, advantages, exps)
+
+        return time.time() - t_start
