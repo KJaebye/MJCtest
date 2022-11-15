@@ -169,6 +169,11 @@ class HopperAgent(AgentPPO):
         log, log_eval = self.optimize_policy(epoch)
 
         t_cur = time.time()
+        self.logger.info('Learning rate: {}'.format(self.))
+        self.logger.info('KL value: {}'.format(self.))
+        self.logger.info('Surrogate loss: {}'.format(self.))
+        self.logger.critical('Average reward: {}'.format(self.))
+
         self.logger.info('Total time: {}'.format(t_cur - self.t_start))
         self.logger.info('{} total steps have happened'.format(self.))
 
