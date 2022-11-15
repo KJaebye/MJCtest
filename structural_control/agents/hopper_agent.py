@@ -60,6 +60,8 @@ class HopperAgent(AgentPPO):
     def sample_worker(self, pid, queue, thread_batch_size, mean_action, render):
 
 
+
+
     def setup_env(self):
         self.env = HopperEnv(self.cfg)
         self.observation_dim = len(self.env.observation_spec())
@@ -102,7 +104,7 @@ class HopperAgent(AgentPPO):
 
     def setup_tb_logger(self):
         self.tb_logger = SummaryWriter(self.cfg.tb_dir) if self.args.type == 'training' else None
-        self.best_rewards = -1000
+        self.best_reward = -1000
         self.save_best_flag = False
 
     def setup_param_scheduler(self):
@@ -128,7 +130,7 @@ class HopperAgent(AgentPPO):
         self.value_net.load_state_dict(model_checkpoint['value_dict'])
         self.running_state = model_checkpoint['running_state']
         self.loss_iter = model_checkpoint['loss_iter']
-        self.best_rewards = model_checkpoint.get['best_rewards', self.best_rewards]
+        self.best_reward = model_checkpoint.get['best_reward', self.best_reward]
         if 'epoch' in model_checkpoint:
             epoch = model_checkpoint['epoch']
         self.pre_epoch_update(epoch)
@@ -143,20 +145,16 @@ class HopperAgent(AgentPPO):
                     'value_dict': self.value_net.state_dict(),
                     'running_state': self.running_state,
                     'loss_iter': self.loss_iter,
-                    'best_rewards': self.best_rewards,
+                    'best_reward': self.best_reward,
                     'epoch': epoch
                 }
                 pickle.dump(model_checkpoint, open(checkpoint_path, 'wb'))
 
-        additional_saves = self.cfg.agent_spec.get('additional_saves', None)
-        if (self.cfg.save_model_interval > 0 and (epoch+1) % self.cfg.save_model_interval == 0) or \
-            (additional_saves is not None and (epoch+1) % additional_saves[0] == 0 and epoch+1 <= additional_saves[1]):
-            self.tb_logger.flush()
-            save('%s/epoch_%04d.p' % (self.cfg.model_dir, epoch+1))
         if self.save_best_flag:
             self.tb_logger.flush()
-            self.logger.critical(f'Save best checkpoint with rewards {self.best_rewards:.2f}')
+            self.logger.critical(f'Saving the best checkpoint with rewards {self.best_reward:.2f}')
             save('%s/best.p' % self.cfg.model_dir)
+            save('%s/checkpoint_%04d.p' % (self.cfg.model_dir, epoch + 1))
 
 
     def pre_epoch_update(self, epoch):
@@ -164,15 +162,30 @@ class HopperAgent(AgentPPO):
             param.set_epoch(epoch)
 
     def optimize(self, epoch):
+        """
+        Optimize and part of logging.
+        :param epoch:
+        :return:
+        """
         self.pre_epoch_update(epoch)
-        self.logger.info('------------------------ Iteration {} --------------------------'.format(epoch))
+        self.logger.info('#------------------------ Iteration {} --------------------------#'.format(epoch))
         log, log_eval = self.optimize_policy(epoch)
 
         t_cur = time.time()
+        if log_eval.episode_reward > self.best_reward:
+            self.best_reward = log_eval.episode_reward
+            self.save_best_flag = True
+            self.logger.critical('Get the best episode reward: {}'.format(self.best_reward))
+            self.save_checkpoint(epoch)
+
+        else:
+            self.save_best_flag = False
+            self.logger.info('Average episode reward: {}'.format(log_eval.episode_reward))
+
+
         self.logger.info('Learning rate: {}'.format(self.))
         self.logger.info('KL value: {}'.format(self.))
         self.logger.info('Surrogate loss: {}'.format(self.))
-        self.logger.critical('Average reward: {}'.format(self.))
 
         self.logger.info('Total time: {}'.format(t_cur - self.t_start))
         self.logger.info('{} total steps have happened'.format(self.))
