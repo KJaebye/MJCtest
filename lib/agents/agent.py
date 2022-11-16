@@ -27,9 +27,8 @@ os.environ["OMP_NUM_THREADS"] = "1"
 
 class Agent:
     def __init__(self, env, policy_net, value_net, dtype, cfg, device, gamma,
-                 custom_reward=None, logger_cls=LoggerRL, logger_kwargs=None,
-                 end_reward=False, running_state=None, traj_cls=TrajBatch,
-                 num_threads=1):
+                 logger_cls=LoggerRL, logger_kwargs=None, end_reward=False,
+                 running_state=None, traj_cls=TrajBatch, num_threads=1):
         self.env = env
         self.policy_net = policy_net
         self.value_net = value_net
@@ -38,7 +37,6 @@ class Agent:
         self.device = device
         self.gamma = gamma
 
-        self.custom_reward = custom_reward
         self.end_reward = end_reward
         self.running_state = running_state
 
@@ -97,7 +95,7 @@ class Agent:
         Sample min_batch_size of data.
         :param pid: work index
         :param queue: for multiprocessing
-        :param thread_batch_size: how many batches of data should be collected by worker
+        :param thread_batch_size: how many batches of data should be collected by one worker
         :param mean_action: bool type
         :param render: bool type
         :return:
@@ -106,17 +104,17 @@ class Agent:
         """
         self.seed_worker(pid)
         memory = Memory()
-        logger = self.logger_cls(**self.logger_kwargs)
+        logger_rl = self.logger_cls(**self.logger_kwargs)
 
         # sample a batch data
-        while logger.num_steps < thread_batch_size:
+        while logger_rl.num_steps < thread_batch_size:
             time_step = self.env.reset()
             cur_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
 
             # preprocess state if needed
             if self.running_state is not None:
                 time_step.observation = self.running_state(time_step.observation)
-            logger.start_episode(self.env)
+            logger_rl.start_episode(self.env)
             self.pre_episode()
 
             # sample an episode
@@ -132,14 +130,18 @@ class Agent:
                 # apply this action and get env feedback
                 time_step = self.env.step(action)
                 reward = time_step.reward
-                next_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
+                next_state = time_step.observation
+
+                # add end reward
+                if self.end_reward and time_step.last():
+                    reward += self.env.end_reward
 
                 # preprocess state if needed
                 if self.running_state is not None:
                     next_state = self.running_state(next_state)
 
                 # record reward
-                logger.step(reward)
+                logger_rl.step(reward)
                 mask = 0 if time_step.last() else 1
                 exp = 1 - use_mean_action
                 self.push_memory(memory, cur_state, action, next_state, reward, mask, exp)
@@ -158,13 +160,13 @@ class Agent:
                 if time_step.last():
                     break
 
-            logger.end_episode()
-        logger.end_sampling()
+            logger_rl.end_episode()
+        logger_rl.end_sampling()
 
         if queue is not None:
-            queue.put([pid, memory, logger])
+            queue.put([pid, memory, logger_rl])
         else:
-            return memory, logger
+            return memory, logger_rl
 
     def seed_worker(self, pid):
         if pid > 0:

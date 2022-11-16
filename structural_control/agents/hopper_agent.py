@@ -57,8 +57,6 @@ class HopperAgent(AgentPPO):
                                  policy_net=self.policy_net, value_net=self.value_net, gamma=self.gamma,
                                  logger_cls=LoggerRL, traj_cls=TrajBatch, logger_kwargs=None,
                                  running_state=None, num_threads=self.num_threads)
-    def sample_worker(self, pid, queue, thread_batch_size, mean_action, render):
-
 
 
 
