@@ -31,6 +31,7 @@ def tensorfy(np_list, device=torch.device('cpu')):
     else:
         return [torch.tensor(y).to(device) for y in np_list]
 
+
 class HopperAgent(AgentPPO):
     def __init__(self, args, cfg, logger, dtype, device, seed, num_threads, training=True, checkpoint=0):
         self.action_dim = None
@@ -53,6 +54,7 @@ class HopperAgent(AgentPPO):
         self.setup_value()
         self.setup_optimizer()
         self.setup_param_scheduler()
+        self.save_best_flag = False
         if checkpoint != 0:
             self.load_checkpoint(checkpoint)
 
@@ -67,8 +69,6 @@ class HopperAgent(AgentPPO):
                                  policy_grad_clip=[(self.policy_net.parameters(), 40)],
                                  use_mini_batch=cfg.mini_batch_size < cfg.min_batch_size,
                                  mini_batch_size=cfg.mini_batch_size)
-
-
 
     def setup_env(self):
         self.env = HopperEnv(self.cfg)
@@ -120,10 +120,10 @@ class HopperAgent(AgentPPO):
         for name, specs in self.cfg.scheduled_params.items():
             if specs['type'] == 'step':
                 self.scheduled_params[name] = torper.StepParamScheduler(specs['start_val'], specs['step_size'],
-                                                                       specs['gamma'], specs.get('smooth', False))
+                                                                        specs['gamma'], specs.get('smooth', False))
             elif specs['type'] == 'linear':
                 self.scheduled_params[name] = torper.LinearParamScheduler(specs['start_val'], specs['end_val'],
-                                                                         specs['start_epoch'], specs['end_epoch'])
+                                                                          specs['start_epoch'], specs['end_epoch'])
 
     def load_checkpoint(self, checkpoint):
         if isinstance(checkpoint, int):
@@ -143,19 +143,18 @@ class HopperAgent(AgentPPO):
             epoch = model_checkpoint['epoch']
         self.pre_epoch_update(epoch)
 
-
     def save_checkpoint(self, epoch):
         def save(checkpoint_path):
             with torper.to_cpu(self.policy_net, self.value_net):
                 model_checkpoint = \
-                {
-                    'policy_dict': self.policy_net.state_dict(),
-                    'value_dict': self.value_net.state_dict(),
-                    'running_state': self.running_state,
-                    'loss_iter': self.loss_iter,
-                    'best_reward': self.best_reward,
-                    'epoch': epoch
-                }
+                    {
+                        'policy_dict': self.policy_net.state_dict(),
+                        'value_dict': self.value_net.state_dict(),
+                        'running_state': self.running_state,
+                        'loss_iter': self.loss_iter,
+                        'best_reward': self.best_reward,
+                        'epoch': epoch
+                    }
                 pickle.dump(model_checkpoint, open(checkpoint_path, 'wb'))
 
         if self.save_best_flag:
@@ -163,7 +162,6 @@ class HopperAgent(AgentPPO):
             self.logger.critical(f'Saving the best checkpoint with rewards {self.best_reward:.2f}')
             save('%s/best.p' % self.cfg.model_dir)
             save('%s/checkpoint_%04d.p' % (self.cfg.model_dir, epoch + 1))
-
 
     def pre_epoch_update(self, epoch):
         for param in self.scheduled_params.values():
@@ -190,7 +188,6 @@ class HopperAgent(AgentPPO):
             self.save_best_flag = False
             self.logger.info('Average episode reward: {}'.format(log_eval.episode_reward))
 
-
         self.logger.info('Learning rate: {}'.format(self.optimizer_policy.state_dict()['param_groups'][0]['lr']))
         # self.logger.info('KL value: {}'.format(self.))
         self.logger.info('Surrogate loss: {}'.format(self.surr_loss))
@@ -198,8 +195,6 @@ class HopperAgent(AgentPPO):
         self.logger.info('Total time: {}'.format(t_cur - self.t_start))
         self.total_steps += self.cfg.min_batch_size
         self.logger.info('{} total steps have happened'.format(self.total_steps))
-
-
 
     def optimize_policy(self, epoch):
         """
@@ -226,8 +221,8 @@ class HopperAgent(AgentPPO):
         self.logger.info('')
 
         info = {
-            'log': log, 'log_eval': log_eval, 'sample_time': t_1-t_0, 'update_time': t_2-t_1,
-            'eval_time': t_3-t_2, 'total_time': t_3-t_0
+            'log': log, 'log_eval': log_eval, 'sample_time': t_1 - t_0, 'update_time': t_2 - t_1,
+            'eval_time': t_3 - t_2, 'total_time': t_3 - t_0
         }
         return log, log_eval
 
@@ -243,7 +238,7 @@ class HopperAgent(AgentPPO):
                 values = []
                 chunk = 10000
                 for i in range(1, len(states), chunk):
-                    states_i = states[i:min(i+chunk, len(states))]
+                    states_i = states[i:min(i + chunk, len(states))]
                     values_i = self.value_net(self.trans_value(states_i))
                     values.append(values_i)
                 values = torch.cat(values)
@@ -256,7 +251,6 @@ class HopperAgent(AgentPPO):
 
         self.update_policy(states, actions, returns, advantages, exps)
         return
-
 
     def get_perm_batch_design(self, states):
         inds = [[], [], []]
@@ -317,7 +311,8 @@ class HopperAgent(AgentPPO):
                 for i in range(optim_iter_num):
                     index = slice(i * self.mini_batch_size, min((i + 1) * self.mini_batch_size, num_state))
                     states_b, actions_b, advantages_b, returns_b, fixed_log_probs_b, exps_b = \
-                        states[index], actions[index], advantages[index], returns[index], fixed_log_probs[index], exps[index]
+                        states[index], actions[index], advantages[index], returns[index], fixed_log_probs[index], exps[
+                            index]
                     self.update_value(states_b, returns_b)
                     self.surr_loss = self.ppo_loss(states_b, actions_b, advantages_b, fixed_log_probs_b)
                     self.optimizer_policy.zero_grad()
@@ -341,17 +336,3 @@ class HopperAgent(AgentPPO):
         surr_2 = torch.clamp(ratio, 1.0 - self.clip_epsilon, 1.0 + self.clip_epsilon) * advantages
         surr_loss = -torch.min(surr_1, surr_2).mean()
         return surr_loss
-
-
-
-
-
-
-
-
-
-
-
-
-
-
