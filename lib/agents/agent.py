@@ -155,8 +155,7 @@ class Agent:
                     worker's action in simulator.
                 """
                 if pid == 0 and render:
-                    ############## env.render should be replaced by mujoco native python bindings
-                    self.env.render()
+                    self.env.physics.render()
                 if time_step.last():
                     break
 
