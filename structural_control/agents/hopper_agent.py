@@ -188,9 +188,6 @@ class HopperAgent(AgentPPO):
             self.save_best_flag = False
             self.logger.info('Average episode reward: {}'.format(log_eval.episode_reward))
 
-        self.logger.info('Learning rate: {}'.format(self.optimizer_policy.state_dict()['param_groups'][0]['lr']))
-        # self.logger.info('KL value: {}'.format(self.))
-        self.logger.info('Surrogate loss: {}'.format(self.surr_loss))
 
         self.logger.info('Total time: {}'.format(t_cur - self.t_start))
         self.total_steps += self.cfg.min_batch_size
@@ -217,8 +214,6 @@ class HopperAgent(AgentPPO):
         _, log_eval = self.sample(self.cfg.eval_batch_size, mean_action=True)
         t_3 = time.time()
         self.logger.info('Evaluation time: {}'.format(t_3 - t_2))
-
-        self.logger.info('')
 
         info = {
             'log': log, 'log_eval': log_eval, 'sample_time': t_1 - t_0, 'update_time': t_2 - t_1,
@@ -282,6 +277,8 @@ class HopperAgent(AgentPPO):
                 fixed_log_probs = torch.cat(fixed_log_probs)
         num_state = len(states)
 
+        self.logger.info('| %11s | %11s | %11s | %11s| %11s|' % ('surr', 'kl', 'ent', 'vf_loss', 'weight_l2'))
+
         for _ in range(self.optim_num_epochs):
             if self.use_mini_batch:
                 perm_np = np.arange(num_state)
@@ -311,8 +308,7 @@ class HopperAgent(AgentPPO):
                 for i in range(optim_iter_num):
                     index = slice(i * self.mini_batch_size, min((i + 1) * self.mini_batch_size, num_state))
                     states_b, actions_b, advantages_b, returns_b, fixed_log_probs_b, exps_b = \
-                        states[index], actions[index], advantages[index], returns[index], fixed_log_probs[index], exps[
-                            index]
+                        states[index], actions[index], advantages[index], returns[index], fixed_log_probs[index], exps[index]
                     self.update_value(states_b, returns_b)
                     self.surr_loss = self.ppo_loss(states_b, actions_b, advantages_b, fixed_log_probs_b)
                     self.optimizer_policy.zero_grad()
@@ -328,10 +324,17 @@ class HopperAgent(AgentPPO):
                 self.clip_policy_grad()
                 self.optimizer_policy.step()
 
+                # logging
+                self.logger.info('| %10.8f | %10.8f | %10.4f | %10.4f | %10.4f |' %
+                    (self.surr_loss, kl_epoch, entropy_epoch, vf_epoch, weight_epoch))
+
+                # self.logger.info('Learning rate: {}'.format(self.optimizer_policy.state_dict()['param_groups'][0]['lr']))
+                # # self.logger.info('KL value: {}'.format(self.))
+                # self.logger.info('Surrogate loss: {}'.format(self.surr_loss))
+
     def ppo_loss(self, states, actions, advantages, fixed_log_probs):
         log_probs = self.policy_net.get_log_prob(self.trans_policy(states), actions)
         ratio = torch.exp(log_probs - fixed_log_probs)
-        advantages = advantages
         surr_1 = ratio * advantages
         surr_2 = torch.clamp(ratio, 1.0 - self.clip_epsilon, 1.0 + self.clip_epsilon) * advantages
         surr_loss = -torch.min(surr_1, surr_2).mean()
