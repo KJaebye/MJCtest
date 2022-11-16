@@ -45,6 +45,7 @@ class HopperAgent(AgentPPO):
         self.training = training
         self.checkpoint = checkpoint
         self.t_start = time.time()
+        self.total_steps = 0
 
         self.setup_env()
         self.setup_tb_logger()
@@ -52,11 +53,20 @@ class HopperAgent(AgentPPO):
         self.setup_value()
         self.setup_optimizer()
         self.setup_param_scheduler()
+        if checkpoint != 0:
+            self.load_checkpoint(checkpoint)
 
         super(AgentPPO).__init__(env=self.env, dtype=self.dtype, cfg=self.cfg, device=self.device,
-                                 policy_net=self.policy_net, value_net=self.value_net, gamma=self.gamma,
-                                 logger_cls=LoggerRL, traj_cls=TrajBatch, logger_kwargs=None,
-                                 running_state=None, num_threads=self.num_threads)
+                                 policy_net=self.policy_net, value_net=self.value_net,
+                                 gamma=cfg.gamma, tau=cfg.tau,
+                                 logger_cls=LoggerRL, traj_cls=TrajBatch,
+                                 logger_kwargs=None, running_state=None, num_threads=self.num_threads,
+                                 optimizer_policy=self.optimizer_policy, optimizer_value=self.optimizer_value,
+                                 opt_num_epochs=cfg.num_optim_epoch,
+                                 clip_epsilon=cfg.clip_epsilon,
+                                 policy_grad_clip=[(self.policy_net.parameters(), 40)],
+                                 use_mini_batch=cfg.mini_batch_size < cfg.min_batch_size,
+                                 mini_batch_size=cfg.mini_batch_size)
 
 
 
@@ -181,12 +191,13 @@ class HopperAgent(AgentPPO):
             self.logger.info('Average episode reward: {}'.format(log_eval.episode_reward))
 
 
-        self.logger.info('Learning rate: {}'.format(self.))
-        self.logger.info('KL value: {}'.format(self.))
-        self.logger.info('Surrogate loss: {}'.format(self.))
+        self.logger.info('Learning rate: {}'.format(self.optimizer_policy.state_dict()['param_groups'][0]['lr']))
+        # self.logger.info('KL value: {}'.format(self.))
+        self.logger.info('Surrogate loss: {}'.format(self.surr_loss))
 
         self.logger.info('Total time: {}'.format(t_cur - self.t_start))
-        self.logger.info('{} total steps have happened'.format(self.))
+        self.total_steps += self.cfg.min_batch_size
+        self.logger.info('{} total steps have happened'.format(self.total_steps))
 
 
 
@@ -308,17 +319,17 @@ class HopperAgent(AgentPPO):
                     states_b, actions_b, advantages_b, returns_b, fixed_log_probs_b, exps_b = \
                         states[index], actions[index], advantages[index], returns[index], fixed_log_probs[index], exps[index]
                     self.update_value(states_b, returns_b)
-                    surr_loss = self.ppo_loss(states_b, actions_b, advantages_b, fixed_log_probs_b)
+                    self.surr_loss = self.ppo_loss(states_b, actions_b, advantages_b, fixed_log_probs_b)
                     self.optimizer_policy.zero_grad()
-                    surr_loss.backward()
+                    self.surr_loss.backward()
                     self.clip_policy_grad()
                     self.optimizer_policy.step()
             else:
                 index = exps.nonzero(as_tuple=False).squeeze(1)
                 self.update_value(states, returns)
-                surr_loss = self.ppo_loss(states, actions, advantages, fixed_log_probs)
+                self.surr_loss = self.ppo_loss(states, actions, advantages, fixed_log_probs)
                 self.optimizer_policy.zero_grad()
-                surr_loss.backward()
+                self.surr_loss.backward()
                 self.clip_policy_grad()
                 self.optimizer_policy.step()
 

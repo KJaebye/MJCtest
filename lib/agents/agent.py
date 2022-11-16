@@ -106,7 +106,7 @@ class Agent:
         memory = Memory()
         logger_rl = self.logger_cls(**self.logger_kwargs)
 
-        # sample a batch data
+        # sample a batch of data
         while logger_rl.num_steps < thread_batch_size:
             time_step = self.env.reset()
             cur_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
