@@ -48,6 +48,7 @@ class Config:
         self.seed = cfg.get('seed')
         self.min_batch_size = cfg.get('min_batch_size')
         self.max_timesteps = cfg.get('max_timesteps')  # maximum timestep per episode
+        self.max_epoch_num = cfg.get('max_epoch_num')
 
         # environment
 

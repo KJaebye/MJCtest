@@ -33,10 +33,9 @@ def tensorfy(np_list, device=torch.device('cpu')):
 
 
 class HopperAgent(AgentPPO):
-    def __init__(self, args, cfg, logger, dtype, device, seed, num_threads, training=True, checkpoint=0):
+    def __init__(self, cfg, logger, dtype, device, seed, num_threads, training=True, checkpoint=0):
         self.action_dim = None
         self.observation_dim = None
-        self.args = args
         self.cfg = cfg
         self.logger = logger
         self.dtype = dtype
@@ -111,7 +110,7 @@ class HopperAgent(AgentPPO):
                                 weight_decay=self.cfg.value_weight_decay)
 
     def setup_tb_logger(self):
-        self.tb_logger = SummaryWriter(self.cfg.tb_dir) if self.args.type == 'training' else None
+        self.tb_logger = SummaryWriter(self.cfg.tb_dir) if self.training else None
         self.best_reward = -1000
         self.save_best_flag = False
 
@@ -188,10 +187,15 @@ class HopperAgent(AgentPPO):
             self.save_best_flag = False
             self.logger.info('Average episode reward: {}'.format(log_eval.episode_reward))
 
-
         self.logger.info('Total time: {}'.format(t_cur - self.t_start))
         self.total_steps += self.cfg.min_batch_size
         self.logger.info('{} total steps have happened'.format(self.total_steps))
+
+        self.tb_logger.add_scalar('train_R_avg ', log.avg_reward, epoch)
+        self.tb_logger.add_scalar('train_R_eps_avg', log.avg_episode_reward, epoch)
+        self.tb_logger.add_scalar('eval_R_eps_avg', log_eval.avg_episode_reward, epoch)
+        self.tb_logger.add_scalar('exec_R_avg', log_eval.avg_exec_reward, epoch)
+        self.tb_logger.add_scalar('exec_R_eps_avg', log_eval.avg_exec_episode_reward, epoch)
 
     def optimize_policy(self, epoch):
         """
@@ -215,10 +219,10 @@ class HopperAgent(AgentPPO):
         t_3 = time.time()
         self.logger.info('Evaluation time: {}'.format(t_3 - t_2))
 
-        info = {
-            'log': log, 'log_eval': log_eval, 'sample_time': t_1 - t_0, 'update_time': t_2 - t_1,
-            'eval_time': t_3 - t_2, 'total_time': t_3 - t_0
-        }
+        # info = {
+        #     'log': log, 'log_eval': log_eval, 'sample_time': t_1 - t_0, 'update_time': t_2 - t_1,
+        #     'eval_time': t_3 - t_2, 'total_time': t_3 - t_0
+        # }
         return log, log_eval
 
     def update_params(self, batch):
@@ -308,7 +312,8 @@ class HopperAgent(AgentPPO):
                 for i in range(optim_iter_num):
                     index = slice(i * self.mini_batch_size, min((i + 1) * self.mini_batch_size, num_state))
                     states_b, actions_b, advantages_b, returns_b, fixed_log_probs_b, exps_b = \
-                        states[index], actions[index], advantages[index], returns[index], fixed_log_probs[index], exps[index]
+                        states[index], actions[index], advantages[index], returns[index], fixed_log_probs[index], exps[
+                            index]
                     self.update_value(states_b, returns_b)
                     self.surr_loss = self.ppo_loss(states_b, actions_b, advantages_b, fixed_log_probs_b)
                     self.optimizer_policy.zero_grad()
@@ -326,7 +331,7 @@ class HopperAgent(AgentPPO):
 
                 # logging
                 # self.logger.info('| %10.8f | %10.8f | %10.4f | %10.4f | %10.4f |' %
-                    # (self.surr_loss, kl_epoch, entropy_epoch, vf_epoch, weight_epoch))
+                # (self.surr_loss, kl_epoch, entropy_epoch, vf_epoch, weight_epoch))
 
                 # self.logger.info('Learning rate: {}'.format(self.optimizer_policy.state_dict()['param_groups'][0]['lr']))
                 # # self.logger.info('KL value: {}'.format(self.))

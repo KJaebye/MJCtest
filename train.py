@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------------------------------------- #
-#   @description: Main file
+#   @description: Training file
 #   @author: Kangyao Huang
 #   @created date: 23.Oct.2022
 # ------------------------------------------------------------------------------------------------------------------- #
@@ -9,8 +9,8 @@ import numpy as np
 from config.get_args import get_args
 from config.config import Config
 from utils.logger import Logger
-# from lib.agents.agent import Agent
-
+from structural_control.agents.hopper_agent import HopperAgent
+from structural_control.envs.hopper import HopperEnv
 
 if __name__ == "__main__":
     args = get_args()
@@ -41,13 +41,22 @@ if __name__ == "__main__":
     logger.set_output_handler()
     logger.print_system_info()
 
-    if args.type == 'training':
-        # only training generates log file
-        logger.critical('Type of current running: Training')
-        logger.set_file_handler()
-    else:
-        logger.info('Type of current running: Evaluation. No log file will be created')
+    # only training generates log file
+    logger.critical('Type of current running: Training')
+    logger.set_file_handler()
+
+    start_epoch = int(args.epoch) if args.epoch.isnumeric() else args.epoch
 
     """create agent"""
-    # agent = Agent(env, policy_net, value_net, dtype, logger, cfg, device, gamma)
+    agent = HopperAgent(cfg, logger, dtype=dtype, device=device, seed=cfg.seed, num_threads=args.num_threads,
+                        training=True, checkpoint=start_epoch)
 
+    if args.render:
+        agent.pre_epoch_update(start_epoch)
+        agent.sample(1e8, mean_action=not args.show_noise, render=True)
+    else:
+        for epoch in range(start_epoch, cfg.max_epoch_num):
+            agent.optimize(epoch)
+            # clean up GPU memory
+            torch.cuda.empty_cache()
+        agent.logger.critical('Training completed!')
