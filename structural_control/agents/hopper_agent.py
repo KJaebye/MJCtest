@@ -72,7 +72,7 @@ class HopperAgent(AgentPPO):
     def setup_env(self):
         self.env = HopperEnv(self.cfg)
         self.observation_dim = len(self.env.observation_spec())
-        self.action_dim = len(self.env.action_spec())
+        self.action_dim = self.env.action_spec().shape
         self.running_state = None
 
     def setup_policy(self):
