@@ -91,6 +91,7 @@ class HopperTask(mujoco_env.MujocoTask):
 
 
 env = HopperEnv(None)
+data = env.physics.data
 action_spec = env.action_spec()
 observation_spec = env.observation_spec()
 print(len(observation_spec))

@@ -11,6 +11,7 @@ import torch
 import math
 import multiprocessing
 import numpy as np
+import mujoco_viewer
 
 from lib.core.memory import Memory
 from lib.core.logger_rl import LoggerRL
@@ -155,7 +156,8 @@ class Agent:
                     worker's action in simulator.
                 """
                 if pid == 0 and render:
-                    self.env.physics.render()
+                    viewer = mujoco_viewer.MujocoViewer(self.env.physics, self.env.physics.data)
+                    viewer.render()
                 if time_step.last():
                     break
 
