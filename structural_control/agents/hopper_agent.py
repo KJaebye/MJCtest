@@ -325,8 +325,8 @@ class HopperAgent(AgentPPO):
                 self.optimizer_policy.step()
 
                 # logging
-                self.logger.info('| %10.8f | %10.8f | %10.4f | %10.4f | %10.4f |' %
-                    (self.surr_loss, kl_epoch, entropy_epoch, vf_epoch, weight_epoch))
+                # self.logger.info('| %10.8f | %10.8f | %10.4f | %10.4f | %10.4f |' %
+                    # (self.surr_loss, kl_epoch, entropy_epoch, vf_epoch, weight_epoch))
 
                 # self.logger.info('Learning rate: {}'.format(self.optimizer_policy.state_dict()['param_groups'][0]['lr']))
                 # # self.logger.info('KL value: {}'.format(self.))
@@ -337,5 +337,5 @@ class HopperAgent(AgentPPO):
         ratio = torch.exp(log_probs - fixed_log_probs)
         surr_1 = ratio * advantages
         surr_2 = torch.clamp(ratio, 1.0 - self.clip_epsilon, 1.0 + self.clip_epsilon) * advantages
-        surr_loss = -torch.min(surr_1, surr_2).mean()
+        surr_loss = - torch.min(surr_1, surr_2).mean()
         return surr_loss

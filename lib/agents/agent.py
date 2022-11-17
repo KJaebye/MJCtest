@@ -172,9 +172,6 @@ class Agent:
     def seed_worker(self, pid):
         if pid > 0:
             torch.manual_seed(torch.randint(0, 5000, (1,)) * pid)
-            #########
-            ### env.np_random is from gym.utils
-            # need use mojoco python bindings to replace gym.seeding
             if hasattr(self.env, 'np_random'):
                 self.env.np_random.seed(self.env.np_random.randint(5000) * pid)
 
