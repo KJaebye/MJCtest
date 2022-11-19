@@ -13,12 +13,12 @@ import lib.core.torch_wrapper as torper
 
 class AgentPPO(AgentPG):
     def __init__(self, clip_epsilon=0.2, mini_batch_size=64, use_mini_batch=False,
-                 policy_grad_clip_value=None, **kwargs):
+                 policy_grad_clip=None, **kwargs):
         super().__init__(**kwargs)
         self.clip_epsilon = clip_epsilon
         self.mini_batch_size = mini_batch_size
         self.use_mini_batch = use_mini_batch
-        self.policy_grad_clip_value = policy_grad_clip_value
+        self.policy_grad_clip = policy_grad_clip
 
     def update_policy(self, states, actions, returns, advantages, exps):
         """ Update the policy """
@@ -64,8 +64,8 @@ class AgentPPO(AgentPG):
                 self.optimizer_policy.step()
 
     def clip_policy_grad(self):
-        if self.policy_grad_clip_value is not None:
-            for params, max_norm in self.policy_grad_clip_value:
+        if self.policy_grad_clip is not None:
+            for params, max_norm in self.policy_grad_clip:
                 torch.nn.utils.clip_grad_norm_(params, max_norm)
 
     def ppo_loss(self, states, actions, advantages, fixd_log_probs, index):

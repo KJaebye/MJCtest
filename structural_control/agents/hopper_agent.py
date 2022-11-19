@@ -36,6 +36,7 @@ class HopperAgent(AgentPPO):
     def __init__(self, cfg, logger, dtype, device, seed, num_threads, training=True, checkpoint=0):
         self.action_dim = None
         self.observation_dim = None
+        self.observation_flat_dim = 0
         self.cfg = cfg
         self.logger = logger
         self.dtype = dtype
@@ -57,27 +58,37 @@ class HopperAgent(AgentPPO):
         if checkpoint != 0:
             self.load_checkpoint(checkpoint)
 
-        super(AgentPPO).__init__(env=self.env, dtype=self.dtype, cfg=self.cfg, device=self.device,
-                                 policy_net=self.policy_net, value_net=self.value_net,
-                                 gamma=cfg.gamma, tau=cfg.tau,
-                                 logger_cls=LoggerRL, traj_cls=TrajBatch,
-                                 logger_kwargs=None, running_state=None, num_threads=self.num_threads,
-                                 optimizer_policy=self.optimizer_policy, optimizer_value=self.optimizer_value,
-                                 opt_num_epochs=cfg.num_optim_epoch,
-                                 clip_epsilon=cfg.clip_epsilon,
-                                 policy_grad_clip=[(self.policy_net.parameters(), 40)],
-                                 use_mini_batch=cfg.mini_batch_size < cfg.min_batch_size,
-                                 mini_batch_size=cfg.mini_batch_size)
+        super().__init__(env=self.env, dtype=self.dtype, cfg=self.cfg, device=self.device,
+                         policy_net=self.policy_net, value_net=self.value_net,
+                         gamma=cfg.gamma, tau=cfg.tau,
+                         logger_cls=LoggerRL, traj_cls=TrajBatch,
+                         logger_kwargs=None, running_state=None, num_threads=self.num_threads,
+                         optimizer_policy=self.optimizer_policy, optimizer_value=self.optimizer_value,
+                         optim_num_epoches=cfg.num_optim_epoch,
+                         clip_epsilon=cfg.clip_epsilon,
+                         policy_grad_clip=[(self.policy_net.parameters(), 40)],
+                         use_mini_batch=cfg.mini_batch_size < cfg.min_batch_size,
+                         mini_batch_size=cfg.mini_batch_size)
 
     def setup_env(self):
-        self.env = HopperEnv(self.cfg)
+        self.env = HopperEnv(self.cfg, flat_observation=False)
+        """ observation specs and dimension """
         self.observation_dim = len(self.env.observation_spec())
-        self.action_dim = self.env.action_spec().shape
+        # print(self.env.observation_spec())
+        # print(self.observation_dim)
+        """ observation flatten dimension """
+        for k, v in self.env.task.get_observation(self.env.physics).items():
+            self.observation_flat_dim += v.shape[0]
+        # print(self.env.task.get_observation(self.env.physics))
+        # print(self.observation_flat_dim)
+        """ action specs and dimension """
+        self.action_dim = self.env.action_spec().shape[0]
+        # print(self.env.action_spec())
+        # print(self.action_dim)
+
         self.running_state = None
 
     def setup_policy(self):
-        # a = [x for x in self.cfg.policy_spec]
-        # print(a)
         self.policy_net = StruturalPolicy(self.cfg.policy_spec, self)
         torper.to_device(self.device, self.policy_net)
 

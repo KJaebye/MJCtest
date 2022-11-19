@@ -6,10 +6,12 @@
 
 from lib.core.actor import Policy
 from lib.models.mlp import MLP
+from structural_control.models.gnn import GNNSimple
 from lib.core.running_norm import RunningNorm
 from lib.utils.tools import init_fc_weights
 from lib.core.distributions import DiagGaussian
 import torch
+import numpy as np
 
 
 class StruturalPolicy(Policy):
@@ -18,11 +20,12 @@ class StruturalPolicy(Policy):
         self.cfg_spec = cfg_spec
         self.type = 'gaussian'
         self.agent = agent
-        self.observation_dim = agent.observation_dim
+        self.observation_flat_dim = agent.observation_flat_dim
+        # self.state_dim = agent.state_dim
         self.action_dim = agent.action_dim
 
-        self.control_norm = RunningNorm(self.observation_dim)
-        cur_dim = self.observation_dim
+        self.control_norm = RunningNorm(self.observation_flat_dim)
+        cur_dim = self.observation_flat_dim
         if 'control_pre_mlp' in cfg_spec:
             self.control_pre_mlp = MLP(cur_dim, cfg_spec['control_pre_mlp'], cfg_spec['htype'])
             cur_dim = self.control_pre_mlp.output_dim
@@ -36,17 +39,18 @@ class StruturalPolicy(Policy):
         if 'control_mlp' in cfg_spec:
             self.control_mlp = MLP(cur_dim, cfg_spec['control_mlp'], cfg_spec['htype'])
             cur_dim = self.control_mlp.output_dim
+
         self.control_action_mean = torch.nn.Linear(cur_dim, self.action_dim)
         init_fc_weights(self.control_action_mean)
         self.control_action_log_std = \
             torch.nn.Parameter(torch.ones(1, self.action_dim) * self.cfg_spec['control_log_std'],
                                requires_grad=not cfg_spec['fix_control_std'])
 
-    def batch_data(self):
+    def batch_data(self, x):
         pass
 
     def forward(self, x):
-        x = self.control_norm(self.observation)
+        x = self.control_norm(x)
         if self.control_pre_mlp is not None:
             x = self.control_pre_mlp(x)
         if self.control_gnn is not None:

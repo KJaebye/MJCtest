@@ -54,13 +54,13 @@ class Config:
         self.policy_optimizer = cfg.get('policy_optimizer', 'Adam')
         self.policy_lr = cfg.get('policy_lr', 5e-5)
         self.policy_momentum = cfg.get('policy_momentum', 0.0)
-        self.policy_weightdecay = cfg.get('policy_weightdecay', 0.0)
+        self.policy_weight_decay = cfg.get('policy_weight_decay', 0.0)
 
         self.value_spec = cfg.get('value_spec', dict())
         self.value_optimizer = cfg.get('value_optimizer', 'Adam')
         self.value_lr = cfg.get('value_lr', 3e-4)
         self.value_momentum = cfg.get('value_momentum', 0.0)
-        self.value_weightdecay = cfg.get('value_weightdecay', 0.0)
+        self.value_weight_decay = cfg.get('value_weight_decay', 0.0)
 
         self.adv_clip = cfg.get('adv_clip', np.inf)
         self.clip_epsilon = cfg.get('clip_epsilon', 0.2)

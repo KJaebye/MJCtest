@@ -20,7 +20,7 @@ def get_args():
     parser.add_argument('--render', type=bool, default=False)
 
     # training configuration
-    parser.add_argument('--epoch', default='0')
+    parser.add_argument('--start_epoch', default='0')
     parser.add_argument('--gamma', type=float, default=.99, help='discount factor for value function')
     parser.add_argument('--num_threads', type=int, default=1)
     parser.add_argument('--num_episodes', type=int, default=1000, help='number of episodes')

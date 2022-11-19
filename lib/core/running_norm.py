@@ -1,11 +1,12 @@
-
 import torch
+
 
 class RunningNorm(torch.nn.Module):
     """
     y = (x-mean)/std
     using running estimates of mean, std
     """
+
     def __init__(self, dim, de_mean=True, de_std=True, clip=5.0):
         super().__init__()
         self.dim = dim

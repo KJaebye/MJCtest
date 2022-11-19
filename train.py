@@ -45,7 +45,7 @@ if __name__ == "__main__":
     logger.critical('Type of current running: Training')
     logger.set_file_handler()
 
-    start_epoch = int(args.epoch) if args.epoch.isnumeric() else args.epoch
+    start_epoch = int(args.start_epoch) if args.start_epoch.isnumeric() else args.start_epoch
 
     """create agent"""
     agent = HopperAgent(cfg, logger, dtype=dtype, device=device, seed=cfg.seed, num_threads=args.num_threads,

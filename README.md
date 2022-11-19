@@ -41,6 +41,11 @@ Learning records and tips are located at Notion https://www.notion.so/huangkangy
 ### mac m1
 - torch==1.12.1
 - torchvision==0.13.1
+- torch-geometric==2.1.0
+- torch-scatter==2.0.9
+- torch-sparse==0.6.15
+- torch-cluster==1.6.0
+- torch-spline-conv==1.2.1
 ### x_86
 - torch==1.12.0_cu116
 - torchvision==0.13.0_cu116

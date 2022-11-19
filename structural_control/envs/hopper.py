@@ -24,11 +24,11 @@ _HOP_SPEED = 2
 
 
 class HopperEnv(MujocoEnv):
-    def __init__(self, cfg):
+    def __init__(self, cfg, **kwargs):
         self.mujoco_xml_path = './assets/robot_models/mjcf/hopper.xml'
         physics = HopperPhysics.from_xml_path(self.mujoco_xml_path)
         task = HopperTask(True, random=None)
-        super().__init__(cfg, physics, task)
+        super().__init__(cfg, physics, task, **kwargs)
 
 
 class HopperPhysics(MujocoPhysics):
