@@ -27,6 +27,7 @@
 import glob
 import os
 import yaml
+import numpy as np
 
 
 class Config:
@@ -45,10 +46,35 @@ class Config:
             cfg = yaml.safe_load(open(files[0], 'r'))
 
         # training config
-        self.seed = cfg.get('seed')
-        self.min_batch_size = cfg.get('min_batch_size')
+        self.env_name = cfg.get('env_name')
+        self.gamma = cfg.get('gamma', 0.99)
+        self.tau = cfg.get('tau', 0.95)
+
+        self.policy_spec = cfg.get('policy_spec', dict())
+        self.policy_optimizer = cfg.get('policy_optimizer', 'Adam')
+        self.policy_lr = cfg.get('policy_lr', 5e-5)
+        self.policy_momentum = cfg.get('policy_momentum', 0.0)
+        self.policy_weightdecay = cfg.get('policy_weightdecay', 0.0)
+
+        self.value_spec = cfg.get('value_spec', dict())
+        self.value_optimizer = cfg.get('value_optimizer', 'Adam')
+        self.value_lr = cfg.get('value_lr', 3e-4)
+        self.value_momentum = cfg.get('value_momentum', 0.0)
+        self.value_weightdecay = cfg.get('value_weightdecay', 0.0)
+
+        self.adv_clip = cfg.get('adv_clip', np.inf)
+        self.clip_epsilon = cfg.get('clip_epsilon', 0.2)
+        self.num_optim_epoch = cfg.get('num_optim_epoch', 10)
+        self.min_batch_size = cfg.get('min_batch_size', 50000)
+        self.mini_batch_size = cfg.get('mini_batch_size', self.min_batch_size)
+        self.eval_batch_size = cfg.get('eval_batch_size', 10000)
+        self.max_epoch_num = cfg.get('max_epoch_num', 1000)
         self.max_timesteps = cfg.get('max_timesteps')  # maximum timestep per episode
-        self.max_epoch_num = cfg.get('max_epoch_num')
+
+        self.seed = cfg.get('seed', 1)
+
+        # anneal parameters
+        self.scheduled_params = cfg.get('scheduled_params', dict())
 
         # environment
 

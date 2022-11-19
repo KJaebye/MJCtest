@@ -254,6 +254,6 @@ class LinearParamScheduler(nn.Module):
         self.cur_epoch.fill_(epoch)
 
     def val(self):
-        return self.start_val + ((self.cur_epoch - self.start_epoch) / (self.end_epoch - self.start_epoch)).clamp(0.0,
-                                                                                                                  1.0) * (
-                           self.end_val - self.start_val)
+        return self.start_val + \
+               ((self.cur_epoch - self.start_epoch) /
+                                 (self.end_epoch - self.start_epoch)).clamp(0.0, 1.0) * (self.end_val - self.start_val)

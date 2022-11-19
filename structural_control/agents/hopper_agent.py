@@ -76,6 +76,8 @@ class HopperAgent(AgentPPO):
         self.running_state = None
 
     def setup_policy(self):
+        # a = [x for x in self.cfg.policy_spec]
+        # print(a)
         self.policy_net = StruturalPolicy(self.cfg.policy_spec, self)
         torper.to_device(self.device, self.policy_net)
 

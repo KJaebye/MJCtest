@@ -18,8 +18,8 @@ class StruturalPolicy(Policy):
         self.cfg_spec = cfg_spec
         self.type = 'gaussian'
         self.agent = agent
-        self.observation_dim = agent.env.observation_spec
-        self.action_dim = agent.env.action_dim
+        self.observation_dim = agent.observation_dim
+        self.action_dim = agent.action_dim
 
         self.control_norm = RunningNorm(self.observation_dim)
         cur_dim = self.observation_dim
