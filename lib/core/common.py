@@ -7,6 +7,7 @@
 from lib.core import torch_wrapper as torper
 import torch
 
+
 def estimate_advantages(rewards, masks, values, gamma, tau):
     device = rewards.device
     rewards, masks, values = torper.batch_to(torch.device('cpu'), rewards, masks, values)
@@ -16,6 +17,7 @@ def estimate_advantages(rewards, masks, values, gamma, tau):
 
     prev_value = 0
     prev_advantage = 0
+
     for i in reversed(range(rewards.size(0))):
         delta[i] = rewards[i] + gamma * prev_value * masks[i] - values[i]
         advantages[i] = delta[i] + gamma * tau * prev_advantage * masks[i]

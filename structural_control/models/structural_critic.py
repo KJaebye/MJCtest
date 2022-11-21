@@ -39,6 +39,7 @@ class StructuralValue(torch.nn.Module):
         pass
 
     def forward(self, x):
+        x = torch.cat(x)
         x = self.norm(x)
         if self.pre_mlp is not None:
             x = self.pre_mlp(x)

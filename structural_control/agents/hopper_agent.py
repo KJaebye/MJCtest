@@ -26,7 +26,6 @@ from structural_control.models.structural_critic import StructuralValue
 from torch.utils.tensorboard import SummaryWriter
 
 
-
 def tensorfy(np_list, device=torch.device('cpu')):
     if isinstance(np_list[0], list):
         return [[torch.tensor(x).to(device) if i < 2 else x for i, x in enumerate(y)] for y in np_list]
@@ -320,7 +319,10 @@ class HopperAgent(AgentPPO):
 
     def update_params(self, batch):
         torper.to_train(*self.update_modules)
+        # print(type(batch.cur_states[0]))
         states = tensorfy(batch.cur_states, self.device)
+        # print(states)
+        # print(type(states[0]))
         actions = tensorfy(batch.actions, self.device)
         rewards = torch.from_numpy(batch.rewards).to(self.dtype).to(self.device)
         masks = torch.from_numpy(batch.masks).to(self.dtype).to(self.device)
@@ -329,7 +331,7 @@ class HopperAgent(AgentPPO):
             with torch.no_grad():
                 values = []
                 chunk = 10000
-                for i in range(1, len(states), chunk):
+                for i in range(0, len(states), chunk):
                     states_i = states[i:min(i + chunk, len(states))]
                     values_i = self.value_net(self.trans_value(states_i))
                     values.append(values_i)

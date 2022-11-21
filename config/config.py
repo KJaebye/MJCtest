@@ -47,6 +47,7 @@ class Config:
 
         # training config
         self.env_name = cfg.get('env_name')
+        self.agent_spec = cfg.get('agent_spec', dict)
         self.gamma = cfg.get('gamma', 0.99)
         self.tau = cfg.get('tau', 0.95)
 

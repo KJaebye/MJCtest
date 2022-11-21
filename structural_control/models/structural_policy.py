@@ -50,9 +50,7 @@ class StruturalPolicy(Policy):
         pass
 
     def forward(self, x):
-        # print(x)
         x = self.control_norm(x)
-
         if self.control_pre_mlp is not None:
             x = self.control_pre_mlp(x)
         if self.control_gnn is not None:
