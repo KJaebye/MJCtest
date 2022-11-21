@@ -12,17 +12,19 @@ import time
 
 import numpy as np
 import torch
+import mujoco_viewer
 from lib.agents.agent_ppo import AgentPPO
 from lib.core.logger_rl import LoggerRL
 from lib.core.traj_batch import TrajBatch
 from lib.core import torch_wrapper as torper
 from lib.core.common import estimate_advantages
-from lib.utils.tools import *
+from lib.core.memory import Memory
+from lib.utils import tools
 from structural_control.envs.hopper import HopperEnv
 from structural_control.models.structural_policy import StruturalPolicy
 from structural_control.models.structural_critic import StructuralValue
 from torch.utils.tensorboard import SummaryWriter
-from lib.core.memory import Memory
+
 
 
 def tensorfy(np_list, device=torch.device('cpu')):
@@ -69,6 +71,85 @@ class HopperAgent(AgentPPO):
                          policy_grad_clip=[(self.policy_net.parameters(), 40)],
                          use_mini_batch=cfg.mini_batch_size < cfg.min_batch_size,
                          mini_batch_size=cfg.mini_batch_size)
+
+    def sample_worker(self, pid, queue, thread_batch_size, mean_action, render):
+        """
+        Sample min_batch_size of data.
+        :param pid: work index
+        :param queue: for multiprocessing
+        :param thread_batch_size: how many batches of data should be collected by one worker
+        :param mean_action: bool type
+        :param render: bool type
+        :return:
+
+        time_step is the instantiation of dm_env.TimeStep
+        """
+        self.seed_worker(pid)
+        memory = Memory()
+        logger_rl = self.logger_cls(**self.logger_kwargs)
+
+        # sample a batch of data
+        while logger_rl.num_steps < thread_batch_size:
+            time_step = self.env.reset()
+            cur_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
+
+            # preprocess state if needed
+            if self.running_state is not None:
+                time_step.observation = self.running_state(time_step.observation)
+            logger_rl.start_episode(self.env)
+            self.pre_episode()
+
+            # sample an episode
+            while not time_step.last():
+                # use trans_policy before entering the policy network
+                cur_state = self.trans_policy(cur_state)
+
+                # sample an action
+                use_mean_action = mean_action or torch.bernoulli(torch.tensor([1 - self.noise_rate])).item()
+                action = self.policy_net.select_action(cur_state, use_mean_action).numpy()
+                action = int(action) if self.policy_net.type == 'discrete' else action.astype(np.float64)
+
+                # apply this action and get env feedback
+                time_step = self.env.step(action)
+                reward = time_step.reward
+                next_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
+
+                # add end reward
+                if self.end_reward and time_step.last():
+                    reward += self.env.end_reward
+
+                # preprocess state if needed
+                if self.running_state is not None:
+                    next_state = self.running_state(next_state)
+
+
+                # record reward
+                logger_rl.step(reward)
+                mask = 0 if time_step.last() else 1
+                exp = 1 - use_mean_action
+                self.push_memory(memory, cur_state, action, next_state, reward, mask, exp)
+                cur_state = next_state
+
+                # only render the first worker pid 0
+                """ 
+                    Only one glfw window can be displayed. However, there are "self.num_threads" number of
+                    workers created and running simultaneously when we use multiprocessing method. Thus,
+                    when user sets parameter render to be True and num_threads > 1, we only display the first
+                    worker's action in simulator.
+                """
+                if pid == 0 and render:
+                    viewer = mujoco_viewer.MujocoViewer(self.env.physics, self.env.physics.data)
+                    viewer.render()
+                if time_step.last():
+                    break
+
+            logger_rl.end_episode()
+        logger_rl.end_sampling()
+
+        if queue is not None:
+            queue.put([pid, memory, logger_rl])
+        else:
+            return memory, logger_rl
 
     def setup_env(self):
         self.env = HopperEnv(self.cfg, flat_observation=False)
@@ -220,7 +301,7 @@ class HopperAgent(AgentPPO):
         # sample a batch of data
         batch, log = self.sample(self.cfg.min_batch_size)
         t_1 = time.time()
-        self.logger.info('Sample time: {}'.format(t_0 - t_1))
+        self.logger.info('Sample time: {}'.format(t_1 - t_0))
 
         # update networks
         self.update_params(batch)
@@ -303,8 +384,8 @@ class HopperAgent(AgentPPO):
                 perm = torper.LongTensor(perm_np).to(self.device)
 
                 states, actions, returns, advantages, fixed_log_probs, exps = \
-                    index_select_list(states, perm_np), \
-                    index_select_list(actions, perm_np), \
+                    tools.index_select_list(states, perm_np), \
+                    tools.index_select_list(actions, perm_np), \
                     returns[perm].clone(), \
                     advantages[perm].clone(), \
                     fixed_log_probs[perm].clone(), \
@@ -314,8 +395,8 @@ class HopperAgent(AgentPPO):
                 if self.cfg.agent_spec.get('batch_design', False):
                     perm_design_np, perm_design = self.get_perm_batch_design(states)
                     states, actions, returns, advantages, fixed_log_probs, exps = \
-                        index_select_list(states, perm_design_np), \
-                        index_select_list(actions, perm_design_np), \
+                        tools.index_select_list(states, perm_design_np), \
+                        tools.index_select_list(actions, perm_design_np), \
                         returns[perm_design].clone(), \
                         advantages[perm_design].clone(), \
                         fixed_log_probs[perm_design].clone(), \

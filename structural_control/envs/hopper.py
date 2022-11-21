@@ -7,6 +7,7 @@
 from abc import ABC
 import numpy as np
 import collections
+import dm_env
 from dm_control.utils import rewards
 from dm_control.suite.utils import randomizers
 from lib.envs.mujoco_env import MujocoEnv, MujocoPhysics, MujocoTask
@@ -27,8 +28,35 @@ class HopperEnv(MujocoEnv):
     def __init__(self, cfg, **kwargs):
         self.mujoco_xml_path = './assets/robot_models/mjcf/hopper.xml'
         physics = HopperPhysics.from_xml_path(self.mujoco_xml_path)
-        task = HopperTask(True, random=None)
-        super().__init__(cfg, physics, task, **kwargs)
+        task = HopperTask(False, random=None)
+        super().__init__(cfg, physics, task, time_limit=5, **kwargs)
+
+    def step(self, action):
+        """Updates the environment using the action and returns a `TimeStep`."""
+        # apply action
+        self._task.before_step(action, self._physics)
+        self._physics.step()
+        self._task.after_step(self._physics)
+
+        # observation
+        observation = self._task.get_observation(self._physics)
+        # reward
+        reward = self._task.get_reward(self._physics)
+        # step
+        self._step_count += 1
+
+        if self._step_count >= self._step_limit:
+            discount = 1.0
+        else:
+            discount = self._task.get_termination(self._physics)
+
+        episode_over = discount is not None
+        if episode_over:
+            self._reset_next_step = True
+            return dm_env.TimeStep(
+                dm_env.StepType.LAST, reward, discount, observation)
+        else:
+            return dm_env.TimeStep(dm_env.StepType.MID, reward, 1.0, observation)
 
 
 class HopperPhysics(MujocoPhysics):
@@ -44,6 +72,7 @@ class HopperPhysics(MujocoPhysics):
     def touch(self):
         """Returns the signals from two foot touch sensors."""
         return np.log1p(self.named.data.sensordata[['touch_toe', 'touch_heel']])
+
 
 
 class HopperTask(MujocoTask, ABC):

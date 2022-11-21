@@ -9,7 +9,7 @@ import random
 
 class Memory:
     """ Reply Buffer. """
-    def __int__(self):
+    def __init__(self):
         self.memory = []
 
     def push(self, *args):

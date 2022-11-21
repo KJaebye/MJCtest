@@ -125,13 +125,13 @@ class Agent:
 
                 # sample an action
                 use_mean_action = mean_action or torch.bernoulli(torch.tensor([1 - self.noise_rate])).item()
-                action = self.policy_net.select_action(cur_state, use_mean_action)
+                action = self.policy_net.select_action(cur_state, use_mean_action).numpy()
                 action = int(action) if self.policy_net.type == 'discrete' else action.astype(np.float64)
 
                 # apply this action and get env feedback
                 time_step = self.env.step(action)
                 reward = time_step.reward
-                next_state = time_step.observation
+                next_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
 
                 # add end reward
                 if self.end_reward and time_step.last():
@@ -140,6 +140,7 @@ class Agent:
                 # preprocess state if needed
                 if self.running_state is not None:
                     next_state = self.running_state(next_state)
+
 
                 # record reward
                 logger_rl.step(reward)
@@ -187,4 +188,4 @@ class Agent:
         return
 
     def push_memory(self, memory, cur_state, action, next_state, reward, mask, exp):
-        memory.push(memory, cur_state, action, next_state, reward, mask, exp)
+        memory.push(cur_state, action, next_state, reward, mask, exp)

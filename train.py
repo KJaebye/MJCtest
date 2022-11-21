@@ -18,10 +18,10 @@ if __name__ == "__main__":
     if args.render:
         args.num_threads = 1
 
-    """load env configs and training settings"""
+    """ load env configs and training settings """
     cfg = Config(args.domain, args.task, tmp=True, cfg_dict=None)
 
-    """set torch and cuda"""
+    """ set torch and cuda """
     dtype = torch.float64
     torch.set_default_dtype(dtype)
     device = torch.device('cuda', index=args.gpu_index) \
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     np.random.seed(cfg.seed)
     torch.manual_seed(cfg.seed)
 
-    """logging config"""
+    """ logging config """
     # set logger
     logger = Logger(name='current', args=args, cfg=cfg)
     logger.propagate = False
@@ -47,7 +47,7 @@ if __name__ == "__main__":
 
     start_epoch = int(args.start_epoch) if args.start_epoch.isnumeric() else args.start_epoch
 
-    """create agent"""
+    """ create agent """
     agent = HopperAgent(cfg, logger, dtype=dtype, device=device, seed=cfg.seed, num_threads=args.num_threads,
                         training=True, checkpoint=start_epoch)
 

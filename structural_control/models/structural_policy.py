@@ -50,7 +50,9 @@ class StruturalPolicy(Policy):
         pass
 
     def forward(self, x):
+        # print(x)
         x = self.control_norm(x)
+
         if self.control_pre_mlp is not None:
             x = self.control_pre_mlp(x)
         if self.control_gnn is not None:
@@ -63,28 +65,7 @@ class StruturalPolicy(Policy):
         return control_dist, x[0][0].device
 
     def select_action(self, x, mean_action=False):
-
-        control_dist, attr_dist, skel_dist, node_design_mask, _, total_num_nodes, _, _, _, device = self.forward(x)
-        if control_dist is not None:
-            control_action = control_dist.mean_sample() if mean_action else control_dist.sample()
-        else:
-            control_action = None
-
-        if attr_dist is not None:
-            attr_action = attr_dist.mean_sample() if mean_action else attr_dist.sample()
-        else:
-            attr_action = None
-
-        if skel_dist is not None:
-            skel_action = skel_dist.mean_sample() if mean_action else skel_dist.sample()
-        else:
-            skel_action = None
-
-        action = torch.zeros(total_num_nodes, self.action_dim).to(device)
-        if control_action is not None:
-            action[node_design_mask['execution'], :self.control_action_dim] = control_action
-        if attr_action is not None:
-            action[node_design_mask['attr_trans'], self.control_action_dim:-1] = attr_action
-        if skel_action is not None:
-            action[node_design_mask['skel_trans'], [-1]] = skel_action.double()
-        return action
+        control_dist, device = self.forward(x)
+        control_action = control_dist.mean_sample() if mean_action else control_dist.sample()
+        control_action.to(device)
+        return control_action
