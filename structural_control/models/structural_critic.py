@@ -14,9 +14,9 @@ class StructuralValue(torch.nn.Module):
         super().__init__()
         self.cfg_spec = cfg_spec
         self.agent = agent
-        self.observation_dim = agent.observation_dim
-        cur_dim = self.observation_dim
-        self.norm = RunningNorm(self.observation_dim)
+        self.observation_flat_dim = agent.observation_flat_dim
+        cur_dim = self.observation_flat_dim
+        self.norm = RunningNorm(self.observation_flat_dim)
         if 'pre_mlp' in cfg_spec:
             self.pre_mlp = MLP(cur_dim, cfg_spec['pre_mlp'], cfg_spec['htype'])
             cur_dim = self.pre_mlp.output_dim
@@ -46,6 +46,5 @@ class StructuralValue(torch.nn.Module):
             x = self.gnn(x)
         if self.mlp is not None:
             x = self.mlp(x)
-        print(len(x))
         value = self.value_head(x)
         return value

@@ -93,7 +93,7 @@ class Agent:
 
     def sample_worker(self, pid, queue, thread_batch_size, mean_action, render):
         """
-        Sample min_batch_size of data.
+        Sample min_batch_size of data
         :param pid: work index
         :param queue: for multiprocessing
         :param thread_batch_size: how many batches of data should be collected by one worker

@@ -122,7 +122,6 @@ class HopperAgent(AgentPPO):
                 if self.running_state is not None:
                     next_state = self.running_state(next_state)
 
-
                 # record reward
                 logger_rl.step(reward)
                 mask = 0 if time_step.last() else 1
@@ -321,7 +320,7 @@ class HopperAgent(AgentPPO):
 
     def update_params(self, batch):
         torper.to_train(*self.update_modules)
-        states = tensorfy(batch.states, self.device)
+        states = tensorfy(batch.cur_states, self.device)
         actions = tensorfy(batch.actions, self.device)
         rewards = torch.from_numpy(batch.rewards).to(self.dtype).to(self.device)
         masks = torch.from_numpy(batch.masks).to(self.dtype).to(self.device)
