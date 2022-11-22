@@ -92,8 +92,10 @@ class HopperAgent(AgentPPO):
         memory = Memory()
         logger_rl = self.logger_cls(**self.logger_kwargs)
 
-        if mean_action:
-            """ per agent only sample one episode when evaluating """
+        t = 0
+        r = 0
+        # sample a batch of data
+        while logger_rl.num_steps < thread_batch_size:
             time_step = self.env.reset()
             cur_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
 
@@ -103,97 +105,42 @@ class HopperAgent(AgentPPO):
             logger_rl.start_episode(self.env)
             self.pre_episode()
 
-            viewer = OpenCVImageViewer()
+            # sample an episode
             while not time_step.last():
                 # use trans_policy before entering the policy network
                 cur_state = self.trans_policy(cur_state)
+
                 # sample an action
                 use_mean_action = mean_action or torch.bernoulli(torch.tensor([1 - self.noise_rate])).item()
                 action = self.policy_net.select_action(cur_state, use_mean_action).numpy()
                 action = int(action) if self.policy_net.type == 'discrete' else action.astype(np.float64)
+
                 # apply this action and get env feedback
                 time_step = self.env.step(action)
                 reward = time_step.reward
                 next_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
-                # add end reward if needed
+
+                # add end reward
                 if self.end_reward and time_step.last():
                     reward += self.env.end_reward
+
                 # preprocess state if needed
                 if self.running_state is not None:
                     next_state = self.running_state(next_state)
+
                 # record reward
                 logger_rl.step(reward)
                 self.push_memory(memory, cur_state, action, next_state, reward)
                 cur_state = next_state
-                # only render the first worker pid 0
-                """
-                    Only one glfw window can be displayed. However, there are "self.num_threads" number of
-                    workers created and running simultaneously when we use multiprocessing method. Thus,
-                    when user sets parameter render to be True and num_threads > 1, we only display the first
-                    worker's action in simulator.
-                """
-                if pid == 0 and render:
-                    pixels = self.env.physics.render()
-                    viewer.imshow(pixels)
+
                 if time_step.last():
-                    viewer.close()
                     break
+
             logger_rl.end_episode()
-            logger_rl.end_sampling()
-
-        else:
-            """ Sample a batch of data when training """
-            t = 0
-            r = 0
-            # sample a batch of data
-            while logger_rl.num_steps < thread_batch_size:
-                time_step = self.env.reset()
-                cur_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
-
-                # preprocess state if needed
-                if self.running_state is not None:
-                    time_step.observation = self.running_state(time_step.observation)
-                logger_rl.start_episode(self.env)
-                self.pre_episode()
-
-                # sample an episode
-                while not time_step.last():
-                    # use trans_policy before entering the policy network
-                    cur_state = self.trans_policy(cur_state)
-
-                    # sample an action
-                    use_mean_action = mean_action or torch.bernoulli(torch.tensor([1 - self.noise_rate])).item()
-                    action = self.policy_net.select_action(cur_state, use_mean_action).numpy()
-                    action = int(action) if self.policy_net.type == 'discrete' else action.astype(np.float64)
-
-                    # apply this action and get env feedback
-                    time_step = self.env.step(action)
-                    reward = time_step.reward
-                    next_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
-
-                    # add end reward
-                    if self.end_reward and time_step.last():
-                        reward += self.env.end_reward
-
-                    # preprocess state if needed
-                    if self.running_state is not None:
-                        next_state = self.running_state(next_state)
-
-                    # record reward
-                    logger_rl.step(reward)
-                    self.push_memory(memory, cur_state, action, next_state, reward)
-                    cur_state = next_state
-
-                    if time_step.last():
-                        break
-
-                logger_rl.end_episode()
-
-                t += 1
-                r += logger_rl.episode_reward
-
-            logger_rl.end_sampling()
-            self.logger.info('agent {}'.format(pid) + ' avg episode training reward: {}'.format(r/t))
+            t += 1
+            r += logger_rl.episode_reward
+        logger_rl.end_sampling()
+        self.logger.info('agent {}'.format(pid) + ' avg episode training reward: {}'.format(r / t))
 
         if queue is not None:
             queue.put([pid, memory, logger_rl])
