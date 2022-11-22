@@ -319,10 +319,8 @@ class HopperAgent(AgentPPO):
 
     def update_params(self, batch):
         torper.to_train(*self.update_modules)
-        # print(type(batch.cur_states[0]))
+
         states = tensorfy(batch.cur_states, self.device)
-        # print(states)
-        # print(type(states[0]))
         actions = tensorfy(batch.actions, self.device)
         rewards = torch.from_numpy(batch.rewards).to(self.dtype).to(self.device)
         masks = torch.from_numpy(batch.masks).to(self.dtype).to(self.device)

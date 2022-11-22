@@ -67,3 +67,19 @@ class StruturalPolicy(Policy):
         control_action = control_dist.mean_sample() if mean_action else control_dist.sample()
         control_action.to(device)
         return control_action
+
+    def get_log_prob(self, x, action):
+        x = torch.cat(x)
+        action = torch.cat(action)
+        control_dist, device = self.forward(x)
+        action_log_prob = torch.zeros(action.shape[0], 1).to(device)
+
+        control_action = action
+        control_action_log_prob_nodes = control_dist.log_prob(control_action)
+        control_action_log_prob_cum = torch.cumsum(control_action_log_prob_nodes, dim=0)
+        # control_action_log_prob_cum = control_action_log_prob_cum[torch.LongTensor(num_nodes_cum_control) - 1]
+        control_action_log_prob = torch.cat(
+            [control_action_log_prob_cum[[0]], control_action_log_prob_cum[1:] - control_action_log_prob_cum[:-1]])
+        action_log_prob = control_action_log_prob
+        print(action_log_prob)
+        return action_log_prob
