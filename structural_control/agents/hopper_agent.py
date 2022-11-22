@@ -275,7 +275,6 @@ class HopperAgent(AgentPPO):
             self.save_best_flag = True
             self.logger.critical('Get the best episode reward: {}'.format(self.best_reward))
             self.save_checkpoint(epoch)
-
         else:
             self.save_best_flag = False
             self.logger.info('Average episode reward: {}'.format(log_eval.episode_reward))
@@ -314,7 +313,6 @@ class HopperAgent(AgentPPO):
 
     def update_params(self, batch):
         torper.to_train(*self.update_modules)
-
         states = tensorfy(batch.cur_states, self.device)
         actions = tensorfy(batch.actions, self.device)
         rewards = torch.from_numpy(batch.rewards).to(self.dtype).to(self.device)
@@ -407,7 +405,7 @@ class HopperAgent(AgentPPO):
                 # # self.logger.info('KL value: {}'.format(self.))
                 # self.logger.info('Surrogate loss: {}'.format(self.surr_loss))
 
-    def ppo_loss(self, states, actions, advantages, fixed_log_probs):
+    def ppo_loss(self, states, actions, advantages, fixed_log_probs, **kwargs):
         log_probs = self.policy_net.get_log_prob(self.trans_policy(states), actions)
         ratio = torch.exp(log_probs - fixed_log_probs)
         surr_1 = ratio * advantages
