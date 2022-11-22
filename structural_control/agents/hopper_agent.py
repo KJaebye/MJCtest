@@ -42,6 +42,7 @@ class HopperAgent(AgentPPO):
         self.logger = logger
         self.dtype = dtype
         self.device = device
+        self.loss_iter = 0
         self.seed = seed
         self.num_threads = num_threads
         self.training = training
@@ -286,8 +287,6 @@ class HopperAgent(AgentPPO):
         self.tb_logger.add_scalar('train_R_avg ', log.avg_reward, epoch)
         self.tb_logger.add_scalar('train_R_eps_avg', log.avg_episode_reward, epoch)
         self.tb_logger.add_scalar('eval_R_eps_avg', log_eval.avg_episode_reward, epoch)
-        self.tb_logger.add_scalar('exec_R_avg', log_eval.avg_exec_reward, epoch)
-        self.tb_logger.add_scalar('exec_R_eps_avg', log_eval.avg_exec_episode_reward, epoch)
 
     def optimize_policy(self, epoch):
         """
@@ -311,10 +310,6 @@ class HopperAgent(AgentPPO):
         t_3 = time.time()
         self.logger.info('Evaluation time: {}'.format(t_3 - t_2))
 
-        # info = {
-        #     'log': log, 'log_eval': log_eval, 'sample_time': t_1 - t_0, 'update_time': t_2 - t_1,
-        #     'eval_time': t_3 - t_2, 'total_time': t_3 - t_0
-        # }
         return log, log_eval
 
     def update_params(self, batch):
@@ -344,13 +339,6 @@ class HopperAgent(AgentPPO):
         self.update_policy(states, actions, returns, advantages, exps)
         return
 
-    def get_perm_batch_design(self, states):
-        inds = [[], [], []]
-        for i, x in enumerate(states):
-            use_transform_action = x[2]
-            inds[use_transform_action.item()].append(i)
-        perm = np.array(inds[0] + inds[1] + inds[2])
-        return perm, torper.LongTensor(perm).to(self.device)
 
     def update_policy(self, states, actions, returns, advantages, exps):
         """
@@ -389,17 +377,6 @@ class HopperAgent(AgentPPO):
                     advantages[perm].clone(), \
                     fixed_log_probs[perm].clone(), \
                     exps[perm].clone()
-
-                # design?
-                if self.cfg.agent_spec.get('batch_design', False):
-                    perm_design_np, perm_design = self.get_perm_batch_design(states)
-                    states, actions, returns, advantages, fixed_log_probs, exps = \
-                        tools.index_select_list(states, perm_design_np), \
-                        tools.index_select_list(actions, perm_design_np), \
-                        returns[perm_design].clone(), \
-                        advantages[perm_design].clone(), \
-                        fixed_log_probs[perm_design].clone(), \
-                        exps[perm_design].clone()
 
                 optim_iter_num = int(math.floor(num_state / self.mini_batch_size))
                 for i in range(optim_iter_num):

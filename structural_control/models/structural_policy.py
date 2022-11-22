@@ -81,5 +81,4 @@ class StruturalPolicy(Policy):
         control_action_log_prob = torch.cat(
             [control_action_log_prob_cum[[0]], control_action_log_prob_cum[1:] - control_action_log_prob_cum[:-1]])
         action_log_prob = control_action_log_prob
-        print(action_log_prob)
         return action_log_prob

@@ -1,6 +1,6 @@
 env_name: hopper
 agent_spec:
-  batch_design: true
+  batch_design: false
 # training parameters
 gamma: 0.995
 tau: 0.95
