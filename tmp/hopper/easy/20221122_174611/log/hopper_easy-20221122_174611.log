@@ -1,0 +1,1791 @@
+[32m[20221122 17:46:11 @logger.py:105][0m Log file set to ./tmp/hopper/easy/20221122_174611/log/hopper_easy-20221122_174611.log
+[32m[20221122 17:46:11 @hopper_agent.py:268][0m #------------------------ Iteration 0 --------------------------#
+[32m[20221122 17:46:18 @hopper_agent.py:301][0m Sample time: 6.337724208831787
+[32m[20221122 17:46:19 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:46:28 @hopper_agent.py:306][0m Update time: 10.060980796813965
+[32m[20221122 17:46:29 @hopper_agent.py:311][0m Evaluation time: 1.1212990283966064
+[32m[20221122 17:46:29 @hopper_agent.py:275][0m [4m[34mCRITICAL[0m Get the best episode reward: 0
+[32m[20221122 17:46:29 @hopper_agent.py:253][0m [4m[34mCRITICAL[0m Saving the best checkpoint with rewards 0.00
+[32m[20221122 17:46:29 @hopper_agent.py:283][0m Total time: 17.602658987045288
+[32m[20221122 17:46:29 @hopper_agent.py:285][0m 50000 total steps have happened
+[32m[20221122 17:46:29 @hopper_agent.py:268][0m #------------------------ Iteration 1 --------------------------#
+[32m[20221122 17:46:35 @hopper_agent.py:301][0m Sample time: 6.4826130867004395
+[32m[20221122 17:46:36 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:46:45 @hopper_agent.py:306][0m Update time: 9.769277095794678
+[32m[20221122 17:46:46 @hopper_agent.py:311][0m Evaluation time: 1.139402151107788
+[32m[20221122 17:46:46 @hopper_agent.py:279][0m Train reward: 0.012138741364088193
+[32m[20221122 17:46:46 @hopper_agent.py:280][0m Train reward episode: 12.138741364088188
+[32m[20221122 17:46:46 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:46:46 @hopper_agent.py:283][0m Total time: 35.013283014297485
+[32m[20221122 17:46:46 @hopper_agent.py:285][0m 100000 total steps have happened
+[32m[20221122 17:46:46 @hopper_agent.py:268][0m #------------------------ Iteration 2 --------------------------#
+[32m[20221122 17:46:53 @hopper_agent.py:301][0m Sample time: 6.5012900829315186
+[32m[20221122 17:46:54 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:47:03 @hopper_agent.py:306][0m Update time: 9.704598903656006
+[32m[20221122 17:47:04 @hopper_agent.py:311][0m Evaluation time: 1.1763463020324707
+[32m[20221122 17:47:04 @hopper_agent.py:279][0m Train reward: 0.011830921858108837
+[32m[20221122 17:47:04 @hopper_agent.py:280][0m Train reward episode: 11.83092185810883
+[32m[20221122 17:47:04 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:47:04 @hopper_agent.py:283][0m Total time: 52.41138577461243
+[32m[20221122 17:47:04 @hopper_agent.py:285][0m 150000 total steps have happened
+[32m[20221122 17:47:04 @hopper_agent.py:268][0m #------------------------ Iteration 3 --------------------------#
+[32m[20221122 17:47:10 @hopper_agent.py:301][0m Sample time: 6.501543998718262
+[32m[20221122 17:47:11 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:47:20 @hopper_agent.py:306][0m Update time: 9.730799198150635
+[32m[20221122 17:47:21 @hopper_agent.py:311][0m Evaluation time: 1.1731977462768555
+[32m[20221122 17:47:21 @hopper_agent.py:279][0m Train reward: 0.015625913663743142
+[32m[20221122 17:47:21 @hopper_agent.py:280][0m Train reward episode: 15.62591366374312
+[32m[20221122 17:47:21 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:47:21 @hopper_agent.py:283][0m Total time: 69.8324830532074
+[32m[20221122 17:47:21 @hopper_agent.py:285][0m 200000 total steps have happened
+[32m[20221122 17:47:21 @hopper_agent.py:268][0m #------------------------ Iteration 4 --------------------------#
+[32m[20221122 17:47:28 @hopper_agent.py:301][0m Sample time: 6.483575820922852
+[32m[20221122 17:47:29 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:47:37 @hopper_agent.py:306][0m Update time: 9.756546974182129
+[32m[20221122 17:47:39 @hopper_agent.py:311][0m Evaluation time: 1.181447982788086
+[32m[20221122 17:47:39 @hopper_agent.py:279][0m Train reward: 0.01081417176593141
+[32m[20221122 17:47:39 @hopper_agent.py:280][0m Train reward episode: 10.814171765931421
+[32m[20221122 17:47:39 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:47:39 @hopper_agent.py:283][0m Total time: 87.26984071731567
+[32m[20221122 17:47:39 @hopper_agent.py:285][0m 250000 total steps have happened
+[32m[20221122 17:47:39 @hopper_agent.py:268][0m #------------------------ Iteration 5 --------------------------#
+[32m[20221122 17:47:45 @hopper_agent.py:301][0m Sample time: 6.490418910980225
+[32m[20221122 17:47:46 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:47:55 @hopper_agent.py:306][0m Update time: 9.909965991973877
+[32m[20221122 17:47:56 @hopper_agent.py:311][0m Evaluation time: 1.1724863052368164
+[32m[20221122 17:47:56 @hopper_agent.py:279][0m Train reward: 0.013572992434163609
+[32m[20221122 17:47:56 @hopper_agent.py:280][0m Train reward episode: 13.572992434163586
+[32m[20221122 17:47:56 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:47:56 @hopper_agent.py:283][0m Total time: 104.85700678825378
+[32m[20221122 17:47:56 @hopper_agent.py:285][0m 300000 total steps have happened
+[32m[20221122 17:47:56 @hopper_agent.py:268][0m #------------------------ Iteration 6 --------------------------#
+[32m[20221122 17:48:03 @hopper_agent.py:301][0m Sample time: 6.478909969329834
+[32m[20221122 17:48:04 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:48:12 @hopper_agent.py:306][0m Update time: 9.7268648147583
+[32m[20221122 17:48:14 @hopper_agent.py:311][0m Evaluation time: 1.1586799621582031
+[32m[20221122 17:48:14 @hopper_agent.py:279][0m Train reward: 0.011879346495518407
+[32m[20221122 17:48:14 @hopper_agent.py:280][0m Train reward episode: 11.879346495518421
+[32m[20221122 17:48:14 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:48:14 @hopper_agent.py:283][0m Total time: 122.23600578308105
+[32m[20221122 17:48:14 @hopper_agent.py:285][0m 350000 total steps have happened
+[32m[20221122 17:48:14 @hopper_agent.py:268][0m #------------------------ Iteration 7 --------------------------#
+[32m[20221122 17:48:20 @hopper_agent.py:301][0m Sample time: 6.480048894882202
+[32m[20221122 17:48:21 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:48:30 @hopper_agent.py:306][0m Update time: 9.83282208442688
+[32m[20221122 17:48:31 @hopper_agent.py:311][0m Evaluation time: 1.1736221313476562
+[32m[20221122 17:48:31 @hopper_agent.py:279][0m Train reward: 0.010725201055578679
+[32m[20221122 17:48:31 @hopper_agent.py:280][0m Train reward episode: 10.725201055578669
+[32m[20221122 17:48:31 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:48:31 @hopper_agent.py:283][0m Total time: 139.73704290390015
+[32m[20221122 17:48:31 @hopper_agent.py:285][0m 400000 total steps have happened
+[32m[20221122 17:48:31 @hopper_agent.py:268][0m #------------------------ Iteration 8 --------------------------#
+[32m[20221122 17:48:38 @hopper_agent.py:301][0m Sample time: 6.497429847717285
+[32m[20221122 17:48:39 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:48:47 @hopper_agent.py:306][0m Update time: 9.886625051498413
+[32m[20221122 17:48:49 @hopper_agent.py:311][0m Evaluation time: 1.1517300605773926
+[32m[20221122 17:48:49 @hopper_agent.py:279][0m Train reward: 0.014247363668578062
+[32m[20221122 17:48:49 @hopper_agent.py:280][0m Train reward episode: 14.247363668578073
+[32m[20221122 17:48:49 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:48:49 @hopper_agent.py:283][0m Total time: 157.288498878479
+[32m[20221122 17:48:49 @hopper_agent.py:285][0m 450000 total steps have happened
+[32m[20221122 17:48:49 @hopper_agent.py:268][0m #------------------------ Iteration 9 --------------------------#
+[32m[20221122 17:48:55 @hopper_agent.py:301][0m Sample time: 6.60968804359436
+[32m[20221122 17:48:56 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:49:05 @hopper_agent.py:306][0m Update time: 10.109196186065674
+[32m[20221122 17:49:06 @hopper_agent.py:311][0m Evaluation time: 1.1883697509765625
+[32m[20221122 17:49:06 @hopper_agent.py:279][0m Train reward: 0.009842170218459028
+[32m[20221122 17:49:06 @hopper_agent.py:280][0m Train reward episode: 9.842170218459025
+[32m[20221122 17:49:06 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:49:06 @hopper_agent.py:283][0m Total time: 175.21265196800232
+[32m[20221122 17:49:06 @hopper_agent.py:285][0m 500000 total steps have happened
+[32m[20221122 17:49:06 @hopper_agent.py:268][0m #------------------------ Iteration 10 --------------------------#
+[32m[20221122 17:49:13 @hopper_agent.py:301][0m Sample time: 6.685212850570679
+[32m[20221122 17:49:14 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:49:23 @hopper_agent.py:306][0m Update time: 9.98569393157959
+[32m[20221122 17:49:24 @hopper_agent.py:311][0m Evaluation time: 1.1577799320220947
+[32m[20221122 17:49:24 @hopper_agent.py:279][0m Train reward: 0.013508297137151255
+[32m[20221122 17:49:24 @hopper_agent.py:280][0m Train reward episode: 13.508297137151262
+[32m[20221122 17:49:24 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:49:24 @hopper_agent.py:283][0m Total time: 193.05846691131592
+[32m[20221122 17:49:24 @hopper_agent.py:285][0m 550000 total steps have happened
+[32m[20221122 17:49:24 @hopper_agent.py:268][0m #------------------------ Iteration 11 --------------------------#
+[32m[20221122 17:49:31 @hopper_agent.py:301][0m Sample time: 6.713408946990967
+[32m[20221122 17:49:32 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:49:41 @hopper_agent.py:306][0m Update time: 9.923014879226685
+[32m[20221122 17:49:42 @hopper_agent.py:311][0m Evaluation time: 1.1866092681884766
+[32m[20221122 17:49:42 @hopper_agent.py:279][0m Train reward: 0.009592717130847793
+[32m[20221122 17:49:42 @hopper_agent.py:280][0m Train reward episode: 9.592717130847788
+[32m[20221122 17:49:42 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:49:42 @hopper_agent.py:283][0m Total time: 210.9030249118805
+[32m[20221122 17:49:42 @hopper_agent.py:285][0m 600000 total steps have happened
+[32m[20221122 17:49:42 @hopper_agent.py:268][0m #------------------------ Iteration 12 --------------------------#
+[32m[20221122 17:49:49 @hopper_agent.py:301][0m Sample time: 6.643541097640991
+[32m[20221122 17:49:50 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:49:59 @hopper_agent.py:306][0m Update time: 10.01974105834961
+[32m[20221122 17:50:00 @hopper_agent.py:311][0m Evaluation time: 1.1833019256591797
+[32m[20221122 17:50:00 @hopper_agent.py:279][0m Train reward: 0.013348156052400804
+[32m[20221122 17:50:00 @hopper_agent.py:280][0m Train reward episode: 13.34815605240078
+[32m[20221122 17:50:00 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:50:00 @hopper_agent.py:283][0m Total time: 228.76505589485168
+[32m[20221122 17:50:00 @hopper_agent.py:285][0m 650000 total steps have happened
+[32m[20221122 17:50:00 @hopper_agent.py:268][0m #------------------------ Iteration 13 --------------------------#
+[32m[20221122 17:50:07 @hopper_agent.py:301][0m Sample time: 6.582551956176758
+[32m[20221122 17:50:08 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:50:16 @hopper_agent.py:306][0m Update time: 9.825029850006104
+[32m[20221122 17:50:18 @hopper_agent.py:311][0m Evaluation time: 1.1643061637878418
+[32m[20221122 17:50:18 @hopper_agent.py:279][0m Train reward: 0.00771657190850528
+[32m[20221122 17:50:18 @hopper_agent.py:280][0m Train reward episode: 7.716571908505282
+[32m[20221122 17:50:18 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:50:18 @hopper_agent.py:283][0m Total time: 246.35270380973816
+[32m[20221122 17:50:18 @hopper_agent.py:285][0m 700000 total steps have happened
+[32m[20221122 17:50:18 @hopper_agent.py:268][0m #------------------------ Iteration 14 --------------------------#
+[32m[20221122 17:50:24 @hopper_agent.py:301][0m Sample time: 6.709637880325317
+[32m[20221122 17:50:25 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:50:34 @hopper_agent.py:306][0m Update time: 9.757798194885254
+[32m[20221122 17:50:35 @hopper_agent.py:311][0m Evaluation time: 1.12019681930542
+[32m[20221122 17:50:35 @hopper_agent.py:279][0m Train reward: 0.012922483693472268
+[32m[20221122 17:50:35 @hopper_agent.py:280][0m Train reward episode: 12.922483693472252
+[32m[20221122 17:50:35 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:50:35 @hopper_agent.py:283][0m Total time: 263.95622396469116
+[32m[20221122 17:50:35 @hopper_agent.py:285][0m 750000 total steps have happened
+[32m[20221122 17:50:35 @hopper_agent.py:268][0m #------------------------ Iteration 15 --------------------------#
+[32m[20221122 17:50:42 @hopper_agent.py:301][0m Sample time: 6.561159133911133
+[32m[20221122 17:50:43 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:50:52 @hopper_agent.py:306][0m Update time: 10.103986740112305
+[32m[20221122 17:50:53 @hopper_agent.py:311][0m Evaluation time: 1.2963981628417969
+[32m[20221122 17:50:53 @hopper_agent.py:279][0m Train reward: 0.01597541955485921
+[32m[20221122 17:50:53 @hopper_agent.py:280][0m Train reward episode: 15.975419554859212
+[32m[20221122 17:50:53 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:50:53 @hopper_agent.py:283][0m Total time: 281.9363589286804
+[32m[20221122 17:50:53 @hopper_agent.py:285][0m 800000 total steps have happened
+[32m[20221122 17:50:53 @hopper_agent.py:268][0m #------------------------ Iteration 16 --------------------------#
+[32m[20221122 17:51:00 @hopper_agent.py:301][0m Sample time: 6.632518768310547
+[32m[20221122 17:51:01 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:51:10 @hopper_agent.py:306][0m Update time: 9.957721948623657
+[32m[20221122 17:51:11 @hopper_agent.py:311][0m Evaluation time: 1.196761131286621
+[32m[20221122 17:51:11 @hopper_agent.py:279][0m Train reward: 0.02048504438479748
+[32m[20221122 17:51:11 @hopper_agent.py:280][0m Train reward episode: 20.485044384797483
+[32m[20221122 17:51:11 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:51:11 @hopper_agent.py:283][0m Total time: 299.74073791503906
+[32m[20221122 17:51:11 @hopper_agent.py:285][0m 850000 total steps have happened
+[32m[20221122 17:51:11 @hopper_agent.py:268][0m #------------------------ Iteration 17 --------------------------#
+[32m[20221122 17:51:18 @hopper_agent.py:301][0m Sample time: 6.716120719909668
+[32m[20221122 17:51:19 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:51:28 @hopper_agent.py:306][0m Update time: 10.109103202819824
+[32m[20221122 17:51:29 @hopper_agent.py:311][0m Evaluation time: 1.1718099117279053
+[32m[20221122 17:51:29 @hopper_agent.py:279][0m Train reward: 0.011926851230633601
+[32m[20221122 17:51:29 @hopper_agent.py:280][0m Train reward episode: 11.92685123063359
+[32m[20221122 17:51:29 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:51:29 @hopper_agent.py:283][0m Total time: 317.7540988922119
+[32m[20221122 17:51:29 @hopper_agent.py:285][0m 900000 total steps have happened
+[32m[20221122 17:51:29 @hopper_agent.py:268][0m #------------------------ Iteration 18 --------------------------#
+[32m[20221122 17:51:36 @hopper_agent.py:301][0m Sample time: 6.757932662963867
+[32m[20221122 17:51:37 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:51:46 @hopper_agent.py:306][0m Update time: 9.995150089263916
+[32m[20221122 17:51:47 @hopper_agent.py:311][0m Evaluation time: 1.2393620014190674
+[32m[20221122 17:51:47 @hopper_agent.py:279][0m Train reward: 0.016706761646746626
+[32m[20221122 17:51:47 @hopper_agent.py:280][0m Train reward episode: 16.706761646746603
+[32m[20221122 17:51:47 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:51:47 @hopper_agent.py:283][0m Total time: 335.7640998363495
+[32m[20221122 17:51:47 @hopper_agent.py:285][0m 950000 total steps have happened
+[32m[20221122 17:51:47 @hopper_agent.py:268][0m #------------------------ Iteration 19 --------------------------#
+[32m[20221122 17:51:54 @hopper_agent.py:301][0m Sample time: 6.611252069473267
+[32m[20221122 17:51:55 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:52:04 @hopper_agent.py:306][0m Update time: 10.045539140701294
+[32m[20221122 17:52:05 @hopper_agent.py:311][0m Evaluation time: 1.1808199882507324
+[32m[20221122 17:52:05 @hopper_agent.py:279][0m Train reward: 0.016569378785916557
+[32m[20221122 17:52:05 @hopper_agent.py:280][0m Train reward episode: 16.569378785916538
+[32m[20221122 17:52:05 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:52:05 @hopper_agent.py:283][0m Total time: 353.61746406555176
+[32m[20221122 17:52:05 @hopper_agent.py:285][0m 1000000 total steps have happened
+[32m[20221122 17:52:05 @hopper_agent.py:268][0m #------------------------ Iteration 20 --------------------------#
+[32m[20221122 17:52:12 @hopper_agent.py:301][0m Sample time: 6.653764009475708
+[32m[20221122 17:52:13 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:52:22 @hopper_agent.py:306][0m Update time: 10.018791913986206
+[32m[20221122 17:52:23 @hopper_agent.py:311][0m Evaluation time: 1.206620216369629
+[32m[20221122 17:52:23 @hopper_agent.py:279][0m Train reward: 0.019523773154293357
+[32m[20221122 17:52:23 @hopper_agent.py:280][0m Train reward episode: 19.52377315429337
+[32m[20221122 17:52:23 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:52:23 @hopper_agent.py:283][0m Total time: 371.5135669708252
+[32m[20221122 17:52:23 @hopper_agent.py:285][0m 1050000 total steps have happened
+[32m[20221122 17:52:23 @hopper_agent.py:268][0m #------------------------ Iteration 21 --------------------------#
+[32m[20221122 17:52:29 @hopper_agent.py:301][0m Sample time: 6.601151943206787
+[32m[20221122 17:52:31 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:52:39 @hopper_agent.py:306][0m Update time: 9.877605199813843
+[32m[20221122 17:52:40 @hopper_agent.py:311][0m Evaluation time: 1.1765809059143066
+[32m[20221122 17:52:40 @hopper_agent.py:279][0m Train reward: 0.011155588559705018
+[32m[20221122 17:52:40 @hopper_agent.py:280][0m Train reward episode: 11.155588559705011
+[32m[20221122 17:52:40 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:52:40 @hopper_agent.py:283][0m Total time: 389.1854200363159
+[32m[20221122 17:52:40 @hopper_agent.py:285][0m 1100000 total steps have happened
+[32m[20221122 17:52:40 @hopper_agent.py:268][0m #------------------------ Iteration 22 --------------------------#
+[32m[20221122 17:52:47 @hopper_agent.py:301][0m Sample time: 6.551424026489258
+[32m[20221122 17:52:48 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:52:57 @hopper_agent.py:306][0m Update time: 9.724953889846802
+[32m[20221122 17:52:58 @hopper_agent.py:311][0m Evaluation time: 1.17535400390625
+[32m[20221122 17:52:58 @hopper_agent.py:279][0m Train reward: 0.015899899417317405
+[32m[20221122 17:52:58 @hopper_agent.py:280][0m Train reward episode: 15.89989941731739
+[32m[20221122 17:52:58 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:52:58 @hopper_agent.py:283][0m Total time: 406.6533029079437
+[32m[20221122 17:52:58 @hopper_agent.py:285][0m 1150000 total steps have happened
+[32m[20221122 17:52:58 @hopper_agent.py:268][0m #------------------------ Iteration 23 --------------------------#
+[32m[20221122 17:53:04 @hopper_agent.py:301][0m Sample time: 6.52505087852478
+[32m[20221122 17:53:06 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:53:15 @hopper_agent.py:306][0m Update time: 10.114099264144897
+[32m[20221122 17:53:16 @hopper_agent.py:311][0m Evaluation time: 1.398806095123291
+[32m[20221122 17:53:16 @hopper_agent.py:279][0m Train reward: 0.019860715726497793
+[32m[20221122 17:53:16 @hopper_agent.py:280][0m Train reward episode: 19.860715726497805
+[32m[20221122 17:53:16 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:53:16 @hopper_agent.py:283][0m Total time: 424.7080247402191
+[32m[20221122 17:53:16 @hopper_agent.py:285][0m 1200000 total steps have happened
+[32m[20221122 17:53:16 @hopper_agent.py:268][0m #------------------------ Iteration 24 --------------------------#
+[32m[20221122 17:53:23 @hopper_agent.py:301][0m Sample time: 6.5562849044799805
+[32m[20221122 17:53:24 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:53:33 @hopper_agent.py:306][0m Update time: 10.010238885879517
+[32m[20221122 17:53:34 @hopper_agent.py:311][0m Evaluation time: 1.1722831726074219
+[32m[20221122 17:53:34 @hopper_agent.py:279][0m Train reward: 0.010492645510897465
+[32m[20221122 17:53:34 @hopper_agent.py:280][0m Train reward episode: 10.492645510897464
+[32m[20221122 17:53:34 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:53:34 @hopper_agent.py:283][0m Total time: 442.4637417793274
+[32m[20221122 17:53:34 @hopper_agent.py:285][0m 1250000 total steps have happened
+[32m[20221122 17:53:34 @hopper_agent.py:268][0m #------------------------ Iteration 25 --------------------------#
+[32m[20221122 17:53:40 @hopper_agent.py:301][0m Sample time: 6.610603094100952
+[32m[20221122 17:53:41 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:53:50 @hopper_agent.py:306][0m Update time: 10.059818029403687
+[32m[20221122 17:53:52 @hopper_agent.py:311][0m Evaluation time: 1.181168794631958
+[32m[20221122 17:53:52 @hopper_agent.py:279][0m Train reward: 0.016216245538276115
+[32m[20221122 17:53:52 @hopper_agent.py:280][0m Train reward episode: 16.21624553827614
+[32m[20221122 17:53:52 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:53:52 @hopper_agent.py:283][0m Total time: 460.33392691612244
+[32m[20221122 17:53:52 @hopper_agent.py:285][0m 1300000 total steps have happened
+[32m[20221122 17:53:52 @hopper_agent.py:268][0m #------------------------ Iteration 26 --------------------------#
+[32m[20221122 17:53:58 @hopper_agent.py:301][0m Sample time: 6.729460954666138
+[32m[20221122 17:53:59 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:54:08 @hopper_agent.py:306][0m Update time: 9.858333110809326
+[32m[20221122 17:54:09 @hopper_agent.py:311][0m Evaluation time: 1.1308128833770752
+[32m[20221122 17:54:09 @hopper_agent.py:279][0m Train reward: 0.02124050231468476
+[32m[20221122 17:54:09 @hopper_agent.py:280][0m Train reward episode: 21.240502314684758
+[32m[20221122 17:54:09 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:54:09 @hopper_agent.py:283][0m Total time: 478.0687129497528
+[32m[20221122 17:54:09 @hopper_agent.py:285][0m 1350000 total steps have happened
+[32m[20221122 17:54:09 @hopper_agent.py:268][0m #------------------------ Iteration 27 --------------------------#
+[32m[20221122 17:54:16 @hopper_agent.py:301][0m Sample time: 6.533339262008667
+[32m[20221122 17:54:17 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:54:26 @hopper_agent.py:306][0m Update time: 9.681062698364258
+[32m[20221122 17:54:27 @hopper_agent.py:311][0m Evaluation time: 1.1366972923278809
+[32m[20221122 17:54:27 @hopper_agent.py:279][0m Train reward: 0.013318014665966894
+[32m[20221122 17:54:27 @hopper_agent.py:280][0m Train reward episode: 13.318014665966894
+[32m[20221122 17:54:27 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:54:27 @hopper_agent.py:283][0m Total time: 495.4347219467163
+[32m[20221122 17:54:27 @hopper_agent.py:285][0m 1400000 total steps have happened
+[32m[20221122 17:54:27 @hopper_agent.py:268][0m #------------------------ Iteration 28 --------------------------#
+[32m[20221122 17:54:33 @hopper_agent.py:301][0m Sample time: 6.692966938018799
+[32m[20221122 17:54:35 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:54:44 @hopper_agent.py:306][0m Update time: 10.185059070587158
+[32m[20221122 17:54:45 @hopper_agent.py:311][0m Evaluation time: 1.1613690853118896
+[32m[20221122 17:54:45 @hopper_agent.py:279][0m Train reward: 0.02177878215842618
+[32m[20221122 17:54:45 @hopper_agent.py:280][0m Train reward episode: 21.778782158426193
+[32m[20221122 17:54:45 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:54:45 @hopper_agent.py:283][0m Total time: 513.4914529323578
+[32m[20221122 17:54:45 @hopper_agent.py:285][0m 1450000 total steps have happened
+[32m[20221122 17:54:45 @hopper_agent.py:268][0m #------------------------ Iteration 29 --------------------------#
+[32m[20221122 17:54:51 @hopper_agent.py:301][0m Sample time: 6.681328773498535
+[32m[20221122 17:54:53 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:55:01 @hopper_agent.py:306][0m Update time: 9.834023237228394
+[32m[20221122 17:55:03 @hopper_agent.py:311][0m Evaluation time: 1.2663629055023193
+[32m[20221122 17:55:03 @hopper_agent.py:279][0m Train reward: 0.014555990627405315
+[32m[20221122 17:55:03 @hopper_agent.py:280][0m Train reward episode: 14.555990627405295
+[32m[20221122 17:55:03 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:55:03 @hopper_agent.py:283][0m Total time: 531.2886610031128
+[32m[20221122 17:55:03 @hopper_agent.py:285][0m 1500000 total steps have happened
+[32m[20221122 17:55:03 @hopper_agent.py:268][0m #------------------------ Iteration 30 --------------------------#
+[32m[20221122 17:55:10 @hopper_agent.py:301][0m Sample time: 7.2505621910095215
+[32m[20221122 17:55:11 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:55:20 @hopper_agent.py:306][0m Update time: 9.750300884246826
+[32m[20221122 17:55:21 @hopper_agent.py:311][0m Evaluation time: 1.1680240631103516
+[32m[20221122 17:55:21 @hopper_agent.py:279][0m Train reward: 0.020172912627426924
+[32m[20221122 17:55:21 @hopper_agent.py:280][0m Train reward episode: 20.172912627426914
+[32m[20221122 17:55:21 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:55:21 @hopper_agent.py:283][0m Total time: 549.4734499454498
+[32m[20221122 17:55:21 @hopper_agent.py:285][0m 1550000 total steps have happened
+[32m[20221122 17:55:21 @hopper_agent.py:268][0m #------------------------ Iteration 31 --------------------------#
+[32m[20221122 17:55:28 @hopper_agent.py:301][0m Sample time: 6.876028060913086
+[32m[20221122 17:55:29 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:55:37 @hopper_agent.py:306][0m Update time: 9.614665985107422
+[32m[20221122 17:55:38 @hopper_agent.py:311][0m Evaluation time: 1.172875165939331
+[32m[20221122 17:55:38 @hopper_agent.py:279][0m Train reward: 0.015175467552926203
+[32m[20221122 17:55:38 @hopper_agent.py:280][0m Train reward episode: 15.175467552926182
+[32m[20221122 17:55:38 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:55:38 @hopper_agent.py:283][0m Total time: 567.1531608104706
+[32m[20221122 17:55:38 @hopper_agent.py:285][0m 1600000 total steps have happened
+[32m[20221122 17:55:38 @hopper_agent.py:268][0m #------------------------ Iteration 32 --------------------------#
+[32m[20221122 17:55:45 @hopper_agent.py:301][0m Sample time: 6.505760192871094
+[32m[20221122 17:55:46 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:55:55 @hopper_agent.py:306][0m Update time: 9.81742787361145
+[32m[20221122 17:55:56 @hopper_agent.py:311][0m Evaluation time: 1.2687737941741943
+[32m[20221122 17:55:56 @hopper_agent.py:279][0m Train reward: 0.015400080827284337
+[32m[20221122 17:55:56 @hopper_agent.py:280][0m Train reward episode: 15.40008082728434
+[32m[20221122 17:55:56 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:55:56 @hopper_agent.py:283][0m Total time: 584.7610659599304
+[32m[20221122 17:55:56 @hopper_agent.py:285][0m 1650000 total steps have happened
+[32m[20221122 17:55:56 @hopper_agent.py:268][0m #------------------------ Iteration 33 --------------------------#
+[32m[20221122 17:56:03 @hopper_agent.py:301][0m Sample time: 6.634925842285156
+[32m[20221122 17:56:04 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:56:13 @hopper_agent.py:306][0m Update time: 9.905372142791748
+[32m[20221122 17:56:14 @hopper_agent.py:311][0m Evaluation time: 1.1857359409332275
+[32m[20221122 17:56:14 @hopper_agent.py:279][0m Train reward: 0.012507565390165691
+[32m[20221122 17:56:14 @hopper_agent.py:280][0m Train reward episode: 12.507565390165691
+[32m[20221122 17:56:14 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:56:14 @hopper_agent.py:283][0m Total time: 602.5037267208099
+[32m[20221122 17:56:14 @hopper_agent.py:285][0m 1700000 total steps have happened
+[32m[20221122 17:56:14 @hopper_agent.py:268][0m #------------------------ Iteration 34 --------------------------#
+[32m[20221122 17:56:20 @hopper_agent.py:301][0m Sample time: 6.635625123977661
+[32m[20221122 17:56:22 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:56:30 @hopper_agent.py:306][0m Update time: 9.816374778747559
+[32m[20221122 17:56:31 @hopper_agent.py:311][0m Evaluation time: 1.1985692977905273
+[32m[20221122 17:56:31 @hopper_agent.py:279][0m Train reward: 0.024655511632271237
+[32m[20221122 17:56:31 @hopper_agent.py:280][0m Train reward episode: 24.655511632271246
+[32m[20221122 17:56:31 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:56:31 @hopper_agent.py:283][0m Total time: 620.1708617210388
+[32m[20221122 17:56:31 @hopper_agent.py:285][0m 1750000 total steps have happened
+[32m[20221122 17:56:31 @hopper_agent.py:268][0m #------------------------ Iteration 35 --------------------------#
+[32m[20221122 17:56:38 @hopper_agent.py:301][0m Sample time: 6.516209125518799
+[32m[20221122 17:56:39 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:56:48 @hopper_agent.py:306][0m Update time: 9.837815761566162
+[32m[20221122 17:56:49 @hopper_agent.py:311][0m Evaluation time: 1.1824803352355957
+[32m[20221122 17:56:49 @hopper_agent.py:279][0m Train reward: 0.03701580831658534
+[32m[20221122 17:56:49 @hopper_agent.py:280][0m Train reward episode: 37.01580831658535
+[32m[20221122 17:56:49 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:56:49 @hopper_agent.py:283][0m Total time: 637.7225546836853
+[32m[20221122 17:56:49 @hopper_agent.py:285][0m 1800000 total steps have happened
+[32m[20221122 17:56:49 @hopper_agent.py:268][0m #------------------------ Iteration 36 --------------------------#
+[32m[20221122 17:56:56 @hopper_agent.py:301][0m Sample time: 6.603248119354248
+[32m[20221122 17:56:57 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:57:05 @hopper_agent.py:306][0m Update time: 9.875327825546265
+[32m[20221122 17:57:07 @hopper_agent.py:311][0m Evaluation time: 1.1293070316314697
+[32m[20221122 17:57:07 @hopper_agent.py:279][0m Train reward: 0.016859280808967998
+[32m[20221122 17:57:07 @hopper_agent.py:280][0m Train reward episode: 16.859280808967995
+[32m[20221122 17:57:07 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:57:07 @hopper_agent.py:283][0m Total time: 655.346245765686
+[32m[20221122 17:57:07 @hopper_agent.py:285][0m 1850000 total steps have happened
+[32m[20221122 17:57:07 @hopper_agent.py:268][0m #------------------------ Iteration 37 --------------------------#
+[32m[20221122 17:57:13 @hopper_agent.py:301][0m Sample time: 6.769192934036255
+[32m[20221122 17:57:14 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:57:23 @hopper_agent.py:306][0m Update time: 9.798827171325684
+[32m[20221122 17:57:24 @hopper_agent.py:311][0m Evaluation time: 1.1308388710021973
+[32m[20221122 17:57:24 @hopper_agent.py:279][0m Train reward: 0.02960515835782727
+[32m[20221122 17:57:24 @hopper_agent.py:280][0m Train reward episode: 29.605158357827246
+[32m[20221122 17:57:24 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:57:24 @hopper_agent.py:283][0m Total time: 673.0614976882935
+[32m[20221122 17:57:24 @hopper_agent.py:285][0m 1900000 total steps have happened
+[32m[20221122 17:57:24 @hopper_agent.py:268][0m #------------------------ Iteration 38 --------------------------#
+[32m[20221122 17:57:31 @hopper_agent.py:301][0m Sample time: 6.6460089683532715
+[32m[20221122 17:57:32 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:57:41 @hopper_agent.py:306][0m Update time: 9.546188116073608
+[32m[20221122 17:57:42 @hopper_agent.py:311][0m Evaluation time: 1.131032943725586
+[32m[20221122 17:57:42 @hopper_agent.py:279][0m Train reward: 0.014749836600694784
+[32m[20221122 17:57:42 @hopper_agent.py:280][0m Train reward episode: 14.749836600694763
+[32m[20221122 17:57:42 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:57:42 @hopper_agent.py:283][0m Total time: 690.4010798931122
+[32m[20221122 17:57:42 @hopper_agent.py:285][0m 1950000 total steps have happened
+[32m[20221122 17:57:42 @hopper_agent.py:268][0m #------------------------ Iteration 39 --------------------------#
+[32m[20221122 17:57:48 @hopper_agent.py:301][0m Sample time: 6.501855850219727
+[32m[20221122 17:57:49 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:57:58 @hopper_agent.py:306][0m Update time: 9.58437728881836
+[32m[20221122 17:57:59 @hopper_agent.py:311][0m Evaluation time: 1.1363098621368408
+[32m[20221122 17:57:59 @hopper_agent.py:279][0m Train reward: 0.015397377963768511
+[32m[20221122 17:57:59 @hopper_agent.py:280][0m Train reward episode: 15.397377963768506
+[32m[20221122 17:57:59 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:57:59 @hopper_agent.py:283][0m Total time: 707.6385989189148
+[32m[20221122 17:57:59 @hopper_agent.py:285][0m 2000000 total steps have happened
+[32m[20221122 17:57:59 @hopper_agent.py:268][0m #------------------------ Iteration 40 --------------------------#
+[32m[20221122 17:58:05 @hopper_agent.py:301][0m Sample time: 6.475028991699219
+[32m[20221122 17:58:06 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:58:15 @hopper_agent.py:306][0m Update time: 9.567911863327026
+[32m[20221122 17:58:16 @hopper_agent.py:311][0m Evaluation time: 1.1272192001342773
+[32m[20221122 17:58:16 @hopper_agent.py:279][0m Train reward: 0.024868309937565586
+[32m[20221122 17:58:16 @hopper_agent.py:280][0m Train reward episode: 24.868309937565627
+[32m[20221122 17:58:16 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:58:16 @hopper_agent.py:283][0m Total time: 724.8249490261078
+[32m[20221122 17:58:16 @hopper_agent.py:285][0m 2050000 total steps have happened
+[32m[20221122 17:58:16 @hopper_agent.py:268][0m #------------------------ Iteration 41 --------------------------#
+[32m[20221122 17:58:23 @hopper_agent.py:301][0m Sample time: 6.452535152435303
+[32m[20221122 17:58:24 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:58:32 @hopper_agent.py:306][0m Update time: 9.75429391860962
+[32m[20221122 17:58:33 @hopper_agent.py:311][0m Evaluation time: 1.1337909698486328
+[32m[20221122 17:58:33 @hopper_agent.py:279][0m Train reward: 0.02229704247328885
+[32m[20221122 17:58:33 @hopper_agent.py:280][0m Train reward episode: 22.29704247328883
+[32m[20221122 17:58:33 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:58:33 @hopper_agent.py:283][0m Total time: 742.1821687221527
+[32m[20221122 17:58:33 @hopper_agent.py:285][0m 2100000 total steps have happened
+[32m[20221122 17:58:33 @hopper_agent.py:268][0m #------------------------ Iteration 42 --------------------------#
+[32m[20221122 17:58:40 @hopper_agent.py:301][0m Sample time: 6.465058088302612
+[32m[20221122 17:58:41 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:58:50 @hopper_agent.py:306][0m Update time: 9.60876178741455
+[32m[20221122 17:58:51 @hopper_agent.py:311][0m Evaluation time: 1.1734910011291504
+[32m[20221122 17:58:51 @hopper_agent.py:279][0m Train reward: 0.017330093421878856
+[32m[20221122 17:58:51 @hopper_agent.py:280][0m Train reward episode: 17.33009342187884
+[32m[20221122 17:58:51 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:58:51 @hopper_agent.py:283][0m Total time: 759.4454729557037
+[32m[20221122 17:58:51 @hopper_agent.py:285][0m 2150000 total steps have happened
+[32m[20221122 17:58:51 @hopper_agent.py:268][0m #------------------------ Iteration 43 --------------------------#
+[32m[20221122 17:58:57 @hopper_agent.py:301][0m Sample time: 6.4713640213012695
+[32m[20221122 17:58:58 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:59:07 @hopper_agent.py:306][0m Update time: 9.793136835098267
+[32m[20221122 17:59:08 @hopper_agent.py:311][0m Evaluation time: 1.172497034072876
+[32m[20221122 17:59:08 @hopper_agent.py:279][0m Train reward: 0.03558675650527609
+[32m[20221122 17:59:08 @hopper_agent.py:280][0m Train reward episode: 35.586756505276206
+[32m[20221122 17:59:08 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:59:08 @hopper_agent.py:283][0m Total time: 776.9001019001007
+[32m[20221122 17:59:08 @hopper_agent.py:285][0m 2200000 total steps have happened
+[32m[20221122 17:59:08 @hopper_agent.py:268][0m #------------------------ Iteration 44 --------------------------#
+[32m[20221122 17:59:15 @hopper_agent.py:301][0m Sample time: 6.46620512008667
+[32m[20221122 17:59:16 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:59:24 @hopper_agent.py:306][0m Update time: 9.779469966888428
+[32m[20221122 17:59:26 @hopper_agent.py:311][0m Evaluation time: 1.1678659915924072
+[32m[20221122 17:59:26 @hopper_agent.py:279][0m Train reward: 0.020052082442036916
+[32m[20221122 17:59:26 @hopper_agent.py:280][0m Train reward episode: 20.052082442036934
+[32m[20221122 17:59:26 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:59:26 @hopper_agent.py:283][0m Total time: 794.3287909030914
+[32m[20221122 17:59:26 @hopper_agent.py:285][0m 2250000 total steps have happened
+[32m[20221122 17:59:26 @hopper_agent.py:268][0m #------------------------ Iteration 45 --------------------------#
+[32m[20221122 17:59:32 @hopper_agent.py:301][0m Sample time: 6.454553127288818
+[32m[20221122 17:59:33 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:59:42 @hopper_agent.py:306][0m Update time: 9.883556842803955
+[32m[20221122 17:59:43 @hopper_agent.py:311][0m Evaluation time: 1.1697289943695068
+[32m[20221122 17:59:43 @hopper_agent.py:279][0m Train reward: 0.029985548981247192
+[32m[20221122 17:59:43 @hopper_agent.py:280][0m Train reward episode: 29.98554898124719
+[32m[20221122 17:59:43 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 17:59:43 @hopper_agent.py:283][0m Total time: 811.8516647815704
+[32m[20221122 17:59:43 @hopper_agent.py:285][0m 2300000 total steps have happened
+[32m[20221122 17:59:43 @hopper_agent.py:268][0m #------------------------ Iteration 46 --------------------------#
+[32m[20221122 17:59:50 @hopper_agent.py:301][0m Sample time: 6.45890998840332
+[32m[20221122 17:59:51 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 17:59:59 @hopper_agent.py:306][0m Update time: 9.640535831451416
+[32m[20221122 18:00:00 @hopper_agent.py:311][0m Evaluation time: 1.1701281070709229
+[32m[20221122 18:00:00 @hopper_agent.py:279][0m Train reward: 0.029617123831922828
+[32m[20221122 18:00:00 @hopper_agent.py:280][0m Train reward episode: 29.61712383192285
+[32m[20221122 18:00:00 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:00:00 @hopper_agent.py:283][0m Total time: 829.1383109092712
+[32m[20221122 18:00:00 @hopper_agent.py:285][0m 2350000 total steps have happened
+[32m[20221122 18:00:00 @hopper_agent.py:268][0m #------------------------ Iteration 47 --------------------------#
+[32m[20221122 18:00:07 @hopper_agent.py:301][0m Sample time: 6.4401679039001465
+[32m[20221122 18:00:08 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:00:17 @hopper_agent.py:306][0m Update time: 9.687503099441528
+[32m[20221122 18:00:18 @hopper_agent.py:311][0m Evaluation time: 1.1834018230438232
+[32m[20221122 18:00:18 @hopper_agent.py:279][0m Train reward: 0.015286969058358647
+[32m[20221122 18:00:18 @hopper_agent.py:280][0m Train reward episode: 15.28696905835867
+[32m[20221122 18:00:18 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:00:18 @hopper_agent.py:283][0m Total time: 846.4659876823425
+[32m[20221122 18:00:18 @hopper_agent.py:285][0m 2400000 total steps have happened
+[32m[20221122 18:00:18 @hopper_agent.py:268][0m #------------------------ Iteration 48 --------------------------#
+[32m[20221122 18:00:24 @hopper_agent.py:301][0m Sample time: 6.472378253936768
+[32m[20221122 18:00:25 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:00:34 @hopper_agent.py:306][0m Update time: 9.665235996246338
+[32m[20221122 18:00:35 @hopper_agent.py:311][0m Evaluation time: 1.1318409442901611
+[32m[20221122 18:00:35 @hopper_agent.py:279][0m Train reward: 0.020006326309961398
+[32m[20221122 18:00:35 @hopper_agent.py:280][0m Train reward episode: 20.00632630996142
+[32m[20221122 18:00:35 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:00:35 @hopper_agent.py:283][0m Total time: 863.7514188289642
+[32m[20221122 18:00:35 @hopper_agent.py:285][0m 2450000 total steps have happened
+[32m[20221122 18:00:35 @hopper_agent.py:268][0m #------------------------ Iteration 49 --------------------------#
+[32m[20221122 18:00:42 @hopper_agent.py:301][0m Sample time: 6.502589225769043
+[32m[20221122 18:00:43 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:00:51 @hopper_agent.py:306][0m Update time: 9.663524866104126
+[32m[20221122 18:00:52 @hopper_agent.py:311][0m Evaluation time: 1.136998176574707
+[32m[20221122 18:00:52 @hopper_agent.py:279][0m Train reward: 0.026796034492485625
+[32m[20221122 18:00:52 @hopper_agent.py:280][0m Train reward episode: 26.79603449248564
+[32m[20221122 18:00:52 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:00:52 @hopper_agent.py:283][0m Total time: 881.0702137947083
+[32m[20221122 18:00:52 @hopper_agent.py:285][0m 2500000 total steps have happened
+[32m[20221122 18:00:52 @hopper_agent.py:268][0m #------------------------ Iteration 50 --------------------------#
+[32m[20221122 18:00:59 @hopper_agent.py:301][0m Sample time: 6.485328912734985
+[32m[20221122 18:01:00 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:01:09 @hopper_agent.py:306][0m Update time: 9.698535203933716
+[32m[20221122 18:01:10 @hopper_agent.py:311][0m Evaluation time: 1.1333987712860107
+[32m[20221122 18:01:10 @hopper_agent.py:279][0m Train reward: 0.023400925656619324
+[32m[20221122 18:01:10 @hopper_agent.py:280][0m Train reward episode: 23.400925656619307
+[32m[20221122 18:01:10 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:01:10 @hopper_agent.py:283][0m Total time: 898.4026176929474
+[32m[20221122 18:01:10 @hopper_agent.py:285][0m 2550000 total steps have happened
+[32m[20221122 18:01:10 @hopper_agent.py:268][0m #------------------------ Iteration 51 --------------------------#
+[32m[20221122 18:01:16 @hopper_agent.py:301][0m Sample time: 6.466524362564087
+[32m[20221122 18:01:17 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:01:26 @hopper_agent.py:306][0m Update time: 9.525473833084106
+[32m[20221122 18:01:27 @hopper_agent.py:311][0m Evaluation time: 1.1357221603393555
+[32m[20221122 18:01:27 @hopper_agent.py:279][0m Train reward: 0.018921584084618456
+[32m[20221122 18:01:27 @hopper_agent.py:280][0m Train reward episode: 18.921584084618438
+[32m[20221122 18:01:27 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:01:27 @hopper_agent.py:283][0m Total time: 915.5456278324127
+[32m[20221122 18:01:27 @hopper_agent.py:285][0m 2600000 total steps have happened
+[32m[20221122 18:01:27 @hopper_agent.py:268][0m #------------------------ Iteration 52 --------------------------#
+[32m[20221122 18:01:33 @hopper_agent.py:301][0m Sample time: 6.476981163024902
+[32m[20221122 18:01:34 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:01:43 @hopper_agent.py:306][0m Update time: 9.461507081985474
+[32m[20221122 18:01:44 @hopper_agent.py:311][0m Evaluation time: 1.1334867477416992
+[32m[20221122 18:01:44 @hopper_agent.py:279][0m Train reward: 0.02392312937079917
+[32m[20221122 18:01:44 @hopper_agent.py:280][0m Train reward episode: 23.923129370799156
+[32m[20221122 18:01:44 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:01:44 @hopper_agent.py:283][0m Total time: 932.632720708847
+[32m[20221122 18:01:44 @hopper_agent.py:285][0m 2650000 total steps have happened
+[32m[20221122 18:01:44 @hopper_agent.py:268][0m #------------------------ Iteration 53 --------------------------#
+[32m[20221122 18:01:50 @hopper_agent.py:301][0m Sample time: 6.44514012336731
+[32m[20221122 18:01:51 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:02:00 @hopper_agent.py:306][0m Update time: 9.495869874954224
+[32m[20221122 18:02:01 @hopper_agent.py:311][0m Evaluation time: 1.1378529071807861
+[32m[20221122 18:02:01 @hopper_agent.py:279][0m Train reward: 0.013881968226237074
+[32m[20221122 18:02:01 @hopper_agent.py:280][0m Train reward episode: 13.881968226237081
+[32m[20221122 18:02:01 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:02:01 @hopper_agent.py:283][0m Total time: 949.727258682251
+[32m[20221122 18:02:01 @hopper_agent.py:285][0m 2700000 total steps have happened
+[32m[20221122 18:02:01 @hopper_agent.py:268][0m #------------------------ Iteration 54 --------------------------#
+[32m[20221122 18:02:07 @hopper_agent.py:301][0m Sample time: 6.4465131759643555
+[32m[20221122 18:02:09 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:02:17 @hopper_agent.py:306][0m Update time: 9.539146900177002
+[32m[20221122 18:02:18 @hopper_agent.py:311][0m Evaluation time: 1.1732590198516846
+[32m[20221122 18:02:18 @hopper_agent.py:279][0m Train reward: 0.01712439270945172
+[32m[20221122 18:02:18 @hopper_agent.py:280][0m Train reward episode: 17.12439270945171
+[32m[20221122 18:02:18 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:02:18 @hopper_agent.py:283][0m Total time: 966.9012868404388
+[32m[20221122 18:02:18 @hopper_agent.py:285][0m 2750000 total steps have happened
+[32m[20221122 18:02:18 @hopper_agent.py:268][0m #------------------------ Iteration 55 --------------------------#
+[32m[20221122 18:02:25 @hopper_agent.py:301][0m Sample time: 6.4843668937683105
+[32m[20221122 18:02:26 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:02:34 @hopper_agent.py:306][0m Update time: 9.498641014099121
+[32m[20221122 18:02:35 @hopper_agent.py:311][0m Evaluation time: 1.172088861465454
+[32m[20221122 18:02:35 @hopper_agent.py:279][0m Train reward: 0.01575473896790992
+[32m[20221122 18:02:35 @hopper_agent.py:280][0m Train reward episode: 15.754738967909923
+[32m[20221122 18:02:35 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:02:35 @hopper_agent.py:283][0m Total time: 984.0716128349304
+[32m[20221122 18:02:35 @hopper_agent.py:285][0m 2800000 total steps have happened
+[32m[20221122 18:02:35 @hopper_agent.py:268][0m #------------------------ Iteration 56 --------------------------#
+[32m[20221122 18:02:42 @hopper_agent.py:301][0m Sample time: 6.455669164657593
+[32m[20221122 18:02:43 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:02:51 @hopper_agent.py:306][0m Update time: 9.39333176612854
+[32m[20221122 18:02:52 @hopper_agent.py:311][0m Evaluation time: 1.1722612380981445
+[32m[20221122 18:02:52 @hopper_agent.py:279][0m Train reward: 0.017770568830058998
+[32m[20221122 18:02:52 @hopper_agent.py:280][0m Train reward episode: 17.770568830059002
+[32m[20221122 18:02:52 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:02:52 @hopper_agent.py:283][0m Total time: 1001.1087579727173
+[32m[20221122 18:02:52 @hopper_agent.py:285][0m 2850000 total steps have happened
+[32m[20221122 18:02:52 @hopper_agent.py:268][0m #------------------------ Iteration 57 --------------------------#
+[32m[20221122 18:02:59 @hopper_agent.py:301][0m Sample time: 6.449051856994629
+[32m[20221122 18:03:00 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:03:08 @hopper_agent.py:306][0m Update time: 9.579788208007812
+[32m[20221122 18:03:10 @hopper_agent.py:311][0m Evaluation time: 1.1734340190887451
+[32m[20221122 18:03:10 @hopper_agent.py:279][0m Train reward: 0.022776750902253385
+[32m[20221122 18:03:10 @hopper_agent.py:280][0m Train reward episode: 22.776750902253383
+[32m[20221122 18:03:10 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:03:10 @hopper_agent.py:283][0m Total time: 1018.3256230354309
+[32m[20221122 18:03:10 @hopper_agent.py:285][0m 2900000 total steps have happened
+[32m[20221122 18:03:10 @hopper_agent.py:268][0m #------------------------ Iteration 58 --------------------------#
+[32m[20221122 18:03:16 @hopper_agent.py:301][0m Sample time: 6.4553773403167725
+[32m[20221122 18:03:17 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:03:26 @hopper_agent.py:306][0m Update time: 9.568038940429688
+[32m[20221122 18:03:27 @hopper_agent.py:311][0m Evaluation time: 1.1688120365142822
+[32m[20221122 18:03:27 @hopper_agent.py:279][0m Train reward: 0.0175195346312824
+[32m[20221122 18:03:27 @hopper_agent.py:280][0m Train reward episode: 17.519534631282404
+[32m[20221122 18:03:27 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:03:27 @hopper_agent.py:283][0m Total time: 1035.5336377620697
+[32m[20221122 18:03:27 @hopper_agent.py:285][0m 2950000 total steps have happened
+[32m[20221122 18:03:27 @hopper_agent.py:268][0m #------------------------ Iteration 59 --------------------------#
+[32m[20221122 18:03:33 @hopper_agent.py:301][0m Sample time: 6.443666934967041
+[32m[20221122 18:03:34 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:03:43 @hopper_agent.py:306][0m Update time: 9.524131059646606
+[32m[20221122 18:03:44 @hopper_agent.py:311][0m Evaluation time: 1.172968864440918
+[32m[20221122 18:03:44 @hopper_agent.py:279][0m Train reward: 0.01682915731855131
+[32m[20221122 18:03:44 @hopper_agent.py:280][0m Train reward episode: 16.82915731855132
+[32m[20221122 18:03:44 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:03:44 @hopper_agent.py:283][0m Total time: 1052.6897149085999
+[32m[20221122 18:03:44 @hopper_agent.py:285][0m 3000000 total steps have happened
+[32m[20221122 18:03:44 @hopper_agent.py:268][0m #------------------------ Iteration 60 --------------------------#
+[32m[20221122 18:03:50 @hopper_agent.py:301][0m Sample time: 6.4686119556427
+[32m[20221122 18:03:51 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:04:00 @hopper_agent.py:306][0m Update time: 9.512290000915527
+[32m[20221122 18:04:01 @hopper_agent.py:311][0m Evaluation time: 1.2180578708648682
+[32m[20221122 18:04:01 @hopper_agent.py:279][0m Train reward: 0.025392061481961162
+[32m[20221122 18:04:01 @hopper_agent.py:280][0m Train reward episode: 25.39206148196114
+[32m[20221122 18:04:01 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:04:01 @hopper_agent.py:283][0m Total time: 1069.9035778045654
+[32m[20221122 18:04:01 @hopper_agent.py:285][0m 3050000 total steps have happened
+[32m[20221122 18:04:01 @hopper_agent.py:268][0m #------------------------ Iteration 61 --------------------------#
+[32m[20221122 18:04:08 @hopper_agent.py:301][0m Sample time: 6.751348972320557
+[32m[20221122 18:04:09 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:04:18 @hopper_agent.py:306][0m Update time: 9.853113889694214
+[32m[20221122 18:04:19 @hopper_agent.py:311][0m Evaluation time: 1.1426451206207275
+[32m[20221122 18:04:19 @hopper_agent.py:279][0m Train reward: 0.01488678130506652
+[32m[20221122 18:04:19 @hopper_agent.py:280][0m Train reward episode: 14.886781305066528
+[32m[20221122 18:04:19 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:04:19 @hopper_agent.py:283][0m Total time: 1087.6732637882233
+[32m[20221122 18:04:19 @hopper_agent.py:285][0m 3100000 total steps have happened
+[32m[20221122 18:04:19 @hopper_agent.py:268][0m #------------------------ Iteration 62 --------------------------#
+[32m[20221122 18:04:25 @hopper_agent.py:301][0m Sample time: 6.497497797012329
+[32m[20221122 18:04:27 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:04:35 @hopper_agent.py:306][0m Update time: 9.424798011779785
+[32m[20221122 18:04:36 @hopper_agent.py:311][0m Evaluation time: 1.1358518600463867
+[32m[20221122 18:04:36 @hopper_agent.py:279][0m Train reward: 0.028611546686479156
+[32m[20221122 18:04:36 @hopper_agent.py:280][0m Train reward episode: 28.611546686479187
+[32m[20221122 18:04:36 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:04:36 @hopper_agent.py:283][0m Total time: 1104.7464859485626
+[32m[20221122 18:04:36 @hopper_agent.py:285][0m 3150000 total steps have happened
+[32m[20221122 18:04:36 @hopper_agent.py:268][0m #------------------------ Iteration 63 --------------------------#
+[32m[20221122 18:04:43 @hopper_agent.py:301][0m Sample time: 6.480895042419434
+[32m[20221122 18:04:44 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:04:52 @hopper_agent.py:306][0m Update time: 9.42200493812561
+[32m[20221122 18:04:53 @hopper_agent.py:311][0m Evaluation time: 1.1356730461120605
+[32m[20221122 18:04:53 @hopper_agent.py:279][0m Train reward: 0.009966215761801718
+[32m[20221122 18:04:53 @hopper_agent.py:280][0m Train reward episode: 9.966215761801726
+[32m[20221122 18:04:53 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:04:53 @hopper_agent.py:283][0m Total time: 1121.8004307746887
+[32m[20221122 18:04:53 @hopper_agent.py:285][0m 3200000 total steps have happened
+[32m[20221122 18:04:53 @hopper_agent.py:268][0m #------------------------ Iteration 64 --------------------------#
+[32m[20221122 18:05:00 @hopper_agent.py:301][0m Sample time: 6.478907108306885
+[32m[20221122 18:05:01 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:05:09 @hopper_agent.py:306][0m Update time: 9.465214967727661
+[32m[20221122 18:05:10 @hopper_agent.py:311][0m Evaluation time: 1.1314349174499512
+[32m[20221122 18:05:10 @hopper_agent.py:279][0m Train reward: 0.01770394851383112
+[32m[20221122 18:05:10 @hopper_agent.py:280][0m Train reward episode: 17.703948513831122
+[32m[20221122 18:05:10 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:05:10 @hopper_agent.py:283][0m Total time: 1138.8915088176727
+[32m[20221122 18:05:10 @hopper_agent.py:285][0m 3250000 total steps have happened
+[32m[20221122 18:05:10 @hopper_agent.py:268][0m #------------------------ Iteration 65 --------------------------#
+[32m[20221122 18:05:17 @hopper_agent.py:301][0m Sample time: 6.441224098205566
+[32m[20221122 18:05:18 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:05:26 @hopper_agent.py:306][0m Update time: 9.394129037857056
+[32m[20221122 18:05:27 @hopper_agent.py:311][0m Evaluation time: 1.1311008930206299
+[32m[20221122 18:05:27 @hopper_agent.py:279][0m Train reward: 0.029869901808984172
+[32m[20221122 18:05:27 @hopper_agent.py:280][0m Train reward episode: 29.869901808984196
+[32m[20221122 18:05:27 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:05:27 @hopper_agent.py:283][0m Total time: 1155.8730690479279
+[32m[20221122 18:05:27 @hopper_agent.py:285][0m 3300000 total steps have happened
+[32m[20221122 18:05:27 @hopper_agent.py:268][0m #------------------------ Iteration 66 --------------------------#
+[32m[20221122 18:05:34 @hopper_agent.py:301][0m Sample time: 6.456094026565552
+[32m[20221122 18:05:35 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:05:43 @hopper_agent.py:306][0m Update time: 9.50723671913147
+[32m[20221122 18:05:44 @hopper_agent.py:311][0m Evaluation time: 1.172410249710083
+[32m[20221122 18:05:44 @hopper_agent.py:279][0m Train reward: 0.01582951021352613
+[32m[20221122 18:05:44 @hopper_agent.py:280][0m Train reward episode: 15.829510213526143
+[32m[20221122 18:05:44 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:05:44 @hopper_agent.py:283][0m Total time: 1173.0238268375397
+[32m[20221122 18:05:44 @hopper_agent.py:285][0m 3350000 total steps have happened
+[32m[20221122 18:05:44 @hopper_agent.py:268][0m #------------------------ Iteration 67 --------------------------#
+[32m[20221122 18:05:51 @hopper_agent.py:301][0m Sample time: 6.477931022644043
+[32m[20221122 18:05:52 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:06:00 @hopper_agent.py:306][0m Update time: 9.419954061508179
+[32m[20221122 18:06:01 @hopper_agent.py:311][0m Evaluation time: 1.1705188751220703
+[32m[20221122 18:06:01 @hopper_agent.py:279][0m Train reward: 0.008239836886821367
+[32m[20221122 18:06:01 @hopper_agent.py:280][0m Train reward episode: 8.23983688682136
+[32m[20221122 18:06:01 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:06:01 @hopper_agent.py:283][0m Total time: 1190.108366727829
+[32m[20221122 18:06:01 @hopper_agent.py:285][0m 3400000 total steps have happened
+[32m[20221122 18:06:01 @hopper_agent.py:268][0m #------------------------ Iteration 68 --------------------------#
+[32m[20221122 18:06:08 @hopper_agent.py:301][0m Sample time: 6.448965072631836
+[32m[20221122 18:06:09 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:06:17 @hopper_agent.py:306][0m Update time: 9.425056219100952
+[32m[20221122 18:06:18 @hopper_agent.py:311][0m Evaluation time: 1.1654598712921143
+[32m[20221122 18:06:18 @hopper_agent.py:279][0m Train reward: 0.02987153145882758
+[32m[20221122 18:06:18 @hopper_agent.py:280][0m Train reward episode: 29.871531458827572
+[32m[20221122 18:06:18 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:06:18 @hopper_agent.py:283][0m Total time: 1207.1628437042236
+[32m[20221122 18:06:18 @hopper_agent.py:285][0m 3450000 total steps have happened
+[32m[20221122 18:06:18 @hopper_agent.py:268][0m #------------------------ Iteration 69 --------------------------#
+[32m[20221122 18:06:25 @hopper_agent.py:301][0m Sample time: 6.459006071090698
+[32m[20221122 18:06:26 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:06:34 @hopper_agent.py:306][0m Update time: 9.470676898956299
+[32m[20221122 18:06:36 @hopper_agent.py:311][0m Evaluation time: 1.1708950996398926
+[32m[20221122 18:06:36 @hopper_agent.py:279][0m Train reward: 0.017101824957947803
+[32m[20221122 18:06:36 @hopper_agent.py:280][0m Train reward episode: 17.10182495794783
+[32m[20221122 18:06:36 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:06:36 @hopper_agent.py:283][0m Total time: 1224.2781128883362
+[32m[20221122 18:06:36 @hopper_agent.py:285][0m 3500000 total steps have happened
+[32m[20221122 18:06:36 @hopper_agent.py:268][0m #------------------------ Iteration 70 --------------------------#
+[32m[20221122 18:06:42 @hopper_agent.py:301][0m Sample time: 6.439672946929932
+[32m[20221122 18:06:43 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:06:52 @hopper_agent.py:306][0m Update time: 9.725171089172363
+[32m[20221122 18:06:53 @hopper_agent.py:311][0m Evaluation time: 1.1691668033599854
+[32m[20221122 18:06:53 @hopper_agent.py:279][0m Train reward: 0.029499640408969952
+[32m[20221122 18:06:53 @hopper_agent.py:280][0m Train reward episode: 29.499640408969938
+[32m[20221122 18:06:53 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:06:53 @hopper_agent.py:283][0m Total time: 1241.6267898082733
+[32m[20221122 18:06:53 @hopper_agent.py:285][0m 3550000 total steps have happened
+[32m[20221122 18:06:53 @hopper_agent.py:268][0m #------------------------ Iteration 71 --------------------------#
+[32m[20221122 18:06:59 @hopper_agent.py:301][0m Sample time: 6.43538498878479
+[32m[20221122 18:07:00 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:07:09 @hopper_agent.py:306][0m Update time: 9.518403053283691
+[32m[20221122 18:07:10 @hopper_agent.py:311][0m Evaluation time: 1.1651411056518555
+[32m[20221122 18:07:10 @hopper_agent.py:279][0m Train reward: 0.018064270652015497
+[32m[20221122 18:07:10 @hopper_agent.py:280][0m Train reward episode: 18.064270652015512
+[32m[20221122 18:07:10 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:07:10 @hopper_agent.py:283][0m Total time: 1258.7610948085785
+[32m[20221122 18:07:10 @hopper_agent.py:285][0m 3600000 total steps have happened
+[32m[20221122 18:07:10 @hopper_agent.py:268][0m #------------------------ Iteration 72 --------------------------#
+[32m[20221122 18:07:17 @hopper_agent.py:301][0m Sample time: 6.470789194107056
+[32m[20221122 18:07:18 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:07:26 @hopper_agent.py:306][0m Update time: 9.48490285873413
+[32m[20221122 18:07:27 @hopper_agent.py:311][0m Evaluation time: 1.1298339366912842
+[32m[20221122 18:07:27 @hopper_agent.py:279][0m Train reward: 0.01487656393434678
+[32m[20221122 18:07:27 @hopper_agent.py:280][0m Train reward episode: 14.87656393434678
+[32m[20221122 18:07:27 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:07:27 @hopper_agent.py:283][0m Total time: 1275.8619968891144
+[32m[20221122 18:07:27 @hopper_agent.py:285][0m 3650000 total steps have happened
+[32m[20221122 18:07:27 @hopper_agent.py:268][0m #------------------------ Iteration 73 --------------------------#
+[32m[20221122 18:07:34 @hopper_agent.py:301][0m Sample time: 6.484186172485352
+[32m[20221122 18:07:35 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:07:43 @hopper_agent.py:306][0m Update time: 9.669670820236206
+[32m[20221122 18:07:44 @hopper_agent.py:311][0m Evaluation time: 1.1309051513671875
+[32m[20221122 18:07:44 @hopper_agent.py:279][0m Train reward: 0.02912043904414799
+[32m[20221122 18:07:44 @hopper_agent.py:280][0m Train reward episode: 29.120439044147982
+[32m[20221122 18:07:44 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:07:44 @hopper_agent.py:283][0m Total time: 1293.1623957157135
+[32m[20221122 18:07:44 @hopper_agent.py:285][0m 3700000 total steps have happened
+[32m[20221122 18:07:44 @hopper_agent.py:268][0m #------------------------ Iteration 74 --------------------------#
+[32m[20221122 18:07:51 @hopper_agent.py:301][0m Sample time: 6.472612142562866
+[32m[20221122 18:07:52 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:08:00 @hopper_agent.py:306][0m Update time: 9.421833038330078
+[32m[20221122 18:08:01 @hopper_agent.py:311][0m Evaluation time: 1.1164658069610596
+[32m[20221122 18:08:01 @hopper_agent.py:279][0m Train reward: 0.03183119718395327
+[32m[20221122 18:08:01 @hopper_agent.py:280][0m Train reward episode: 31.83119718395333
+[32m[20221122 18:08:01 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:08:01 @hopper_agent.py:283][0m Total time: 1310.1875638961792
+[32m[20221122 18:08:01 @hopper_agent.py:285][0m 3750000 total steps have happened
+[32m[20221122 18:08:01 @hopper_agent.py:268][0m #------------------------ Iteration 75 --------------------------#
+[32m[20221122 18:08:08 @hopper_agent.py:301][0m Sample time: 6.474151372909546
+[32m[20221122 18:08:09 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:08:18 @hopper_agent.py:306][0m Update time: 9.662446737289429
+[32m[20221122 18:08:19 @hopper_agent.py:311][0m Evaluation time: 1.132493019104004
+[32m[20221122 18:08:19 @hopper_agent.py:279][0m Train reward: 0.021334017841956196
+[32m[20221122 18:08:19 @hopper_agent.py:280][0m Train reward episode: 21.33401784195618
+[32m[20221122 18:08:19 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:08:19 @hopper_agent.py:283][0m Total time: 1327.4713537693024
+[32m[20221122 18:08:19 @hopper_agent.py:285][0m 3800000 total steps have happened
+[32m[20221122 18:08:19 @hopper_agent.py:268][0m #------------------------ Iteration 76 --------------------------#
+[32m[20221122 18:08:25 @hopper_agent.py:301][0m Sample time: 6.4812541007995605
+[32m[20221122 18:08:26 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:08:35 @hopper_agent.py:306][0m Update time: 9.723661184310913
+[32m[20221122 18:08:36 @hopper_agent.py:311][0m Evaluation time: 1.1274440288543701
+[32m[20221122 18:08:36 @hopper_agent.py:279][0m Train reward: 0.01913191272343743
+[32m[20221122 18:08:36 @hopper_agent.py:280][0m Train reward episode: 19.13191272343745
+[32m[20221122 18:08:36 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:08:36 @hopper_agent.py:283][0m Total time: 1344.818520784378
+[32m[20221122 18:08:36 @hopper_agent.py:285][0m 3850000 total steps have happened
+[32m[20221122 18:08:36 @hopper_agent.py:268][0m #------------------------ Iteration 77 --------------------------#
+[32m[20221122 18:08:43 @hopper_agent.py:301][0m Sample time: 6.431441068649292
+[32m[20221122 18:08:44 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:08:52 @hopper_agent.py:306][0m Update time: 9.714447021484375
+[32m[20221122 18:08:53 @hopper_agent.py:311][0m Evaluation time: 1.135072946548462
+[32m[20221122 18:08:53 @hopper_agent.py:279][0m Train reward: 0.025045358541561084
+[32m[20221122 18:08:53 @hopper_agent.py:280][0m Train reward episode: 25.0453585415611
+[32m[20221122 18:08:53 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:08:53 @hopper_agent.py:283][0m Total time: 1362.1139466762543
+[32m[20221122 18:08:53 @hopper_agent.py:285][0m 3900000 total steps have happened
+[32m[20221122 18:08:53 @hopper_agent.py:268][0m #------------------------ Iteration 78 --------------------------#
+[32m[20221122 18:09:00 @hopper_agent.py:301][0m Sample time: 6.4433348178863525
+[32m[20221122 18:09:01 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:09:10 @hopper_agent.py:306][0m Update time: 9.755425214767456
+[32m[20221122 18:09:11 @hopper_agent.py:311][0m Evaluation time: 1.1751210689544678
+[32m[20221122 18:09:11 @hopper_agent.py:279][0m Train reward: 0.03134668788507276
+[32m[20221122 18:09:11 @hopper_agent.py:280][0m Train reward episode: 31.346687885072797
+[32m[20221122 18:09:11 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:09:11 @hopper_agent.py:283][0m Total time: 1379.5035367012024
+[32m[20221122 18:09:11 @hopper_agent.py:285][0m 3950000 total steps have happened
+[32m[20221122 18:09:11 @hopper_agent.py:268][0m #------------------------ Iteration 79 --------------------------#
+[32m[20221122 18:09:17 @hopper_agent.py:301][0m Sample time: 6.43501091003418
+[32m[20221122 18:09:18 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:09:27 @hopper_agent.py:306][0m Update time: 9.615379095077515
+[32m[20221122 18:09:28 @hopper_agent.py:311][0m Evaluation time: 1.1736578941345215
+[32m[20221122 18:09:28 @hopper_agent.py:279][0m Train reward: 0.038199480560529006
+[32m[20221122 18:09:28 @hopper_agent.py:280][0m Train reward episode: 38.199480560529025
+[32m[20221122 18:09:28 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:09:28 @hopper_agent.py:283][0m Total time: 1396.7427697181702
+[32m[20221122 18:09:28 @hopper_agent.py:285][0m 4000000 total steps have happened
+[32m[20221122 18:09:28 @hopper_agent.py:268][0m #------------------------ Iteration 80 --------------------------#
+[32m[20221122 18:09:34 @hopper_agent.py:301][0m Sample time: 6.441732168197632
+[32m[20221122 18:09:36 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:09:44 @hopper_agent.py:306][0m Update time: 9.509390115737915
+[32m[20221122 18:09:45 @hopper_agent.py:311][0m Evaluation time: 1.1534950733184814
+[32m[20221122 18:09:45 @hopper_agent.py:279][0m Train reward: 0.01649832624107657
+[32m[20221122 18:09:45 @hopper_agent.py:280][0m Train reward episode: 16.498326241076562
+[32m[20221122 18:09:45 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:09:45 @hopper_agent.py:283][0m Total time: 1413.8614110946655
+[32m[20221122 18:09:45 @hopper_agent.py:285][0m 4050000 total steps have happened
+[32m[20221122 18:09:45 @hopper_agent.py:268][0m #------------------------ Iteration 81 --------------------------#
+[32m[20221122 18:09:52 @hopper_agent.py:301][0m Sample time: 6.449392795562744
+[32m[20221122 18:09:53 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:10:01 @hopper_agent.py:306][0m Update time: 9.603369951248169
+[32m[20221122 18:10:02 @hopper_agent.py:311][0m Evaluation time: 1.172137975692749
+[32m[20221122 18:10:02 @hopper_agent.py:279][0m Train reward: 0.020760127231798736
+[32m[20221122 18:10:02 @hopper_agent.py:280][0m Train reward episode: 20.760127231798723
+[32m[20221122 18:10:02 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:10:02 @hopper_agent.py:283][0m Total time: 1431.101655960083
+[32m[20221122 18:10:02 @hopper_agent.py:285][0m 4100000 total steps have happened
+[32m[20221122 18:10:02 @hopper_agent.py:268][0m #------------------------ Iteration 82 --------------------------#
+[32m[20221122 18:10:09 @hopper_agent.py:301][0m Sample time: 6.443259000778198
+[32m[20221122 18:10:10 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:10:19 @hopper_agent.py:306][0m Update time: 9.725114107131958
+[32m[20221122 18:10:20 @hopper_agent.py:311][0m Evaluation time: 1.1695878505706787
+[32m[20221122 18:10:20 @hopper_agent.py:279][0m Train reward: 0.019536053452649783
+[32m[20221122 18:10:20 @hopper_agent.py:280][0m Train reward episode: 19.536053452649796
+[32m[20221122 18:10:20 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:10:20 @hopper_agent.py:283][0m Total time: 1448.4550557136536
+[32m[20221122 18:10:20 @hopper_agent.py:285][0m 4150000 total steps have happened
+[32m[20221122 18:10:20 @hopper_agent.py:268][0m #------------------------ Iteration 83 --------------------------#
+[32m[20221122 18:10:26 @hopper_agent.py:301][0m Sample time: 6.455691814422607
+[32m[20221122 18:10:27 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:10:36 @hopper_agent.py:306][0m Update time: 9.59717321395874
+[32m[20221122 18:10:37 @hopper_agent.py:311][0m Evaluation time: 1.1659939289093018
+[32m[20221122 18:10:37 @hopper_agent.py:279][0m Train reward: 0.018241020171348092
+[32m[20221122 18:10:37 @hopper_agent.py:280][0m Train reward episode: 18.24102017134807
+[32m[20221122 18:10:37 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:10:37 @hopper_agent.py:283][0m Total time: 1465.6888978481293
+[32m[20221122 18:10:37 @hopper_agent.py:285][0m 4200000 total steps have happened
+[32m[20221122 18:10:37 @hopper_agent.py:268][0m #------------------------ Iteration 84 --------------------------#
+[32m[20221122 18:10:43 @hopper_agent.py:301][0m Sample time: 6.447801828384399
+[32m[20221122 18:10:44 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:10:53 @hopper_agent.py:306][0m Update time: 9.59878921508789
+[32m[20221122 18:10:54 @hopper_agent.py:311][0m Evaluation time: 1.142685890197754
+[32m[20221122 18:10:54 @hopper_agent.py:279][0m Train reward: 0.02073574140471216
+[32m[20221122 18:10:54 @hopper_agent.py:280][0m Train reward episode: 20.735741404712126
+[32m[20221122 18:10:54 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:10:54 @hopper_agent.py:283][0m Total time: 1482.8928339481354
+[32m[20221122 18:10:54 @hopper_agent.py:285][0m 4250000 total steps have happened
+[32m[20221122 18:10:54 @hopper_agent.py:268][0m #------------------------ Iteration 85 --------------------------#
+[32m[20221122 18:11:01 @hopper_agent.py:301][0m Sample time: 6.4795777797698975
+[32m[20221122 18:11:02 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:11:10 @hopper_agent.py:306][0m Update time: 9.526873111724854
+[32m[20221122 18:11:11 @hopper_agent.py:311][0m Evaluation time: 1.1299841403961182
+[32m[20221122 18:11:11 @hopper_agent.py:279][0m Train reward: 0.025389130629362204
+[32m[20221122 18:11:11 @hopper_agent.py:280][0m Train reward episode: 25.389130629362253
+[32m[20221122 18:11:11 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:11:11 @hopper_agent.py:283][0m Total time: 1500.0445919036865
+[32m[20221122 18:11:11 @hopper_agent.py:285][0m 4300000 total steps have happened
+[32m[20221122 18:11:11 @hopper_agent.py:268][0m #------------------------ Iteration 86 --------------------------#
+[32m[20221122 18:11:18 @hopper_agent.py:301][0m Sample time: 6.473283052444458
+[32m[20221122 18:11:19 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:11:27 @hopper_agent.py:306][0m Update time: 9.602470874786377
+[32m[20221122 18:11:29 @hopper_agent.py:311][0m Evaluation time: 1.1277971267700195
+[32m[20221122 18:11:29 @hopper_agent.py:279][0m Train reward: 0.013180098519447504
+[32m[20221122 18:11:29 @hopper_agent.py:280][0m Train reward episode: 13.180098519447505
+[32m[20221122 18:11:29 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:11:29 @hopper_agent.py:283][0m Total time: 1517.263056755066
+[32m[20221122 18:11:29 @hopper_agent.py:285][0m 4350000 total steps have happened
+[32m[20221122 18:11:29 @hopper_agent.py:268][0m #------------------------ Iteration 87 --------------------------#
+[32m[20221122 18:11:35 @hopper_agent.py:301][0m Sample time: 6.476941108703613
+[32m[20221122 18:11:36 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:11:45 @hopper_agent.py:306][0m Update time: 9.757391929626465
+[32m[20221122 18:11:46 @hopper_agent.py:311][0m Evaluation time: 1.1327810287475586
+[32m[20221122 18:11:46 @hopper_agent.py:279][0m Train reward: 0.02659866977576602
+[32m[20221122 18:11:46 @hopper_agent.py:280][0m Train reward episode: 26.59866977576608
+[32m[20221122 18:11:46 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:11:46 @hopper_agent.py:283][0m Total time: 1534.6452457904816
+[32m[20221122 18:11:46 @hopper_agent.py:285][0m 4400000 total steps have happened
+[32m[20221122 18:11:46 @hopper_agent.py:268][0m #------------------------ Iteration 88 --------------------------#
+[32m[20221122 18:11:52 @hopper_agent.py:301][0m Sample time: 6.467290163040161
+[32m[20221122 18:11:53 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:12:02 @hopper_agent.py:306][0m Update time: 9.609781980514526
+[32m[20221122 18:12:03 @hopper_agent.py:311][0m Evaluation time: 1.1295249462127686
+[32m[20221122 18:12:03 @hopper_agent.py:279][0m Train reward: 0.02296143820799308
+[32m[20221122 18:12:03 @hopper_agent.py:280][0m Train reward episode: 22.96143820799306
+[32m[20221122 18:12:03 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:12:03 @hopper_agent.py:283][0m Total time: 1551.8676569461823
+[32m[20221122 18:12:03 @hopper_agent.py:285][0m 4450000 total steps have happened
+[32m[20221122 18:12:03 @hopper_agent.py:268][0m #------------------------ Iteration 89 --------------------------#
+[32m[20221122 18:12:10 @hopper_agent.py:301][0m Sample time: 6.429302930831909
+[32m[20221122 18:12:11 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:12:19 @hopper_agent.py:306][0m Update time: 9.623676061630249
+[32m[20221122 18:12:20 @hopper_agent.py:311][0m Evaluation time: 1.1309571266174316
+[32m[20221122 18:12:20 @hopper_agent.py:279][0m Train reward: 0.02623855825204685
+[32m[20221122 18:12:20 @hopper_agent.py:280][0m Train reward episode: 26.238558252046843
+[32m[20221122 18:12:20 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:12:20 @hopper_agent.py:283][0m Total time: 1569.065923690796
+[32m[20221122 18:12:20 @hopper_agent.py:285][0m 4500000 total steps have happened
+[32m[20221122 18:12:20 @hopper_agent.py:268][0m #------------------------ Iteration 90 --------------------------#
+[32m[20221122 18:12:27 @hopper_agent.py:301][0m Sample time: 6.4665820598602295
+[32m[20221122 18:12:28 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:12:36 @hopper_agent.py:306][0m Update time: 9.498000860214233
+[32m[20221122 18:12:37 @hopper_agent.py:311][0m Evaluation time: 1.1663470268249512
+[32m[20221122 18:12:37 @hopper_agent.py:279][0m Train reward: 0.015545508788477236
+[32m[20221122 18:12:37 @hopper_agent.py:280][0m Train reward episode: 15.545508788477242
+[32m[20221122 18:12:37 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:12:37 @hopper_agent.py:283][0m Total time: 1586.2112698554993
+[32m[20221122 18:12:37 @hopper_agent.py:285][0m 4550000 total steps have happened
+[32m[20221122 18:12:37 @hopper_agent.py:268][0m #------------------------ Iteration 91 --------------------------#
+[32m[20221122 18:12:44 @hopper_agent.py:301][0m Sample time: 6.432287931442261
+[32m[20221122 18:12:45 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:12:54 @hopper_agent.py:306][0m Update time: 9.692262887954712
+[32m[20221122 18:12:55 @hopper_agent.py:311][0m Evaluation time: 1.1893932819366455
+[32m[20221122 18:12:55 @hopper_agent.py:279][0m Train reward: 0.025229756098551947
+[32m[20221122 18:12:55 @hopper_agent.py:280][0m Train reward episode: 25.229756098551988
+[32m[20221122 18:12:55 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:12:55 @hopper_agent.py:283][0m Total time: 1603.542433977127
+[32m[20221122 18:12:55 @hopper_agent.py:285][0m 4600000 total steps have happened
+[32m[20221122 18:12:55 @hopper_agent.py:268][0m #------------------------ Iteration 92 --------------------------#
+[32m[20221122 18:13:01 @hopper_agent.py:301][0m Sample time: 6.4398581981658936
+[32m[20221122 18:13:02 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:13:11 @hopper_agent.py:306][0m Update time: 9.439884662628174
+[32m[20221122 18:13:12 @hopper_agent.py:311][0m Evaluation time: 1.175281286239624
+[32m[20221122 18:13:12 @hopper_agent.py:279][0m Train reward: 0.02155670212993595
+[32m[20221122 18:13:12 @hopper_agent.py:280][0m Train reward episode: 21.556702129935992
+[32m[20221122 18:13:12 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:13:12 @hopper_agent.py:283][0m Total time: 1620.6127128601074
+[32m[20221122 18:13:12 @hopper_agent.py:285][0m 4650000 total steps have happened
+[32m[20221122 18:13:12 @hopper_agent.py:268][0m #------------------------ Iteration 93 --------------------------#
+[32m[20221122 18:13:18 @hopper_agent.py:301][0m Sample time: 6.436354160308838
+[32m[20221122 18:13:19 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:13:28 @hopper_agent.py:306][0m Update time: 9.570825815200806
+[32m[20221122 18:13:29 @hopper_agent.py:311][0m Evaluation time: 1.155702829360962
+[32m[20221122 18:13:29 @hopper_agent.py:279][0m Train reward: 0.020588988878824262
+[32m[20221122 18:13:29 @hopper_agent.py:280][0m Train reward episode: 20.588988878824253
+[32m[20221122 18:13:29 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:13:29 @hopper_agent.py:283][0m Total time: 1637.7900137901306
+[32m[20221122 18:13:29 @hopper_agent.py:285][0m 4700000 total steps have happened
+[32m[20221122 18:13:29 @hopper_agent.py:268][0m #------------------------ Iteration 94 --------------------------#
+[32m[20221122 18:13:36 @hopper_agent.py:301][0m Sample time: 6.456884860992432
+[32m[20221122 18:13:37 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:13:45 @hopper_agent.py:306][0m Update time: 9.495398998260498
+[32m[20221122 18:13:46 @hopper_agent.py:311][0m Evaluation time: 1.1542749404907227
+[32m[20221122 18:13:46 @hopper_agent.py:279][0m Train reward: 0.02094197085105383
+[32m[20221122 18:13:46 @hopper_agent.py:280][0m Train reward episode: 20.941970851053824
+[32m[20221122 18:13:46 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:13:46 @hopper_agent.py:283][0m Total time: 1654.9104187488556
+[32m[20221122 18:13:46 @hopper_agent.py:285][0m 4750000 total steps have happened
+[32m[20221122 18:13:46 @hopper_agent.py:268][0m #------------------------ Iteration 95 --------------------------#
+[32m[20221122 18:13:53 @hopper_agent.py:301][0m Sample time: 6.437685012817383
+[32m[20221122 18:13:54 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:14:02 @hopper_agent.py:306][0m Update time: 9.652514219284058
+[32m[20221122 18:14:03 @hopper_agent.py:311][0m Evaluation time: 1.174379825592041
+[32m[20221122 18:14:03 @hopper_agent.py:279][0m Train reward: 0.024074326876317692
+[32m[20221122 18:14:03 @hopper_agent.py:280][0m Train reward episode: 24.07432687631771
+[32m[20221122 18:14:03 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:14:03 @hopper_agent.py:283][0m Total time: 1672.1905918121338
+[32m[20221122 18:14:03 @hopper_agent.py:285][0m 4800000 total steps have happened
+[32m[20221122 18:14:03 @hopper_agent.py:268][0m #------------------------ Iteration 96 --------------------------#
+[32m[20221122 18:14:10 @hopper_agent.py:301][0m Sample time: 6.454390048980713
+[32m[20221122 18:14:11 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:14:20 @hopper_agent.py:306][0m Update time: 9.85108995437622
+[32m[20221122 18:14:21 @hopper_agent.py:311][0m Evaluation time: 1.1177592277526855
+[32m[20221122 18:14:21 @hopper_agent.py:279][0m Train reward: 0.021923138604716504
+[32m[20221122 18:14:21 @hopper_agent.py:280][0m Train reward episode: 21.9231386047165
+[32m[20221122 18:14:21 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:14:21 @hopper_agent.py:283][0m Total time: 1689.6284458637238
+[32m[20221122 18:14:21 @hopper_agent.py:285][0m 4850000 total steps have happened
+[32m[20221122 18:14:21 @hopper_agent.py:268][0m #------------------------ Iteration 97 --------------------------#
+[32m[20221122 18:14:27 @hopper_agent.py:301][0m Sample time: 6.48642373085022
+[32m[20221122 18:14:28 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:14:37 @hopper_agent.py:306][0m Update time: 9.73690915107727
+[32m[20221122 18:14:38 @hopper_agent.py:311][0m Evaluation time: 1.1344668865203857
+[32m[20221122 18:14:38 @hopper_agent.py:279][0m Train reward: 0.01691097242976776
+[32m[20221122 18:14:38 @hopper_agent.py:280][0m Train reward episode: 16.910972429767764
+[32m[20221122 18:14:38 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:14:38 @hopper_agent.py:283][0m Total time: 1707.0009388923645
+[32m[20221122 18:14:38 @hopper_agent.py:285][0m 4900000 total steps have happened
+[32m[20221122 18:14:38 @hopper_agent.py:268][0m #------------------------ Iteration 98 --------------------------#
+[32m[20221122 18:14:45 @hopper_agent.py:301][0m Sample time: 6.485739707946777
+[32m[20221122 18:14:46 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:14:54 @hopper_agent.py:306][0m Update time: 9.665502309799194
+[32m[20221122 18:14:56 @hopper_agent.py:311][0m Evaluation time: 1.125898838043213
+[32m[20221122 18:14:56 @hopper_agent.py:279][0m Train reward: 0.027003254715929542
+[32m[20221122 18:14:56 @hopper_agent.py:280][0m Train reward episode: 27.00325471592959
+[32m[20221122 18:14:56 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:14:56 @hopper_agent.py:283][0m Total time: 1724.2927689552307
+[32m[20221122 18:14:56 @hopper_agent.py:285][0m 4950000 total steps have happened
+[32m[20221122 18:14:56 @hopper_agent.py:268][0m #------------------------ Iteration 99 --------------------------#
+[32m[20221122 18:15:02 @hopper_agent.py:301][0m Sample time: 6.473363876342773
+[32m[20221122 18:15:03 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:15:12 @hopper_agent.py:306][0m Update time: 9.522224187850952
+[32m[20221122 18:15:13 @hopper_agent.py:311][0m Evaluation time: 1.134850025177002
+[32m[20221122 18:15:13 @hopper_agent.py:279][0m Train reward: 0.03205157251488812
+[32m[20221122 18:15:13 @hopper_agent.py:280][0m Train reward episode: 32.051572514888115
+[32m[20221122 18:15:13 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:15:13 @hopper_agent.py:283][0m Total time: 1741.438759803772
+[32m[20221122 18:15:13 @hopper_agent.py:285][0m 5000000 total steps have happened
+[32m[20221122 18:15:13 @hopper_agent.py:268][0m #------------------------ Iteration 100 --------------------------#
+[32m[20221122 18:15:19 @hopper_agent.py:301][0m Sample time: 6.481488943099976
+[32m[20221122 18:15:20 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:15:29 @hopper_agent.py:306][0m Update time: 9.634037971496582
+[32m[20221122 18:15:30 @hopper_agent.py:311][0m Evaluation time: 1.1259350776672363
+[32m[20221122 18:15:30 @hopper_agent.py:279][0m Train reward: 0.049643794597710685
+[32m[20221122 18:15:30 @hopper_agent.py:280][0m Train reward episode: 49.64379459771066
+[32m[20221122 18:15:30 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:15:30 @hopper_agent.py:283][0m Total time: 1758.6950697898865
+[32m[20221122 18:15:30 @hopper_agent.py:285][0m 5050000 total steps have happened
+[32m[20221122 18:15:30 @hopper_agent.py:268][0m #------------------------ Iteration 101 --------------------------#
+[32m[20221122 18:15:36 @hopper_agent.py:301][0m Sample time: 6.446507930755615
+[32m[20221122 18:15:38 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:15:46 @hopper_agent.py:306][0m Update time: 9.594362020492554
+[32m[20221122 18:15:47 @hopper_agent.py:311][0m Evaluation time: 1.13211989402771
+[32m[20221122 18:15:47 @hopper_agent.py:279][0m Train reward: 0.02145190904343985
+[32m[20221122 18:15:47 @hopper_agent.py:280][0m Train reward episode: 21.451909043439844
+[32m[20221122 18:15:47 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:15:47 @hopper_agent.py:283][0m Total time: 1775.8835599422455
+[32m[20221122 18:15:47 @hopper_agent.py:285][0m 5100000 total steps have happened
+[32m[20221122 18:15:47 @hopper_agent.py:268][0m #------------------------ Iteration 102 --------------------------#
+[32m[20221122 18:15:54 @hopper_agent.py:301][0m Sample time: 6.464439868927002
+[32m[20221122 18:15:55 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:16:03 @hopper_agent.py:306][0m Update time: 9.48362398147583
+[32m[20221122 18:16:04 @hopper_agent.py:311][0m Evaluation time: 1.1717021465301514
+[32m[20221122 18:16:04 @hopper_agent.py:279][0m Train reward: 0.028936705276439868
+[32m[20221122 18:16:04 @hopper_agent.py:280][0m Train reward episode: 28.936705276439874
+[32m[20221122 18:16:04 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:16:04 @hopper_agent.py:283][0m Total time: 1793.0180158615112
+[32m[20221122 18:16:04 @hopper_agent.py:285][0m 5150000 total steps have happened
+[32m[20221122 18:16:04 @hopper_agent.py:268][0m #------------------------ Iteration 103 --------------------------#
+[32m[20221122 18:16:11 @hopper_agent.py:301][0m Sample time: 6.438083171844482
+[32m[20221122 18:16:12 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:16:20 @hopper_agent.py:306][0m Update time: 9.646910905838013
+[32m[20221122 18:16:22 @hopper_agent.py:311][0m Evaluation time: 1.1687862873077393
+[32m[20221122 18:16:22 @hopper_agent.py:279][0m Train reward: 0.024195554722575934
+[32m[20221122 18:16:22 @hopper_agent.py:280][0m Train reward episode: 24.195554722575967
+[32m[20221122 18:16:22 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:16:22 @hopper_agent.py:283][0m Total time: 1810.2863709926605
+[32m[20221122 18:16:22 @hopper_agent.py:285][0m 5200000 total steps have happened
+[32m[20221122 18:16:22 @hopper_agent.py:268][0m #------------------------ Iteration 104 --------------------------#
+[32m[20221122 18:16:28 @hopper_agent.py:301][0m Sample time: 6.450744152069092
+[32m[20221122 18:16:29 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:16:38 @hopper_agent.py:306][0m Update time: 9.526828050613403
+[32m[20221122 18:16:39 @hopper_agent.py:311][0m Evaluation time: 1.1667139530181885
+[32m[20221122 18:16:39 @hopper_agent.py:279][0m Train reward: 0.022162572691542145
+[32m[20221122 18:16:39 @hopper_agent.py:280][0m Train reward episode: 22.162572691542117
+[32m[20221122 18:16:39 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:16:39 @hopper_agent.py:283][0m Total time: 1827.4471027851105
+[32m[20221122 18:16:39 @hopper_agent.py:285][0m 5250000 total steps have happened
+[32m[20221122 18:16:39 @hopper_agent.py:268][0m #------------------------ Iteration 105 --------------------------#
+[32m[20221122 18:16:45 @hopper_agent.py:301][0m Sample time: 6.434251070022583
+[32m[20221122 18:16:46 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:16:55 @hopper_agent.py:306][0m Update time: 9.5743567943573
+[32m[20221122 18:16:56 @hopper_agent.py:311][0m Evaluation time: 1.1538093090057373
+[32m[20221122 18:16:56 @hopper_agent.py:279][0m Train reward: 0.015584506263939582
+[32m[20221122 18:16:56 @hopper_agent.py:280][0m Train reward episode: 15.584506263939602
+[32m[20221122 18:16:56 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:16:56 @hopper_agent.py:283][0m Total time: 1844.6234998703003
+[32m[20221122 18:16:56 @hopper_agent.py:285][0m 5300000 total steps have happened
+[32m[20221122 18:16:56 @hopper_agent.py:268][0m #------------------------ Iteration 106 --------------------------#
+[32m[20221122 18:17:02 @hopper_agent.py:301][0m Sample time: 6.450440883636475
+[32m[20221122 18:17:03 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:17:12 @hopper_agent.py:306][0m Update time: 9.818051815032959
+[32m[20221122 18:17:13 @hopper_agent.py:311][0m Evaluation time: 1.17311429977417
+[32m[20221122 18:17:13 @hopper_agent.py:279][0m Train reward: 0.019763834546253013
+[32m[20221122 18:17:13 @hopper_agent.py:280][0m Train reward episode: 19.763834546252994
+[32m[20221122 18:17:13 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:17:13 @hopper_agent.py:283][0m Total time: 1862.0808267593384
+[32m[20221122 18:17:13 @hopper_agent.py:285][0m 5350000 total steps have happened
+[32m[20221122 18:17:13 @hopper_agent.py:268][0m #------------------------ Iteration 107 --------------------------#
+[32m[20221122 18:17:20 @hopper_agent.py:301][0m Sample time: 6.44392204284668
+[32m[20221122 18:17:21 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:17:29 @hopper_agent.py:306][0m Update time: 9.533523082733154
+[32m[20221122 18:17:31 @hopper_agent.py:311][0m Evaluation time: 1.1703519821166992
+[32m[20221122 18:17:31 @hopper_agent.py:279][0m Train reward: 0.008506789128971463
+[32m[20221122 18:17:31 @hopper_agent.py:280][0m Train reward episode: 8.506789128971457
+[32m[20221122 18:17:31 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:17:31 @hopper_agent.py:283][0m Total time: 1879.2438678741455
+[32m[20221122 18:17:31 @hopper_agent.py:285][0m 5400000 total steps have happened
+[32m[20221122 18:17:31 @hopper_agent.py:268][0m #------------------------ Iteration 108 --------------------------#
+[32m[20221122 18:17:37 @hopper_agent.py:301][0m Sample time: 6.4885382652282715
+[32m[20221122 18:17:38 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:17:47 @hopper_agent.py:306][0m Update time: 9.603290796279907
+[32m[20221122 18:17:48 @hopper_agent.py:311][0m Evaluation time: 1.1310889720916748
+[32m[20221122 18:17:48 @hopper_agent.py:279][0m Train reward: 0.020182894328364034
+[32m[20221122 18:17:48 @hopper_agent.py:280][0m Train reward episode: 20.1828943283641
+[32m[20221122 18:17:48 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:17:48 @hopper_agent.py:283][0m Total time: 1896.4816517829895
+[32m[20221122 18:17:48 @hopper_agent.py:285][0m 5450000 total steps have happened
+[32m[20221122 18:17:48 @hopper_agent.py:268][0m #------------------------ Iteration 109 --------------------------#
+[32m[20221122 18:17:54 @hopper_agent.py:301][0m Sample time: 6.463634967803955
+[32m[20221122 18:17:55 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:18:04 @hopper_agent.py:306][0m Update time: 9.606778144836426
+[32m[20221122 18:18:05 @hopper_agent.py:311][0m Evaluation time: 1.1284899711608887
+[32m[20221122 18:18:05 @hopper_agent.py:279][0m Train reward: 0.016450349214535444
+[32m[20221122 18:18:05 @hopper_agent.py:280][0m Train reward episode: 16.450349214535436
+[32m[20221122 18:18:05 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:18:05 @hopper_agent.py:283][0m Total time: 1913.6951076984406
+[32m[20221122 18:18:05 @hopper_agent.py:285][0m 5500000 total steps have happened
+[32m[20221122 18:18:05 @hopper_agent.py:268][0m #------------------------ Iteration 110 --------------------------#
+[32m[20221122 18:18:11 @hopper_agent.py:301][0m Sample time: 6.467601299285889
+[32m[20221122 18:18:12 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:18:21 @hopper_agent.py:306][0m Update time: 9.619755744934082
+[32m[20221122 18:18:22 @hopper_agent.py:311][0m Evaluation time: 1.131592035293579
+[32m[20221122 18:18:22 @hopper_agent.py:279][0m Train reward: 0.015475424516375659
+[32m[20221122 18:18:22 @hopper_agent.py:280][0m Train reward episode: 15.475424516375655
+[32m[20221122 18:18:22 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:18:22 @hopper_agent.py:283][0m Total time: 1930.930627822876
+[32m[20221122 18:18:22 @hopper_agent.py:285][0m 5550000 total steps have happened
+[32m[20221122 18:18:22 @hopper_agent.py:268][0m #------------------------ Iteration 111 --------------------------#
+[32m[20221122 18:18:29 @hopper_agent.py:301][0m Sample time: 6.479668140411377
+[32m[20221122 18:18:30 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:18:38 @hopper_agent.py:306][0m Update time: 9.653235912322998
+[32m[20221122 18:18:39 @hopper_agent.py:311][0m Evaluation time: 1.119441032409668
+[32m[20221122 18:18:39 @hopper_agent.py:279][0m Train reward: 0.027999716143386474
+[32m[20221122 18:18:39 @hopper_agent.py:280][0m Train reward episode: 27.999716143386486
+[32m[20221122 18:18:39 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:18:39 @hopper_agent.py:283][0m Total time: 1948.1973679065704
+[32m[20221122 18:18:39 @hopper_agent.py:285][0m 5600000 total steps have happened
+[32m[20221122 18:18:39 @hopper_agent.py:268][0m #------------------------ Iteration 112 --------------------------#
+[32m[20221122 18:18:46 @hopper_agent.py:301][0m Sample time: 6.481652021408081
+[32m[20221122 18:18:47 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:18:56 @hopper_agent.py:306][0m Update time: 9.577419996261597
+[32m[20221122 18:18:57 @hopper_agent.py:311][0m Evaluation time: 1.1301987171173096
+[32m[20221122 18:18:57 @hopper_agent.py:279][0m Train reward: 0.012959121364147659
+[32m[20221122 18:18:57 @hopper_agent.py:280][0m Train reward episode: 12.959121364147654
+[32m[20221122 18:18:57 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:18:57 @hopper_agent.py:283][0m Total time: 1965.4008419513702
+[32m[20221122 18:18:57 @hopper_agent.py:285][0m 5650000 total steps have happened
+[32m[20221122 18:18:57 @hopper_agent.py:268][0m #------------------------ Iteration 113 --------------------------#
+[32m[20221122 18:19:03 @hopper_agent.py:301][0m Sample time: 6.448312759399414
+[32m[20221122 18:19:04 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:19:13 @hopper_agent.py:306][0m Update time: 9.651760339736938
+[32m[20221122 18:19:14 @hopper_agent.py:311][0m Evaluation time: 1.128793716430664
+[32m[20221122 18:19:14 @hopper_agent.py:279][0m Train reward: 0.011290305871479155
+[32m[20221122 18:19:14 @hopper_agent.py:280][0m Train reward episode: 11.290305871479138
+[32m[20221122 18:19:14 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:19:14 @hopper_agent.py:283][0m Total time: 1982.6445219516754
+[32m[20221122 18:19:14 @hopper_agent.py:285][0m 5700000 total steps have happened
+[32m[20221122 18:19:14 @hopper_agent.py:268][0m #------------------------ Iteration 114 --------------------------#
+[32m[20221122 18:19:20 @hopper_agent.py:301][0m Sample time: 6.444049835205078
+[32m[20221122 18:19:21 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:19:30 @hopper_agent.py:306][0m Update time: 9.6462562084198
+[32m[20221122 18:19:31 @hopper_agent.py:311][0m Evaluation time: 1.1708128452301025
+[32m[20221122 18:19:31 @hopper_agent.py:279][0m Train reward: 0.020321118369654754
+[32m[20221122 18:19:31 @hopper_agent.py:280][0m Train reward episode: 20.321118369654773
+[32m[20221122 18:19:31 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:19:31 @hopper_agent.py:283][0m Total time: 1999.9207837581635
+[32m[20221122 18:19:31 @hopper_agent.py:285][0m 5750000 total steps have happened
+[32m[20221122 18:19:31 @hopper_agent.py:268][0m #------------------------ Iteration 115 --------------------------#
+[32m[20221122 18:19:38 @hopper_agent.py:301][0m Sample time: 6.443495035171509
+[32m[20221122 18:19:39 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:19:47 @hopper_agent.py:306][0m Update time: 9.730268955230713
+[32m[20221122 18:19:49 @hopper_agent.py:311][0m Evaluation time: 1.1779308319091797
+[32m[20221122 18:19:49 @hopper_agent.py:279][0m Train reward: 0.012784134179910844
+[32m[20221122 18:19:49 @hopper_agent.py:280][0m Train reward episode: 12.784134179910826
+[32m[20221122 18:19:49 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:19:49 @hopper_agent.py:283][0m Total time: 2017.289144039154
+[32m[20221122 18:19:49 @hopper_agent.py:285][0m 5800000 total steps have happened
+[32m[20221122 18:19:49 @hopper_agent.py:268][0m #------------------------ Iteration 116 --------------------------#
+[32m[20221122 18:19:55 @hopper_agent.py:301][0m Sample time: 6.447246074676514
+[32m[20221122 18:19:56 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:20:05 @hopper_agent.py:306][0m Update time: 9.5517578125
+[32m[20221122 18:20:06 @hopper_agent.py:311][0m Evaluation time: 1.166673183441162
+[32m[20221122 18:20:06 @hopper_agent.py:279][0m Train reward: 0.02133344967752078
+[32m[20221122 18:20:06 @hopper_agent.py:280][0m Train reward episode: 21.333449677520786
+[32m[20221122 18:20:06 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:20:06 @hopper_agent.py:283][0m Total time: 2034.4700438976288
+[32m[20221122 18:20:06 @hopper_agent.py:285][0m 5850000 total steps have happened
+[32m[20221122 18:20:06 @hopper_agent.py:268][0m #------------------------ Iteration 117 --------------------------#
+[32m[20221122 18:20:12 @hopper_agent.py:301][0m Sample time: 6.457472085952759
+[32m[20221122 18:20:13 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:20:22 @hopper_agent.py:306][0m Update time: 9.540496110916138
+[32m[20221122 18:20:23 @hopper_agent.py:311][0m Evaluation time: 1.1700060367584229
+[32m[20221122 18:20:23 @hopper_agent.py:279][0m Train reward: 0.043120756784900315
+[32m[20221122 18:20:23 @hopper_agent.py:280][0m Train reward episode: 43.12075678490029
+[32m[20221122 18:20:23 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:20:23 @hopper_agent.py:283][0m Total time: 2051.653555870056
+[32m[20221122 18:20:23 @hopper_agent.py:285][0m 5900000 total steps have happened
+[32m[20221122 18:20:23 @hopper_agent.py:268][0m #------------------------ Iteration 118 --------------------------#
+[32m[20221122 18:20:29 @hopper_agent.py:301][0m Sample time: 6.445202112197876
+[32m[20221122 18:20:31 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:20:39 @hopper_agent.py:306][0m Update time: 9.652808904647827
+[32m[20221122 18:20:40 @hopper_agent.py:311][0m Evaluation time: 1.173398733139038
+[32m[20221122 18:20:40 @hopper_agent.py:279][0m Train reward: 0.014136772829382789
+[32m[20221122 18:20:40 @hopper_agent.py:280][0m Train reward episode: 14.136772829382808
+[32m[20221122 18:20:40 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:20:40 @hopper_agent.py:283][0m Total time: 2068.9404118061066
+[32m[20221122 18:20:40 @hopper_agent.py:285][0m 5950000 total steps have happened
+[32m[20221122 18:20:40 @hopper_agent.py:268][0m #------------------------ Iteration 119 --------------------------#
+[32m[20221122 18:20:47 @hopper_agent.py:301][0m Sample time: 6.43507194519043
+[32m[20221122 18:20:48 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:20:56 @hopper_agent.py:306][0m Update time: 9.549737930297852
+[32m[20221122 18:20:57 @hopper_agent.py:311][0m Evaluation time: 1.1685481071472168
+[32m[20221122 18:20:57 @hopper_agent.py:279][0m Train reward: 0.01427023509047603
+[32m[20221122 18:20:57 @hopper_agent.py:280][0m Train reward episode: 14.27023509047602
+[32m[20221122 18:20:57 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:20:57 @hopper_agent.py:283][0m Total time: 2086.1083767414093
+[32m[20221122 18:20:57 @hopper_agent.py:285][0m 6000000 total steps have happened
+[32m[20221122 18:20:57 @hopper_agent.py:268][0m #------------------------ Iteration 120 --------------------------#
+[32m[20221122 18:21:04 @hopper_agent.py:301][0m Sample time: 6.456712961196899
+[32m[20221122 18:21:05 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:21:13 @hopper_agent.py:306][0m Update time: 9.627941131591797
+[32m[20221122 18:21:15 @hopper_agent.py:311][0m Evaluation time: 1.1336030960083008
+[32m[20221122 18:21:15 @hopper_agent.py:279][0m Train reward: 0.03679902000411586
+[32m[20221122 18:21:15 @hopper_agent.py:280][0m Train reward episode: 36.79902000411589
+[32m[20221122 18:21:15 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:21:15 @hopper_agent.py:283][0m Total time: 2103.341860771179
+[32m[20221122 18:21:15 @hopper_agent.py:285][0m 6050000 total steps have happened
+[32m[20221122 18:21:15 @hopper_agent.py:268][0m #------------------------ Iteration 121 --------------------------#
+[32m[20221122 18:21:21 @hopper_agent.py:301][0m Sample time: 6.465111970901489
+[32m[20221122 18:21:22 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:21:31 @hopper_agent.py:306][0m Update time: 9.775757074356079
+[32m[20221122 18:21:32 @hopper_agent.py:311][0m Evaluation time: 1.1300899982452393
+[32m[20221122 18:21:32 @hopper_agent.py:279][0m Train reward: 0.019753826432475554
+[32m[20221122 18:21:32 @hopper_agent.py:280][0m Train reward episode: 19.75382643247557
+[32m[20221122 18:21:32 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:21:32 @hopper_agent.py:283][0m Total time: 2120.729274749756
+[32m[20221122 18:21:32 @hopper_agent.py:285][0m 6100000 total steps have happened
+[32m[20221122 18:21:32 @hopper_agent.py:268][0m #------------------------ Iteration 122 --------------------------#
+[32m[20221122 18:21:38 @hopper_agent.py:301][0m Sample time: 6.477308988571167
+[32m[20221122 18:21:40 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:21:48 @hopper_agent.py:306][0m Update time: 9.605743169784546
+[32m[20221122 18:21:49 @hopper_agent.py:311][0m Evaluation time: 1.1334538459777832
+[32m[20221122 18:21:49 @hopper_agent.py:279][0m Train reward: 0.028984760919383436
+[32m[20221122 18:21:49 @hopper_agent.py:280][0m Train reward episode: 28.98476091938341
+[32m[20221122 18:21:49 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:21:49 @hopper_agent.py:283][0m Total time: 2137.9614248275757
+[32m[20221122 18:21:49 @hopper_agent.py:285][0m 6150000 total steps have happened
+[32m[20221122 18:21:49 @hopper_agent.py:268][0m #------------------------ Iteration 123 --------------------------#
+[32m[20221122 18:21:56 @hopper_agent.py:301][0m Sample time: 6.496354818344116
+[32m[20221122 18:21:57 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:22:05 @hopper_agent.py:306][0m Update time: 9.585651874542236
+[32m[20221122 18:22:06 @hopper_agent.py:311][0m Evaluation time: 1.1173481941223145
+[32m[20221122 18:22:06 @hopper_agent.py:279][0m Train reward: 0.015253287417894305
+[32m[20221122 18:22:06 @hopper_agent.py:280][0m Train reward episode: 15.253287417894319
+[32m[20221122 18:22:06 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:22:06 @hopper_agent.py:283][0m Total time: 2155.1748259067535
+[32m[20221122 18:22:06 @hopper_agent.py:285][0m 6200000 total steps have happened
+[32m[20221122 18:22:06 @hopper_agent.py:268][0m #------------------------ Iteration 124 --------------------------#
+[32m[20221122 18:22:13 @hopper_agent.py:301][0m Sample time: 6.49253511428833
+[32m[20221122 18:22:14 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:22:23 @hopper_agent.py:306][0m Update time: 9.715602159500122
+[32m[20221122 18:22:24 @hopper_agent.py:311][0m Evaluation time: 1.1352338790893555
+[32m[20221122 18:22:24 @hopper_agent.py:279][0m Train reward: 0.014243982191658443
+[32m[20221122 18:22:24 @hopper_agent.py:280][0m Train reward episode: 14.243982191658453
+[32m[20221122 18:22:24 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:22:24 @hopper_agent.py:283][0m Total time: 2172.5328357219696
+[32m[20221122 18:22:24 @hopper_agent.py:285][0m 6250000 total steps have happened
+[32m[20221122 18:22:24 @hopper_agent.py:268][0m #------------------------ Iteration 125 --------------------------#
+[32m[20221122 18:22:30 @hopper_agent.py:301][0m Sample time: 6.467303037643433
+[32m[20221122 18:22:31 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:22:40 @hopper_agent.py:306][0m Update time: 9.57036805152893
+[32m[20221122 18:22:41 @hopper_agent.py:311][0m Evaluation time: 1.1164569854736328
+[32m[20221122 18:22:41 @hopper_agent.py:279][0m Train reward: 0.04396078593815098
+[32m[20221122 18:22:41 @hopper_agent.py:280][0m Train reward episode: 43.96078593815098
+[32m[20221122 18:22:41 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:22:41 @hopper_agent.py:283][0m Total time: 2189.7018749713898
+[32m[20221122 18:22:41 @hopper_agent.py:285][0m 6300000 total steps have happened
+[32m[20221122 18:22:41 @hopper_agent.py:268][0m #------------------------ Iteration 126 --------------------------#
+[32m[20221122 18:22:47 @hopper_agent.py:301][0m Sample time: 6.454310894012451
+[32m[20221122 18:22:49 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:22:57 @hopper_agent.py:306][0m Update time: 9.784615278244019
+[32m[20221122 18:22:58 @hopper_agent.py:311][0m Evaluation time: 1.1710968017578125
+[32m[20221122 18:22:58 @hopper_agent.py:279][0m Train reward: 0.018814857243206067
+[32m[20221122 18:22:58 @hopper_agent.py:280][0m Train reward episode: 18.814857243206077
+[32m[20221122 18:22:58 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:22:58 @hopper_agent.py:283][0m Total time: 2207.1268348693848
+[32m[20221122 18:22:58 @hopper_agent.py:285][0m 6350000 total steps have happened
+[32m[20221122 18:22:58 @hopper_agent.py:268][0m #------------------------ Iteration 127 --------------------------#
+[32m[20221122 18:23:05 @hopper_agent.py:301][0m Sample time: 6.454265832901001
+[32m[20221122 18:23:06 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:23:15 @hopper_agent.py:306][0m Update time: 9.657685995101929
+[32m[20221122 18:23:16 @hopper_agent.py:311][0m Evaluation time: 1.1740961074829102
+[32m[20221122 18:23:16 @hopper_agent.py:279][0m Train reward: 0.025769016050040505
+[32m[20221122 18:23:16 @hopper_agent.py:280][0m Train reward episode: 25.769016050040555
+[32m[20221122 18:23:16 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:23:16 @hopper_agent.py:283][0m Total time: 2224.4281108379364
+[32m[20221122 18:23:16 @hopper_agent.py:285][0m 6400000 total steps have happened
+[32m[20221122 18:23:16 @hopper_agent.py:268][0m #------------------------ Iteration 128 --------------------------#
+[32m[20221122 18:23:22 @hopper_agent.py:301][0m Sample time: 6.439848899841309
+[32m[20221122 18:23:23 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:23:32 @hopper_agent.py:306][0m Update time: 9.517024993896484
+[32m[20221122 18:23:33 @hopper_agent.py:311][0m Evaluation time: 1.1576173305511475
+[32m[20221122 18:23:33 @hopper_agent.py:279][0m Train reward: 0.010624054683037263
+[32m[20221122 18:23:33 @hopper_agent.py:280][0m Train reward episode: 10.624054683037262
+[32m[20221122 18:23:33 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:23:33 @hopper_agent.py:283][0m Total time: 2241.5564589500427
+[32m[20221122 18:23:33 @hopper_agent.py:285][0m 6450000 total steps have happened
+[32m[20221122 18:23:33 @hopper_agent.py:268][0m #------------------------ Iteration 129 --------------------------#
+[32m[20221122 18:23:39 @hopper_agent.py:301][0m Sample time: 6.44453501701355
+[32m[20221122 18:23:40 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:23:49 @hopper_agent.py:306][0m Update time: 9.546970844268799
+[32m[20221122 18:23:50 @hopper_agent.py:311][0m Evaluation time: 1.1779870986938477
+[32m[20221122 18:23:50 @hopper_agent.py:279][0m Train reward: 0.023591557982124305
+[32m[20221122 18:23:50 @hopper_agent.py:280][0m Train reward episode: 23.59155798212432
+[32m[20221122 18:23:50 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:23:50 @hopper_agent.py:283][0m Total time: 2258.740694999695
+[32m[20221122 18:23:50 @hopper_agent.py:285][0m 6500000 total steps have happened
+[32m[20221122 18:23:50 @hopper_agent.py:268][0m #------------------------ Iteration 130 --------------------------#
+[32m[20221122 18:23:57 @hopper_agent.py:301][0m Sample time: 7.0226171016693115
+[32m[20221122 18:23:58 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:24:07 @hopper_agent.py:306][0m Update time: 9.589319944381714
+[32m[20221122 18:24:08 @hopper_agent.py:311][0m Evaluation time: 1.1739768981933594
+[32m[20221122 18:24:08 @hopper_agent.py:279][0m Train reward: 0.014253216444536842
+[32m[20221122 18:24:08 @hopper_agent.py:280][0m Train reward episode: 14.25321644453682
+[32m[20221122 18:24:08 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:24:08 @hopper_agent.py:283][0m Total time: 2276.541158914566
+[32m[20221122 18:24:08 @hopper_agent.py:285][0m 6550000 total steps have happened
+[32m[20221122 18:24:08 @hopper_agent.py:268][0m #------------------------ Iteration 131 --------------------------#
+[32m[20221122 18:24:14 @hopper_agent.py:301][0m Sample time: 6.456406116485596
+[32m[20221122 18:24:15 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:24:24 @hopper_agent.py:306][0m Update time: 9.542603015899658
+[32m[20221122 18:24:25 @hopper_agent.py:311][0m Evaluation time: 1.1683430671691895
+[32m[20221122 18:24:25 @hopper_agent.py:279][0m Train reward: 0.021230713579300224
+[32m[20221122 18:24:25 @hopper_agent.py:280][0m Train reward episode: 21.23071357930023
+[32m[20221122 18:24:25 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:24:25 @hopper_agent.py:283][0m Total time: 2293.723527908325
+[32m[20221122 18:24:25 @hopper_agent.py:285][0m 6600000 total steps have happened
+[32m[20221122 18:24:25 @hopper_agent.py:268][0m #------------------------ Iteration 132 --------------------------#
+[32m[20221122 18:24:31 @hopper_agent.py:301][0m Sample time: 6.459859132766724
+[32m[20221122 18:24:33 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:24:41 @hopper_agent.py:306][0m Update time: 9.534150123596191
+[32m[20221122 18:24:42 @hopper_agent.py:311][0m Evaluation time: 1.1315147876739502
+[32m[20221122 18:24:42 @hopper_agent.py:279][0m Train reward: 0.042532213539821596
+[32m[20221122 18:24:42 @hopper_agent.py:280][0m Train reward episode: 42.532213539821676
+[32m[20221122 18:24:42 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:24:42 @hopper_agent.py:283][0m Total time: 2310.864800930023
+[32m[20221122 18:24:42 @hopper_agent.py:285][0m 6650000 total steps have happened
+[32m[20221122 18:24:42 @hopper_agent.py:268][0m #------------------------ Iteration 133 --------------------------#
+[32m[20221122 18:24:49 @hopper_agent.py:301][0m Sample time: 6.749222278594971
+[32m[20221122 18:24:50 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:24:58 @hopper_agent.py:306][0m Update time: 9.470333814620972
+[32m[20221122 18:25:00 @hopper_agent.py:311][0m Evaluation time: 1.1377830505371094
+[32m[20221122 18:25:00 @hopper_agent.py:279][0m Train reward: 0.021442761914033145
+[32m[20221122 18:25:00 @hopper_agent.py:280][0m Train reward episode: 21.442761914033117
+[32m[20221122 18:25:00 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:25:00 @hopper_agent.py:283][0m Total time: 2328.2391839027405
+[32m[20221122 18:25:00 @hopper_agent.py:285][0m 6700000 total steps have happened
+[32m[20221122 18:25:00 @hopper_agent.py:268][0m #------------------------ Iteration 134 --------------------------#
+[32m[20221122 18:25:06 @hopper_agent.py:301][0m Sample time: 6.61601996421814
+[32m[20221122 18:25:07 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:25:16 @hopper_agent.py:306][0m Update time: 9.568039894104004
+[32m[20221122 18:25:17 @hopper_agent.py:311][0m Evaluation time: 1.1488540172576904
+[32m[20221122 18:25:17 @hopper_agent.py:279][0m Train reward: 0.019252465108461663
+[32m[20221122 18:25:17 @hopper_agent.py:280][0m Train reward episode: 19.25246510846167
+[32m[20221122 18:25:17 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:25:17 @hopper_agent.py:283][0m Total time: 2345.588036775589
+[32m[20221122 18:25:17 @hopper_agent.py:285][0m 6750000 total steps have happened
+[32m[20221122 18:25:17 @hopper_agent.py:268][0m #------------------------ Iteration 135 --------------------------#
+[32m[20221122 18:25:23 @hopper_agent.py:301][0m Sample time: 6.606710195541382
+[32m[20221122 18:25:25 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:25:33 @hopper_agent.py:306][0m Update time: 9.673280954360962
+[32m[20221122 18:25:34 @hopper_agent.py:311][0m Evaluation time: 1.2130401134490967
+[32m[20221122 18:25:34 @hopper_agent.py:279][0m Train reward: 0.029542332257760564
+[32m[20221122 18:25:34 @hopper_agent.py:280][0m Train reward episode: 29.54233225776059
+[32m[20221122 18:25:34 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:25:34 @hopper_agent.py:283][0m Total time: 2363.096233844757
+[32m[20221122 18:25:34 @hopper_agent.py:285][0m 6800000 total steps have happened
+[32m[20221122 18:25:34 @hopper_agent.py:268][0m #------------------------ Iteration 136 --------------------------#
+[32m[20221122 18:25:41 @hopper_agent.py:301][0m Sample time: 6.678354978561401
+[32m[20221122 18:25:42 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:25:51 @hopper_agent.py:306][0m Update time: 9.758618116378784
+[32m[20221122 18:25:52 @hopper_agent.py:311][0m Evaluation time: 1.1562559604644775
+[32m[20221122 18:25:52 @hopper_agent.py:279][0m Train reward: 0.019066394208885774
+[32m[20221122 18:25:52 @hopper_agent.py:280][0m Train reward episode: 19.066394208885782
+[32m[20221122 18:25:52 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:25:52 @hopper_agent.py:283][0m Total time: 2380.706039905548
+[32m[20221122 18:25:52 @hopper_agent.py:285][0m 6850000 total steps have happened
+[32m[20221122 18:25:52 @hopper_agent.py:268][0m #------------------------ Iteration 137 --------------------------#
+[32m[20221122 18:25:59 @hopper_agent.py:301][0m Sample time: 6.672352075576782
+[32m[20221122 18:26:00 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:26:09 @hopper_agent.py:306][0m Update time: 9.87768006324768
+[32m[20221122 18:26:10 @hopper_agent.py:311][0m Evaluation time: 1.1608119010925293
+[32m[20221122 18:26:10 @hopper_agent.py:279][0m Train reward: 0.017677087791864814
+[32m[20221122 18:26:10 @hopper_agent.py:280][0m Train reward episode: 17.67708779186483
+[32m[20221122 18:26:10 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:26:10 @hopper_agent.py:283][0m Total time: 2398.433129787445
+[32m[20221122 18:26:10 @hopper_agent.py:285][0m 6900000 total steps have happened
+[32m[20221122 18:26:10 @hopper_agent.py:268][0m #------------------------ Iteration 138 --------------------------#
+[32m[20221122 18:26:16 @hopper_agent.py:301][0m Sample time: 6.607331037521362
+[32m[20221122 18:26:17 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:26:26 @hopper_agent.py:306][0m Update time: 9.898587942123413
+[32m[20221122 18:26:27 @hopper_agent.py:311][0m Evaluation time: 1.1891579627990723
+[32m[20221122 18:26:27 @hopper_agent.py:279][0m Train reward: 0.03048431949792576
+[32m[20221122 18:26:27 @hopper_agent.py:280][0m Train reward episode: 30.484319497925764
+[32m[20221122 18:26:27 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:26:27 @hopper_agent.py:283][0m Total time: 2416.1433458328247
+[32m[20221122 18:26:27 @hopper_agent.py:285][0m 6950000 total steps have happened
+[32m[20221122 18:26:27 @hopper_agent.py:268][0m #------------------------ Iteration 139 --------------------------#
+[32m[20221122 18:26:34 @hopper_agent.py:301][0m Sample time: 6.659787654876709
+[32m[20221122 18:26:35 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:26:44 @hopper_agent.py:306][0m Update time: 9.900474071502686
+[32m[20221122 18:26:45 @hopper_agent.py:311][0m Evaluation time: 1.2125930786132812
+[32m[20221122 18:26:45 @hopper_agent.py:279][0m Train reward: 0.029741343982862906
+[32m[20221122 18:26:45 @hopper_agent.py:280][0m Train reward episode: 29.7413439828629
+[32m[20221122 18:26:45 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:26:45 @hopper_agent.py:283][0m Total time: 2433.9317638874054
+[32m[20221122 18:26:45 @hopper_agent.py:285][0m 7000000 total steps have happened
+[32m[20221122 18:26:45 @hopper_agent.py:268][0m #------------------------ Iteration 140 --------------------------#
+[32m[20221122 18:26:52 @hopper_agent.py:301][0m Sample time: 6.673030853271484
+[32m[20221122 18:26:53 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:27:02 @hopper_agent.py:306][0m Update time: 9.802677154541016
+[32m[20221122 18:27:03 @hopper_agent.py:311][0m Evaluation time: 1.2043650150299072
+[32m[20221122 18:27:03 @hopper_agent.py:279][0m Train reward: 0.035140816560706174
+[32m[20221122 18:27:03 @hopper_agent.py:280][0m Train reward episode: 35.14081656070616
+[32m[20221122 18:27:03 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:27:03 @hopper_agent.py:283][0m Total time: 2451.6270809173584
+[32m[20221122 18:27:03 @hopper_agent.py:285][0m 7050000 total steps have happened
+[32m[20221122 18:27:03 @hopper_agent.py:268][0m #------------------------ Iteration 141 --------------------------#
+[32m[20221122 18:27:10 @hopper_agent.py:301][0m Sample time: 6.658005952835083
+[32m[20221122 18:27:11 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:27:19 @hopper_agent.py:306][0m Update time: 9.80147933959961
+[32m[20221122 18:27:21 @hopper_agent.py:311][0m Evaluation time: 1.2111690044403076
+[32m[20221122 18:27:21 @hopper_agent.py:279][0m Train reward: 0.01872035601838961
+[32m[20221122 18:27:21 @hopper_agent.py:280][0m Train reward episode: 18.72035601838958
+[32m[20221122 18:27:21 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:27:21 @hopper_agent.py:283][0m Total time: 2469.314918756485
+[32m[20221122 18:27:21 @hopper_agent.py:285][0m 7100000 total steps have happened
+[32m[20221122 18:27:21 @hopper_agent.py:268][0m #------------------------ Iteration 142 --------------------------#
+[32m[20221122 18:27:27 @hopper_agent.py:301][0m Sample time: 6.642642021179199
+[32m[20221122 18:27:28 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:27:37 @hopper_agent.py:306][0m Update time: 9.724729776382446
+[32m[20221122 18:27:38 @hopper_agent.py:311][0m Evaluation time: 1.1737232208251953
+[32m[20221122 18:27:38 @hopper_agent.py:279][0m Train reward: 0.029402909023448595
+[32m[20221122 18:27:38 @hopper_agent.py:280][0m Train reward episode: 29.40290902344856
+[32m[20221122 18:27:38 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:27:38 @hopper_agent.py:283][0m Total time: 2486.8719527721405
+[32m[20221122 18:27:38 @hopper_agent.py:285][0m 7150000 total steps have happened
+[32m[20221122 18:27:38 @hopper_agent.py:268][0m #------------------------ Iteration 143 --------------------------#
+[32m[20221122 18:27:45 @hopper_agent.py:301][0m Sample time: 6.736154079437256
+[32m[20221122 18:27:46 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:27:54 @hopper_agent.py:306][0m Update time: 9.592484951019287
+[32m[20221122 18:27:56 @hopper_agent.py:311][0m Evaluation time: 1.2021028995513916
+[32m[20221122 18:27:56 @hopper_agent.py:279][0m Train reward: 0.0293104689798363
+[32m[20221122 18:27:56 @hopper_agent.py:280][0m Train reward episode: 29.31046897983629
+[32m[20221122 18:27:56 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:27:56 @hopper_agent.py:283][0m Total time: 2504.418284893036
+[32m[20221122 18:27:56 @hopper_agent.py:285][0m 7200000 total steps have happened
+[32m[20221122 18:27:56 @hopper_agent.py:268][0m #------------------------ Iteration 144 --------------------------#
+[32m[20221122 18:28:02 @hopper_agent.py:301][0m Sample time: 6.541392087936401
+[32m[20221122 18:28:03 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:28:12 @hopper_agent.py:306][0m Update time: 9.922714948654175
+[32m[20221122 18:28:13 @hopper_agent.py:311][0m Evaluation time: 1.1568629741668701
+[32m[20221122 18:28:13 @hopper_agent.py:279][0m Train reward: 0.01822339249327733
+[32m[20221122 18:28:13 @hopper_agent.py:280][0m Train reward episode: 18.22339249327733
+[32m[20221122 18:28:13 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:28:13 @hopper_agent.py:283][0m Total time: 2522.054379940033
+[32m[20221122 18:28:13 @hopper_agent.py:285][0m 7250000 total steps have happened
+[32m[20221122 18:28:13 @hopper_agent.py:268][0m #------------------------ Iteration 145 --------------------------#
+[32m[20221122 18:28:20 @hopper_agent.py:301][0m Sample time: 6.544217109680176
+[32m[20221122 18:28:21 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:28:30 @hopper_agent.py:306][0m Update time: 9.77321195602417
+[32m[20221122 18:28:31 @hopper_agent.py:311][0m Evaluation time: 1.1540000438690186
+[32m[20221122 18:28:31 @hopper_agent.py:279][0m Train reward: 0.02191515776874856
+[32m[20221122 18:28:31 @hopper_agent.py:280][0m Train reward episode: 21.915157768748582
+[32m[20221122 18:28:31 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:28:31 @hopper_agent.py:283][0m Total time: 2539.5412306785583
+[32m[20221122 18:28:31 @hopper_agent.py:285][0m 7300000 total steps have happened
+[32m[20221122 18:28:31 @hopper_agent.py:268][0m #------------------------ Iteration 146 --------------------------#
+[32m[20221122 18:28:37 @hopper_agent.py:301][0m Sample time: 6.529861927032471
+[32m[20221122 18:28:38 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:28:47 @hopper_agent.py:306][0m Update time: 9.690852165222168
+[32m[20221122 18:28:48 @hopper_agent.py:311][0m Evaluation time: 1.1451349258422852
+[32m[20221122 18:28:48 @hopper_agent.py:279][0m Train reward: 0.018374853803908946
+[32m[20221122 18:28:48 @hopper_agent.py:280][0m Train reward episode: 18.37485380390893
+[32m[20221122 18:28:48 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:28:48 @hopper_agent.py:283][0m Total time: 2556.923229932785
+[32m[20221122 18:28:48 @hopper_agent.py:285][0m 7350000 total steps have happened
+[32m[20221122 18:28:48 @hopper_agent.py:268][0m #------------------------ Iteration 147 --------------------------#
+[32m[20221122 18:28:55 @hopper_agent.py:301][0m Sample time: 6.71465802192688
+[32m[20221122 18:28:56 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:29:05 @hopper_agent.py:306][0m Update time: 9.884809017181396
+[32m[20221122 18:29:06 @hopper_agent.py:311][0m Evaluation time: 1.2027018070220947
+[32m[20221122 18:29:06 @hopper_agent.py:279][0m Train reward: 0.02560803555643912
+[32m[20221122 18:29:06 @hopper_agent.py:280][0m Train reward episode: 25.608035556439123
+[32m[20221122 18:29:06 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:29:06 @hopper_agent.py:283][0m Total time: 2574.741096973419
+[32m[20221122 18:29:06 @hopper_agent.py:285][0m 7400000 total steps have happened
+[32m[20221122 18:29:06 @hopper_agent.py:268][0m #------------------------ Iteration 148 --------------------------#
+[32m[20221122 18:29:13 @hopper_agent.py:301][0m Sample time: 6.788215160369873
+[32m[20221122 18:29:14 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:29:22 @hopper_agent.py:306][0m Update time: 9.679095983505249
+[32m[20221122 18:29:24 @hopper_agent.py:311][0m Evaluation time: 1.137176752090454
+[32m[20221122 18:29:24 @hopper_agent.py:279][0m Train reward: 0.023211269389497507
+[32m[20221122 18:29:24 @hopper_agent.py:280][0m Train reward episode: 23.211269389497524
+[32m[20221122 18:29:24 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:29:24 @hopper_agent.py:283][0m Total time: 2592.361778974533
+[32m[20221122 18:29:24 @hopper_agent.py:285][0m 7450000 total steps have happened
+[32m[20221122 18:29:24 @hopper_agent.py:268][0m #------------------------ Iteration 149 --------------------------#
+[32m[20221122 18:29:30 @hopper_agent.py:301][0m Sample time: 6.571388006210327
+[32m[20221122 18:29:31 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:29:40 @hopper_agent.py:306][0m Update time: 9.648753881454468
+[32m[20221122 18:29:41 @hopper_agent.py:311][0m Evaluation time: 1.1345009803771973
+[32m[20221122 18:29:41 @hopper_agent.py:279][0m Train reward: 0.03329890006857846
+[32m[20221122 18:29:41 @hopper_agent.py:280][0m Train reward episode: 33.29890006857851
+[32m[20221122 18:29:41 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:29:41 @hopper_agent.py:283][0m Total time: 2609.732400894165
+[32m[20221122 18:29:41 @hopper_agent.py:285][0m 7500000 total steps have happened
+[32m[20221122 18:29:41 @hopper_agent.py:268][0m #------------------------ Iteration 150 --------------------------#
+[32m[20221122 18:29:48 @hopper_agent.py:301][0m Sample time: 6.500216245651245
+[32m[20221122 18:29:49 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:29:57 @hopper_agent.py:306][0m Update time: 9.507737636566162
+[32m[20221122 18:29:58 @hopper_agent.py:311][0m Evaluation time: 1.1739282608032227
+[32m[20221122 18:29:58 @hopper_agent.py:279][0m Train reward: 0.022862706095439785
+[32m[20221122 18:29:58 @hopper_agent.py:280][0m Train reward episode: 22.862706095439812
+[32m[20221122 18:29:58 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:29:58 @hopper_agent.py:283][0m Total time: 2626.9292867183685
+[32m[20221122 18:29:58 @hopper_agent.py:285][0m 7550000 total steps have happened
+[32m[20221122 18:29:58 @hopper_agent.py:268][0m #------------------------ Iteration 151 --------------------------#
+[32m[20221122 18:30:05 @hopper_agent.py:301][0m Sample time: 6.472442865371704
+[32m[20221122 18:30:06 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:30:14 @hopper_agent.py:306][0m Update time: 9.685257911682129
+[32m[20221122 18:30:16 @hopper_agent.py:311][0m Evaluation time: 1.196451187133789
+[32m[20221122 18:30:16 @hopper_agent.py:279][0m Train reward: 0.031718846369830966
+[32m[20221122 18:30:16 @hopper_agent.py:280][0m Train reward episode: 31.718846369831027
+[32m[20221122 18:30:16 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:30:16 @hopper_agent.py:283][0m Total time: 2644.2995676994324
+[32m[20221122 18:30:16 @hopper_agent.py:285][0m 7600000 total steps have happened
+[32m[20221122 18:30:16 @hopper_agent.py:268][0m #------------------------ Iteration 152 --------------------------#
+[32m[20221122 18:30:22 @hopper_agent.py:301][0m Sample time: 6.532650947570801
+[32m[20221122 18:30:23 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:30:32 @hopper_agent.py:306][0m Update time: 10.270718097686768
+[32m[20221122 18:30:34 @hopper_agent.py:311][0m Evaluation time: 1.2208178043365479
+[32m[20221122 18:30:34 @hopper_agent.py:279][0m Train reward: 0.029701839393473206
+[32m[20221122 18:30:34 @hopper_agent.py:280][0m Train reward episode: 29.701839393473218
+[32m[20221122 18:30:34 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:30:34 @hopper_agent.py:283][0m Total time: 2662.341071844101
+[32m[20221122 18:30:34 @hopper_agent.py:285][0m 7650000 total steps have happened
+[32m[20221122 18:30:34 @hopper_agent.py:268][0m #------------------------ Iteration 153 --------------------------#
+[32m[20221122 18:30:40 @hopper_agent.py:301][0m Sample time: 6.621059894561768
+[32m[20221122 18:30:41 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:30:50 @hopper_agent.py:306][0m Update time: 9.712441205978394
+[32m[20221122 18:30:51 @hopper_agent.py:311][0m Evaluation time: 1.1849761009216309
+[32m[20221122 18:30:51 @hopper_agent.py:279][0m Train reward: 0.025589143690058255
+[32m[20221122 18:30:51 @hopper_agent.py:280][0m Train reward episode: 25.58914369005824
+[32m[20221122 18:30:51 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:30:51 @hopper_agent.py:283][0m Total time: 2679.8774518966675
+[32m[20221122 18:30:51 @hopper_agent.py:285][0m 7700000 total steps have happened
+[32m[20221122 18:30:51 @hopper_agent.py:268][0m #------------------------ Iteration 154 --------------------------#
+[32m[20221122 18:30:58 @hopper_agent.py:301][0m Sample time: 6.454967021942139
+[32m[20221122 18:30:59 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:31:07 @hopper_agent.py:306][0m Update time: 9.45904803276062
+[32m[20221122 18:31:08 @hopper_agent.py:311][0m Evaluation time: 1.1884570121765137
+[32m[20221122 18:31:08 @hopper_agent.py:279][0m Train reward: 0.013950288338537885
+[32m[20221122 18:31:08 @hopper_agent.py:280][0m Train reward episode: 13.950288338537902
+[32m[20221122 18:31:08 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:31:08 @hopper_agent.py:283][0m Total time: 2696.995096683502
+[32m[20221122 18:31:08 @hopper_agent.py:285][0m 7750000 total steps have happened
+[32m[20221122 18:31:08 @hopper_agent.py:268][0m #------------------------ Iteration 155 --------------------------#
+[32m[20221122 18:31:15 @hopper_agent.py:301][0m Sample time: 6.69796895980835
+[32m[20221122 18:31:16 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:31:25 @hopper_agent.py:306][0m Update time: 9.59641695022583
+[32m[20221122 18:31:26 @hopper_agent.py:311][0m Evaluation time: 1.1759021282196045
+[32m[20221122 18:31:26 @hopper_agent.py:279][0m Train reward: 0.025092982532734325
+[32m[20221122 18:31:26 @hopper_agent.py:280][0m Train reward episode: 25.09298253273434
+[32m[20221122 18:31:26 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:31:26 @hopper_agent.py:283][0m Total time: 2714.480598926544
+[32m[20221122 18:31:26 @hopper_agent.py:285][0m 7800000 total steps have happened
+[32m[20221122 18:31:26 @hopper_agent.py:268][0m #------------------------ Iteration 156 --------------------------#
+[32m[20221122 18:31:32 @hopper_agent.py:301][0m Sample time: 6.566682815551758
+[32m[20221122 18:31:33 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:31:42 @hopper_agent.py:306][0m Update time: 9.739137172698975
+[32m[20221122 18:31:43 @hopper_agent.py:311][0m Evaluation time: 1.1385471820831299
+[32m[20221122 18:31:43 @hopper_agent.py:279][0m Train reward: 0.03595191856566399
+[32m[20221122 18:31:43 @hopper_agent.py:280][0m Train reward episode: 35.95191856566405
+[32m[20221122 18:31:43 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:31:43 @hopper_agent.py:283][0m Total time: 2731.940631866455
+[32m[20221122 18:31:43 @hopper_agent.py:285][0m 7850000 total steps have happened
+[32m[20221122 18:31:43 @hopper_agent.py:268][0m #------------------------ Iteration 157 --------------------------#
+[32m[20221122 18:31:50 @hopper_agent.py:301][0m Sample time: 6.497942924499512
+[32m[20221122 18:31:51 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:31:59 @hopper_agent.py:306][0m Update time: 9.495039939880371
+[32m[20221122 18:32:00 @hopper_agent.py:311][0m Evaluation time: 1.151979923248291
+[32m[20221122 18:32:00 @hopper_agent.py:279][0m Train reward: 0.02140551202808514
+[32m[20221122 18:32:00 @hopper_agent.py:280][0m Train reward episode: 21.405512028085123
+[32m[20221122 18:32:00 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:32:00 @hopper_agent.py:283][0m Total time: 2749.1030099391937
+[32m[20221122 18:32:00 @hopper_agent.py:285][0m 7900000 total steps have happened
+[32m[20221122 18:32:00 @hopper_agent.py:268][0m #------------------------ Iteration 158 --------------------------#
+[32m[20221122 18:32:07 @hopper_agent.py:301][0m Sample time: 6.777425050735474
+[32m[20221122 18:32:08 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:32:17 @hopper_agent.py:306][0m Update time: 10.001315832138062
+[32m[20221122 18:32:18 @hopper_agent.py:311][0m Evaluation time: 1.2271249294281006
+[32m[20221122 18:32:18 @hopper_agent.py:279][0m Train reward: 0.030244969818903397
+[32m[20221122 18:32:18 @hopper_agent.py:280][0m Train reward episode: 30.244969818903368
+[32m[20221122 18:32:18 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:32:18 @hopper_agent.py:283][0m Total time: 2767.1672587394714
+[32m[20221122 18:32:18 @hopper_agent.py:285][0m 7950000 total steps have happened
+[32m[20221122 18:32:18 @hopper_agent.py:268][0m #------------------------ Iteration 159 --------------------------#
+[32m[20221122 18:32:25 @hopper_agent.py:301][0m Sample time: 6.827110052108765
+[32m[20221122 18:32:27 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:32:35 @hopper_agent.py:306][0m Update time: 9.53246784210205
+[32m[20221122 18:32:36 @hopper_agent.py:311][0m Evaluation time: 1.131911277770996
+[32m[20221122 18:32:36 @hopper_agent.py:279][0m Train reward: 0.021527602884038006
+[32m[20221122 18:32:36 @hopper_agent.py:280][0m Train reward episode: 21.527602884037982
+[32m[20221122 18:32:36 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:32:36 @hopper_agent.py:283][0m Total time: 2784.6738669872284
+[32m[20221122 18:32:36 @hopper_agent.py:285][0m 8000000 total steps have happened
+[32m[20221122 18:32:36 @hopper_agent.py:268][0m #------------------------ Iteration 160 --------------------------#
+[32m[20221122 18:32:42 @hopper_agent.py:301][0m Sample time: 6.498510122299194
+[32m[20221122 18:32:44 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:32:52 @hopper_agent.py:306][0m Update time: 9.503237962722778
+[32m[20221122 18:32:53 @hopper_agent.py:311][0m Evaluation time: 1.153285026550293
+[32m[20221122 18:32:53 @hopper_agent.py:279][0m Train reward: 0.017695483202537637
+[32m[20221122 18:32:53 @hopper_agent.py:280][0m Train reward episode: 17.69548320253765
+[32m[20221122 18:32:53 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:32:53 @hopper_agent.py:283][0m Total time: 2801.843817949295
+[32m[20221122 18:32:53 @hopper_agent.py:285][0m 8050000 total steps have happened
+[32m[20221122 18:32:53 @hopper_agent.py:268][0m #------------------------ Iteration 161 --------------------------#
+[32m[20221122 18:33:00 @hopper_agent.py:301][0m Sample time: 6.612608194351196
+[32m[20221122 18:33:01 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:33:09 @hopper_agent.py:306][0m Update time: 9.731673002243042
+[32m[20221122 18:33:11 @hopper_agent.py:311][0m Evaluation time: 1.187225103378296
+[32m[20221122 18:33:11 @hopper_agent.py:279][0m Train reward: 0.013984560811023759
+[32m[20221122 18:33:11 @hopper_agent.py:280][0m Train reward episode: 13.984560811023762
+[32m[20221122 18:33:11 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:33:11 @hopper_agent.py:283][0m Total time: 2819.392733812332
+[32m[20221122 18:33:11 @hopper_agent.py:285][0m 8100000 total steps have happened
+[32m[20221122 18:33:11 @hopper_agent.py:268][0m #------------------------ Iteration 162 --------------------------#
+[32m[20221122 18:33:17 @hopper_agent.py:301][0m Sample time: 6.480760812759399
+[32m[20221122 18:33:18 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:33:27 @hopper_agent.py:306][0m Update time: 9.674391984939575
+[32m[20221122 18:33:28 @hopper_agent.py:311][0m Evaluation time: 1.192230224609375
+[32m[20221122 18:33:28 @hopper_agent.py:279][0m Train reward: 0.03241641370825635
+[32m[20221122 18:33:28 @hopper_agent.py:280][0m Train reward episode: 32.41641370825637
+[32m[20221122 18:33:28 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:33:28 @hopper_agent.py:283][0m Total time: 2836.7555887699127
+[32m[20221122 18:33:28 @hopper_agent.py:285][0m 8150000 total steps have happened
+[32m[20221122 18:33:28 @hopper_agent.py:268][0m #------------------------ Iteration 163 --------------------------#
+[32m[20221122 18:33:35 @hopper_agent.py:301][0m Sample time: 6.505620956420898
+[32m[20221122 18:33:36 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:33:44 @hopper_agent.py:306][0m Update time: 9.458767175674438
+[32m[20221122 18:33:45 @hopper_agent.py:311][0m Evaluation time: 1.1953699588775635
+[32m[20221122 18:33:45 @hopper_agent.py:279][0m Train reward: 0.024217858533431016
+[32m[20221122 18:33:45 @hopper_agent.py:280][0m Train reward episode: 24.217858533431027
+[32m[20221122 18:33:45 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:33:45 @hopper_agent.py:283][0m Total time: 2853.9317648410797
+[32m[20221122 18:33:45 @hopper_agent.py:285][0m 8200000 total steps have happened
+[32m[20221122 18:33:45 @hopper_agent.py:268][0m #------------------------ Iteration 164 --------------------------#
+[32m[20221122 18:33:52 @hopper_agent.py:301][0m Sample time: 6.803648948669434
+[32m[20221122 18:33:53 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:34:02 @hopper_agent.py:306][0m Update time: 9.570006132125854
+[32m[20221122 18:34:03 @hopper_agent.py:311][0m Evaluation time: 1.1801600456237793
+[32m[20221122 18:34:03 @hopper_agent.py:279][0m Train reward: 0.024642432339611383
+[32m[20221122 18:34:03 @hopper_agent.py:280][0m Train reward episode: 24.642432339611403
+[32m[20221122 18:34:03 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:34:03 @hopper_agent.py:283][0m Total time: 2871.5004301071167
+[32m[20221122 18:34:03 @hopper_agent.py:285][0m 8250000 total steps have happened
+[32m[20221122 18:34:03 @hopper_agent.py:268][0m #------------------------ Iteration 165 --------------------------#
+[32m[20221122 18:34:09 @hopper_agent.py:301][0m Sample time: 6.453762054443359
+[32m[20221122 18:34:10 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:34:19 @hopper_agent.py:306][0m Update time: 9.350639820098877
+[32m[20221122 18:34:20 @hopper_agent.py:311][0m Evaluation time: 1.1783149242401123
+[32m[20221122 18:34:20 @hopper_agent.py:279][0m Train reward: 0.03553110667972015
+[32m[20221122 18:34:20 @hopper_agent.py:280][0m Train reward episode: 35.53110667972019
+[32m[20221122 18:34:20 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:34:20 @hopper_agent.py:283][0m Total time: 2888.500141620636
+[32m[20221122 18:34:20 @hopper_agent.py:285][0m 8300000 total steps have happened
+[32m[20221122 18:34:20 @hopper_agent.py:268][0m #------------------------ Iteration 166 --------------------------#
+[32m[20221122 18:34:26 @hopper_agent.py:301][0m Sample time: 6.467272996902466
+[32m[20221122 18:34:27 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:34:35 @hopper_agent.py:306][0m Update time: 9.214825868606567
+[32m[20221122 18:34:37 @hopper_agent.py:311][0m Evaluation time: 1.1575989723205566
+[32m[20221122 18:34:37 @hopper_agent.py:279][0m Train reward: 0.0357081120427833
+[32m[20221122 18:34:37 @hopper_agent.py:280][0m Train reward episode: 35.70811204278321
+[32m[20221122 18:34:37 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:34:37 @hopper_agent.py:283][0m Total time: 2905.3539638519287
+[32m[20221122 18:34:37 @hopper_agent.py:285][0m 8350000 total steps have happened
+[32m[20221122 18:34:37 @hopper_agent.py:268][0m #------------------------ Iteration 167 --------------------------#
+[32m[20221122 18:34:43 @hopper_agent.py:301][0m Sample time: 6.5956690311431885
+[32m[20221122 18:34:44 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:34:53 @hopper_agent.py:306][0m Update time: 9.53252387046814
+[32m[20221122 18:34:54 @hopper_agent.py:311][0m Evaluation time: 1.2034509181976318
+[32m[20221122 18:34:54 @hopper_agent.py:279][0m Train reward: 0.016240056516654795
+[32m[20221122 18:34:54 @hopper_agent.py:280][0m Train reward episode: 16.240056516654814
+[32m[20221122 18:34:54 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:34:54 @hopper_agent.py:283][0m Total time: 2922.7023470401764
+[32m[20221122 18:34:54 @hopper_agent.py:285][0m 8400000 total steps have happened
+[32m[20221122 18:34:54 @hopper_agent.py:268][0m #------------------------ Iteration 168 --------------------------#
+[32m[20221122 18:35:01 @hopper_agent.py:301][0m Sample time: 6.5906898975372314
+[32m[20221122 18:35:02 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:35:10 @hopper_agent.py:306][0m Update time: 9.541759014129639
+[32m[20221122 18:35:11 @hopper_agent.py:311][0m Evaluation time: 1.192615270614624
+[32m[20221122 18:35:11 @hopper_agent.py:279][0m Train reward: 0.022843509116345296
+[32m[20221122 18:35:11 @hopper_agent.py:280][0m Train reward episode: 22.843509116345302
+[32m[20221122 18:35:11 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:35:11 @hopper_agent.py:283][0m Total time: 2940.0484108924866
+[32m[20221122 18:35:11 @hopper_agent.py:285][0m 8450000 total steps have happened
+[32m[20221122 18:35:11 @hopper_agent.py:268][0m #------------------------ Iteration 169 --------------------------#
+[32m[20221122 18:35:18 @hopper_agent.py:301][0m Sample time: 7.034079074859619
+[32m[20221122 18:35:19 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:35:28 @hopper_agent.py:306][0m Update time: 9.92435097694397
+[32m[20221122 18:35:29 @hopper_agent.py:311][0m Evaluation time: 1.1802988052368164
+[32m[20221122 18:35:29 @hopper_agent.py:279][0m Train reward: 0.028699417518677724
+[32m[20221122 18:35:29 @hopper_agent.py:280][0m Train reward episode: 28.699417518677723
+[32m[20221122 18:35:29 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:35:29 @hopper_agent.py:283][0m Total time: 2958.2056319713593
+[32m[20221122 18:35:29 @hopper_agent.py:285][0m 8500000 total steps have happened
+[32m[20221122 18:35:29 @hopper_agent.py:268][0m #------------------------ Iteration 170 --------------------------#
+[32m[20221122 18:35:36 @hopper_agent.py:301][0m Sample time: 6.636355638504028
+[32m[20221122 18:35:37 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:35:46 @hopper_agent.py:306][0m Update time: 9.460238218307495
+[32m[20221122 18:35:47 @hopper_agent.py:311][0m Evaluation time: 1.2721138000488281
+[32m[20221122 18:35:47 @hopper_agent.py:279][0m Train reward: 0.030185309273917604
+[32m[20221122 18:35:47 @hopper_agent.py:280][0m Train reward episode: 30.185309273917575
+[32m[20221122 18:35:47 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:35:47 @hopper_agent.py:283][0m Total time: 2975.5921840667725
+[32m[20221122 18:35:47 @hopper_agent.py:285][0m 8550000 total steps have happened
+[32m[20221122 18:35:47 @hopper_agent.py:268][0m #------------------------ Iteration 171 --------------------------#
+[32m[20221122 18:35:54 @hopper_agent.py:301][0m Sample time: 6.731023788452148
+[32m[20221122 18:35:55 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:36:04 @hopper_agent.py:306][0m Update time: 9.946109294891357
+[32m[20221122 18:36:05 @hopper_agent.py:311][0m Evaluation time: 1.166043758392334
+[32m[20221122 18:36:05 @hopper_agent.py:279][0m Train reward: 0.033085602922201814
+[32m[20221122 18:36:05 @hopper_agent.py:280][0m Train reward episode: 33.085602922201744
+[32m[20221122 18:36:05 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:36:05 @hopper_agent.py:283][0m Total time: 2993.452218770981
+[32m[20221122 18:36:05 @hopper_agent.py:285][0m 8600000 total steps have happened
+[32m[20221122 18:36:05 @hopper_agent.py:268][0m #------------------------ Iteration 172 --------------------------#
+[32m[20221122 18:36:11 @hopper_agent.py:301][0m Sample time: 6.525244951248169
+[32m[20221122 18:36:12 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:36:21 @hopper_agent.py:306][0m Update time: 9.496877193450928
+[32m[20221122 18:36:22 @hopper_agent.py:311][0m Evaluation time: 1.1677827835083008
+[32m[20221122 18:36:22 @hopper_agent.py:279][0m Train reward: 0.03907183826485582
+[32m[20221122 18:36:22 @hopper_agent.py:280][0m Train reward episode: 39.07183826485582
+[32m[20221122 18:36:22 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:36:22 @hopper_agent.py:283][0m Total time: 3010.6572349071503
+[32m[20221122 18:36:22 @hopper_agent.py:285][0m 8650000 total steps have happened
+[32m[20221122 18:36:22 @hopper_agent.py:268][0m #------------------------ Iteration 173 --------------------------#
+[32m[20221122 18:36:29 @hopper_agent.py:301][0m Sample time: 6.6118481159210205
+[32m[20221122 18:36:30 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:36:38 @hopper_agent.py:306][0m Update time: 9.664102792739868
+[32m[20221122 18:36:39 @hopper_agent.py:311][0m Evaluation time: 1.1365242004394531
+[32m[20221122 18:36:39 @hopper_agent.py:279][0m Train reward: 0.03099435406120158
+[32m[20221122 18:36:39 @hopper_agent.py:280][0m Train reward episode: 30.99435406120163
+[32m[20221122 18:36:39 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:36:39 @hopper_agent.py:283][0m Total time: 3028.0898537635803
+[32m[20221122 18:36:39 @hopper_agent.py:285][0m 8700000 total steps have happened
+[32m[20221122 18:36:39 @hopper_agent.py:268][0m #------------------------ Iteration 174 --------------------------#
+[32m[20221122 18:36:46 @hopper_agent.py:301][0m Sample time: 6.490173816680908
+[32m[20221122 18:36:47 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:36:55 @hopper_agent.py:306][0m Update time: 9.534480810165405
+[32m[20221122 18:36:57 @hopper_agent.py:311][0m Evaluation time: 1.194460391998291
+[32m[20221122 18:36:57 @hopper_agent.py:279][0m Train reward: 0.024761169190912626
+[32m[20221122 18:36:57 @hopper_agent.py:280][0m Train reward episode: 24.761169190912625
+[32m[20221122 18:36:57 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:36:57 @hopper_agent.py:283][0m Total time: 3045.3255178928375
+[32m[20221122 18:36:57 @hopper_agent.py:285][0m 8750000 total steps have happened
+[32m[20221122 18:36:57 @hopper_agent.py:268][0m #------------------------ Iteration 175 --------------------------#
+[32m[20221122 18:37:03 @hopper_agent.py:301][0m Sample time: 6.643628835678101
+[32m[20221122 18:37:04 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:37:13 @hopper_agent.py:306][0m Update time: 9.421601057052612
+[32m[20221122 18:37:14 @hopper_agent.py:311][0m Evaluation time: 1.1753120422363281
+[32m[20221122 18:37:14 @hopper_agent.py:279][0m Train reward: 0.03403238767765814
+[32m[20221122 18:37:14 @hopper_agent.py:280][0m Train reward episode: 34.03238767765813
+[32m[20221122 18:37:14 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:37:14 @hopper_agent.py:283][0m Total time: 3062.5811638832092
+[32m[20221122 18:37:14 @hopper_agent.py:285][0m 8800000 total steps have happened
+[32m[20221122 18:37:14 @hopper_agent.py:268][0m #------------------------ Iteration 176 --------------------------#
+[32m[20221122 18:37:20 @hopper_agent.py:301][0m Sample time: 6.459484815597534
+[32m[20221122 18:37:21 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:37:30 @hopper_agent.py:306][0m Update time: 9.405236005783081
+[32m[20221122 18:37:31 @hopper_agent.py:311][0m Evaluation time: 1.1721711158752441
+[32m[20221122 18:37:31 @hopper_agent.py:279][0m Train reward: 0.01759313479154131
+[32m[20221122 18:37:31 @hopper_agent.py:280][0m Train reward episode: 17.59313479154129
+[32m[20221122 18:37:31 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:37:31 @hopper_agent.py:283][0m Total time: 3079.632516860962
+[32m[20221122 18:37:31 @hopper_agent.py:285][0m 8850000 total steps have happened
+[32m[20221122 18:37:31 @hopper_agent.py:268][0m #------------------------ Iteration 177 --------------------------#
+[32m[20221122 18:37:37 @hopper_agent.py:301][0m Sample time: 6.458051681518555
+[32m[20221122 18:37:38 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:37:47 @hopper_agent.py:306][0m Update time: 9.370703220367432
+[32m[20221122 18:37:48 @hopper_agent.py:311][0m Evaluation time: 1.186176061630249
+[32m[20221122 18:37:48 @hopper_agent.py:279][0m Train reward: 0.02351455943786316
+[32m[20221122 18:37:48 @hopper_agent.py:280][0m Train reward episode: 23.51455943786315
+[32m[20221122 18:37:48 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:37:48 @hopper_agent.py:283][0m Total time: 3096.6638588905334
+[32m[20221122 18:37:48 @hopper_agent.py:285][0m 8900000 total steps have happened
+[32m[20221122 18:37:48 @hopper_agent.py:268][0m #------------------------ Iteration 178 --------------------------#
+[32m[20221122 18:37:55 @hopper_agent.py:301][0m Sample time: 6.647755861282349
+[32m[20221122 18:37:56 @hopper_agent.py:360][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
+[32m[20221122 18:38:05 @hopper_agent.py:306][0m Update time: 9.943795919418335
+[32m[20221122 18:38:06 @hopper_agent.py:311][0m Evaluation time: 1.2492501735687256
+[32m[20221122 18:38:06 @hopper_agent.py:279][0m Train reward: 0.026589238893601163
+[32m[20221122 18:38:06 @hopper_agent.py:280][0m Train reward episode: 26.589238893601173
+[32m[20221122 18:38:06 @hopper_agent.py:281][0m Average episode reward: 0
+[32m[20221122 18:38:06 @hopper_agent.py:283][0m Total time: 3114.531842947006
+[32m[20221122 18:38:06 @hopper_agent.py:285][0m 8950000 total steps have happened
+[32m[20221122 18:38:06 @hopper_agent.py:268][0m #------------------------ Iteration 179 --------------------------#

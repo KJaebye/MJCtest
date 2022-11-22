@@ -88,6 +88,8 @@ class HopperAgent(AgentPPO):
         memory = Memory()
         logger_rl = self.logger_cls(**self.logger_kwargs)
 
+        t = 0
+        r = 0
         # sample a batch of data
         while logger_rl.num_steps < thread_batch_size:
             time_step = self.env.reset()
@@ -124,9 +126,8 @@ class HopperAgent(AgentPPO):
 
                 # record reward
                 logger_rl.step(reward)
-                mask = 0 if time_step.last() else 1
-                exp = 1 - use_mean_action
-                self.push_memory(memory, cur_state, action, next_state, reward, mask, exp)
+
+                self.push_memory(memory, cur_state, action, next_state, reward)
                 cur_state = next_state
 
                 # only render the first worker pid 0
@@ -143,7 +144,12 @@ class HopperAgent(AgentPPO):
                     break
 
             logger_rl.end_episode()
+            t += 1
+            r += logger_rl.episode_reward
         logger_rl.end_sampling()
+
+        self.logger.info('agent avg episode reward: {}'.format(r/t))
+
 
         if queue is not None:
             queue.put([pid, memory, logger_rl])
@@ -277,7 +283,8 @@ class HopperAgent(AgentPPO):
             self.save_checkpoint(epoch)
         else:
             self.save_best_flag = False
-            self.logger.info('Average episode reward: {}'.format(log_eval.episode_reward))
+            self.logger.info('Average TRAINING episode reward: {}'.format(log.avg_episode_reward))
+            self.logger.info('Average EVALUATION episode reward: {}'.format(log_eval.episode_reward))
 
         self.logger.info('Total time: {}'.format(t_cur - self.t_start))
         self.total_steps += self.cfg.min_batch_size
@@ -316,8 +323,6 @@ class HopperAgent(AgentPPO):
         states = tensorfy(batch.cur_states, self.device)
         actions = tensorfy(batch.actions, self.device)
         rewards = torch.from_numpy(batch.rewards).to(self.dtype).to(self.device)
-        masks = torch.from_numpy(batch.masks).to(self.dtype).to(self.device)
-        exps = torch.from_numpy(batch.exps).to(self.dtype).to(self.device)
         with torper.to_eval(*self.update_modules):
             with torch.no_grad():
                 values = []
@@ -329,23 +334,21 @@ class HopperAgent(AgentPPO):
                 values = torch.cat(values)
 
         # get advantage from the trajectories
-        advantages, returns = estimate_advantages(rewards, masks, values, self.gamma, self.tau)
+        advantages, returns = estimate_advantages(rewards, values, self.gamma, self.tau)
 
         if self.cfg.agent_spec.get('reinforce', False):
             advantages = returns.clone()
 
-        self.update_policy(states, actions, returns, advantages, exps)
+        self.update_policy(states, actions, returns, advantages)
         return
 
-
-    def update_policy(self, states, actions, returns, advantages, exps):
+    def update_policy(self, states, actions, returns, advantages):
         """
         Update policy.
         :param states:
         :param actions:
         :param returns:
         :param advantages:
-        :param exps:
         :return:
         """
         with torper.to_eval(*self.update_modules):
@@ -360,7 +363,7 @@ class HopperAgent(AgentPPO):
                 fixed_log_probs = torch.cat(fixed_log_probs)
         num_state = len(states)
 
-        self.logger.info('| %11s | %11s | %11s | %11s| %11s|' % ('surr', 'kl', 'ent', 'vf_loss', 'weight_l2'))
+        # self.logger.info('| %11s | %11s | %11s | %11s| %11s|' % ('surr', 'kl', 'ent', 'vf_loss', 'weight_l2'))
 
         for _ in range(self.optim_num_epochs):
             if self.use_mini_batch:
@@ -368,20 +371,18 @@ class HopperAgent(AgentPPO):
                 np.random.shuffle(perm_np)
                 perm = torper.LongTensor(perm_np).to(self.device)
 
-                states, actions, returns, advantages, fixed_log_probs, exps = \
+                states, actions, returns, advantages, fixed_log_probs = \
                     tools.index_select_list(states, perm_np), \
                     tools.index_select_list(actions, perm_np), \
                     returns[perm].clone(), \
                     advantages[perm].clone(), \
-                    fixed_log_probs[perm].clone(), \
-                    exps[perm].clone()
+                    fixed_log_probs[perm].clone()
 
                 optim_iter_num = int(math.floor(num_state / self.mini_batch_size))
                 for i in range(optim_iter_num):
                     index = slice(i * self.mini_batch_size, min((i + 1) * self.mini_batch_size, num_state))
-                    states_b, actions_b, advantages_b, returns_b, fixed_log_probs_b, exps_b = \
-                        states[index], actions[index], advantages[index], returns[index], fixed_log_probs[index], exps[
-                            index]
+                    states_b, actions_b, advantages_b, returns_b, fixed_log_probs_b = \
+                        states[index], actions[index], advantages[index], returns[index], fixed_log_probs[index]
                     self.update_value(states_b, returns_b)
                     self.surr_loss = self.ppo_loss(states_b, actions_b, advantages_b, fixed_log_probs_b)
                     self.optimizer_policy.zero_grad()
@@ -389,7 +390,6 @@ class HopperAgent(AgentPPO):
                     self.clip_policy_grad()
                     self.optimizer_policy.step()
             else:
-                index = exps.nonzero(as_tuple=False).squeeze(1)
                 self.update_value(states, returns)
                 self.surr_loss = self.ppo_loss(states, actions, advantages, fixed_log_probs)
                 self.optimizer_policy.zero_grad()

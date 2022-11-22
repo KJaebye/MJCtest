@@ -20,7 +20,7 @@ class AgentPPO(AgentPG):
         self.use_mini_batch = use_mini_batch
         self.policy_grad_clip = policy_grad_clip
 
-    def update_policy(self, states, actions, returns, advantages, exps):
+    def update_policy(self, states, actions, returns, advantages):
         """ Update the policy """
         with torper.to_eval(*self.update_modules):
             with torch.no_grad():
@@ -32,9 +32,9 @@ class AgentPPO(AgentPG):
                 perm = np.arange(states.shape[0])
                 np.random.shuffle(perm)
                 perm = torper.LongTensor(perm).to(self.device)
-                states, actions, returns, advantages, fixed_log_probs, exps = \
+                states, actions, returns, advantages, fixed_log_probs = \
                     states[perm].clone(), actions[perm].clone(), returns[perm].clone(), advantages[perm].clone(), \
-                    fixed_log_probs[perm].clone(), exps[perm].clone()
+                    fixed_log_probs[perm].clone()
 
                 optim_iter_num = int(math.floor(states.shape[0] / self.mini_batch_size))
                 for i in range(optim_iter_num):
@@ -42,22 +42,20 @@ class AgentPPO(AgentPG):
                     index = slice(i * self.mini_batch_size, min((i + 1) * self.mini_batch_size, states.shape[0]))
 
                     # intercept the current batch data
-                    states_b, actions_b, returns_b, advantages_b, fixed_log_probs_b, exps_b = \
+                    states_b, actions_b, returns_b, advantages_b, fixed_log_probs_b = \
                         states[index], actions[index], returns[index], \
-                        advantages[index], fixed_log_probs[index], exps[index]
-                    index = exps_b.nonzero(as_turple=False).squeeze(1)
+                        advantages[index], fixed_log_probs[index]
 
                     # update value by using the current batch
                     self.update_value(states_b, returns_b)
-                    surr_loss = self.ppo_loss(states_b, actions_b, advantages_b, fixed_log_probs_b, index)
+                    surr_loss = self.ppo_loss(states_b, actions_b, advantages_b, fixed_log_probs_b)
                     self.optimizer_policy.zero_grad()
                     surr_loss.backward()
                     self.clip_policy_grad()
                     self.optimizer_policy.step()
             else:
-                index = exps.nonzero(as_tuple=False).squeeze(1)
                 self.update_value(states, returns)
-                surr_loss = self.ppo_loss(states, actions, advantages, fixed_log_probs, index)
+                surr_loss = self.ppo_loss(states, actions, advantages, fixed_log_probs)
                 self.optimizer_policy.zero_grad()
                 surr_loss.backward()
                 self.clip_policy_grad()
@@ -68,10 +66,9 @@ class AgentPPO(AgentPG):
             for params, max_norm in self.policy_grad_clip:
                 torch.nn.utils.clip_grad_norm_(params, max_norm)
 
-    def ppo_loss(self, states, actions, advantages, fixd_log_probs, index):
-        log_probs = self.policy_net.get_log_prob(self.trans_policy(states)[index], actions[index])
-        ratio = torch.exp(log_probs - fixd_log_probs[index])
-        advantages = advantages[index]
+    def ppo_loss(self, states, actions, advantages, fixd_log_probs):
+        log_probs = self.policy_net.get_log_prob(self.trans_policy(states), actions)
+        ratio = torch.exp(log_probs - fixd_log_probs)
         surr_1 = ratio * advantages
         surr_2 = torch.clamp(ratio, 1.0 - self.clip_epsilon, 1.0 + self.clip_epsilon) * advantages
         surr_loss = - torch.min(surr_1, surr_2).mean()

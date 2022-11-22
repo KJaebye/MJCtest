@@ -1,0 +1,18 @@
+[32m[20221122 18:45:07 @logger.py:105][0m Log file set to ./tmp/hopper/easy/20221122_184507/log/hopper_easy-20221122_184507.log
+[32m[20221122 18:45:07 @hopper_agent.py:268][0m #------------------------ Iteration 0 --------------------------#
+[32m[20221122 18:45:11 @hopper_agent.py:300][0m Sample time: 3.481058120727539
+[32m[20221122 18:45:21 @hopper_agent.py:305][0m Update time: 9.927709102630615
+[32m[20221122 18:45:22 @hopper_agent.py:310][0m Evaluation time: 0.7762057781219482
+[32m[20221122 18:45:22 @hopper_agent.py:275][0m [4m[34mCRITICAL[0m Get the best episode reward: 0
+[32m[20221122 18:45:22 @hopper_agent.py:253][0m [4m[34mCRITICAL[0m Saving the best checkpoint with rewards 0.00
+[32m[20221122 18:45:22 @hopper_agent.py:282][0m Total time: 14.560613870620728
+[32m[20221122 18:45:22 @hopper_agent.py:284][0m 50000 total steps have happened
+[32m[20221122 18:45:22 @hopper_agent.py:268][0m #------------------------ Iteration 1 --------------------------#
+[32m[20221122 18:45:26 @hopper_agent.py:300][0m Sample time: 3.9223790168762207
+[32m[20221122 18:45:36 @hopper_agent.py:305][0m Update time: 9.805737018585205
+[32m[20221122 18:45:36 @hopper_agent.py:310][0m Evaluation time: 0.911984920501709
+[32m[20221122 18:45:37 @hopper_agent.py:279][0m Train reward episode: 28.262437912398862
+[32m[20221122 18:45:37 @hopper_agent.py:280][0m Average episode reward: 0
+[32m[20221122 18:45:37 @hopper_agent.py:282][0m Total time: 29.504174947738647
+[32m[20221122 18:45:37 @hopper_agent.py:284][0m 100000 total steps have happened
+[32m[20221122 18:45:37 @hopper_agent.py:268][0m #------------------------ Iteration 2 --------------------------#

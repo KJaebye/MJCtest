@@ -33,14 +33,13 @@ class AgentPG(Agent):
             value_loss.backward()
             self.optimizer_value.step()
 
-    def update_policy(self, states, actions, returns, advantages, exps):
+    def update_policy(self, states, actions, returns, advantages):
         """ Update Policy """
         # use a2c by default
-        ind = exps.nonzero().squeeze(1)
         for _ in range(self.optim_num_epochs):
             self.update_value(states, returns)
-            log_probs = self.policy_net.get_log_prob(self.trans_policy(states)[ind], actions[ind])
-            policy_loss = - (log_probs * advantages[ind]).mean()
+            log_probs = self.policy_net.get_log_prob(self.trans_policy(states), actions)
+            policy_loss = - (log_probs * advantages).mean()
             self.optimizer_policy.zero_grad()
             policy_loss.backward()
             self.optimizer_policy.step()
@@ -59,8 +58,8 @@ class AgentPG(Agent):
                 values = self.value_net(self.trans_value(states))
 
         """get advantage estimation from the trajectories"""
-        advantages, returns = torper.estimate_advantages(rewards, masks, values, self.gamma, self.tau)
+        advantages, returns = torper.estimate_advantages(rewards, values, self.gamma, self.tau)
 
-        self.update_policy(states, actions, returns, advantages, exps)
+        self.update_policy(states, actions, returns, advantages)
 
         return time.time() - t_start

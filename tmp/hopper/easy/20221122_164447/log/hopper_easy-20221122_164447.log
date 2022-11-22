@@ -1,0 +1,4 @@
+[32m[20221122 16:44:47 @logger.py:105][0m Log file set to ./tmp/hopper/easy/20221122_164447/log/hopper_easy-20221122_164447.log
+[32m[20221122 16:44:47 @hopper_agent.py:269][0m #------------------------ Iteration 0 --------------------------#
+[32m[20221122 16:44:54 @hopper_agent.py:300][0m Sample time: 6.253310918807983
+[32m[20221122 16:44:55 @hopper_agent.py:366][0m |        surr |          kl |         ent |     vf_loss|   weight_l2|
