@@ -92,7 +92,6 @@ class HopperTask(mujoco_env.MujocoTask):
 
 env = HopperEnv(None)
 action_spec = env.action_spec()
-env.step()
 
 observation_spec = env.observation_spec()
 

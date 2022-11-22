@@ -49,14 +49,10 @@ if __name__ == "__main__":
 
     """ create agent """
     agent = HopperAgent(cfg, logger, dtype=dtype, device=device, seed=cfg.seed, num_threads=args.num_threads,
-                        training=True, checkpoint=start_epoch)
+                        render=args.render, training=True, checkpoint=start_epoch)
 
-    if args.render:
-        agent.pre_epoch_update(start_epoch)
-        agent.sample(1e8, mean_action=not args.show_noise, render=True)
-    else:
-        for epoch in range(start_epoch, cfg.max_epoch_num):
-            agent.optimize(epoch)
-            # clean up GPU memory
-            torch.cuda.empty_cache()
-        agent.logger.critical('Training completed!')
+    for epoch in range(start_epoch, cfg.max_epoch_num):
+        agent.optimize(epoch)
+        # clean up GPU memory
+        torch.cuda.empty_cache()
+    agent.logger.critical('Training completed!')

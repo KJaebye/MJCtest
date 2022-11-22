@@ -13,6 +13,7 @@ import time
 import numpy as np
 import torch
 import mujoco_viewer
+from lib.utils.image_viewer import OpenCVImageViewer
 from lib.agents.agent_ppo import AgentPPO
 from lib.core.logger_rl import LoggerRL
 from lib.core.traj_batch import TrajBatch
@@ -33,8 +34,10 @@ def tensorfy(np_list, device=torch.device('cpu')):
         return [torch.tensor(y).to(device) for y in np_list]
 
 
+
+
 class HopperAgent(AgentPPO):
-    def __init__(self, cfg, logger, dtype, device, seed, num_threads, training=True, checkpoint=0):
+    def __init__(self, cfg, logger, dtype, device, seed, num_threads, render=False, training=True, checkpoint=0):
         self.action_dim = None
         self.observation_dim = None
         self.observation_flat_dim = 0
@@ -45,6 +48,7 @@ class HopperAgent(AgentPPO):
         self.loss_iter = 0
         self.seed = seed
         self.num_threads = num_threads
+        self.render = render
         self.training = training
         self.checkpoint = checkpoint
         self.t_start = time.time()
@@ -88,10 +92,8 @@ class HopperAgent(AgentPPO):
         memory = Memory()
         logger_rl = self.logger_cls(**self.logger_kwargs)
 
-        t = 0
-        r = 0
-        # sample a batch of data
-        while logger_rl.num_steps < thread_batch_size:
+        if mean_action:
+            """ per agent only sample one episode when evaluating """
             time_step = self.env.reset()
             cur_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
 
@@ -101,55 +103,97 @@ class HopperAgent(AgentPPO):
             logger_rl.start_episode(self.env)
             self.pre_episode()
 
-            # sample an episode
+            viewer = OpenCVImageViewer()
             while not time_step.last():
                 # use trans_policy before entering the policy network
                 cur_state = self.trans_policy(cur_state)
-
                 # sample an action
                 use_mean_action = mean_action or torch.bernoulli(torch.tensor([1 - self.noise_rate])).item()
                 action = self.policy_net.select_action(cur_state, use_mean_action).numpy()
                 action = int(action) if self.policy_net.type == 'discrete' else action.astype(np.float64)
-
                 # apply this action and get env feedback
                 time_step = self.env.step(action)
                 reward = time_step.reward
                 next_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
-
-                # add end reward
+                # add end reward if needed
                 if self.end_reward and time_step.last():
                     reward += self.env.end_reward
-
                 # preprocess state if needed
                 if self.running_state is not None:
                     next_state = self.running_state(next_state)
-
                 # record reward
                 logger_rl.step(reward)
-
                 self.push_memory(memory, cur_state, action, next_state, reward)
                 cur_state = next_state
-
                 # only render the first worker pid 0
-                """ 
+                """
                     Only one glfw window can be displayed. However, there are "self.num_threads" number of
                     workers created and running simultaneously when we use multiprocessing method. Thus,
                     when user sets parameter render to be True and num_threads > 1, we only display the first
                     worker's action in simulator.
                 """
                 if pid == 0 and render:
-                    viewer = mujoco_viewer.MujocoViewer(self.env.physics, self.env.physics.data)
-                    viewer.render()
+                    pixels = self.env.physics.render()
+                    viewer.imshow(pixels)
                 if time_step.last():
+                    viewer.close()
                     break
-
             logger_rl.end_episode()
-            t += 1
-            r += logger_rl.episode_reward
-        logger_rl.end_sampling()
+            logger_rl.end_sampling()
 
-        self.logger.info('agent avg episode reward: {}'.format(r/t))
+        else:
+            """ Sample a batch of data when training """
+            t = 0
+            r = 0
+            # sample a batch of data
+            while logger_rl.num_steps < thread_batch_size:
+                time_step = self.env.reset()
+                cur_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
 
+                # preprocess state if needed
+                if self.running_state is not None:
+                    time_step.observation = self.running_state(time_step.observation)
+                logger_rl.start_episode(self.env)
+                self.pre_episode()
+
+                # sample an episode
+                while not time_step.last():
+                    # use trans_policy before entering the policy network
+                    cur_state = self.trans_policy(cur_state)
+
+                    # sample an action
+                    use_mean_action = mean_action or torch.bernoulli(torch.tensor([1 - self.noise_rate])).item()
+                    action = self.policy_net.select_action(cur_state, use_mean_action).numpy()
+                    action = int(action) if self.policy_net.type == 'discrete' else action.astype(np.float64)
+
+                    # apply this action and get env feedback
+                    time_step = self.env.step(action)
+                    reward = time_step.reward
+                    next_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
+
+                    # add end reward
+                    if self.end_reward and time_step.last():
+                        reward += self.env.end_reward
+
+                    # preprocess state if needed
+                    if self.running_state is not None:
+                        next_state = self.running_state(next_state)
+
+                    # record reward
+                    logger_rl.step(reward)
+                    self.push_memory(memory, cur_state, action, next_state, reward)
+                    cur_state = next_state
+
+                    if time_step.last():
+                        break
+
+                logger_rl.end_episode()
+
+                t += 1
+                r += logger_rl.episode_reward
+
+            logger_rl.end_sampling()
+            self.logger.info('agent {}'.format(pid) + ' avg episode training reward: {}'.format(r/t))
 
         if queue is not None:
             queue.put([pid, memory, logger_rl])
@@ -302,7 +346,7 @@ class HopperAgent(AgentPPO):
         """
         t_0 = time.time()
         # sample a batch of data
-        batch, log = self.sample(self.cfg.min_batch_size)
+        batch, log = self.sample(self.cfg.min_batch_size, render=False)
         t_1 = time.time()
         self.logger.info('Sample time: {}'.format(t_1 - t_0))
 
@@ -312,7 +356,7 @@ class HopperAgent(AgentPPO):
         self.logger.info('Update time: {}'.format(t_2 - t_1))
 
         # evaluate policy
-        _, log_eval = self.sample(self.cfg.eval_batch_size, mean_action=True)
+        _, log_eval = self.sample(self.cfg.eval_batch_size, render=self.render, mean_action=True)
         t_3 = time.time()
         self.logger.info('Evaluation time: {}'.format(t_3 - t_2))
 

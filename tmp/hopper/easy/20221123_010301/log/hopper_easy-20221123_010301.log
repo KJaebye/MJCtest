@@ -1,0 +1,29 @@
+[32m[20221123 01:03:01 @logger.py:105][0m Log file set to ./tmp/hopper/easy/20221123_010301/log/hopper_easy-20221123_010301.log
+[32m[20221123 01:03:01 @hopper_agent.py:316][0m #------------------------ Iteration 0 --------------------------#
+[32m[20221123 01:03:07 @hopper_agent.py:193][0m agent avg episode training reward: 8.311732129846604
+[32m[20221123 01:03:07 @hopper_agent.py:348][0m Sample time: 6.2460527420043945
+[32m[20221123 01:03:18 @hopper_agent.py:353][0m Update time: 10.272566080093384
+[32m[20221123 01:03:36 @hopper_agent.py:358][0m Evaluation time: 18.380775213241577
+[32m[20221123 01:03:36 @hopper_agent.py:323][0m [4m[34mCRITICAL[0m Get the best episode reward: 0
+[32m[20221123 01:03:36 @hopper_agent.py:301][0m [4m[34mCRITICAL[0m Saving the best checkpoint with rewards 0.00
+[32m[20221123 01:03:36 @hopper_agent.py:330][0m Total time: 34.98901987075806
+[32m[20221123 01:03:36 @hopper_agent.py:332][0m 50000 total steps have happened
+[32m[20221123 01:03:36 @hopper_agent.py:316][0m #------------------------ Iteration 1 --------------------------#
+[32m[20221123 01:03:42 @hopper_agent.py:193][0m agent avg episode training reward: 8.364085947423659
+[32m[20221123 01:03:42 @hopper_agent.py:348][0m Sample time: 6.547202825546265
+[32m[20221123 01:03:52 @hopper_agent.py:353][0m Update time: 9.682103157043457
+[32m[20221123 01:04:10 @hopper_agent.py:358][0m Evaluation time: 17.480342864990234
+[32m[20221123 01:04:10 @hopper_agent.py:327][0m Average TRAINING episode reward: 8.364085947423659
+[32m[20221123 01:04:10 @hopper_agent.py:328][0m Average EVALUATION episode reward: 0
+[32m[20221123 01:04:10 @hopper_agent.py:330][0m Total time: 68.72932195663452
+[32m[20221123 01:04:10 @hopper_agent.py:332][0m 100000 total steps have happened
+[32m[20221123 01:04:10 @hopper_agent.py:316][0m #------------------------ Iteration 2 --------------------------#
+[32m[20221123 01:04:16 @hopper_agent.py:193][0m agent avg episode training reward: 7.2616606223580575
+[32m[20221123 01:04:16 @hopper_agent.py:348][0m Sample time: 6.642902851104736
+[32m[20221123 01:04:26 @hopper_agent.py:353][0m Update time: 9.920985221862793
+[32m[20221123 01:04:43 @hopper_agent.py:358][0m Evaluation time: 16.848390817642212
+[32m[20221123 01:04:43 @hopper_agent.py:327][0m Average TRAINING episode reward: 7.2616606223580575
+[32m[20221123 01:04:43 @hopper_agent.py:328][0m Average EVALUATION episode reward: 0
+[32m[20221123 01:04:43 @hopper_agent.py:330][0m Total time: 102.16751003265381
+[32m[20221123 01:04:43 @hopper_agent.py:332][0m 150000 total steps have happened
+[32m[20221123 01:04:43 @hopper_agent.py:316][0m #------------------------ Iteration 3 --------------------------#

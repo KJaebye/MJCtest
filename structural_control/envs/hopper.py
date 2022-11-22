@@ -8,6 +8,7 @@ from abc import ABC
 import numpy as np
 import collections
 import dm_env
+import mujoco_viewer
 from dm_control.utils import rewards
 from dm_control.suite.utils import randomizers
 from lib.envs.mujoco_env import MujocoEnv, MujocoPhysics, MujocoTask

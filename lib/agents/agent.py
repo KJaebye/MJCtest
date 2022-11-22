@@ -55,7 +55,7 @@ class Agent:
         """
         Sample a batch of data.
         :param min_batch_size: minimum batch size
-        :param mean_action: bool type
+        :param mean_action: bool type, means run evaluation
         :param render: bool type
         :param nthreads: number of threads
         :return:
