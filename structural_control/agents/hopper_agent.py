@@ -97,6 +97,7 @@ class HopperAgent(AgentPPO):
             time_step = self.env.reset()
             cur_state = torper.tensor([tools.get_state_flatten(time_step.observation)], device=self.device)
 
+
             # preprocess state if needed
             if self.running_state is not None:
                 time_step.observation = self.running_state(time_step.observation)
@@ -222,8 +223,10 @@ class HopperAgent(AgentPPO):
         else:
             assert isinstance(checkpoint, str)
             checkpoint_path = './results/%s/%s/%s.p' % (self.cfg.domain, self.cfg.task, checkpoint)
-        self.logger.critical('Loading model from checkpoint: %s' % checkpoint_path)
+
         model_checkpoint = pickle.load(open(checkpoint_path, "rb"))
+        self.logger.critical('Loading model from checkpoint: %s' % checkpoint_path)
+
         self.policy_net.load_state_dict(model_checkpoint['policy_dict'])
         self.value_net.load_state_dict(model_checkpoint['value_dict'])
         self.running_state = model_checkpoint['running_state']
@@ -431,6 +434,5 @@ class HopperAgent(AgentPPO):
         def policy_fn(time_step):
             cur_state = torper.tensor([tools.get_state_flatten(time_step.observation)], device=self.device)
             action = self.policy_net.select_action(cur_state, mean_action).detach().numpy()
-            print(type(action))
 
         viewer.launch(env, policy=policy_fn)

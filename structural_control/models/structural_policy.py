@@ -57,6 +57,7 @@ class StruturalPolicy(Policy):
             x = self.control_gnn(x, edges)
         if self.control_mlp is not None:
             x = self.control_mlp(x)
+
         control_action_mean = self.control_action_mean(x)
         control_action_std = self.control_action_log_std.expand_as(control_action_mean).exp()
         control_dist = DiagGaussian(control_action_mean, control_action_std)
@@ -65,7 +66,6 @@ class StruturalPolicy(Policy):
     def select_action(self, x, mean_action=False):
         control_dist, device = self.forward(x)
         control_action = control_dist.mean_sample() if mean_action else control_dist.sample()
-        # print(control_action)
         control_action.to(device)
         return control_action
 

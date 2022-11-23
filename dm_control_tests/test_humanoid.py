@@ -13,13 +13,14 @@ action_spec = env.action_spec()
 # Define a uniform random policy.
 def random_policy(time_step):
   del time_step  # Unused.
-  # x = np.random.uniform(low=action_spec.minimum,
-  #                       high=action_spec.maximum,
-  #                       size=action_spec.shape)
-  x = np.random.uniform(low=-3,
-                        high=4,
+  x = np.random.uniform(low=action_spec.minimum,
+                        high=action_spec.maximum,
                         size=action_spec.shape)
-  print(list(x))
+  # x = np.random.uniform(low=4,
+  #                       high=4,
+  #                       size=action_spec.shape)
+  print(x)
+  print(x.shape)
   print(type(x))
   return x
 

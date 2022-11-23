@@ -52,5 +52,6 @@ if __name__ == "__main__":
     """ create agent """
     agent = HopperAgent(cfg, logger, dtype=dtype, device=device, seed=cfg.seed, num_threads=1,
                         render=True, training=False, checkpoint=epoch)
+
     agent.visualize_agent(num_episode=1, save_video=args.save_video)
 
