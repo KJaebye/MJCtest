@@ -110,7 +110,7 @@ class Agent:
         # sample a batch of data
         while logger_rl.num_steps < thread_batch_size:
             time_step = self.env.reset()
-            cur_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
+            cur_state = torper.tensor([tools.get_state_flatten(time_step.observation)], device=self.device)
 
             # preprocess state if needed
             if self.running_state is not None:
@@ -131,7 +131,7 @@ class Agent:
                 # apply this action and get env feedback
                 time_step = self.env.step(action)
                 reward = time_step.reward
-                next_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
+                next_state = torper.tensor([tools.get_state_flatten(time_step.observation)], device=self.device)
 
                 # add end reward
                 if self.end_reward and time_step.last():

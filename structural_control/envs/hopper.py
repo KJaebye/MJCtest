@@ -8,10 +8,9 @@ from abc import ABC
 import numpy as np
 import collections
 import dm_env
-import mujoco_viewer
 from dm_control.utils import rewards
 from dm_control.suite.utils import randomizers
-from lib.envs.mujoco_env import MujocoEnv, MujocoPhysics, MujocoTask
+from lib.envs.mujoco_env import MujocoEnv, MujocoTask, MujocoPhysics
 
 _CONTROL_TIMESTEP = .02  # (Seconds)
 
@@ -28,19 +27,29 @@ _HOP_SPEED = 2
 class HopperEnv(MujocoEnv):
     def __init__(self, cfg, **kwargs):
         self.mujoco_xml_path = './assets/robot_models/mjcf/hopper.xml'
+        self.cfg = cfg
         physics = HopperPhysics.from_xml_path(self.mujoco_xml_path)
-        task = HopperTask(False, random=None)
-        super().__init__(cfg, physics, task, time_limit=5, **kwargs)
+        task = HopperTask(hopping=False, random=None)
+        super().__init__(physics, task, time_limit=_DEFAULT_TIME_LIMIT, **kwargs)
 
     def step(self, action):
         """Updates the environment using the action and returns a `TimeStep`."""
+        # observation = self._task.get_observation(self._physics)
+        # print('before action:')
+        # print(observation)
+
         # apply action
         self._task.before_step(action, self._physics)
-        self._physics.step()
+        self._physics.step(self._n_sub_steps)
         self._task.after_step(self._physics)
 
         # observation
         observation = self._task.get_observation(self._physics)
+        # print('after action:')
+        # print(observation)
+
+        # print(self.action_spec())
+
         # reward
         reward = self._task.get_reward(self._physics)
         # step

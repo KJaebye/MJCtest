@@ -9,7 +9,7 @@ from lib.agents.agent import Agent
 import lib.core.torch_wrapper as torper
 import time
 import torch
-
+from torch.utils.tensorboard import SummaryWriter
 
 class AgentPG(Agent):
     """
@@ -24,16 +24,17 @@ class AgentPG(Agent):
         self.optim_num_epochs = optim_num_epoches
         self.value_optim_num_iter = value_optim_num_iter # value optimizer number of iteration?
 
-    def update_value(self, states, returns):
+    def update_value(self, states, returns, tb_logger, epoch):
         """ Update Critic """
         for _ in range(self.value_optim_num_iter):
             value_pred = self.value_net(self.trans_value(states))
             value_loss = (value_pred - returns).pow(2).mean()
+            tb_logger.add_scalar('PPO value loss', value_loss, epoch)
             self.optimizer_value.zero_grad()
             value_loss.backward()
             self.optimizer_value.step()
 
-    def update_policy(self, states, actions, returns, advantages):
+    def update_policy(self, states, actions, returns, advantages, epoch):
         """ Update Policy """
         # use a2c by default
         for _ in range(self.optim_num_epochs):
@@ -44,7 +45,7 @@ class AgentPG(Agent):
             policy_loss.backward()
             self.optimizer_policy.step()
 
-    def update_params(self, batch):
+    def update_params(self, batch, epoch):
         t_start = time.time()
         torper.to_train(*self.update_modules)
         states = torch.from_numpy(batch.states).to(self.dtype).to(self.device)
@@ -60,6 +61,6 @@ class AgentPG(Agent):
         """get advantage estimation from the trajectories"""
         advantages, returns = torper.estimate_advantages(rewards, values, self.gamma, self.tau)
 
-        self.update_policy(states, actions, returns, advantages)
+        self.update_policy(states, actions, returns, advantages, epoch)
 
         return time.time() - t_start

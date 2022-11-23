@@ -6,7 +6,7 @@
 from typing import Any, Optional, Tuple
 import numpy as np
 
-def get_state(observation):
+def get_state_flatten(observation):
     state = []
     for s in observation.values():
         state += list(s)

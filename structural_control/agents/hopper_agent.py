@@ -34,8 +34,6 @@ def tensorfy(np_list, device=torch.device('cpu')):
         return [torch.tensor(y).to(device) for y in np_list]
 
 
-
-
 class HopperAgent(AgentPPO):
     def __init__(self, cfg, logger, dtype, device, seed, num_threads, render=False, training=True, checkpoint=0):
         self.action_dim = None
@@ -97,7 +95,7 @@ class HopperAgent(AgentPPO):
         # sample a batch of data
         while logger_rl.num_steps < thread_batch_size:
             time_step = self.env.reset()
-            cur_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
+            cur_state = torper.tensor([tools.get_state_flatten(time_step.observation)], device=self.device)
 
             # preprocess state if needed
             if self.running_state is not None:
@@ -118,11 +116,14 @@ class HopperAgent(AgentPPO):
                 # apply this action and get env feedback
                 time_step = self.env.step(action)
                 reward = time_step.reward
-                next_state = torper.tensor([tools.get_state(time_step.observation)], device=self.device)
+                next_state = torper.tensor([tools.get_state_flatten(time_step.observation)], device=self.device)
 
                 # add end reward
                 if self.end_reward and time_step.last():
                     reward += self.env.end_reward
+
+                # if time_step.last():
+                #     mask =
 
                 # preprocess state if needed
                 if self.running_state is not None:
@@ -281,9 +282,9 @@ class HopperAgent(AgentPPO):
         self.total_steps += self.cfg.min_batch_size
         self.logger.info('{} total steps have happened'.format(self.total_steps))
 
-        self.tb_logger.add_scalar('train_R_avg ', log.avg_reward, epoch)
+        # self.tb_logger.add_scalar('train_R_avg ', log.avg_reward, epoch)
         self.tb_logger.add_scalar('train_R_eps_avg', log.avg_episode_reward, epoch)
-        self.tb_logger.add_scalar('eval_R_eps_avg', log_eval.avg_episode_reward, epoch)
+        # self.tb_logger.add_scalar('eval_R_eps_avg', log_eval.avg_episode_reward, epoch)
 
     def optimize_policy(self, epoch):
         """
@@ -298,7 +299,7 @@ class HopperAgent(AgentPPO):
         self.logger.info('Sample time: {}'.format(t_1 - t_0))
 
         # update networks
-        self.update_params(batch)
+        self.update_params(batch, epoch)
         t_2 = time.time()
         self.logger.info('Update time: {}'.format(t_2 - t_1))
 
@@ -309,7 +310,7 @@ class HopperAgent(AgentPPO):
 
         return log, log_eval
 
-    def update_params(self, batch):
+    def update_params(self, batch, epoch):
         torper.to_train(*self.update_modules)
         states = tensorfy(batch.cur_states, self.device)
         actions = tensorfy(batch.actions, self.device)
@@ -330,12 +331,13 @@ class HopperAgent(AgentPPO):
         if self.cfg.agent_spec.get('reinforce', False):
             advantages = returns.clone()
 
-        self.update_policy(states, actions, returns, advantages)
+        self.update_policy(states, actions, returns, advantages, epoch)
         return
 
-    def update_policy(self, states, actions, returns, advantages):
+    def update_policy(self, states, actions, returns, advantages, epoch):
         """
         Update policy.
+        :param epoch:
         :param states:
         :param actions:
         :param returns:
@@ -355,8 +357,8 @@ class HopperAgent(AgentPPO):
         num_state = len(states)
 
         # self.logger.info('| %11s | %11s | %11s | %11s| %11s|' % ('surr', 'kl', 'ent', 'vf_loss', 'weight_l2'))
-
         for _ in range(self.optim_num_epochs):
+            # perform mini-batch PPO update
             if self.use_mini_batch:
                 perm_np = np.arange(num_state)
                 np.random.shuffle(perm_np)
@@ -374,15 +376,17 @@ class HopperAgent(AgentPPO):
                     index = slice(i * self.mini_batch_size, min((i + 1) * self.mini_batch_size, num_state))
                     states_b, actions_b, advantages_b, returns_b, fixed_log_probs_b = \
                         states[index], actions[index], advantages[index], returns[index], fixed_log_probs[index]
-                    self.update_value(states_b, returns_b)
+                    self.update_value(states_b, returns_b, self.tb_logger, epoch)
                     self.surr_loss = self.ppo_loss(states_b, actions_b, advantages_b, fixed_log_probs_b)
+                    self.tb_logger.add_scalar('PPO policy loss', self.surr_loss, epoch)
                     self.optimizer_policy.zero_grad()
                     self.surr_loss.backward()
                     self.clip_policy_grad()
                     self.optimizer_policy.step()
             else:
-                self.update_value(states, returns)
+                self.update_value(states, returns, self.tb_logger, epoch)
                 self.surr_loss = self.ppo_loss(states, actions, advantages, fixed_log_probs)
+                self.tb_logger.add_scalar('PPO policy loss', self.surr_loss, epoch)
                 self.optimizer_policy.zero_grad()
                 self.surr_loss.backward()
                 self.clip_policy_grad()
@@ -402,4 +406,5 @@ class HopperAgent(AgentPPO):
         surr_1 = ratio * advantages
         surr_2 = torch.clamp(ratio, 1.0 - self.clip_epsilon, 1.0 + self.clip_epsilon) * advantages
         surr_loss = - torch.min(surr_1, surr_2).mean()
+        # print(surr_loss)
         return surr_loss

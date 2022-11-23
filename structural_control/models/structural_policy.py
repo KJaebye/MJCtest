@@ -65,6 +65,7 @@ class StruturalPolicy(Policy):
     def select_action(self, x, mean_action=False):
         control_dist, device = self.forward(x)
         control_action = control_dist.mean_sample() if mean_action else control_dist.sample()
+        # print(control_action)
         control_action.to(device)
         return control_action
 

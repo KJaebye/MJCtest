@@ -20,7 +20,7 @@ class AgentPPO(AgentPG):
         self.use_mini_batch = use_mini_batch
         self.policy_grad_clip = policy_grad_clip
 
-    def update_policy(self, states, actions, returns, advantages):
+    def update_policy(self, states, actions, returns, advantages, epoch):
         """ Update the policy """
         with torper.to_eval(*self.update_modules):
             with torch.no_grad():

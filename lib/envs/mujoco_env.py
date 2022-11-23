@@ -18,14 +18,13 @@ class MujocoEnv(Environment):
         This class will pass config into environment.
     """
 
-    def __init__(self, cfg, physics, task, *args, **kwargs):
+    def __init__(self, physics, task, *args, **kwargs):
         """
         :param physics: Instance of Physics.
         :param task: Instance of Task.
         :param args: ...
         :param kwargs: ...
         """
-        self.cfg = cfg
         super(MujocoEnv, self).__init__(physics, task, *args, **kwargs)
 
     def seed(self, seed=None):
