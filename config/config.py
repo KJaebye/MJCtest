@@ -40,8 +40,7 @@ class Config:
         if cfg_dict is not None:
             cfg = cfg_dict
         else:
-            # cfg_path = './config/cfg/**/%s/%s.yml' % (domain, task)
-            cfg_path = './test/train.yml'
+            cfg_path = './config/cfg/**/%s/%s.yml' % (domain, task)
             files = glob.glob(cfg_path, recursive=True)
             assert len(files) == 1, "{} file(s) is/are found.".format(len(files))
             cfg = yaml.safe_load(open(files[0], 'r'))

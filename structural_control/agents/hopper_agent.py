@@ -59,7 +59,7 @@ class HopperAgent(AgentPPO):
         self.setup_optimizer()
         self.setup_param_scheduler()
         self.save_best_flag = False
-        if checkpoint != 0:
+        if checkpoint != 0 or not training:
             self.load_checkpoint(checkpoint)
 
         super().__init__(env=self.env, dtype=self.dtype, cfg=self.cfg, device=self.device,
@@ -114,7 +114,7 @@ class HopperAgent(AgentPPO):
                 action = int(action) if self.policy_net.type == 'discrete' else action.astype(np.float64)
 
                 # apply this action and get env feedback
-                time_step = self.env.step(action)
+                time_step, done = self.env.step(action)
                 reward = time_step.reward
                 next_state = torper.tensor([tools.get_state_flatten(time_step.observation)], device=self.device)
 
@@ -122,8 +122,8 @@ class HopperAgent(AgentPPO):
                 if self.end_reward and time_step.last():
                     reward += self.env.end_reward
 
-                # if time_step.last():
-                #     mask =
+                mask = 1 if done else 0
+                exp = 1 - use_mean_action
 
                 # preprocess state if needed
                 if self.running_state is not None:
@@ -131,7 +131,7 @@ class HopperAgent(AgentPPO):
 
                 # record reward
                 logger_rl.step(reward)
-                self.push_memory(memory, cur_state, action, next_state, reward)
+                self.push_memory(memory, cur_state, action, next_state, reward, mask, exp)
                 cur_state = next_state
 
                 if time_step.last():
@@ -217,18 +217,18 @@ class HopperAgent(AgentPPO):
 
     def load_checkpoint(self, checkpoint):
         if isinstance(checkpoint, int):
-            checkpoint_path = '%s/epoch_%04d.p' % (self.cfg.model_dir, checkpoint)
+            checkpoint_path = './results/%s/%s/checkpoint_%04d.p' % (self.cfg.domain, self.cfg.task, checkpoint)
             epoch = checkpoint
         else:
             assert isinstance(checkpoint, str)
-            checkpoint_path = '%s/%s' % (self.cfg.model_dir, checkpoint)
+            checkpoint_path = './results/%s/%s/%s.p' % (self.cfg.domain, self.cfg.task, checkpoint)
         self.logger.critical('Loading model from checkpoint: %s' % checkpoint_path)
         model_checkpoint = pickle.load(open(checkpoint_path, "rb"))
         self.policy_net.load_state_dict(model_checkpoint['policy_dict'])
         self.value_net.load_state_dict(model_checkpoint['value_dict'])
         self.running_state = model_checkpoint['running_state']
         self.loss_iter = model_checkpoint['loss_iter']
-        self.best_reward = model_checkpoint.get['best_reward', self.best_reward]
+        # self.best_reward = model_checkpoint.get['best_reward', self.best_reward]
         if 'epoch' in model_checkpoint:
             epoch = model_checkpoint['epoch']
         self.pre_epoch_update(epoch)
@@ -315,6 +315,8 @@ class HopperAgent(AgentPPO):
         states = tensorfy(batch.cur_states, self.device)
         actions = tensorfy(batch.actions, self.device)
         rewards = torch.from_numpy(batch.rewards).to(self.dtype).to(self.device)
+        masks = torch.from_numpy(batch.masks).to(self.dtype).to(self.device)
+        exps = torch.from_numpy(batch.exps).to(self.dtype).to(self.device)
         with torper.to_eval(*self.update_modules):
             with torch.no_grad():
                 values = []
@@ -326,15 +328,15 @@ class HopperAgent(AgentPPO):
                 values = torch.cat(values)
 
         # get advantage from the trajectories
-        advantages, returns = estimate_advantages(rewards, values, self.gamma, self.tau)
+        advantages, returns = estimate_advantages(rewards, masks, values, self.gamma, self.tau)
 
         if self.cfg.agent_spec.get('reinforce', False):
             advantages = returns.clone()
 
-        self.update_policy(states, actions, returns, advantages, epoch)
+        self.update_policy(states, actions, returns, advantages, exps, epoch)
         return
 
-    def update_policy(self, states, actions, returns, advantages, epoch):
+    def update_policy(self, states, actions, returns, advantages, exps, epoch):
         """
         Update policy.
         :param epoch:
@@ -364,18 +366,20 @@ class HopperAgent(AgentPPO):
                 np.random.shuffle(perm_np)
                 perm = torper.LongTensor(perm_np).to(self.device)
 
-                states, actions, returns, advantages, fixed_log_probs = \
+                states, actions, returns, advantages, fixed_log_probs, exps = \
                     tools.index_select_list(states, perm_np), \
                     tools.index_select_list(actions, perm_np), \
                     returns[perm].clone(), \
                     advantages[perm].clone(), \
-                    fixed_log_probs[perm].clone()
+                    fixed_log_probs[perm].clone(), \
+                    exps[perm].clone()
 
                 optim_iter_num = int(math.floor(num_state / self.mini_batch_size))
                 for i in range(optim_iter_num):
                     index = slice(i * self.mini_batch_size, min((i + 1) * self.mini_batch_size, num_state))
-                    states_b, actions_b, advantages_b, returns_b, fixed_log_probs_b = \
-                        states[index], actions[index], advantages[index], returns[index], fixed_log_probs[index]
+                    states_b, actions_b, advantages_b, returns_b, fixed_log_probs_b, exps_b = \
+                        states[index], actions[index], advantages[index], returns[index], fixed_log_probs[index], exps[
+                            index]
                     self.update_value(states_b, returns_b, self.tb_logger, epoch)
                     self.surr_loss = self.ppo_loss(states_b, actions_b, advantages_b, fixed_log_probs_b)
                     self.tb_logger.add_scalar('PPO policy loss', self.surr_loss, epoch)
@@ -400,6 +404,16 @@ class HopperAgent(AgentPPO):
                 # # self.logger.info('KL value: {}'.format(self.))
                 # self.logger.info('Surrogate loss: {}'.format(self.surr_loss))
 
+    def update_value(self, states, returns, tb_logger, epoch):
+        """ Update Critic """
+        for _ in range(self.value_optim_num_iter):
+            value_pred = self.value_net(self.trans_value(states))
+            value_loss = (value_pred - returns).pow(2).mean()
+            tb_logger.add_scalar('PPO value loss', value_loss, epoch)
+            self.optimizer_value.zero_grad()
+            value_loss.backward()
+            self.optimizer_value.step()
+
     def ppo_loss(self, states, actions, advantages, fixed_log_probs, **kwargs):
         log_probs = self.policy_net.get_log_prob(self.trans_policy(states), actions)
         ratio = torch.exp(log_probs - fixed_log_probs)
@@ -408,3 +422,15 @@ class HopperAgent(AgentPPO):
         surr_loss = - torch.min(surr_1, surr_2).mean()
         # print(surr_loss)
         return surr_loss
+
+    def visualize_agent(self, num_episode=1, mean_action=True, save_video=False):
+        env = self.env
+
+        from dm_control import viewer
+
+        def policy_fn(time_step):
+            cur_state = torper.tensor([tools.get_state_flatten(time_step.observation)], device=self.device)
+            action = self.policy_net.select_action(cur_state, mean_action).detach().numpy()
+            print(type(action))
+
+        viewer.launch(env, policy=policy_fn)

@@ -25,7 +25,7 @@ class HopperEnv(mujoco_env.MujocoEnv):
     def __init__(self, cfg):
         physics = HopperPhysics.from_xml_path('hopper.xml')
         task = HopperTask(True, random=None)
-        super().__init__(cfg, physics, task)
+        super().__init__(physics, task)
 
 
 class HopperPhysics(mujoco_env.MujocoPhysics):
@@ -75,7 +75,6 @@ class HopperTask(mujoco_env.MujocoTask):
     def get_reward(self, physics):
         """Returns a reward applicable to the performed task."""
         standing = rewards.tolerance(physics.height(), (_STAND_HEIGHT, 2))
-        print(standing)
         if self._hopping:
             hopping = rewards.tolerance(physics.speed(),
                                         bounds=(_HOP_SPEED, float('inf')),
@@ -96,12 +95,23 @@ action_spec = env.action_spec()
 observation_spec = env.observation_spec()
 
 # Define a uniform random policy.
-def random_policy(time_step):
-    del time_step  # Unused.
-    x = np.random.uniform(low=action_spec.minimum,
-                             high=action_spec.maximum,
-                             size=action_spec.shape)
-    return x
+# def random_policy(time_step):
+#     del time_step  # Unused.
+#     x = np.random.uniform(low=action_spec.minimum,
+#                              high=action_spec.maximum,
+#                              size=action_spec.shape)
+#     return x
 
+def random_policy(time_step):
+  del time_step  # Unused.
+  x = np.random.uniform(low=action_spec.minimum,
+                        high=action_spec.maximum,
+                        size=action_spec.shape)
+  # x = np.random.uniform(low=-5,
+  #                       high=5,
+  #                       size=action_spec.shape)
+  # print(x.shape)
+  # print(type(x))
+  return x
 
 viewer.launch(env, policy=random_policy)

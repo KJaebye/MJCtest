@@ -129,7 +129,7 @@ class Agent:
                 action = int(action) if self.policy_net.type == 'discrete' else action.astype(np.float64)
 
                 # apply this action and get env feedback
-                time_step = self.env.step(action)
+                time_step, done = self.env.step(action)
                 reward = time_step.reward
                 next_state = torper.tensor([tools.get_state_flatten(time_step.observation)], device=self.device)
 
@@ -141,10 +141,12 @@ class Agent:
                 if self.running_state is not None:
                     next_state = self.running_state(next_state)
 
+                mask = 1 if done else 0
+                exp = 1 - use_mean_action
 
                 # record reward
                 logger_rl.step(reward)
-                self.push_memory(memory, cur_state, action, next_state, reward)
+                self.push_memory(memory, cur_state, action, next_state, reward, mask, exp)
                 cur_state = next_state
 
                 # only render the first worker pid 0
@@ -185,5 +187,5 @@ class Agent:
     def pre_episode(self):
         return
 
-    def push_memory(self, memory, cur_state, action, next_state, reward):
-        memory.push(cur_state, action, next_state, reward)
+    def push_memory(self, memory, cur_state, action, next_state, reward, mask, exp):
+        memory.push(cur_state, action, next_state, reward, mask, exp)

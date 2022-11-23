@@ -20,7 +20,7 @@ class AgentPPO(AgentPG):
         self.use_mini_batch = use_mini_batch
         self.policy_grad_clip = policy_grad_clip
 
-    def update_policy(self, states, actions, returns, advantages, epoch):
+    def update_policy(self, states, actions, returns, advantages, exps, epoch):
         """ Update the policy """
         with torper.to_eval(*self.update_modules):
             with torch.no_grad():
@@ -32,9 +32,9 @@ class AgentPPO(AgentPG):
                 perm = np.arange(states.shape[0])
                 np.random.shuffle(perm)
                 perm = torper.LongTensor(perm).to(self.device)
-                states, actions, returns, advantages, fixed_log_probs = \
+                states, actions, returns, advantages, fixed_log_probs, exps = \
                     states[perm].clone(), actions[perm].clone(), returns[perm].clone(), advantages[perm].clone(), \
-                    fixed_log_probs[perm].clone()
+                    fixed_log_probs[perm].clone(), exps[perm].clone()
 
                 optim_iter_num = int(math.floor(states.shape[0] / self.mini_batch_size))
                 for i in range(optim_iter_num):
@@ -42,9 +42,9 @@ class AgentPPO(AgentPG):
                     index = slice(i * self.mini_batch_size, min((i + 1) * self.mini_batch_size, states.shape[0]))
 
                     # intercept the current batch data
-                    states_b, actions_b, returns_b, advantages_b, fixed_log_probs_b = \
+                    states_b, actions_b, returns_b, advantages_b, fixed_log_probs_b, exps_b = \
                         states[index], actions[index], returns[index], \
-                        advantages[index], fixed_log_probs[index]
+                        advantages[index], fixed_log_probs[index], exps[index]
 
                     # update value by using the current batch
                     self.update_value(states_b, returns_b)

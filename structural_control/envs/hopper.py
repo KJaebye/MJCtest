@@ -12,6 +12,8 @@ from dm_control.utils import rewards
 from dm_control.suite.utils import randomizers
 from lib.envs.mujoco_env import MujocoEnv, MujocoTask, MujocoPhysics
 
+# Default simulation timestep is 0.005s in hopper.xml
+# Default control timestep
 _CONTROL_TIMESTEP = .02  # (Seconds)
 
 # Default duration of an episode, in seconds.
@@ -30,14 +32,10 @@ class HopperEnv(MujocoEnv):
         self.cfg = cfg
         physics = HopperPhysics.from_xml_path(self.mujoco_xml_path)
         task = HopperTask(hopping=False, random=None)
-        super().__init__(physics, task, time_limit=_DEFAULT_TIME_LIMIT, **kwargs)
+        super().__init__(physics, task, time_limit=_DEFAULT_TIME_LIMIT, control_timestep=_CONTROL_TIMESTEP, **kwargs)
 
     def step(self, action):
         """Updates the environment using the action and returns a `TimeStep`."""
-        # observation = self._task.get_observation(self._physics)
-        # print('before action:')
-        # print(observation)
-
         # apply action
         self._task.before_step(action, self._physics)
         self._physics.step(self._n_sub_steps)
@@ -45,15 +43,12 @@ class HopperEnv(MujocoEnv):
 
         # observation
         observation = self._task.get_observation(self._physics)
-        # print('after action:')
-        # print(observation)
-
-        # print(self.action_spec())
-
         # reward
         reward = self._task.get_reward(self._physics)
         # step
         self._step_count += 1
+
+        done = self.check_done(observation)
 
         if self._step_count >= self._step_limit:
             discount = 1.0
@@ -64,9 +59,23 @@ class HopperEnv(MujocoEnv):
         if episode_over:
             self._reset_next_step = True
             return dm_env.TimeStep(
-                dm_env.StepType.LAST, reward, discount, observation)
+                dm_env.StepType.LAST, reward, discount, observation), done
         else:
-            return dm_env.TimeStep(dm_env.StepType.MID, reward, 1.0, observation)
+            return dm_env.TimeStep(dm_env.StepType.MID, reward, 1.0, observation), done
+
+    def check_done(self, observation):
+        """ check agent is well done """
+        s = self.state_vector()
+        max_nsteps = 300
+        done = np.isfinite(s).all() and (self.physics.height() > _STAND_HEIGHT) \
+               and (self._step_count < max_nsteps) and (not self.physics.touch().any())
+        return done
+
+    def state_vector(self):
+        return np.concatenate([
+            self.physics.data.qpos.flat,
+            self.physics.data.qvel.flat
+        ])
 
 
 class HopperPhysics(MujocoPhysics):
@@ -82,7 +91,6 @@ class HopperPhysics(MujocoPhysics):
     def touch(self):
         """Returns the signals from two foot touch sensors."""
         return np.log1p(self.named.data.sensordata[['touch_toe', 'touch_heel']])
-
 
 
 class HopperTask(MujocoTask, ABC):

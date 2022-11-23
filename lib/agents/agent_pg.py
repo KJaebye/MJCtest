@@ -24,23 +24,23 @@ class AgentPG(Agent):
         self.optim_num_epochs = optim_num_epoches
         self.value_optim_num_iter = value_optim_num_iter # value optimizer number of iteration?
 
-    def update_value(self, states, returns, tb_logger, epoch):
+    def update_value(self, states, returns):
         """ Update Critic """
         for _ in range(self.value_optim_num_iter):
             value_pred = self.value_net(self.trans_value(states))
             value_loss = (value_pred - returns).pow(2).mean()
-            tb_logger.add_scalar('PPO value loss', value_loss, epoch)
             self.optimizer_value.zero_grad()
             value_loss.backward()
             self.optimizer_value.step()
 
-    def update_policy(self, states, actions, returns, advantages, epoch):
+    def update_policy(self, states, actions, returns, advantages, exps, epoch):
         """ Update Policy """
         # use a2c by default
+        index = exps.nonzero().squeeze(1)
         for _ in range(self.optim_num_epochs):
             self.update_value(states, returns)
-            log_probs = self.policy_net.get_log_prob(self.trans_policy(states), actions)
-            policy_loss = - (log_probs * advantages).mean()
+            log_probs = self.policy_net.get_log_prob(self.trans_policy(states)[index], actions[index])
+            policy_loss = - (log_probs * advantages[index]).mean()
             self.optimizer_policy.zero_grad()
             policy_loss.backward()
             self.optimizer_policy.step()
