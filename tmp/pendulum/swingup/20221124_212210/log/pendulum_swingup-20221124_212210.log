@@ -667,3 +667,22 @@
 [32m[20221124 21:27:51 @pendulum_agent.py:144][0m agent 9 avg episode training reward: 0.0
 [32m[20221124 21:27:51 @pendulum_agent.py:144][0m agent 8 avg episode training reward: 0.0
 [32m[20221124 21:27:52 @pendulum_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:27:54 @pendulum_agent.py:307][0m Sample time: 3.3408188819885254
+[32m[20221124 21:28:04 @pendulum_agent.py:312][0m Update time: 9.765578031539917
+[32m[20221124 21:28:04 @pendulum_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:28:04 @pendulum_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:28:04 @pendulum_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:28:04 @pendulum_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:28:04 @pendulum_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:28:04 @pendulum_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:28:04 @pendulum_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:28:04 @pendulum_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:28:04 @pendulum_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:28:04 @pendulum_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:28:05 @pendulum_agent.py:317][0m Evaluation time: 1.2202491760253906
+[32m[20221124 21:28:05 @pendulum_agent.py:285][0m Average TRAINING episode reward: 0.0
+[32m[20221124 21:28:05 @pendulum_agent.py:286][0m Average EVALUATION episode reward: 0
+[32m[20221124 21:28:05 @pendulum_agent.py:256][0m [4m[34mCRITICAL[0m Saving the interval checkpoint with rewards 0.00
+[32m[20221124 21:28:05 @pendulum_agent.py:289][0m Total time: 354.77693700790405
+[32m[20221124 21:28:05 @pendulum_agent.py:291][0m 1200000 total steps have happened
+[32m[20221124 21:28:05 @pendulum_agent.py:281][0m #------------------------ Iteration 24 --------------------------#
