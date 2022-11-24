@@ -1,0 +1,43 @@
+env_name: pendulum_swingup
+agent_spec:
+  batch_design: false
+# training parameters
+gamma: 0.995
+tau: 0.95
+policy_spec:
+  htype: tanh
+  control_mlp: [512, 512]
+  control_log_std: 0
+  fix_control_std: false
+policy_optimizer: 'Adam'
+policy_lr: 5.e-5
+policy_momentum: 0.0
+policy_weight_decay: 0.0
+
+value_spec:
+  htype: tanh
+  mlp: [512, 256]
+value_optimizer: 'Adam'
+value_lr: 3.e-4
+value_momentum: 0.0
+value_weight_decay: 0.0
+
+clip_epsilon: 0.2
+min_batch_size: 50000
+mini_batch_size: 2048
+num_optim_epoch: 10
+max_epoch_num: 1000
+seed: 1
+save_model_interval: 2
+
+
+obs_spec:
+  attr: ['depth']
+  sim: []
+  design: true
+  clip_qvel: true
+  use_projected_params: true
+  use_body_ind: true
+max_body_depth: 4
+
+

@@ -1,0 +1,2 @@
+[32m[20221124 00:48:04 @logger.py:105][0m Log file set to ./tmp/hopper/easy/20221124_004804/log/hopper_easy-20221124_004804.log
+[32m[20221124 00:48:04 @hopper_agent.py:228][0m [4m[34mCRITICAL[0m Loading model from checkpoint: ./results/hopper/easy/best.p

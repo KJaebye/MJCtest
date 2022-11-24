@@ -1,0 +1,293 @@
+[32m[20221124 21:09:20 @logger.py:105][0m Log file set to ./tmp/pendulum/swingup/20221124_210920/log/pendulum_swingup-20221124_210920.log
+[32m[20221124 21:09:20 @hopper_agent.py:269][0m #------------------------ Iteration 0 --------------------------#
+[32m[20221124 21:09:21 @hopper_agent.py:144][0m agent 5 avg episode training reward: 2.3421681178476277
+[32m[20221124 21:09:21 @hopper_agent.py:144][0m agent 3 avg episode training reward: 0.6983791238803547
+[32m[20221124 21:09:21 @hopper_agent.py:144][0m agent 6 avg episode training reward: 2.884601607304533
+[32m[20221124 21:09:21 @hopper_agent.py:144][0m agent 9 avg episode training reward: 0.5362645002190527
+[32m[20221124 21:09:21 @hopper_agent.py:144][0m agent 2 avg episode training reward: 0.87697894032184
+[32m[20221124 21:09:21 @hopper_agent.py:144][0m agent 1 avg episode training reward: 0.9056226411372394
+[32m[20221124 21:09:21 @hopper_agent.py:144][0m agent 7 avg episode training reward: 0.8921529417646565
+[32m[20221124 21:09:21 @hopper_agent.py:144][0m agent 4 avg episode training reward: 1.5492010485847398
+[32m[20221124 21:09:21 @hopper_agent.py:144][0m agent 0 avg episode training reward: 2.8729828695100204
+[32m[20221124 21:09:21 @hopper_agent.py:144][0m agent 8 avg episode training reward: 2.8836045022749213
+[32m[20221124 21:09:24 @hopper_agent.py:301][0m Sample time: 3.5134918689727783
+[32m[20221124 21:09:33 @hopper_agent.py:306][0m Update time: 9.776919841766357
+[32m[20221124 21:09:34 @hopper_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:09:34 @hopper_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:09:34 @hopper_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:09:34 @hopper_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:09:34 @hopper_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:09:34 @hopper_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:09:34 @hopper_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:09:34 @hopper_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:09:34 @hopper_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:09:34 @hopper_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:09:34 @hopper_agent.py:311][0m Evaluation time: 0.7786092758178711
+[32m[20221124 21:09:34 @hopper_agent.py:276][0m [4m[34mCRITICAL[0m Get the best episode reward: 0
+[32m[20221124 21:09:34 @hopper_agent.py:254][0m [4m[34mCRITICAL[0m Saving the best checkpoint with rewards 0.00
+[32m[20221124 21:09:34 @hopper_agent.py:283][0m Total time: 14.393592834472656
+[32m[20221124 21:09:34 @hopper_agent.py:285][0m 50000 total steps have happened
+[32m[20221124 21:09:34 @hopper_agent.py:269][0m #------------------------ Iteration 1 --------------------------#
+[32m[20221124 21:09:36 @hopper_agent.py:144][0m agent 0 avg episode training reward: 3.5343135787664566
+[32m[20221124 21:09:36 @hopper_agent.py:144][0m agent 1 avg episode training reward: 2.5160018667087716
+[32m[20221124 21:09:36 @hopper_agent.py:144][0m agent 8 avg episode training reward: 2.3636820603817066
+[32m[20221124 21:09:36 @hopper_agent.py:144][0m agent 3 avg episode training reward: 1.6031355457728953
+[32m[20221124 21:09:36 @hopper_agent.py:144][0m agent 7 avg episode training reward: 2.375287880728659
+[32m[20221124 21:09:36 @hopper_agent.py:144][0m agent 5 avg episode training reward: 2.544632850749708
+[32m[20221124 21:09:36 @hopper_agent.py:144][0m agent 6 avg episode training reward: 1.0761589617743343
+[32m[20221124 21:09:36 @hopper_agent.py:144][0m agent 2 avg episode training reward: 2.740718425110977
+[32m[20221124 21:09:36 @hopper_agent.py:144][0m agent 4 avg episode training reward: 3.723568100096341
+[32m[20221124 21:09:36 @hopper_agent.py:144][0m agent 9 avg episode training reward: 2.517979727640051
+[32m[20221124 21:09:38 @hopper_agent.py:301][0m Sample time: 3.9092371463775635
+[32m[20221124 21:09:48 @hopper_agent.py:306][0m Update time: 10.028650999069214
+[32m[20221124 21:09:49 @hopper_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:09:49 @hopper_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:09:49 @hopper_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:09:49 @hopper_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:09:49 @hopper_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:09:49 @hopper_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:09:49 @hopper_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:09:49 @hopper_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:09:49 @hopper_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:09:49 @hopper_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:09:49 @hopper_agent.py:311][0m Evaluation time: 0.9317760467529297
+[32m[20221124 21:09:50 @hopper_agent.py:280][0m Average TRAINING episode reward: 2.4995478997729896
+[32m[20221124 21:09:50 @hopper_agent.py:281][0m Average EVALUATION episode reward: 0
+[32m[20221124 21:09:50 @hopper_agent.py:283][0m Total time: 29.529984951019287
+[32m[20221124 21:09:50 @hopper_agent.py:285][0m 100000 total steps have happened
+[32m[20221124 21:09:50 @hopper_agent.py:269][0m #------------------------ Iteration 2 --------------------------#
+[32m[20221124 21:09:51 @hopper_agent.py:144][0m agent 0 avg episode training reward: 1.062677083709617
+[32m[20221124 21:09:51 @hopper_agent.py:144][0m agent 4 avg episode training reward: 1.4093497050005823
+[32m[20221124 21:09:51 @hopper_agent.py:144][0m agent 9 avg episode training reward: 3.05937369538734
+[32m[20221124 21:09:51 @hopper_agent.py:144][0m agent 3 avg episode training reward: 2.4685335711851826
+[32m[20221124 21:09:51 @hopper_agent.py:144][0m agent 6 avg episode training reward: 2.345102633144951
+[32m[20221124 21:09:51 @hopper_agent.py:144][0m agent 1 avg episode training reward: 3.748280838275843
+[32m[20221124 21:09:51 @hopper_agent.py:144][0m agent 5 avg episode training reward: 0.9084301223967417
+[32m[20221124 21:09:51 @hopper_agent.py:144][0m agent 2 avg episode training reward: 2.3461815233051113
+[32m[20221124 21:09:51 @hopper_agent.py:144][0m agent 7 avg episode training reward: 1.453402238384291
+[32m[20221124 21:09:51 @hopper_agent.py:144][0m agent 8 avg episode training reward: 1.4286185007991419
+[32m[20221124 21:09:53 @hopper_agent.py:301][0m Sample time: 3.952751874923706
+[32m[20221124 21:10:03 @hopper_agent.py:306][0m Update time: 9.46283507347107
+[32m[20221124 21:10:03 @hopper_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:10:03 @hopper_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:10:03 @hopper_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:10:03 @hopper_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:10:03 @hopper_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:10:03 @hopper_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:10:03 @hopper_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:10:03 @hopper_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:10:03 @hopper_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:10:03 @hopper_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:10:05 @hopper_agent.py:311][0m Evaluation time: 1.8575279712677002
+[32m[20221124 21:10:05 @hopper_agent.py:280][0m Average TRAINING episode reward: 2.02299499115888
+[32m[20221124 21:10:05 @hopper_agent.py:281][0m Average EVALUATION episode reward: 0
+[32m[20221124 21:10:05 @hopper_agent.py:283][0m Total time: 45.103893995285034
+[32m[20221124 21:10:05 @hopper_agent.py:285][0m 150000 total steps have happened
+[32m[20221124 21:10:05 @hopper_agent.py:269][0m #------------------------ Iteration 3 --------------------------#
+[32m[20221124 21:10:06 @hopper_agent.py:144][0m agent 0 avg episode training reward: 5.815108957197658
+[32m[20221124 21:10:06 @hopper_agent.py:144][0m agent 9 avg episode training reward: 2.4678901765267174
+[32m[20221124 21:10:06 @hopper_agent.py:144][0m agent 4 avg episode training reward: 3.268843157222765
+[32m[20221124 21:10:06 @hopper_agent.py:144][0m agent 6 avg episode training reward: 5.034210592951908
+[32m[20221124 21:10:06 @hopper_agent.py:144][0m agent 5 avg episode training reward: 5.044423977788126
+[32m[20221124 21:10:06 @hopper_agent.py:144][0m agent 3 avg episode training reward: 5.621687612880011
+[32m[20221124 21:10:06 @hopper_agent.py:144][0m agent 2 avg episode training reward: 5.162353031899615
+[32m[20221124 21:10:06 @hopper_agent.py:144][0m agent 1 avg episode training reward: 5.755819400568791
+[32m[20221124 21:10:06 @hopper_agent.py:144][0m agent 7 avg episode training reward: 5.591302463386582
+[32m[20221124 21:10:06 @hopper_agent.py:144][0m agent 8 avg episode training reward: 3.7743334473010393
+[32m[20221124 21:10:09 @hopper_agent.py:301][0m Sample time: 4.266236066818237
+[32m[20221124 21:10:19 @hopper_agent.py:306][0m Update time: 9.599005937576294
+[32m[20221124 21:10:19 @hopper_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:10:19 @hopper_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:10:19 @hopper_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:10:19 @hopper_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:10:19 @hopper_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:10:19 @hopper_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:10:19 @hopper_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:10:19 @hopper_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:10:19 @hopper_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:10:19 @hopper_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:10:20 @hopper_agent.py:311][0m Evaluation time: 1.1806221008300781
+[32m[20221124 21:10:20 @hopper_agent.py:280][0m Average TRAINING episode reward: 4.753597281772321
+[32m[20221124 21:10:20 @hopper_agent.py:281][0m Average EVALUATION episode reward: 0
+[32m[20221124 21:10:20 @hopper_agent.py:283][0m Total time: 60.4521758556366
+[32m[20221124 21:10:20 @hopper_agent.py:285][0m 200000 total steps have happened
+[32m[20221124 21:10:20 @hopper_agent.py:269][0m #------------------------ Iteration 4 --------------------------#
+[32m[20221124 21:10:22 @hopper_agent.py:144][0m agent 1 avg episode training reward: 1.792102568970312
+[32m[20221124 21:10:22 @hopper_agent.py:144][0m agent 2 avg episode training reward: 3.252412642522645
+[32m[20221124 21:10:22 @hopper_agent.py:144][0m agent 3 avg episode training reward: 2.9726635674420825
+[32m[20221124 21:10:22 @hopper_agent.py:144][0m agent 7 avg episode training reward: 3.797946612320987
+[32m[20221124 21:10:22 @hopper_agent.py:144][0m agent 0 avg episode training reward: 3.9657048586078867
+[32m[20221124 21:10:22 @hopper_agent.py:144][0m agent 4 avg episode training reward: 3.6611964498597858
+[32m[20221124 21:10:22 @hopper_agent.py:144][0m agent 9 avg episode training reward: 2.3184728432181805
+[32m[20221124 21:10:22 @hopper_agent.py:144][0m agent 6 avg episode training reward: 1.761763470347013
+[32m[20221124 21:10:22 @hopper_agent.py:144][0m agent 8 avg episode training reward: 3.73635889019513
+[32m[20221124 21:10:22 @hopper_agent.py:144][0m agent 5 avg episode training reward: 3.0237621916598285
+[32m[20221124 21:10:25 @hopper_agent.py:301][0m Sample time: 4.931058168411255
+[32m[20221124 21:10:35 @hopper_agent.py:306][0m Update time: 9.74519395828247
+[32m[20221124 21:10:35 @hopper_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:10:35 @hopper_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:10:35 @hopper_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:10:35 @hopper_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:10:35 @hopper_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:10:35 @hopper_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:10:35 @hopper_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:10:35 @hopper_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:10:35 @hopper_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:10:35 @hopper_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:10:36 @hopper_agent.py:311][0m Evaluation time: 0.8174316883087158
+[32m[20221124 21:10:36 @hopper_agent.py:280][0m Average TRAINING episode reward: 3.028238409514385
+[32m[20221124 21:10:36 @hopper_agent.py:281][0m Average EVALUATION episode reward: 0
+[32m[20221124 21:10:36 @hopper_agent.py:283][0m Total time: 76.25001811981201
+[32m[20221124 21:10:36 @hopper_agent.py:285][0m 250000 total steps have happened
+[32m[20221124 21:10:36 @hopper_agent.py:269][0m #------------------------ Iteration 5 --------------------------#
+[32m[20221124 21:10:37 @hopper_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:10:37 @hopper_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:10:37 @hopper_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:10:37 @hopper_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:10:38 @hopper_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:10:38 @hopper_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:10:38 @hopper_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:10:38 @hopper_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:10:38 @hopper_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:10:38 @hopper_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:10:40 @hopper_agent.py:301][0m Sample time: 3.952565908432007
+[32m[20221124 21:10:50 @hopper_agent.py:306][0m Update time: 10.081951141357422
+[32m[20221124 21:10:51 @hopper_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:10:51 @hopper_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:10:51 @hopper_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:10:51 @hopper_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:10:51 @hopper_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:10:51 @hopper_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:10:51 @hopper_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:10:51 @hopper_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:10:51 @hopper_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:10:51 @hopper_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:10:51 @hopper_agent.py:311][0m Evaluation time: 0.8568379878997803
+[32m[20221124 21:10:51 @hopper_agent.py:280][0m Average TRAINING episode reward: 0.0
+[32m[20221124 21:10:51 @hopper_agent.py:281][0m Average EVALUATION episode reward: 0
+[32m[20221124 21:10:51 @hopper_agent.py:283][0m Total time: 91.42319393157959
+[32m[20221124 21:10:51 @hopper_agent.py:285][0m 300000 total steps have happened
+[32m[20221124 21:10:51 @hopper_agent.py:269][0m #------------------------ Iteration 6 --------------------------#
+[32m[20221124 21:10:53 @hopper_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:10:53 @hopper_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:10:53 @hopper_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:10:53 @hopper_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:10:53 @hopper_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:10:53 @hopper_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:10:53 @hopper_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:10:53 @hopper_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:10:53 @hopper_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:10:53 @hopper_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:10:56 @hopper_agent.py:301][0m Sample time: 4.203790903091431
+[32m[20221124 21:11:05 @hopper_agent.py:306][0m Update time: 9.8801851272583
+[32m[20221124 21:11:06 @hopper_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:11:06 @hopper_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:11:06 @hopper_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:11:06 @hopper_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:11:06 @hopper_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:11:06 @hopper_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:11:06 @hopper_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:11:06 @hopper_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:11:06 @hopper_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:11:06 @hopper_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:11:07 @hopper_agent.py:311][0m Evaluation time: 1.0415239334106445
+[32m[20221124 21:11:07 @hopper_agent.py:280][0m Average TRAINING episode reward: 0.0
+[32m[20221124 21:11:07 @hopper_agent.py:281][0m Average EVALUATION episode reward: 0
+[32m[20221124 21:11:07 @hopper_agent.py:283][0m Total time: 106.8366630077362
+[32m[20221124 21:11:07 @hopper_agent.py:285][0m 350000 total steps have happened
+[32m[20221124 21:11:07 @hopper_agent.py:269][0m #------------------------ Iteration 7 --------------------------#
+[32m[20221124 21:11:08 @hopper_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:11:08 @hopper_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:11:08 @hopper_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:11:08 @hopper_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:11:08 @hopper_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:11:08 @hopper_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:11:08 @hopper_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:11:08 @hopper_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:11:08 @hopper_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:11:08 @hopper_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:11:11 @hopper_agent.py:301][0m Sample time: 4.068308115005493
+[32m[20221124 21:11:21 @hopper_agent.py:306][0m Update time: 9.865402936935425
+[32m[20221124 21:11:21 @hopper_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:11:21 @hopper_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:11:21 @hopper_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:11:21 @hopper_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:11:21 @hopper_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:11:21 @hopper_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:11:21 @hopper_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:11:21 @hopper_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:11:21 @hopper_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:11:21 @hopper_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:11:21 @hopper_agent.py:311][0m Evaluation time: 0.7022390365600586
+[32m[20221124 21:11:22 @hopper_agent.py:280][0m Average TRAINING episode reward: 0.0
+[32m[20221124 21:11:22 @hopper_agent.py:281][0m Average EVALUATION episode reward: 0
+[32m[20221124 21:11:22 @hopper_agent.py:283][0m Total time: 121.7740318775177
+[32m[20221124 21:11:22 @hopper_agent.py:285][0m 400000 total steps have happened
+[32m[20221124 21:11:22 @hopper_agent.py:269][0m #------------------------ Iteration 8 --------------------------#
+[32m[20221124 21:11:23 @hopper_agent.py:144][0m agent 5 avg episode training reward: 1.0418742450119622
+[32m[20221124 21:11:23 @hopper_agent.py:144][0m agent 9 avg episode training reward: 3.7767187813788086
+[32m[20221124 21:11:23 @hopper_agent.py:144][0m agent 1 avg episode training reward: 2.3172222478012863
+[32m[20221124 21:11:23 @hopper_agent.py:144][0m agent 0 avg episode training reward: 1.4182867784491482
+[32m[20221124 21:11:23 @hopper_agent.py:144][0m agent 3 avg episode training reward: 1.8033421758970682
+[32m[20221124 21:11:23 @hopper_agent.py:144][0m agent 6 avg episode training reward: 0.6967757981483831
+[32m[20221124 21:11:23 @hopper_agent.py:144][0m agent 8 avg episode training reward: 1.963142588219096
+[32m[20221124 21:11:23 @hopper_agent.py:144][0m agent 4 avg episode training reward: 1.5696461941440556
+[32m[20221124 21:11:23 @hopper_agent.py:144][0m agent 2 avg episode training reward: 1.4836430150979054
+[32m[20221124 21:11:23 @hopper_agent.py:144][0m agent 7 avg episode training reward: 1.7889104317190636
+[32m[20221124 21:11:26 @hopper_agent.py:301][0m Sample time: 4.232002019882202
+[32m[20221124 21:11:36 @hopper_agent.py:306][0m Update time: 9.711427927017212
+[32m[20221124 21:11:36 @hopper_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:11:36 @hopper_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:11:36 @hopper_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:11:36 @hopper_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:11:36 @hopper_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:11:36 @hopper_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:11:36 @hopper_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:11:36 @hopper_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:11:36 @hopper_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:11:36 @hopper_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:11:37 @hopper_agent.py:311][0m Evaluation time: 0.8183472156524658
+[32m[20221124 21:11:37 @hopper_agent.py:280][0m Average TRAINING episode reward: 1.7859562255866779
+[32m[20221124 21:11:37 @hopper_agent.py:281][0m Average EVALUATION episode reward: 0
+[32m[20221124 21:11:37 @hopper_agent.py:283][0m Total time: 136.835303068161
+[32m[20221124 21:11:37 @hopper_agent.py:285][0m 450000 total steps have happened
+[32m[20221124 21:11:37 @hopper_agent.py:269][0m #------------------------ Iteration 9 --------------------------#
+[32m[20221124 21:11:38 @hopper_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:11:38 @hopper_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:11:38 @hopper_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:11:38 @hopper_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:11:38 @hopper_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:11:38 @hopper_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:11:38 @hopper_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:11:38 @hopper_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:11:38 @hopper_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:11:38 @hopper_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:11:41 @hopper_agent.py:301][0m Sample time: 4.1788649559021
+[32m[20221124 21:11:51 @hopper_agent.py:306][0m Update time: 9.839062929153442
+[32m[20221124 21:11:51 @hopper_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:11:51 @hopper_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:11:51 @hopper_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:11:51 @hopper_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:11:51 @hopper_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:11:51 @hopper_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:11:51 @hopper_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:11:51 @hopper_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:11:51 @hopper_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:11:51 @hopper_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:11:52 @hopper_agent.py:311][0m Evaluation time: 0.8401439189910889
+[32m[20221124 21:11:52 @hopper_agent.py:280][0m Average TRAINING episode reward: 0.0
+[32m[20221124 21:11:52 @hopper_agent.py:281][0m Average EVALUATION episode reward: 0
+[32m[20221124 21:11:52 @hopper_agent.py:283][0m Total time: 152.008318901062
+[32m[20221124 21:11:52 @hopper_agent.py:285][0m 500000 total steps have happened
+[32m[20221124 21:11:52 @hopper_agent.py:269][0m #------------------------ Iteration 10 --------------------------#
+[32m[20221124 21:11:53 @hopper_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:11:53 @hopper_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:11:53 @hopper_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:11:53 @hopper_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:11:53 @hopper_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:11:53 @hopper_agent.py:144][0m agent 2 avg episode training reward: 1.4378677583652488
+[32m[20221124 21:11:53 @hopper_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:11:53 @hopper_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:11:53 @hopper_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:11:53 @hopper_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:11:56 @hopper_agent.py:301][0m Sample time: 4.067420244216919

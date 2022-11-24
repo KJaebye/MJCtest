@@ -9,8 +9,7 @@ import numpy as np
 from config.get_args import get_args
 from config.config import Config
 from utils.logger import Logger
-from structural_control.agents.hopper_agent import HopperAgent
-from structural_control.envs.hopper import HopperEnv
+from structural_control.agents.pendulum_agent import PendulumAgent
 
 if __name__ == "__main__":
     args = get_args()
@@ -48,7 +47,10 @@ if __name__ == "__main__":
     start_epoch = int(args.start_epoch) if args.start_epoch.isnumeric() else args.start_epoch
 
     """ create agent """
-    agent = HopperAgent(cfg, logger, dtype=dtype, device=device, seed=cfg.seed, num_threads=args.num_threads,
+    # agent = HopperAgent(cfg, logger, dtype=dtype, device=device, seed=cfg.seed, num_threads=args.num_threads,
+    #                     render=args.render, training=True, checkpoint=start_epoch)
+
+    agent = PendulumAgent(cfg, logger, dtype=dtype, device=device, seed=cfg.seed, num_threads=args.num_threads,
                         render=args.render, training=True, checkpoint=start_epoch)
 
     for epoch in range(start_epoch, cfg.max_epoch_num):

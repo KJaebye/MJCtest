@@ -4,7 +4,6 @@
 #   @created date: 07.Nov.2022
 # ------------------------------------------------------------------------------------------------------------------- #
 
-from abc import ABC
 import numpy as np
 import collections
 import dm_env
@@ -93,7 +92,7 @@ class HopperPhysics(MujocoPhysics):
         return np.log1p(self.named.data.sensordata[['touch_toe', 'touch_heel']])
 
 
-class HopperTask(MujocoTask, ABC):
+class HopperTask(MujocoTask):
     def __init__(self, hopping, random=None):
         """Initialize an instance of `Hopper`.
 

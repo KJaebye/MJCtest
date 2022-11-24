@@ -4,7 +4,7 @@
 #   @created date: 07.Nov.2022
 # ------------------------------------------------------------------------------------------------------------------- #
 """
-    This agent is an example for training a robot.
+    This agent is an example for training a Hopper.
 """
 import math
 import pickle
@@ -12,8 +12,7 @@ import time
 
 import numpy as np
 import torch
-import mujoco_viewer
-from lib.utils.image_viewer import OpenCVImageViewer
+
 from lib.agents.agent_ppo import AgentPPO
 from lib.core.logger_rl import LoggerRL
 from lib.core.traj_batch import TrajBatch
@@ -426,13 +425,14 @@ class HopperAgent(AgentPPO):
         # print(surr_loss)
         return surr_loss
 
-    def visualize_agent(self, num_episode=1, mean_action=True, save_video=False):
+    def visualize_agent(self, num_episode=1, mean_action=False, save_video=False):
         env = self.env
 
         from dm_control import viewer
-
         def policy_fn(time_step):
             cur_state = torper.tensor([tools.get_state_flatten(time_step.observation)], device=self.device)
             action = self.policy_net.select_action(cur_state, mean_action).detach().numpy()
+            return action
 
-        viewer.launch(env, policy=policy_fn)
+        viewer.launch(environment_loader=env, policy=policy_fn)
+

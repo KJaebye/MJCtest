@@ -70,7 +70,7 @@ class Config:
         self.mini_batch_size = cfg.get('mini_batch_size', self.min_batch_size)
         self.eval_batch_size = cfg.get('eval_batch_size', 10000)
         self.max_epoch_num = cfg.get('max_epoch_num', 1000)
-        self.max_timesteps = cfg.get('max_timesteps')  # maximum timestep per episode
+        self.save_model_interval = cfg.get('save_model_interval', 100)
 
         self.seed = cfg.get('seed', 1)
 
