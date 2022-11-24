@@ -639,3 +639,31 @@
 [32m[20221124 21:27:37 @pendulum_agent.py:144][0m agent 9 avg episode training reward: 0.0
 [32m[20221124 21:27:37 @pendulum_agent.py:144][0m agent 8 avg episode training reward: 0.0
 [32m[20221124 21:27:37 @pendulum_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:27:40 @pendulum_agent.py:307][0m Sample time: 3.8567967414855957
+[32m[20221124 21:27:49 @pendulum_agent.py:312][0m Update time: 9.587045192718506
+[32m[20221124 21:27:50 @pendulum_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:27:50 @pendulum_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:27:50 @pendulum_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:27:50 @pendulum_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:27:50 @pendulum_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:27:50 @pendulum_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:27:50 @pendulum_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:27:50 @pendulum_agent.py:144][0m agent 0 avg episode training reward: 0.0
+[32m[20221124 21:27:50 @pendulum_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:27:50 @pendulum_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:27:50 @pendulum_agent.py:317][0m Evaluation time: 0.8442208766937256
+[32m[20221124 21:27:51 @pendulum_agent.py:285][0m Average TRAINING episode reward: 0.0
+[32m[20221124 21:27:51 @pendulum_agent.py:286][0m Average EVALUATION episode reward: 0
+[32m[20221124 21:27:51 @pendulum_agent.py:289][0m Total time: 340.1868100166321
+[32m[20221124 21:27:51 @pendulum_agent.py:291][0m 1150000 total steps have happened
+[32m[20221124 21:27:51 @pendulum_agent.py:281][0m #------------------------ Iteration 23 --------------------------#
+[32m[20221124 21:27:51 @pendulum_agent.py:144][0m agent 4 avg episode training reward: 0.0
+[32m[20221124 21:27:51 @pendulum_agent.py:144][0m agent 7 avg episode training reward: 0.0
+[32m[20221124 21:27:51 @pendulum_agent.py:144][0m agent 3 avg episode training reward: 0.0
+[32m[20221124 21:27:51 @pendulum_agent.py:144][0m agent 1 avg episode training reward: 0.0
+[32m[20221124 21:27:51 @pendulum_agent.py:144][0m agent 6 avg episode training reward: 0.0
+[32m[20221124 21:27:51 @pendulum_agent.py:144][0m agent 2 avg episode training reward: 0.0
+[32m[20221124 21:27:51 @pendulum_agent.py:144][0m agent 5 avg episode training reward: 0.0
+[32m[20221124 21:27:51 @pendulum_agent.py:144][0m agent 9 avg episode training reward: 0.0
+[32m[20221124 21:27:51 @pendulum_agent.py:144][0m agent 8 avg episode training reward: 0.0
+[32m[20221124 21:27:52 @pendulum_agent.py:144][0m agent 0 avg episode training reward: 0.0
