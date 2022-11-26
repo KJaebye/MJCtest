@@ -20,3 +20,4 @@ class TrajBatch:
         self.rewards = np.stack(next(self.batch))
         self.masks = np.stack(next(self.batch))
         self.exps = np.stack(next(self.batch))
+

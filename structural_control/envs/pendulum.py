@@ -18,42 +18,42 @@ _COSINE_BOUND = np.cos(np.deg2rad(_ANGLE_BOUND))
 
 class PendulumEnv(MujocoEnv):
     def __init__(self, cfg, **kwargs):
-        self.mujoco_xml_path = './assets/robot_models/mjcf/pendulum.xml'
-        # self.mujoco_xml_path = '/Users/kjaebye/EvoTest/MJCtest/assets/robot_models/mjcf/pendulum.xml'
+        # self.mujoco_xml_path = './assets/robot_models/mjcf/pendulum.xml'
+        self.mujoco_xml_path = '/Users/kjaebye/EvoTest/MJCtest/assets/robot_models/mjcf/pendulum.xml'
         self.cfg = cfg
         physics = PendulumPhysics.from_xml_path(self.mujoco_xml_path)
         task = SwingUpTask(random=None)
         super().__init__(physics, task, time_limit=_DEFAULT_TIME_LIMIT, **kwargs)
 
 
-    def step(self, action):
-        """Updates the environment using the action and returns a `TimeStep`."""
-        # apply action
-        self._task.before_step(action, self._physics)
-        self._physics.step(self._n_sub_steps)
-        self._task.after_step(self._physics)
-
-        # observation
-        observation = self._task.get_observation(self._physics)
-        # reward
-        reward = self._task.get_reward(self._physics)
-        # step
-        self._step_count += 1
-
-        done = self.check_done(observation)
-
-        if self._step_count >= self._step_limit:
-            discount = 1.0
-        else:
-            discount = self._task.get_termination(self._physics)
-
-        episode_over = discount is not None
-        if episode_over:
-            self._reset_next_step = True
-            return dm_env.TimeStep(
-                dm_env.StepType.LAST, reward, discount, observation), done
-        else:
-            return dm_env.TimeStep(dm_env.StepType.MID, reward, 1.0, observation), done
+    # def step(self, action):
+    #     """Updates the environment using the action and returns a `TimeStep`."""
+    #     # apply action
+    #     self._task.before_step(action, self._physics)
+    #     self._physics.step(self._n_sub_steps)
+    #     self._task.after_step(self._physics)
+    #
+    #     # observation
+    #     observation = self._task.get_observation(self._physics)
+    #     # reward
+    #     reward = self._task.get_reward(self._physics)
+    #     # step
+    #     self._step_count += 1
+    #
+    #     done = self.check_done(observation)
+    #
+    #     if self._step_count >= self._step_limit:
+    #         discount = 1.0
+    #     else:
+    #         discount = self._task.get_termination(self._physics)
+    #
+    #     episode_over = discount is not None
+    #     if episode_over:
+    #         self._reset_next_step = True
+    #         return dm_env.TimeStep(
+    #             dm_env.StepType.LAST, reward, discount, observation), done
+    #     else:
+    #         return dm_env.TimeStep(dm_env.StepType.MID, reward, 1.0, observation), done
 
     def check_done(self, observation):
         """ check agent is well done """

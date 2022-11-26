@@ -13,6 +13,7 @@ from config.config import Config
 from utils.logger import Logger
 from structural_control.agents.hopper_agent import HopperAgent
 from structural_control.envs.hopper import HopperEnv
+from structural_control.agents.pendulum_agent import PendulumAgent
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -47,10 +48,12 @@ if __name__ == "__main__":
     logger.critical('Type of current running: Evaluation. No log file will be created')
     logger.set_file_handler()
 
-    epoch = 'best'
+    epoch = 888
 
     """ create agent """
-    agent = HopperAgent(cfg, logger, dtype=dtype, device=device, seed=cfg.seed, num_threads=1,
+    # agent = HopperAgent(cfg, logger, dtype=dtype, device=device, seed=cfg.seed, num_threads=1,
+    #                     render=True, training=False, checkpoint=epoch)
+    agent = PendulumAgent(cfg, logger, dtype=dtype, device=device, seed=cfg.seed, num_threads=1,
                         render=True, training=False, checkpoint=epoch)
 
     agent.visualize_agent(num_episode=1, save_video=args.save_video)

@@ -1,0 +1,4 @@
+[32m[20221126 21:15:19 @logger.py:105][0m Log file set to ./tmp/pendulum/swingup/20221126_211519/log/pendulum_swingup-20221126_211519.log
+[32m[20221126 21:15:19 @pendulum_agent.py:285][0m #------------------------ Iteration 0 --------------------------#
+[32m[20221126 21:15:29 @pendulum_agent.py:148][0m agent 0 avg episode training reward: 0.8
+[32m[20221126 21:15:29 @pendulum_agent.py:311][0m Sample time: 9.681790113449097

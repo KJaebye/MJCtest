@@ -110,17 +110,20 @@ class PendulumAgent(AgentPPO):
 
                 # sample an action
                 use_mean_action = mean_action or torch.bernoulli(torch.tensor([1 - self.noise_rate])).item()
-                action = self.policy_net.select_action(cur_state, use_mean_action).numpy()
-                action = int(action) if self.policy_net.type == 'discrete' else action.astype(np.float64)
+                action = self.policy_net.select_action(cur_state, use_mean_action).numpy().astype(np.float64)
 
                 # apply this action and get env feedback
-                time_step, done = self.env.step(action)
+                time_step = self.env.step(action)
                 reward = time_step.reward
                 next_state = torper.tensor([tools.get_state_flatten(time_step.observation)], device=self.device)
 
-                # add end reward
+                # if end reward
                 if self.end_reward and time_step.last():
                     reward += self.env.end_reward
+
+                done = False
+                if time_step.last():
+                    done = True
 
                 mask = 1 if done else 0
                 exp = 1 - use_mean_action
@@ -171,7 +174,7 @@ class PendulumAgent(AgentPPO):
         torper.to_device(self.device, self.policy_net)
 
     def setup_value(self):
-        self.value_net = StructuralValue(self.cfg.policy_spec, self)
+        self.value_net = StructuralValue(self.cfg.value_spec, self)
         torper.to_device(self.device, self.value_net)
 
     def setup_optimizer(self):
@@ -217,7 +220,7 @@ class PendulumAgent(AgentPPO):
 
     def load_checkpoint(self, checkpoint):
         if isinstance(checkpoint, int):
-            checkpoint_path = './results/%s/%s/checkpoint_%04d.p' % (self.cfg.domain, self.cfg.task, checkpoint)
+            checkpoint_path = './results/%s/%s/epoch_%04d.p' % (self.cfg.domain, self.cfg.task, checkpoint)
             epoch = checkpoint
         else:
             assert isinstance(checkpoint, str)
@@ -325,21 +328,25 @@ class PendulumAgent(AgentPPO):
         rewards = torch.from_numpy(batch.rewards).to(self.dtype).to(self.device)
         masks = torch.from_numpy(batch.masks).to(self.dtype).to(self.device)
         exps = torch.from_numpy(batch.exps).to(self.dtype).to(self.device)
+
         with torper.to_eval(*self.update_modules):
             with torch.no_grad():
-                values = []
-                chunk = 10000
-                for i in range(0, len(states), chunk):
-                    states_i = states[i:min(i + chunk, len(states))]
-                    values_i = self.value_net(self.trans_value(states_i))
-                    values.append(values_i)
-                values = torch.cat(values)
+                # values = []
+                # chunk = 10000
+                # for i in range(0, len(states), chunk):
+                #     states_i = states[i:min(i + chunk, len(states))]
+                #     values_i = self.value_net(self.trans_value(states_i))
+                #     values.append(values_i)
+                # values = torch.cat(values)
+
+                values = self.value_net(states)
+                # fixed_log_probs = self.policy_net.get_log_prob(states, actions)
 
         # get advantage from the trajectories
         advantages, returns = estimate_advantages(rewards, masks, values, self.gamma, self.tau)
 
-        if self.cfg.agent_spec.get('reinforce', False):
-            advantages = returns.clone()
+        # if self.cfg.agent_spec.get('reinforce', False):
+        #     advantages = returns.clone()
 
         self.update_policy(states, actions, returns, advantages, exps, epoch)
         return
@@ -356,17 +363,19 @@ class PendulumAgent(AgentPPO):
         """
         with torper.to_eval(*self.update_modules):
             with torch.no_grad():
-                fixed_log_probs = []
-                chunk = 10000
-                for i in range(0, len(states), chunk):
-                    states_i = states[i:min(i + chunk, len(states))]
-                    actions_i = actions[i:min(i + chunk, len(states))]
-                    fixed_log_probs_i = self.policy_net.get_log_prob(self.trans_policy(states_i), actions_i)
-                    fixed_log_probs.append(fixed_log_probs_i)
-                fixed_log_probs = torch.cat(fixed_log_probs)
+                # fixed_log_probs = []
+                # chunk = 10000
+                # for i in range(0, len(states), chunk):
+                #     states_i = states[i:min(i + chunk, len(states))]
+                #     actions_i = actions[i:min(i + chunk, len(states))]
+                #     fixed_log_probs_i = self.policy_net.get_log_prob(self.trans_policy(states_i), actions_i)
+                #     fixed_log_probs.append(fixed_log_probs_i)
+                # fixed_log_probs = torch.cat(fixed_log_probs)
+
+                fixed_log_probs = self.policy_net.get_log_prob(states, actions)
+
         num_state = len(states)
 
-        # self.logger.info('| %11s | %11s | %11s | %11s| %11s|' % ('surr', 'kl', 'ent', 'vf_loss', 'weight_l2'))
         for _ in range(self.optim_num_epochs):
             # perform mini-batch PPO update
             if self.use_mini_batch:
@@ -386,37 +395,33 @@ class PendulumAgent(AgentPPO):
                 for i in range(optim_iter_num):
                     index = slice(i * self.mini_batch_size, min((i + 1) * self.mini_batch_size, num_state))
                     states_b, actions_b, advantages_b, returns_b, fixed_log_probs_b, exps_b = \
-                        states[index], actions[index], advantages[index], returns[index], fixed_log_probs[index], exps[
-                            index]
-                    self.update_value(states_b, returns_b, self.tb_logger, epoch)
-                    self.surr_loss = self.ppo_loss(states_b, actions_b, advantages_b, fixed_log_probs_b)
-                    self.tb_logger.add_scalar('PPO policy loss', self.surr_loss, epoch)
-                    self.optimizer_policy.zero_grad()
-                    self.surr_loss.backward()
-                    self.clip_policy_grad()
-                    self.optimizer_policy.step()
+                        states[index], actions[index], advantages[index], returns[index], fixed_log_probs[index], exps[index]
+
+                    self.ppo_step(states_b, actions_b, advantages_b, returns_b, fixed_log_probs_b, epoch)
             else:
-                self.update_value(states, returns, self.tb_logger, epoch)
-                self.surr_loss = self.ppo_loss(states, actions, advantages, fixed_log_probs)
-                self.tb_logger.add_scalar('PPO policy loss', self.surr_loss, epoch)
-                self.optimizer_policy.zero_grad()
-                self.surr_loss.backward()
-                self.clip_policy_grad()
-                self.optimizer_policy.step()
+                self.ppo_step(states, actions, advantages, returns, fixed_log_probs, epoch)
 
-                # logging
-                # self.logger.info('| %10.8f | %10.8f | %10.4f | %10.4f | %10.4f |' %
-                # (self.surr_loss, kl_epoch, entropy_epoch, vf_epoch, weight_epoch))
+    def ppo_step(self, states, actions, advantages, returns, fixed_log_probs, epoch):
+        self.update_value(states, returns, self.tb_logger, epoch)
 
-                # self.logger.info('Learning rate: {}'.format(self.optimizer_policy.state_dict()['param_groups'][0]['lr']))
-                # # self.logger.info('KL value: {}'.format(self.))
-                # self.logger.info('Surrogate loss: {}'.format(self.surr_loss))
+        self.policy_surr_loss = self.ppo_loss(states, actions, advantages, fixed_log_probs)
+        self.tb_logger.add_scalar('PPO policy loss', self.policy_surr_loss, epoch)
+        self.optimizer_policy.zero_grad()
+        self.policy_surr_loss.backward()
+        self.clip_policy_grad()
+        self.optimizer_policy.step()
 
     def update_value(self, states, returns, tb_logger, epoch):
         """ Update Critic """
         for _ in range(self.value_optim_num_iter):
             value_pred = self.value_net(self.trans_value(states))
             value_loss = (value_pred - returns).pow(2).mean()
+
+            # weight decay
+            for param in self.value_net.parameters():
+                self.cfg.l2_reg = float(self.cfg.l2_reg)
+                value_loss += param.pow(2).sum() * self.cfg.l2_reg
+
             tb_logger.add_scalar('PPO value loss', value_loss, epoch)
             self.optimizer_value.zero_grad()
             value_loss.backward()
@@ -427,12 +432,12 @@ class PendulumAgent(AgentPPO):
         ratio = torch.exp(log_probs - fixed_log_probs)
         surr_1 = ratio * advantages
         surr_2 = torch.clamp(ratio, 1.0 - self.clip_epsilon, 1.0 + self.clip_epsilon) * advantages
-        surr_loss = - torch.min(surr_1, surr_2).mean()
+        policy_surr_loss = - torch.min(surr_1, surr_2).mean()
         # print(surr_loss)
-        return surr_loss
+        return policy_surr_loss
 
     def visualize_agent(self, num_episode=1, mean_action=False, save_video=False):
-        env = self.env
+        action_spec = self.env.action_spec()
 
         from dm_control import viewer
         def policy_fn(time_step):
@@ -440,4 +445,4 @@ class PendulumAgent(AgentPPO):
             action = self.policy_net.select_action(cur_state, mean_action).detach().numpy()
             return action
 
-        viewer.launch(environment_loader=env, policy=policy_fn)
+        viewer.launch(self.env, policy=policy_fn)

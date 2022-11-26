@@ -1,0 +1,13 @@
+[32m[20221127 02:58:10 @logger.py:105][0m Log file set to ./tmp/pendulum/swingup/20221127_025810/log/pendulum_swingup-20221127_025810.log
+[32m[20221127 02:58:10 @pendulum_agent.py:284][0m #------------------------ Iteration 0 --------------------------#
+[32m[20221127 02:58:12 @pendulum_agent.py:147][0m agent 3 avg episode training reward: 0.0
+[32m[20221127 02:58:12 @pendulum_agent.py:147][0m agent 7 avg episode training reward: 0.0
+[32m[20221127 02:58:12 @pendulum_agent.py:147][0m agent 9 avg episode training reward: 0.0
+[32m[20221127 02:58:12 @pendulum_agent.py:147][0m agent 6 avg episode training reward: 0.0
+[32m[20221127 02:58:12 @pendulum_agent.py:147][0m agent 4 avg episode training reward: 0.0
+[32m[20221127 02:58:12 @pendulum_agent.py:147][0m agent 2 avg episode training reward: 0.0
+[32m[20221127 02:58:12 @pendulum_agent.py:147][0m agent 5 avg episode training reward: 0.0
+[32m[20221127 02:58:12 @pendulum_agent.py:147][0m agent 1 avg episode training reward: 0.0
+[32m[20221127 02:58:12 @pendulum_agent.py:147][0m agent 8 avg episode training reward: 0.0
+[32m[20221127 02:58:12 @pendulum_agent.py:147][0m agent 0 avg episode training reward: 0.0
+[32m[20221127 02:58:15 @pendulum_agent.py:310][0m Sample time: 4.7722649574279785

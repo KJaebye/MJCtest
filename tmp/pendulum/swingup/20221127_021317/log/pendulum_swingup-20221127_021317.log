@@ -1,0 +1,16 @@
+[32m[20221127 02:13:17 @logger.py:105][0m Log file set to ./tmp/pendulum/swingup/20221127_021317/log/pendulum_swingup-20221127_021317.log
+[32m[20221127 02:13:17 @pendulum_agent.py:284][0m #------------------------ Iteration 0 --------------------------#
+[32m[20221127 02:13:26 @pendulum_agent.py:147][0m agent 0 avg episode training reward: 0.0
+[32m[20221127 02:13:26 @pendulum_agent.py:310][0m Sample time: 8.437286376953125
+[32m[20221127 02:13:51 @pendulum_agent.py:315][0m Update time: 25.12803077697754
+[32m[20221127 02:13:52 @pendulum_agent.py:147][0m agent 0 avg episode training reward: 0.7
+[32m[20221127 02:13:52 @pendulum_agent.py:320][0m Evaluation time: 1.587179183959961
+[32m[20221127 02:13:52 @pendulum_agent.py:288][0m Average TRAINING episode reward: 0.0
+[32m[20221127 02:13:52 @pendulum_agent.py:289][0m Average EVALUATION episode reward: 0
+[32m[20221127 02:13:52 @pendulum_agent.py:265][0m [4m[34mCRITICAL[0m Get the best episode reward: 0
+[32m[20221127 02:13:52 @pendulum_agent.py:269][0m [4m[34mCRITICAL[0m Saving the best checkpoint with rewards 0.00
+[32m[20221127 02:13:52 @pendulum_agent.py:292][0m Total time: 35.249752044677734
+[32m[20221127 02:13:52 @pendulum_agent.py:294][0m 50000 total steps have happened
+[32m[20221127 02:13:52 @pendulum_agent.py:284][0m #------------------------ Iteration 1 --------------------------#
+[32m[20221127 02:14:01 @pendulum_agent.py:147][0m agent 0 avg episode training reward: 0.18
+[32m[20221127 02:14:01 @pendulum_agent.py:310][0m Sample time: 8.82443904876709

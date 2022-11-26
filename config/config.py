@@ -48,7 +48,7 @@ class Config:
         # training config
         self.env_name = cfg.get('env_name')
         self.agent_spec = cfg.get('agent_spec', dict)
-        self.gamma = cfg.get('gamma', 0.99)
+        self.gamma = cfg.get('gamma', 0.995)
         self.tau = cfg.get('tau', 0.95)
 
         self.policy_spec = cfg.get('policy_spec', dict())
@@ -64,6 +64,7 @@ class Config:
         self.value_weight_decay = cfg.get('value_weight_decay', 0.0)
 
         self.adv_clip = cfg.get('adv_clip', np.inf)
+        self.l2_reg = cfg.get('l2_reg', 1e-3)
         self.clip_epsilon = cfg.get('clip_epsilon', 0.2)
         self.num_optim_epoch = cfg.get('num_optim_epoch', 10)
         self.min_batch_size = cfg.get('min_batch_size', 50000)

@@ -4,6 +4,7 @@
 #   @created date: 12.Nov.2022
 # ------------------------------------------------------------------------------------------------------------------- #
 import torch
+import numpy as np
 from lib.models.mlp import MLP
 from lib.utils.tools import init_fc_weights
 from lib.core.running_norm import RunningNorm
@@ -15,8 +16,9 @@ class StructuralValue(torch.nn.Module):
         self.cfg_spec = cfg_spec
         self.agent = agent
         self.observation_flat_dim = agent.observation_flat_dim
-        cur_dim = self.observation_flat_dim
-        self.norm = RunningNorm(self.observation_flat_dim)
+        self.state_dim = self.observation_flat_dim
+        self.norm = RunningNorm(self.state_dim)
+        cur_dim = self.state_dim
         if 'pre_mlp' in cfg_spec:
             self.pre_mlp = MLP(cur_dim, cfg_spec['pre_mlp'], cfg_spec['htype'])
             cur_dim = self.pre_mlp.output_dim
@@ -44,7 +46,7 @@ class StructuralValue(torch.nn.Module):
         if self.pre_mlp is not None:
             x = self.pre_mlp(x)
         if self.gnn is not None:
-            x = self.gnn(x)
+            x = self.gnn(x, edges)
         if self.mlp is not None:
             x = self.mlp(x)
         value = self.value_head(x)

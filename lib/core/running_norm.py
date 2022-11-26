@@ -37,5 +37,5 @@ class RunningNorm(torch.nn.Module):
             if self.de_std:
                 x = x / (self.std + 1e-8)
             if self.clip:
-                x = torch.clamp(x, -self.clip, self.clip)
+                x = torch.clamp(x, - self.clip, self.clip)
         return x

@@ -23,7 +23,8 @@ _HOP_SPEED = 2
 
 class HopperEnv(mujoco_env.MujocoEnv):
     def __init__(self, cfg):
-        physics = HopperPhysics.from_xml_path('hopper.xml')
+        # physics = HopperPhysics.from_xml_path('hopper.xml')
+        physics = HopperPhysics.from_xml_path('/Users/kjaebye/EvoTest/MJCtest/assets/robot_models/mjcf/hopper.xml')
         task = HopperTask(True, random=None)
         super().__init__(physics, task)
 
@@ -95,21 +96,12 @@ action_spec = env.action_spec()
 observation_spec = env.observation_spec()
 
 # Define a uniform random policy.
-# def random_policy(time_step):
-#     del time_step  # Unused.
-#     x = np.random.uniform(low=action_spec.minimum,
-#                              high=action_spec.maximum,
-#                              size=action_spec.shape)
-#     return x
-
 def random_policy(time_step):
-  del time_step  # Unused.
-  x = np.random.uniform(low=action_spec.minimum,
-                        high=action_spec.maximum,
-                        size=action_spec.shape)
-  print(x.shape)
-  print(x)
-  print(type(x))
-  return x
+    del time_step  # Unused.
+    x = np.random.uniform(low=action_spec.minimum,
+                             high=action_spec.maximum,
+                             size=action_spec.shape)
+    return x
+
 
 viewer.launch(env, policy=random_policy)

@@ -79,6 +79,7 @@ class Agent:
                     worker.start()
                 # save sample data from first worker pid 0
                 memories[0], loggers[0] = self.sample_worker(0, None, thread_batch_size, mean_action, render)
+
                 # save sample data from other workers
                 for i in range(nthreads - 1):
                     pid, worker_memory, worker_logger = queue.get()
@@ -125,8 +126,7 @@ class Agent:
 
                 # sample an action
                 use_mean_action = mean_action or torch.bernoulli(torch.tensor([1 - self.noise_rate])).item()
-                action = self.policy_net.select_action(cur_state, use_mean_action).numpy()
-                action = int(action) if self.policy_net.type == 'discrete' else action.astype(np.float64)
+                action = self.policy_net.select_action(cur_state, use_mean_action).numpy().astype(np.float64)
 
                 # apply this action and get env feedback
                 time_step, done = self.env.step(action)
