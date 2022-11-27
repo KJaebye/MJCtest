@@ -1,2 +1,0 @@
-[32m[20221125 17:27:50 @logger.py:105][0m Log file set to ./tmp/pendulum/swingup/20221125_172750/log/pendulum_swingup-20221125_172750.log
-[32m[20221125 17:27:50 @pendulum_agent.py:227][0m [4m[34mCRITICAL[0m Loading model from checkpoint: ./results/pendulum/swingup/epoch_0888.p

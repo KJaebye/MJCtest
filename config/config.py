@@ -66,7 +66,7 @@ class Config:
         self.adv_clip = cfg.get('adv_clip', np.inf)
         self.l2_reg = cfg.get('l2_reg', 1e-3)
         self.clip_epsilon = cfg.get('clip_epsilon', 0.2)
-        self.num_optim_epoch = cfg.get('num_optim_epoch', 10)
+        self.optim_num_epoches = cfg.get('optim_num_epoches', 10)
         self.min_batch_size = cfg.get('min_batch_size', 50000)
         self.mini_batch_size = cfg.get('mini_batch_size', self.min_batch_size)
         self.eval_batch_size = cfg.get('eval_batch_size', 10000)

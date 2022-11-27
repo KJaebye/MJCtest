@@ -68,7 +68,7 @@ class PendulumAgent(AgentPPO):
                          logger_cls=LoggerRL, traj_cls=TrajBatch,
                          logger_kwargs=None, running_state=None, num_threads=self.num_threads,
                          optimizer_policy=self.optimizer_policy, optimizer_value=self.optimizer_value,
-                         optim_num_epoches=cfg.num_optim_epoch,
+                         optim_num_epoches=cfg.optim_num_epoches,
                          clip_epsilon=cfg.clip_epsilon,
                          policy_grad_clip=[(self.policy_net.parameters(), 40)],
                          use_mini_batch=cfg.mini_batch_size < cfg.min_batch_size,
@@ -153,6 +153,14 @@ class PendulumAgent(AgentPPO):
 
     def setup_env(self):
         self.env = PendulumEnv(self.cfg, flat_observation=False)
+
+        # from dm_control import suite
+        # seed = 0
+        # np.random.seed(seed)
+        # torch.manual_seed(seed)
+        # self.env = suite.load(domain_name="pendulum", task_name="swingup", task_kwargs={'random': seed})
+        # self.env.cfg = self.cfg
+
         """ observation specs and dimension """
         self.observation_dim = len(self.env.observation_spec())
         # print(self.env.observation_spec())
@@ -323,6 +331,7 @@ class PendulumAgent(AgentPPO):
 
     def update_params(self, batch, epoch):
         torper.to_train(*self.update_modules)
+
         states = tensorfy(batch.cur_states, self.device)
         actions = tensorfy(batch.actions, self.device)
         rewards = torch.from_numpy(batch.rewards).to(self.dtype).to(self.device)
@@ -331,22 +340,17 @@ class PendulumAgent(AgentPPO):
 
         with torper.to_eval(*self.update_modules):
             with torch.no_grad():
-                # values = []
-                # chunk = 10000
-                # for i in range(0, len(states), chunk):
-                #     states_i = states[i:min(i + chunk, len(states))]
-                #     values_i = self.value_net(self.trans_value(states_i))
-                #     values.append(values_i)
-                # values = torch.cat(values)
-
-                values = self.value_net(states)
-                # fixed_log_probs = self.policy_net.get_log_prob(states, actions)
+                values = []
+                chunk = 10000
+                for i in range(0, len(states), chunk):
+                    states_i = states[i:min(i + chunk, len(states))]
+                    values_i = self.value_net(self.trans_value(states_i))
+                    values.append(values_i)
+                values = torch.cat(values)
+                # values = self.value_net(states)
 
         # get advantage from the trajectories
         advantages, returns = estimate_advantages(rewards, masks, values, self.gamma, self.tau)
-
-        # if self.cfg.agent_spec.get('reinforce', False):
-        #     advantages = returns.clone()
 
         self.update_policy(states, actions, returns, advantages, exps, epoch)
         return
@@ -361,18 +365,19 @@ class PendulumAgent(AgentPPO):
         :param advantages:
         :return:
         """
+
         with torper.to_eval(*self.update_modules):
             with torch.no_grad():
-                # fixed_log_probs = []
-                # chunk = 10000
-                # for i in range(0, len(states), chunk):
-                #     states_i = states[i:min(i + chunk, len(states))]
-                #     actions_i = actions[i:min(i + chunk, len(states))]
-                #     fixed_log_probs_i = self.policy_net.get_log_prob(self.trans_policy(states_i), actions_i)
-                #     fixed_log_probs.append(fixed_log_probs_i)
-                # fixed_log_probs = torch.cat(fixed_log_probs)
+                fixed_log_probs = []
+                chunk = 10000
+                for i in range(0, len(states), chunk):
+                    states_i = states[i:min(i + chunk, len(states))]
+                    actions_i = actions[i:min(i + chunk, len(states))]
+                    fixed_log_probs_i = self.policy_net.get_log_prob(self.trans_policy(states_i), actions_i)
+                    fixed_log_probs.append(fixed_log_probs_i)
+                fixed_log_probs = torch.cat(fixed_log_probs)
 
-                fixed_log_probs = self.policy_net.get_log_prob(states, actions)
+                # fixed_log_probs = self.policy_net.get_log_prob(states, actions)
 
         num_state = len(states)
 
@@ -404,10 +409,10 @@ class PendulumAgent(AgentPPO):
     def ppo_step(self, states, actions, advantages, returns, fixed_log_probs, epoch):
         self.update_value(states, returns, self.tb_logger, epoch)
 
-        self.policy_surr_loss = self.ppo_loss(states, actions, advantages, fixed_log_probs)
-        self.tb_logger.add_scalar('PPO policy loss', self.policy_surr_loss, epoch)
+        policy_surr_loss = self.ppo_loss(states, actions, advantages, fixed_log_probs)
+        self.tb_logger.add_scalar('PPO policy loss', policy_surr_loss, epoch)
         self.optimizer_policy.zero_grad()
-        self.policy_surr_loss.backward()
+        policy_surr_loss.backward()
         self.clip_policy_grad()
         self.optimizer_policy.step()
 
@@ -433,7 +438,6 @@ class PendulumAgent(AgentPPO):
         surr_1 = ratio * advantages
         surr_2 = torch.clamp(ratio, 1.0 - self.clip_epsilon, 1.0 + self.clip_epsilon) * advantages
         policy_surr_loss = - torch.min(surr_1, surr_2).mean()
-        # print(surr_loss)
         return policy_surr_loss
 
     def visualize_agent(self, num_episode=1, mean_action=False, save_video=False):
