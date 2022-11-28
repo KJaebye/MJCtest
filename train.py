@@ -44,17 +44,17 @@ if __name__ == "__main__":
     logger.critical('Type of current running: Training')
     logger.set_file_handler()
 
-    start_epoch = int(args.start_epoch) if args.start_epoch.isnumeric() else args.start_epoch
+    start_iter = int(args.start_iter) if args.start_iter.isnumeric() else args.start_iter
 
     """ create agent """
     # agent = HopperAgent(cfg, logger, dtype=dtype, device=device, seed=cfg.seed, num_threads=args.num_threads,
     #                     render=args.render, training=True, checkpoint=start_epoch)
 
-    agent = PendulumAgent(cfg, logger, dtype=dtype, device=device, seed=cfg.seed, num_threads=args.num_threads,
-                        render=args.render, training=True, checkpoint=start_epoch)
+    agent = PendulumAgent(cfg, logger, dtype=dtype, device=device,
+                          num_threads=args.num_threads, training=True, checkpoint=start_iter)
 
-    for epoch in range(start_epoch, cfg.max_epoch_num):
-        agent.optimize(epoch)
+    for iter in range(start_iter, cfg.max_iter_num):
+        agent.optimize(iter)
         # clean up GPU memory
         torch.cuda.empty_cache()
     agent.logger.critical('Training completed!')

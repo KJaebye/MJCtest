@@ -66,19 +66,13 @@ class Config:
         self.adv_clip = cfg.get('adv_clip', np.inf)
         self.l2_reg = cfg.get('l2_reg', 1e-3)
         self.clip_epsilon = cfg.get('clip_epsilon', 0.2)
-        self.optim_num_epoches = cfg.get('optim_num_epoches', 10)
-        self.min_batch_size = cfg.get('min_batch_size', 50000)
-        self.mini_batch_size = cfg.get('mini_batch_size', self.min_batch_size)
+        self.optim_num_epoch = cfg.get('optim_num_epoch', 10)
+        self.batch_size = cfg.get('batch_size', 50000)
+        self.mini_batch_size = cfg.get('mini_batch_size', 2048)
         self.eval_batch_size = cfg.get('eval_batch_size', 10000)
-        self.max_epoch_num = cfg.get('max_epoch_num', 1000)
+        self.max_iter_num = cfg.get('max_iter_num', 100)
         self.save_model_interval = cfg.get('save_model_interval', 100)
-
         self.seed = cfg.get('seed', 1)
-
-        # anneal parameters
-        self.scheduled_params = cfg.get('scheduled_params', dict())
-
-        # environment
 
         # robot
         self.robot_param_scale = cfg.get('robot_param_scale', 0.1)

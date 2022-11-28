@@ -11,154 +11,114 @@ import torch
 import math
 import multiprocessing
 import numpy as np
-import mujoco_viewer
 
 from lib.core.memory import Memory
 from lib.core.logger_rl import LoggerRL
-from lib.core.traj_batch import TrajBatch
-from lib.core import torch_wrapper as torper
-from lib.utils import tools
+from lib.core.utils import *
 
 if platform.system() != "Linux":
     from multiprocessing import set_start_method
     set_start_method("fork")
 
-os.environ["OMP_NUM_THREADS"] = "1"
-
 
 class Agent:
-    def __init__(self, env, policy_net, value_net, dtype, cfg, device, gamma,
-                 logger_cls=LoggerRL, logger_kwargs=None, end_reward=False,
-                 running_state=None, traj_cls=TrajBatch, num_threads=1):
+    def __init__(self, env, policy_net, device, logger_cls=LoggerRL, use_custom_reward=False,
+                 running_state=None, num_threads=1):
         self.env = env
         self.policy_net = policy_net
-        self.value_net = value_net
-        self.dtype = dtype
-        self.cfg = cfg
         self.device = device
-        self.gamma = gamma
 
-        self.end_reward = end_reward
         self.running_state = running_state
-
+        self.use_custom_reward = use_custom_reward
         self.num_threads = num_threads
-        self.noise_rate = 1.0
-
-        self.traj_cls = traj_cls
         self.logger_cls = logger_cls
-        self.logger_kwargs = dict() if logger_kwargs is None else logger_kwargs
 
-        self.sample_modules = [policy_net]
-        self.update_modules = [policy_net, value_net]
-
-    def sample(self, min_batch_size, mean_action=False, render=False, nthreads=None):
+    def sample(self, batch_size, use_mean_action=False):
+        """ Sample a batch of data.
         """
-        Sample a batch of data.
-        :param min_batch_size: minimum batch size
-        :param mean_action: bool type, means run evaluation
-        :param render: bool type
-        :param nthreads: number of threads
-        :return:
+        with torch.no_grad():
+            # multiprocess sampling
+            thread_batch_size = int(math.floor(batch_size / self.num_threads))
+            queue = multiprocessing.Queue()
+            memories = [None] * self.num_threads
+            loggers = [None] * self.num_threads
+            slaves = []
+
+            for i in range(self.num_threads - 1):
+                slave_args = (i + 1, queue, thread_batch_size, use_mean_action)
+                slaves.append(multiprocessing.Process(target=self.sample_slave, args=slave_args))
+            for slave in slaves:
+                slave.start()
+
+            memory, logger = self.sample_slave(0, None, thread_batch_size, use_mean_action)
+            memories[0], loggers[0] = memory, logger
+            # save sample data from other slaves
+            for _ in range(self.num_threads - 1):
+                pid, slave_memory, slave_logger = queue.get()
+                memories[pid] = slave_memory
+                loggers[pid] = slave_logger
+
+            # gather memories from all slaves
+            for slave_memory in memories:
+                # print(type(slave_memory))
+                memory.append(slave_memory)
+
+            batch = memory.sample()
+            logger = self.logger_cls.merge(loggers, use_custom_reward=False)
+
+            to_device(self.device, self.policy_net)
+        return batch, logger
+
+    def sample_slave(self, pid, queue, thread_batch_size, use_mean_action):
         """
-        if nthreads is None:
-            nthreads = self.num_threads
-        t_start = time.time()
-        torper.to_eval(*self.sample_modules)
-
-        with torper.to_cpu(*self.sample_modules):
-            with torch.no_grad():
-                # multiprocess sampling
-                thread_batch_size = int(math.floor(min_batch_size / nthreads))
-                queue = multiprocessing.Queue()
-                memories = [None] * nthreads
-                loggers = [None] * nthreads
-
-                for i in range(nthreads - 1):
-                    worker_args = (i + 1, queue, thread_batch_size, mean_action, render)
-                    worker = multiprocessing.Process(target=self.sample_worker, args=worker_args)
-                    worker.start()
-                # save sample data from first worker pid 0
-                memories[0], loggers[0] = self.sample_worker(0, None, thread_batch_size, mean_action, render)
-
-                # save sample data from other workers
-                for i in range(nthreads - 1):
-                    pid, worker_memory, worker_logger = queue.get()
-                    memories[pid] = worker_memory
-                    loggers[pid] = worker_logger
-
-                traj_batch = self.traj_cls(memories)
-                logger = self.logger_cls.merge(loggers, **self.logger_kwargs)
-
-        logger.sample_duration = time.time() - t_start
-        return traj_batch, logger
-
-    def sample_worker(self, pid, queue, thread_batch_size, mean_action, render):
-        """
-        Sample min_batch_size of data
-        :param pid: work index
-        :param queue: for multiprocessing
-        :param thread_batch_size: how many batches of data should be collected by one worker
-        :param mean_action: bool type
-        :param render: bool type
-        :return:
-
+        Data sampling slave.
         time_step is the instantiation of dm_env.TimeStep
         """
-        self.seed_worker(pid)
+        # set seed
+        if pid > 0:
+            torch.manual_seed(torch.randint(0, 5000, (1,)) * pid)
+            if hasattr(self.env, 'np_random'):
+                self.env.np_random.seed(self.env.np_random.randint(5000) * pid)
+
         memory = Memory()
-        logger_rl = self.logger_cls(**self.logger_kwargs)
+        logger_rl = self.logger_cls()
 
         # sample a batch of data
         while logger_rl.num_steps < thread_batch_size:
+            # pre-episode process
             time_step = self.env.reset()
-            cur_state = torper.tensor([tools.get_state_flatten(time_step.observation)], device=self.device)
-
-            # preprocess state if needed
-            if self.running_state is not None:
-                time_step.observation = self.running_state(time_step.observation)
-            logger_rl.start_episode(self.env)
-            self.pre_episode()
+            logger_rl.start_episode()
+            # process dm_control observation
+            observation, reward, done = self.process_dm_ctrl_observation(time_step)
+            state = observation
+            state_var = torch.tensor(state).unsqueeze(0)
 
             # sample an episode
             while not time_step.last():
-                # use trans_policy before entering the policy network
-                cur_state = self.trans_policy(cur_state)
-
                 # sample an action
-                use_mean_action = mean_action or torch.bernoulli(torch.tensor([1 - self.noise_rate])).item()
-                action = self.policy_net.select_action(cur_state, use_mean_action).numpy().astype(np.float64)
+                with torch.no_grad():
+                    if use_mean_action:
+                        action = self.policy_net(state_var)[0][0].numpy()
+                    else:
+                        action = self.policy_net.select_action(state_var)[0].numpy()
 
                 # apply this action and get env feedback
-                time_step, done = self.env.step(action)
-                reward = time_step.reward
-                next_state = torper.tensor([tools.get_state_flatten(time_step.observation)], device=self.device)
-
-                # add end reward
-                if self.end_reward and time_step.last():
-                    reward += self.env.end_reward
-
-                # preprocess state if needed
-                if self.running_state is not None:
-                    next_state = self.running_state(next_state)
-
-                mask = 1 if done else 0
-                exp = 1 - use_mean_action
+                time_step = self.env.step(action)
+                observation, reward, done = self.process_dm_ctrl_observation(time_step)
+                next_state = observation
+                mask = 0 if done else 1
 
                 # record reward
                 logger_rl.step(reward)
-                self.push_memory(memory, cur_state, action, next_state, reward, mask, exp)
-                cur_state = next_state
 
-                # only render the first worker pid 0
-                """ 
-                    Only one glfw window can be displayed. However, there are "self.num_threads" number of
-                    workers created and running simultaneously when we use multiprocessing method. Thus,
-                    when user sets parameter render to be True and num_threads > 1, we only display the first
-                    worker's action in simulator.
-                """
-                if pid == 0 and render:
-                    viewer = mujoco_viewer.MujocoViewer(self.env.physics, self.env.physics.data)
-                    viewer.render()
+                # # if using custom reward
+                # if self.use_custom_reward and self.env.custom_reward is not None:
+                #     reward = self.env.custom_reward(cur_state, action)
+                #     logger_rl.step_custom(reward)
+
+                memory.push(state, action, mask, next_state, reward)
+                state = next_state
+
                 if time_step.last():
                     break
 
@@ -170,22 +130,14 @@ class Agent:
         else:
             return memory, logger_rl
 
-    def seed_worker(self, pid):
-        if pid > 0:
-            torch.manual_seed(torch.randint(0, 5000, (1,)) * pid)
-            if hasattr(self.env, 'np_random'):
-                self.env.np_random.seed(self.env.np_random.randint(5000) * pid)
-
-    def trans_policy(self, states):
-        """transform states before going into policy net"""
-        return states
-
-    def trans_value(self, states):
-        """transform states before going into value net"""
-        return states
-
-    def pre_episode(self):
-        return
-
-    def push_memory(self, memory, cur_state, action, next_state, reward, mask, exp):
-        memory.push(cur_state, action, next_state, reward, mask, exp)
+    def process_dm_ctrl_observation(self, time_step):
+        """ Flatten the dm_control observation. """
+        observation_flatten = np.array([])
+        for k in time_step.observation:
+            if time_step.observation[k].shape:
+                observation_flatten = np.concatenate((observation_flatten, time_step.observation[k].flatten()))
+            else:
+                observation_flatten = np.concatenate((observation_flatten, np.array([time_step.observation[k]])))
+        reward = time_step.reward
+        done = time_step.last()
+        return observation_flatten, reward, done

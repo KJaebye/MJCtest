@@ -1,75 +1,123 @@
-# ------------------------------------------------------------------------------------------------------------------- #
-#   @description: Class AgentPPO
-#   @author: Modified from khrylib by Ye Yuan, modified by Kangyao Huang
-#   @created date: 02.Nov.2022
-# ------------------------------------------------------------------------------------------------------------------- #
-import math
+
 import torch
+import time
+import math
 import numpy as np
+from lib.agents.agent import Agent
+from lib.core.logger_rl import LoggerRL
+from lib.core.common import estimate_advantages
+from lib.core.utils import *
 
-from lib.agents.agent_pg import AgentPG
-import lib.core.torch_wrapper as torper
+from structural_control.networks.policy import Policy
+from structural_control.networks.value import Value
 
 
-class AgentPPO(AgentPG):
-    def __init__(self, clip_epsilon=0.2, mini_batch_size=64, use_mini_batch=False,
-                 policy_grad_clip=None, **kwargs):
-        super().__init__(**kwargs)
-        self.clip_epsilon = clip_epsilon
-        self.mini_batch_size = mini_batch_size
-        self.use_mini_batch = use_mini_batch
-        self.policy_grad_clip = policy_grad_clip
+class AgentPPO(Agent):
+    def __init__(self, env, cfg, logger, dtype, device, num_threads, training=True):
+        self.env = env
+        self.cfg = cfg
+        self.logger = logger
+        self.dtype = dtype
+        self.device = device
+        self.num_threads = num_threads
+        self.training = training
 
-    def update_policy(self, states, actions, returns, advantages, exps, epoch):
-        """ Update the policy """
-        with torper.to_eval(*self.update_modules):
-            with torch.no_grad():
-                fixed_log_probs = self.policy_net.get_log_prob(self.trans_policy(states), actions)
+        # parameters
+        self.optim_num_epoch = self.cfg.optim_num_epoch
+        self.batch_size = self.cfg.batch_size
+        self.mini_batch_size = self.cfg.mini_batch_size
+        self.eval_batch_size = self.cfg.eval_batch_size
 
-        for _ in range(self.optim_num_epochs):
-            if self.use_mini_batch:
-                # randomly arrange data
-                perm = np.arange(states.shape[0])
-                np.random.shuffle(perm)
-                perm = torper.LongTensor(perm).to(self.device)
-                states, actions, returns, advantages, fixed_log_probs, exps = \
-                    states[perm].clone(), actions[perm].clone(), returns[perm].clone(), advantages[perm].clone(), \
-                    fixed_log_probs[perm].clone(), exps[perm].clone()
+        self.gamma = self.cfg.gamma
+        self.tau = self.cfg.tau
+        self.clip_epsilon = self.cfg.clip_epsilon
+        self.l2_reg = self.cfg.l2_reg
 
-                optim_iter_num = int(math.floor(states.shape[0] / self.mini_batch_size))
-                for i in range(optim_iter_num):
-                    # index denotes data range of the current batch
-                    index = slice(i * self.mini_batch_size, min((i + 1) * self.mini_batch_size, states.shape[0]))
+        self.setup_policy()
+        self.setup_value()
+        self.setup_optimizer()
+        super().__init__(self.env, self.policy_net, self.device, logger_cls=LoggerRL, use_custom_reward=False,
+                        running_state=None, num_threads=num_threads)
 
-                    # intercept the current batch data
-                    states_b, actions_b, returns_b, advantages_b, fixed_log_probs_b, exps_b = \
-                        states[index], actions[index], returns[index], \
-                        advantages[index], fixed_log_probs[index], exps[index]
+    def setup_policy(self):
+        self.policy_net = Policy(self.env.state_dim, self.env.action_dim, log_std=self.cfg.policy_spec['log_std'])
+        self.policy_net.to(self.device)
+    def setup_value(self):
+        self.value_net = Value(self.env.state_dim)
+        self.value_net.to(self.device)
+    def setup_optimizer(self):
+        self.optimizer_policy = torch.optim.Adam(self.policy_net.parameters(), lr=self.cfg.policy_lr)
+        self.optimizer_value = torch.optim.Adam(self.value_net.parameters(), lr=self.cfg.value_lr)
 
-                    # update value by using the current batch
-                    self.update_value(states_b, returns_b)
-                    surr_loss = self.ppo_loss(states_b, actions_b, advantages_b, fixed_log_probs_b)
-                    self.optimizer_policy.zero_grad()
-                    surr_loss.backward()
-                    self.clip_policy_grad()
-                    self.optimizer_policy.step()
-            else:
-                self.update_value(states, returns)
-                surr_loss = self.ppo_loss(states, actions, advantages, fixed_log_probs)
-                self.optimizer_policy.zero_grad()
-                surr_loss.backward()
-                self.clip_policy_grad()
-                self.optimizer_policy.step()
+    def train(self, iter):
+        t_0 = time.time()
+        # sample a batch of data
+        batch, log = self.sample(self.batch_size)
+        t_1 = time.time()
+        self.logger.info('Sample time: {}'.format(t_1 - t_0))
 
-    def clip_policy_grad(self):
-        if self.policy_grad_clip is not None:
-            for params, max_norm in self.policy_grad_clip:
-                torch.nn.utils.clip_grad_norm_(params, max_norm)
+        # update networks
+        self.update_params(batch, iter)
+        t_2 = time.time()
+        self.logger.info('Update time: {}'.format(t_2 - t_1))
 
-    def ppo_loss(self, states, actions, advantages, fixd_log_probs):
-        log_probs = self.policy_net.get_log_prob(self.trans_policy(states), actions)
-        ratio = torch.exp(log_probs - fixd_log_probs)
-        surr_1 = ratio * advantages
-        surr_2 = torch.clamp(ratio, 1.0 - self.clip_epsilon, 1.0 + self.clip_epsilon) * advantages
-        surr_loss = - torch.min(surr_1, surr_2).mean()
-        return surr_loss
+        # evaluation
+        _, log_eval = self.sample(self.eval_batch_size, use_mean_action=True)
+        t_3 = time.time()
+        self.logger.info('Evaluation time: {}'.format(t_3 - t_2))
+
+        return log, log_eval
+
+    def update_params(self, batch, iter):
+        states = torch.from_numpy(np.stack(batch.next_state)).to(self.dtype).to(self.device)
+        actions = torch.from_numpy(np.stack(batch.action)).to(self.dtype).to(self.device)
+        rewards = torch.from_numpy(np.stack(batch.reward)).to(self.dtype).to(self.device)
+        masks = torch.from_numpy(np.stack(batch.mask)).to(self.dtype).to(self.device)
+        with torch.no_grad():
+            values = self.value_net(states)
+            fixed_log_probs = self.policy_net.get_log_prob(states, actions)
+
+        """get advantage estimation from the trajectories"""
+        advantages, returns = estimate_advantages(rewards, masks, values, self.gamma, self.tau, self.device)
+
+        """perform mini-batch PPO update"""
+        optim_iter_num = int(math.ceil(states.shape[0] / self.mini_batch_size))
+        for _ in range(self.optim_num_epoch):
+            perm = np.arange(states.shape[0])
+            np.random.shuffle(perm)
+            perm = torch.LongTensor(perm).to(self.device)
+
+            states, actions, returns, advantages, fixed_log_probs = \
+                states[perm].clone(), actions[perm].clone(), returns[perm].clone(), advantages[perm].clone(), \
+                fixed_log_probs[perm].clone()
+
+            for i in range(optim_iter_num):
+                ind = slice(i * self.mini_batch_size, min((i + 1) * self.mini_batch_size, states.shape[0]))
+                states_b, actions_b, advantages_b, returns_b, fixed_log_probs_b = \
+                    states[ind], actions[ind], advantages[ind], returns[ind], fixed_log_probs[ind]
+
+                self.ppo_step(1, states_b, actions_b, returns_b, advantages_b, fixed_log_probs_b)
+
+    def ppo_step(self, optim_value_iter, states, actions, returns, advantages, fixed_log_probs):
+        """update critic"""
+        for _ in range(optim_value_iter):
+            values_pred = self.value_net(states)
+            value_loss = (values_pred - returns).pow(2).mean()
+            # print(value_loss)
+            # # weight decay
+            # for param in self.value_net.parameters():
+            #     value_loss += param.pow(2).sum() * self.l2_reg
+            self.optimizer_value.zero_grad()
+            value_loss.backward()
+            self.optimizer_value.step()
+
+        """update policy"""
+        log_probs = self.policy_net.get_log_prob(states, actions)
+        ratio = torch.exp(log_probs - fixed_log_probs)
+        surr1 = ratio * advantages
+        surr2 = torch.clamp(ratio, 1.0 - self.clip_epsilon, 1.0 + self.clip_epsilon) * advantages
+        policy_surr = -torch.min(surr1, surr2).mean()
+        self.optimizer_policy.zero_grad()
+        policy_surr.backward()
+        torch.nn.utils.clip_grad_norm_(self.policy_net.parameters(), 40)
+        self.optimizer_policy.step()

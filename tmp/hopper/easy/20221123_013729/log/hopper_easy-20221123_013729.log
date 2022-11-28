@@ -1,7 +1,0 @@
-[32m[20221123 01:37:29 @logger.py:105][0m Log file set to ./tmp/hopper/easy/20221123_013729/log/hopper_easy-20221123_013729.log
-[32m[20221123 01:37:29 @hopper_agent.py:319][0m #------------------------ Iteration 0 --------------------------#
-[32m[20221123 01:37:32 @hopper_agent.py:196][0m agent 0 avg episode training reward: 3.806146974142126
-[32m[20221123 01:37:32 @hopper_agent.py:196][0m agent 2 avg episode training reward: 4.851868246933806
-[32m[20221123 01:37:32 @hopper_agent.py:196][0m agent 1 avg episode training reward: 2.8321821037586514
-[32m[20221123 01:37:34 @hopper_agent.py:351][0m Sample time: 4.749689102172852
-[32m[20221123 01:37:44 @hopper_agent.py:356][0m Update time: 10.20897388458252

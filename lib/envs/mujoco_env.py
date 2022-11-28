@@ -8,9 +8,6 @@ from dm_control.rl.control import Environment
 from dm_control.mujoco import Physics
 from dm_control.suite.base import Task
 
-from lib.utils import tools
-
-
 class MujocoEnv(Environment):
     """
         Superclass for all MujoCo environments in this proj.
@@ -25,10 +22,6 @@ class MujocoEnv(Environment):
         :param kwargs: ...
         """
         super(MujocoEnv, self).__init__(physics, task, *args, **kwargs)
-
-    def seed(self, seed=None):
-        self.np_random, seed = tools.np_random(seed)
-        return [seed]
 
 
 class MujocoPhysics(Physics):

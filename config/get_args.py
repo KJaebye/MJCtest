@@ -20,11 +20,9 @@ def get_args():
     parser.add_argument('--render', type=bool, default=False)
 
     # training configuration
-    parser.add_argument('--start_epoch', default='0')
+    parser.add_argument('--start_iter', default='0')
     parser.add_argument('--gamma', type=float, default=.99, help='discount factor for value function')
     parser.add_argument('--num_threads', type=int, default=1)
-    parser.add_argument('--num_episodes', type=int, default=1000, help='number of episodes')
-    parser.add_argument('--timesteps_per_episode', type=int, default=2050, help='number of steps per rollout(episode)')
 
     # settings for networks
     parser.add_argument('--use_ggnn', type=bool, default=False, help='use NerveNet(GGNN) as policy networks')

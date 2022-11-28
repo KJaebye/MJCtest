@@ -7,19 +7,19 @@ tau: 0.95
 
 policy_spec:
   htype: tanh
-#  control_pre_mlp: [512, 512]
-  control_mlp: [128, 128]
-  control_log_std: 0
+#  pre_mlp: [512, 512]
+  mlp: [64, 64]
+  log_std: 0
   fix_control_std: False
 
 policy_optimizer: 'Adam'
-policy_lr: 5.e-5
+policy_lr: 5.e-5 # 5.e-5
 policy_momentum: 0.0
 policy_weight_decay: 0.0
 
 value_spec:
   htype: tanh
-  mlp: [128, 128]
+  mlp: [64, 64]
 #  gnn_spec:
 #    layer_type: graph_conv
 #    hdims: [64, 64, 64]
@@ -33,12 +33,12 @@ value_weight_decay: 0.0
 
 l2_reg: 1e-3
 clip_epsilon: 0.2
-min_batch_size: 2048
-mini_batch_size: 64
-num_optim_epoch: 10
-max_epoch_num: 1000
+batch_size: 50000
+mini_batch_size: 2048
+optim_num_epoch: 10
+max_iter_num: 1000
 seed: 1
-save_model_interval: 20
+save_model_interval: 50
 
 
 obs_spec:
