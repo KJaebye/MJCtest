@@ -44,7 +44,6 @@ if __name__ == "__main__":
 
     # only training generates log file
     logger.critical('Type of current running: Evaluation. No log file will be created')
-    logger.set_file_handler()
 
     # iter = 'best'
     iter = 5900
