@@ -45,13 +45,13 @@ class PendulumAgent(AgentPPO):
             self.load_checkpoint(checkpoint)
 
     def setup_env(self):
-        # self.env = PendulumEnv(self.cfg, flat_observation=False)
+        self.env = PendulumEnv(self.cfg, flat_observation=False)
 
-        from dm_control import suite
-        seed = 0
-        np.random.seed(seed)
-        torch.manual_seed(seed)
-        self.env = suite.load(domain_name="pendulum", task_name="swingup", task_kwargs={'random': seed})
+        # from dm_control import suite
+        # seed = 0
+        # np.random.seed(seed)
+        # torch.manual_seed(seed)
+        # self.env = suite.load(domain_name="pendulum", task_name="swingup", task_kwargs={'random': seed})
 
         observation_flat_dim = 0
         for k, v in self.env.task.get_observation(self.env.physics).items():

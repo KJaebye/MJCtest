@@ -13,7 +13,7 @@ policy_spec:
   fix_control_std: False
 
 policy_optimizer: 'Adam'
-policy_lr: 5.e-5 # 5.e-5
+policy_lr: 8.e-5 # 5.e-5
 policy_momentum: 0.0
 policy_weight_decay: 0.0
 
@@ -36,7 +36,7 @@ clip_epsilon: 0.2
 batch_size: 50000
 mini_batch_size: 2048
 optim_num_epoch: 10
-max_iter_num: 1000
+max_iter_num: 20000
 seed: 1
 save_model_interval: 50
 

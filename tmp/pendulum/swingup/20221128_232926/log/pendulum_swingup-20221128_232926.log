@@ -1,0 +1,1721 @@
+[32m[20221128 23:29:26 @logger.py:105][0m Log file set to ./tmp/pendulum/swingup/20221128_232926/log/pendulum_swingup-20221128_232926.log
+[32m[20221128 23:29:26 @pendulum_agent.py:122][0m #------------------------ Iteration 0 --------------------------#
+[32m[20221128 23:29:27 @agent_ppo.py:57][0m Sample time: 0.7585539817810059
+[32m[20221128 23:29:30 @agent_ppo.py:62][0m Update time: 3.081252098083496
+[32m[20221128 23:29:30 @agent_ppo.py:67][0m Evaluation time: 0.2177419662475586
+[32m[20221128 23:29:30 @pendulum_agent.py:126][0m Average TRAINING episode reward: 3.12
+[32m[20221128 23:29:30 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:29:30 @pendulum_agent.py:109][0m [4m[34mCRITICAL[0m Get the best episode reward: 0.0
+[32m[20221128 23:29:30 @pendulum_agent.py:113][0m [4m[34mCRITICAL[0m Saving the best checkpoint with rewards 0.00
+[32m[20221128 23:29:30 @pendulum_agent.py:130][0m Total time: 4.06929612159729
+[32m[20221128 23:29:30 @pendulum_agent.py:132][0m 50000 total steps have happened
+[32m[20221128 23:29:30 @pendulum_agent.py:122][0m #------------------------ Iteration 1 --------------------------#
+[32m[20221128 23:29:31 @agent_ppo.py:57][0m Sample time: 0.7003359794616699
+[32m[20221128 23:29:33 @agent_ppo.py:62][0m Update time: 2.73759388923645
+[32m[20221128 23:29:34 @agent_ppo.py:67][0m Evaluation time: 0.14474797248840332
+[32m[20221128 23:29:34 @pendulum_agent.py:126][0m Average TRAINING episode reward: 5.84
+[32m[20221128 23:29:34 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:29:34 @pendulum_agent.py:130][0m Total time: 3.5965781211853027
+[32m[20221128 23:29:34 @pendulum_agent.py:132][0m 100000 total steps have happened
+[32m[20221128 23:29:34 @pendulum_agent.py:122][0m #------------------------ Iteration 2 --------------------------#
+[32m[20221128 23:29:34 @agent_ppo.py:57][0m Sample time: 0.6452608108520508
+[32m[20221128 23:29:37 @agent_ppo.py:62][0m Update time: 2.7142398357391357
+[32m[20221128 23:29:37 @agent_ppo.py:67][0m Evaluation time: 0.12680912017822266
+[32m[20221128 23:29:37 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:29:37 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:29:37 @pendulum_agent.py:130][0m Total time: 3.499605894088745
+[32m[20221128 23:29:37 @pendulum_agent.py:132][0m 150000 total steps have happened
+[32m[20221128 23:29:37 @pendulum_agent.py:122][0m #------------------------ Iteration 3 --------------------------#
+[32m[20221128 23:29:38 @agent_ppo.py:57][0m Sample time: 0.6465439796447754
+[32m[20221128 23:29:41 @agent_ppo.py:62][0m Update time: 2.7079861164093018
+[32m[20221128 23:29:41 @agent_ppo.py:67][0m Evaluation time: 0.1325669288635254
+[32m[20221128 23:29:41 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:29:41 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:29:41 @pendulum_agent.py:130][0m Total time: 3.500180959701538
+[32m[20221128 23:29:41 @pendulum_agent.py:132][0m 200000 total steps have happened
+[32m[20221128 23:29:41 @pendulum_agent.py:122][0m #------------------------ Iteration 4 --------------------------#
+[32m[20221128 23:29:41 @agent_ppo.py:57][0m Sample time: 0.6419458389282227
+[32m[20221128 23:29:44 @agent_ppo.py:62][0m Update time: 2.7244532108306885
+[32m[20221128 23:29:44 @agent_ppo.py:67][0m Evaluation time: 0.13841485977172852
+[32m[20221128 23:29:44 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:29:44 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:29:44 @pendulum_agent.py:130][0m Total time: 3.518484115600586
+[32m[20221128 23:29:44 @pendulum_agent.py:132][0m 250000 total steps have happened
+[32m[20221128 23:29:44 @pendulum_agent.py:122][0m #------------------------ Iteration 5 --------------------------#
+[32m[20221128 23:29:45 @agent_ppo.py:57][0m Sample time: 0.9783868789672852
+[32m[20221128 23:29:49 @agent_ppo.py:62][0m Update time: 3.6466140747070312
+[32m[20221128 23:29:49 @agent_ppo.py:67][0m Evaluation time: 0.13985681533813477
+[32m[20221128 23:29:49 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:29:49 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:29:49 @pendulum_agent.py:130][0m Total time: 4.777246952056885
+[32m[20221128 23:29:49 @pendulum_agent.py:132][0m 300000 total steps have happened
+[32m[20221128 23:29:49 @pendulum_agent.py:122][0m #------------------------ Iteration 6 --------------------------#
+[32m[20221128 23:29:50 @agent_ppo.py:57][0m Sample time: 0.7642350196838379
+[32m[20221128 23:29:52 @agent_ppo.py:62][0m Update time: 2.758028030395508
+[32m[20221128 23:29:53 @agent_ppo.py:67][0m Evaluation time: 0.16005778312683105
+[32m[20221128 23:29:53 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:29:53 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:29:53 @pendulum_agent.py:130][0m Total time: 3.6953189373016357
+[32m[20221128 23:29:53 @pendulum_agent.py:132][0m 350000 total steps have happened
+[32m[20221128 23:29:53 @pendulum_agent.py:122][0m #------------------------ Iteration 7 --------------------------#
+[32m[20221128 23:29:53 @agent_ppo.py:57][0m Sample time: 0.6644010543823242
+[32m[20221128 23:29:56 @agent_ppo.py:62][0m Update time: 2.840712070465088
+[32m[20221128 23:29:56 @agent_ppo.py:67][0m Evaluation time: 0.20304393768310547
+[32m[20221128 23:29:56 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:29:56 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:29:56 @pendulum_agent.py:130][0m Total time: 3.7221999168395996
+[32m[20221128 23:29:56 @pendulum_agent.py:132][0m 400000 total steps have happened
+[32m[20221128 23:29:56 @pendulum_agent.py:122][0m #------------------------ Iteration 8 --------------------------#
+[32m[20221128 23:29:57 @agent_ppo.py:57][0m Sample time: 0.7358341217041016
+[32m[20221128 23:30:00 @agent_ppo.py:62][0m Update time: 2.742849111557007
+[32m[20221128 23:30:00 @agent_ppo.py:67][0m Evaluation time: 0.13013577461242676
+[32m[20221128 23:30:00 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:30:00 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:30:00 @pendulum_agent.py:130][0m Total time: 3.623154878616333
+[32m[20221128 23:30:00 @pendulum_agent.py:132][0m 450000 total steps have happened
+[32m[20221128 23:30:00 @pendulum_agent.py:122][0m #------------------------ Iteration 9 --------------------------#
+[32m[20221128 23:30:01 @agent_ppo.py:57][0m Sample time: 0.6220660209655762
+[32m[20221128 23:30:03 @agent_ppo.py:62][0m Update time: 2.8555259704589844
+[32m[20221128 23:30:04 @agent_ppo.py:67][0m Evaluation time: 0.15895605087280273
+[32m[20221128 23:30:04 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:30:04 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:30:04 @pendulum_agent.py:130][0m Total time: 3.6516518592834473
+[32m[20221128 23:30:04 @pendulum_agent.py:132][0m 500000 total steps have happened
+[32m[20221128 23:30:04 @pendulum_agent.py:122][0m #------------------------ Iteration 10 --------------------------#
+[32m[20221128 23:30:04 @agent_ppo.py:57][0m Sample time: 0.6396899223327637
+[32m[20221128 23:30:07 @agent_ppo.py:62][0m Update time: 2.7604873180389404
+[32m[20221128 23:30:07 @agent_ppo.py:67][0m Evaluation time: 0.13185787200927734
+[32m[20221128 23:30:07 @pendulum_agent.py:126][0m Average TRAINING episode reward: 4.14
+[32m[20221128 23:30:07 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:30:07 @pendulum_agent.py:130][0m Total time: 3.5451982021331787
+[32m[20221128 23:30:07 @pendulum_agent.py:132][0m 550000 total steps have happened
+[32m[20221128 23:30:07 @pendulum_agent.py:122][0m #------------------------ Iteration 11 --------------------------#
+[32m[20221128 23:30:08 @agent_ppo.py:57][0m Sample time: 0.7746610641479492
+[32m[20221128 23:30:11 @agent_ppo.py:62][0m Update time: 2.6936159133911133
+[32m[20221128 23:30:11 @agent_ppo.py:67][0m Evaluation time: 0.13118314743041992
+[32m[20221128 23:30:11 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:30:11 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:30:11 @pendulum_agent.py:130][0m Total time: 3.612046003341675
+[32m[20221128 23:30:11 @pendulum_agent.py:132][0m 600000 total steps have happened
+[32m[20221128 23:30:11 @pendulum_agent.py:122][0m #------------------------ Iteration 12 --------------------------#
+[32m[20221128 23:30:11 @agent_ppo.py:57][0m Sample time: 0.6562619209289551
+[32m[20221128 23:30:15 @agent_ppo.py:62][0m Update time: 3.0713891983032227
+[32m[20221128 23:30:15 @agent_ppo.py:67][0m Evaluation time: 0.16951394081115723
+[32m[20221128 23:30:15 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:30:15 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:30:15 @pendulum_agent.py:130][0m Total time: 3.9106831550598145
+[32m[20221128 23:30:15 @pendulum_agent.py:132][0m 650000 total steps have happened
+[32m[20221128 23:30:15 @pendulum_agent.py:122][0m #------------------------ Iteration 13 --------------------------#
+[32m[20221128 23:30:15 @agent_ppo.py:57][0m Sample time: 0.6405148506164551
+[32m[20221128 23:30:18 @agent_ppo.py:62][0m Update time: 2.787792205810547
+[32m[20221128 23:30:18 @agent_ppo.py:67][0m Evaluation time: 0.1277778148651123
+[32m[20221128 23:30:18 @pendulum_agent.py:126][0m Average TRAINING episode reward: 3.66
+[32m[20221128 23:30:18 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:30:18 @pendulum_agent.py:130][0m Total time: 3.569870948791504
+[32m[20221128 23:30:18 @pendulum_agent.py:132][0m 700000 total steps have happened
+[32m[20221128 23:30:18 @pendulum_agent.py:122][0m #------------------------ Iteration 14 --------------------------#
+[32m[20221128 23:30:19 @agent_ppo.py:57][0m Sample time: 0.8159370422363281
+[32m[20221128 23:30:22 @agent_ppo.py:62][0m Update time: 2.7258739471435547
+[32m[20221128 23:30:22 @agent_ppo.py:67][0m Evaluation time: 0.1297621726989746
+[32m[20221128 23:30:22 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:30:22 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:30:22 @pendulum_agent.py:130][0m Total time: 3.685634136199951
+[32m[20221128 23:30:22 @pendulum_agent.py:132][0m 750000 total steps have happened
+[32m[20221128 23:30:22 @pendulum_agent.py:122][0m #------------------------ Iteration 15 --------------------------#
+[32m[20221128 23:30:23 @agent_ppo.py:57][0m Sample time: 0.6137478351593018
+[32m[20221128 23:30:25 @agent_ppo.py:62][0m Update time: 2.700301170349121
+[32m[20221128 23:30:25 @agent_ppo.py:67][0m Evaluation time: 0.1372830867767334
+[32m[20221128 23:30:25 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:30:25 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:30:25 @pendulum_agent.py:130][0m Total time: 3.4652957916259766
+[32m[20221128 23:30:25 @pendulum_agent.py:132][0m 800000 total steps have happened
+[32m[20221128 23:30:25 @pendulum_agent.py:122][0m #------------------------ Iteration 16 --------------------------#
+[32m[20221128 23:30:26 @agent_ppo.py:57][0m Sample time: 0.6358556747436523
+[32m[20221128 23:30:29 @agent_ppo.py:62][0m Update time: 2.675485372543335
+[32m[20221128 23:30:29 @agent_ppo.py:67][0m Evaluation time: 0.12868475914001465
+[32m[20221128 23:30:29 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:30:29 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:30:29 @pendulum_agent.py:130][0m Total time: 3.4523110389709473
+[32m[20221128 23:30:29 @pendulum_agent.py:132][0m 850000 total steps have happened
+[32m[20221128 23:30:29 @pendulum_agent.py:122][0m #------------------------ Iteration 17 --------------------------#
+[32m[20221128 23:30:30 @agent_ppo.py:57][0m Sample time: 0.7026569843292236
+[32m[20221128 23:30:32 @agent_ppo.py:62][0m Update time: 2.736794948577881
+[32m[20221128 23:30:32 @agent_ppo.py:67][0m Evaluation time: 0.12911319732666016
+[32m[20221128 23:30:32 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:30:32 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:30:32 @pendulum_agent.py:130][0m Total time: 3.581868886947632
+[32m[20221128 23:30:32 @pendulum_agent.py:132][0m 900000 total steps have happened
+[32m[20221128 23:30:32 @pendulum_agent.py:122][0m #------------------------ Iteration 18 --------------------------#
+[32m[20221128 23:30:33 @agent_ppo.py:57][0m Sample time: 0.6426188945770264
+[32m[20221128 23:30:36 @agent_ppo.py:62][0m Update time: 2.75799298286438
+[32m[20221128 23:30:36 @agent_ppo.py:67][0m Evaluation time: 0.13465118408203125
+[32m[20221128 23:30:36 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:30:36 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:30:36 @pendulum_agent.py:130][0m Total time: 3.5502090454101562
+[32m[20221128 23:30:36 @pendulum_agent.py:132][0m 950000 total steps have happened
+[32m[20221128 23:30:36 @pendulum_agent.py:122][0m #------------------------ Iteration 19 --------------------------#
+[32m[20221128 23:30:37 @agent_ppo.py:57][0m Sample time: 0.6114728450775146
+[32m[20221128 23:30:39 @agent_ppo.py:62][0m Update time: 2.722598075866699
+[32m[20221128 23:30:39 @agent_ppo.py:67][0m Evaluation time: 0.12236404418945312
+[32m[20221128 23:30:39 @pendulum_agent.py:126][0m Average TRAINING episode reward: 1.8
+[32m[20221128 23:30:39 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:30:39 @pendulum_agent.py:130][0m Total time: 3.470025062561035
+[32m[20221128 23:30:39 @pendulum_agent.py:132][0m 1000000 total steps have happened
+[32m[20221128 23:30:39 @pendulum_agent.py:122][0m #------------------------ Iteration 20 --------------------------#
+[32m[20221128 23:30:40 @agent_ppo.py:57][0m Sample time: 0.677001953125
+[32m[20221128 23:30:43 @agent_ppo.py:62][0m Update time: 2.7637078762054443
+[32m[20221128 23:30:43 @agent_ppo.py:67][0m Evaluation time: 0.13495230674743652
+[32m[20221128 23:30:43 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.56
+[32m[20221128 23:30:43 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:30:43 @pendulum_agent.py:130][0m Total time: 3.589812994003296
+[32m[20221128 23:30:43 @pendulum_agent.py:132][0m 1050000 total steps have happened
+[32m[20221128 23:30:43 @pendulum_agent.py:122][0m #------------------------ Iteration 21 --------------------------#
+[32m[20221128 23:30:44 @agent_ppo.py:57][0m Sample time: 0.7375009059906006
+[32m[20221128 23:30:47 @agent_ppo.py:62][0m Update time: 3.015902042388916
+[32m[20221128 23:30:47 @agent_ppo.py:67][0m Evaluation time: 0.16099786758422852
+[32m[20221128 23:30:47 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.18
+[32m[20221128 23:30:47 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:30:47 @pendulum_agent.py:130][0m Total time: 3.9286320209503174
+[32m[20221128 23:30:47 @pendulum_agent.py:132][0m 1100000 total steps have happened
+[32m[20221128 23:30:47 @pendulum_agent.py:122][0m #------------------------ Iteration 22 --------------------------#
+[32m[20221128 23:30:48 @agent_ppo.py:57][0m Sample time: 0.60951828956604
+[32m[20221128 23:30:51 @agent_ppo.py:62][0m Update time: 2.942936658859253
+[32m[20221128 23:30:51 @agent_ppo.py:67][0m Evaluation time: 0.16754817962646484
+[32m[20221128 23:30:51 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:30:51 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:30:51 @pendulum_agent.py:130][0m Total time: 3.734004259109497
+[32m[20221128 23:30:51 @pendulum_agent.py:132][0m 1150000 total steps have happened
+[32m[20221128 23:30:51 @pendulum_agent.py:122][0m #------------------------ Iteration 23 --------------------------#
+[32m[20221128 23:30:52 @agent_ppo.py:57][0m Sample time: 0.7587273120880127
+[32m[20221128 23:30:54 @agent_ppo.py:62][0m Update time: 2.728334903717041
+[32m[20221128 23:30:54 @agent_ppo.py:67][0m Evaluation time: 0.14275193214416504
+[32m[20221128 23:30:54 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:30:54 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:30:54 @pendulum_agent.py:130][0m Total time: 3.642220973968506
+[32m[20221128 23:30:54 @pendulum_agent.py:132][0m 1200000 total steps have happened
+[32m[20221128 23:30:54 @pendulum_agent.py:122][0m #------------------------ Iteration 24 --------------------------#
+[32m[20221128 23:30:55 @agent_ppo.py:57][0m Sample time: 0.7116878032684326
+[32m[20221128 23:30:58 @agent_ppo.py:62][0m Update time: 2.753038167953491
+[32m[20221128 23:30:58 @agent_ppo.py:67][0m Evaluation time: 0.13536477088928223
+[32m[20221128 23:30:58 @pendulum_agent.py:126][0m Average TRAINING episode reward: 7.5
+[32m[20221128 23:30:58 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:30:58 @pendulum_agent.py:130][0m Total time: 3.61444091796875
+[32m[20221128 23:30:58 @pendulum_agent.py:132][0m 1250000 total steps have happened
+[32m[20221128 23:30:58 @pendulum_agent.py:122][0m #------------------------ Iteration 25 --------------------------#
+[32m[20221128 23:30:59 @agent_ppo.py:57][0m Sample time: 0.6297361850738525
+[32m[20221128 23:31:01 @agent_ppo.py:62][0m Update time: 2.758328676223755
+[32m[20221128 23:31:02 @agent_ppo.py:67][0m Evaluation time: 0.15226435661315918
+[32m[20221128 23:31:02 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:31:02 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:31:02 @pendulum_agent.py:130][0m Total time: 3.554236888885498
+[32m[20221128 23:31:02 @pendulum_agent.py:132][0m 1300000 total steps have happened
+[32m[20221128 23:31:02 @pendulum_agent.py:122][0m #------------------------ Iteration 26 --------------------------#
+[32m[20221128 23:31:02 @agent_ppo.py:57][0m Sample time: 0.7466650009155273
+[32m[20221128 23:31:05 @agent_ppo.py:62][0m Update time: 2.7547810077667236
+[32m[20221128 23:31:05 @agent_ppo.py:67][0m Evaluation time: 0.12999296188354492
+[32m[20221128 23:31:05 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:31:05 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:31:05 @pendulum_agent.py:130][0m Total time: 3.6448299884796143
+[32m[20221128 23:31:05 @pendulum_agent.py:132][0m 1350000 total steps have happened
+[32m[20221128 23:31:05 @pendulum_agent.py:122][0m #------------------------ Iteration 27 --------------------------#
+[32m[20221128 23:31:06 @agent_ppo.py:57][0m Sample time: 0.6480841636657715
+[32m[20221128 23:31:09 @agent_ppo.py:62][0m Update time: 2.751340866088867
+[32m[20221128 23:31:09 @agent_ppo.py:67][0m Evaluation time: 0.1345350742340088
+[32m[20221128 23:31:09 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.32
+[32m[20221128 23:31:09 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:31:09 @pendulum_agent.py:130][0m Total time: 3.5472187995910645
+[32m[20221128 23:31:09 @pendulum_agent.py:132][0m 1400000 total steps have happened
+[32m[20221128 23:31:09 @pendulum_agent.py:122][0m #------------------------ Iteration 28 --------------------------#
+[32m[20221128 23:31:09 @agent_ppo.py:57][0m Sample time: 0.618394136428833
+[32m[20221128 23:31:12 @agent_ppo.py:62][0m Update time: 2.7478227615356445
+[32m[20221128 23:31:12 @agent_ppo.py:67][0m Evaluation time: 0.1354222297668457
+[32m[20221128 23:31:12 @pendulum_agent.py:126][0m Average TRAINING episode reward: 23.62
+[32m[20221128 23:31:12 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 64.0
+[32m[20221128 23:31:12 @pendulum_agent.py:109][0m [4m[34mCRITICAL[0m Get the best episode reward: 64.0
+[32m[20221128 23:31:12 @pendulum_agent.py:113][0m [4m[34mCRITICAL[0m Saving the best checkpoint with rewards 64.00
+[32m[20221128 23:31:12 @pendulum_agent.py:130][0m Total time: 3.515544891357422
+[32m[20221128 23:31:12 @pendulum_agent.py:132][0m 1450000 total steps have happened
+[32m[20221128 23:31:12 @pendulum_agent.py:122][0m #------------------------ Iteration 29 --------------------------#
+[32m[20221128 23:31:13 @agent_ppo.py:57][0m Sample time: 0.7076261043548584
+[32m[20221128 23:31:16 @agent_ppo.py:62][0m Update time: 2.801563024520874
+[32m[20221128 23:31:16 @agent_ppo.py:67][0m Evaluation time: 0.13577985763549805
+[32m[20221128 23:31:16 @pendulum_agent.py:126][0m Average TRAINING episode reward: 14.52
+[32m[20221128 23:31:16 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:31:16 @pendulum_agent.py:130][0m Total time: 3.6591200828552246
+[32m[20221128 23:31:16 @pendulum_agent.py:132][0m 1500000 total steps have happened
+[32m[20221128 23:31:16 @pendulum_agent.py:122][0m #------------------------ Iteration 30 --------------------------#
+[32m[20221128 23:31:17 @agent_ppo.py:57][0m Sample time: 0.6187958717346191
+[32m[20221128 23:31:19 @agent_ppo.py:62][0m Update time: 2.7399790287017822
+[32m[20221128 23:31:19 @agent_ppo.py:67][0m Evaluation time: 0.13372206687927246
+[32m[20221128 23:31:19 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:31:19 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 56.0
+[32m[20221128 23:31:19 @pendulum_agent.py:130][0m Total time: 3.505882740020752
+[32m[20221128 23:31:19 @pendulum_agent.py:132][0m 1550000 total steps have happened
+[32m[20221128 23:31:19 @pendulum_agent.py:122][0m #------------------------ Iteration 31 --------------------------#
+[32m[20221128 23:31:20 @agent_ppo.py:57][0m Sample time: 0.6273689270019531
+[32m[20221128 23:31:23 @agent_ppo.py:62][0m Update time: 2.7067017555236816
+[32m[20221128 23:31:23 @agent_ppo.py:67][0m Evaluation time: 0.13394808769226074
+[32m[20221128 23:31:23 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:31:23 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:31:23 @pendulum_agent.py:130][0m Total time: 3.4812872409820557
+[32m[20221128 23:31:23 @pendulum_agent.py:132][0m 1600000 total steps have happened
+[32m[20221128 23:31:23 @pendulum_agent.py:122][0m #------------------------ Iteration 32 --------------------------#
+[32m[20221128 23:31:24 @agent_ppo.py:57][0m Sample time: 0.7033977508544922
+[32m[20221128 23:31:26 @agent_ppo.py:62][0m Update time: 2.7426092624664307
+[32m[20221128 23:31:26 @agent_ppo.py:67][0m Evaluation time: 0.1269679069519043
+[32m[20221128 23:31:27 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:31:27 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:31:27 @pendulum_agent.py:130][0m Total time: 3.5881106853485107
+[32m[20221128 23:31:27 @pendulum_agent.py:132][0m 1650000 total steps have happened
+[32m[20221128 23:31:27 @pendulum_agent.py:122][0m #------------------------ Iteration 33 --------------------------#
+[32m[20221128 23:31:27 @agent_ppo.py:57][0m Sample time: 0.6300148963928223
+[32m[20221128 23:31:30 @agent_ppo.py:62][0m Update time: 2.736114978790283
+[32m[20221128 23:31:30 @agent_ppo.py:67][0m Evaluation time: 0.12961721420288086
+[32m[20221128 23:31:30 @pendulum_agent.py:126][0m Average TRAINING episode reward: 39.82
+[32m[20221128 23:31:30 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:31:30 @pendulum_agent.py:130][0m Total time: 3.509572982788086
+[32m[20221128 23:31:30 @pendulum_agent.py:132][0m 1700000 total steps have happened
+[32m[20221128 23:31:30 @pendulum_agent.py:122][0m #------------------------ Iteration 34 --------------------------#
+[32m[20221128 23:31:31 @agent_ppo.py:57][0m Sample time: 0.6689188480377197
+[32m[20221128 23:31:33 @agent_ppo.py:62][0m Update time: 2.7461740970611572
+[32m[20221128 23:31:34 @agent_ppo.py:67][0m Evaluation time: 0.12892699241638184
+[32m[20221128 23:31:34 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:31:34 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:31:34 @pendulum_agent.py:130][0m Total time: 3.5597329139709473
+[32m[20221128 23:31:34 @pendulum_agent.py:132][0m 1750000 total steps have happened
+[32m[20221128 23:31:34 @pendulum_agent.py:122][0m #------------------------ Iteration 35 --------------------------#
+[32m[20221128 23:31:34 @agent_ppo.py:57][0m Sample time: 0.707538366317749
+[32m[20221128 23:31:37 @agent_ppo.py:62][0m Update time: 2.7586288452148438
+[32m[20221128 23:31:37 @agent_ppo.py:67][0m Evaluation time: 0.13331890106201172
+[32m[20221128 23:31:37 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:31:37 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 58.0
+[32m[20221128 23:31:37 @pendulum_agent.py:130][0m Total time: 3.6126527786254883
+[32m[20221128 23:31:37 @pendulum_agent.py:132][0m 1800000 total steps have happened
+[32m[20221128 23:31:37 @pendulum_agent.py:122][0m #------------------------ Iteration 36 --------------------------#
+[32m[20221128 23:31:38 @agent_ppo.py:57][0m Sample time: 0.6289799213409424
+[32m[20221128 23:31:41 @agent_ppo.py:62][0m Update time: 2.7495009899139404
+[32m[20221128 23:31:41 @agent_ppo.py:67][0m Evaluation time: 0.1273500919342041
+[32m[20221128 23:31:41 @pendulum_agent.py:126][0m Average TRAINING episode reward: 14.76
+[32m[20221128 23:31:41 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:31:41 @pendulum_agent.py:130][0m Total time: 3.5209319591522217
+[32m[20221128 23:31:41 @pendulum_agent.py:132][0m 1850000 total steps have happened
+[32m[20221128 23:31:41 @pendulum_agent.py:122][0m #------------------------ Iteration 37 --------------------------#
+[32m[20221128 23:31:41 @agent_ppo.py:57][0m Sample time: 0.7027881145477295
+[32m[20221128 23:31:44 @agent_ppo.py:62][0m Update time: 2.755666971206665
+[32m[20221128 23:31:44 @agent_ppo.py:67][0m Evaluation time: 0.13357114791870117
+[32m[20221128 23:31:44 @pendulum_agent.py:126][0m Average TRAINING episode reward: 9.72
+[32m[20221128 23:31:44 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:31:44 @pendulum_agent.py:130][0m Total time: 3.606417179107666
+[32m[20221128 23:31:44 @pendulum_agent.py:132][0m 1900000 total steps have happened
+[32m[20221128 23:31:44 @pendulum_agent.py:122][0m #------------------------ Iteration 38 --------------------------#
+[32m[20221128 23:31:45 @agent_ppo.py:57][0m Sample time: 0.6872348785400391
+[32m[20221128 23:31:48 @agent_ppo.py:62][0m Update time: 2.752916097640991
+[32m[20221128 23:31:48 @agent_ppo.py:67][0m Evaluation time: 0.1334700584411621
+[32m[20221128 23:31:48 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:31:48 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:31:48 @pendulum_agent.py:130][0m Total time: 3.5873360633850098
+[32m[20221128 23:31:48 @pendulum_agent.py:132][0m 1950000 total steps have happened
+[32m[20221128 23:31:48 @pendulum_agent.py:122][0m #------------------------ Iteration 39 --------------------------#
+[32m[20221128 23:31:49 @agent_ppo.py:57][0m Sample time: 0.6466038227081299
+[32m[20221128 23:31:51 @agent_ppo.py:62][0m Update time: 2.7642579078674316
+[32m[20221128 23:31:51 @agent_ppo.py:67][0m Evaluation time: 0.13649511337280273
+[32m[20221128 23:31:51 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:31:51 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:31:51 @pendulum_agent.py:130][0m Total time: 3.5613338947296143
+[32m[20221128 23:31:51 @pendulum_agent.py:132][0m 2000000 total steps have happened
+[32m[20221128 23:31:51 @pendulum_agent.py:122][0m #------------------------ Iteration 40 --------------------------#
+[32m[20221128 23:31:52 @agent_ppo.py:57][0m Sample time: 0.6155951023101807
+[32m[20221128 23:31:55 @agent_ppo.py:62][0m Update time: 2.7970387935638428
+[32m[20221128 23:31:55 @agent_ppo.py:67][0m Evaluation time: 0.13279104232788086
+[32m[20221128 23:31:55 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:31:55 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:31:55 @pendulum_agent.py:130][0m Total time: 3.5597660541534424
+[32m[20221128 23:31:55 @pendulum_agent.py:132][0m 2050000 total steps have happened
+[32m[20221128 23:31:55 @pendulum_agent.py:122][0m #------------------------ Iteration 41 --------------------------#
+[32m[20221128 23:31:56 @agent_ppo.py:57][0m Sample time: 0.6805660724639893
+[32m[20221128 23:31:58 @agent_ppo.py:62][0m Update time: 2.7652928829193115
+[32m[20221128 23:31:59 @agent_ppo.py:67][0m Evaluation time: 0.13599109649658203
+[32m[20221128 23:31:59 @pendulum_agent.py:126][0m Average TRAINING episode reward: 13.42
+[32m[20221128 23:31:59 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:31:59 @pendulum_agent.py:130][0m Total time: 3.5965921878814697
+[32m[20221128 23:31:59 @pendulum_agent.py:132][0m 2100000 total steps have happened
+[32m[20221128 23:31:59 @pendulum_agent.py:122][0m #------------------------ Iteration 42 --------------------------#
+[32m[20221128 23:31:59 @agent_ppo.py:57][0m Sample time: 0.6352951526641846
+[32m[20221128 23:32:02 @agent_ppo.py:62][0m Update time: 2.7634317874908447
+[32m[20221128 23:32:02 @agent_ppo.py:67][0m Evaluation time: 0.132127046585083
+[32m[20221128 23:32:02 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:32:02 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:32:02 @pendulum_agent.py:130][0m Total time: 3.54435396194458
+[32m[20221128 23:32:02 @pendulum_agent.py:132][0m 2150000 total steps have happened
+[32m[20221128 23:32:02 @pendulum_agent.py:122][0m #------------------------ Iteration 43 --------------------------#
+[32m[20221128 23:32:03 @agent_ppo.py:57][0m Sample time: 0.6083009243011475
+[32m[20221128 23:32:06 @agent_ppo.py:62][0m Update time: 2.7595038414001465
+[32m[20221128 23:32:06 @agent_ppo.py:67][0m Evaluation time: 0.14269733428955078
+[32m[20221128 23:32:06 @pendulum_agent.py:126][0m Average TRAINING episode reward: 28.24
+[32m[20221128 23:32:06 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:32:06 @pendulum_agent.py:130][0m Total time: 3.5248401165008545
+[32m[20221128 23:32:06 @pendulum_agent.py:132][0m 2200000 total steps have happened
+[32m[20221128 23:32:06 @pendulum_agent.py:122][0m #------------------------ Iteration 44 --------------------------#
+[32m[20221128 23:32:06 @agent_ppo.py:57][0m Sample time: 0.689582109451294
+[32m[20221128 23:32:09 @agent_ppo.py:62][0m Update time: 2.764359951019287
+[32m[20221128 23:32:09 @agent_ppo.py:67][0m Evaluation time: 0.13161802291870117
+[32m[20221128 23:32:09 @pendulum_agent.py:126][0m Average TRAINING episode reward: 12.8
+[32m[20221128 23:32:09 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 56.0
+[32m[20221128 23:32:09 @pendulum_agent.py:130][0m Total time: 3.6000540256500244
+[32m[20221128 23:32:09 @pendulum_agent.py:132][0m 2250000 total steps have happened
+[32m[20221128 23:32:09 @pendulum_agent.py:122][0m #------------------------ Iteration 45 --------------------------#
+[32m[20221128 23:32:10 @agent_ppo.py:57][0m Sample time: 0.6351120471954346
+[32m[20221128 23:32:13 @agent_ppo.py:62][0m Update time: 2.735610008239746
+[32m[20221128 23:32:13 @agent_ppo.py:67][0m Evaluation time: 0.1334397792816162
+[32m[20221128 23:32:13 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:32:13 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:32:13 @pendulum_agent.py:130][0m Total time: 3.517198085784912
+[32m[20221128 23:32:13 @pendulum_agent.py:132][0m 2300000 total steps have happened
+[32m[20221128 23:32:13 @pendulum_agent.py:122][0m #------------------------ Iteration 46 --------------------------#
+[32m[20221128 23:32:13 @agent_ppo.py:57][0m Sample time: 0.6198880672454834
+[32m[20221128 23:32:16 @agent_ppo.py:62][0m Update time: 2.7331368923187256
+[32m[20221128 23:32:16 @agent_ppo.py:67][0m Evaluation time: 0.14460015296936035
+[32m[20221128 23:32:16 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.9
+[32m[20221128 23:32:16 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:32:16 @pendulum_agent.py:130][0m Total time: 3.5118658542633057
+[32m[20221128 23:32:16 @pendulum_agent.py:132][0m 2350000 total steps have happened
+[32m[20221128 23:32:16 @pendulum_agent.py:122][0m #------------------------ Iteration 47 --------------------------#
+[32m[20221128 23:32:17 @agent_ppo.py:57][0m Sample time: 0.693120002746582
+[32m[20221128 23:32:20 @agent_ppo.py:62][0m Update time: 2.7256221771240234
+[32m[20221128 23:32:20 @agent_ppo.py:67][0m Evaluation time: 0.13087987899780273
+[32m[20221128 23:32:20 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.98
+[32m[20221128 23:32:20 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:32:20 @pendulum_agent.py:130][0m Total time: 3.562324047088623
+[32m[20221128 23:32:20 @pendulum_agent.py:132][0m 2400000 total steps have happened
+[32m[20221128 23:32:20 @pendulum_agent.py:122][0m #------------------------ Iteration 48 --------------------------#
+[32m[20221128 23:32:21 @agent_ppo.py:57][0m Sample time: 0.622826099395752
+[32m[20221128 23:32:23 @agent_ppo.py:62][0m Update time: 2.7607510089874268
+[32m[20221128 23:32:23 @agent_ppo.py:67][0m Evaluation time: 0.12845492362976074
+[32m[20221128 23:32:23 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:32:23 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:32:23 @pendulum_agent.py:130][0m Total time: 3.526995897293091
+[32m[20221128 23:32:23 @pendulum_agent.py:132][0m 2450000 total steps have happened
+[32m[20221128 23:32:23 @pendulum_agent.py:122][0m #------------------------ Iteration 49 --------------------------#
+[32m[20221128 23:32:24 @agent_ppo.py:57][0m Sample time: 0.6285481452941895
+[32m[20221128 23:32:27 @agent_ppo.py:62][0m Update time: 2.7477948665618896
+[32m[20221128 23:32:27 @agent_ppo.py:67][0m Evaluation time: 0.14721417427062988
+[32m[20221128 23:32:27 @pendulum_agent.py:126][0m Average TRAINING episode reward: 12.88
+[32m[20221128 23:32:27 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:32:27 @pendulum_agent.py:103][0m [4m[34mCRITICAL[0m Saving the interval checkpoint with rewards 64.00
+[32m[20221128 23:32:27 @pendulum_agent.py:130][0m Total time: 3.5362741947174072
+[32m[20221128 23:32:27 @pendulum_agent.py:132][0m 2500000 total steps have happened
+[32m[20221128 23:32:27 @pendulum_agent.py:122][0m #------------------------ Iteration 50 --------------------------#
+[32m[20221128 23:32:28 @agent_ppo.py:57][0m Sample time: 0.7288990020751953
+[32m[20221128 23:32:30 @agent_ppo.py:62][0m Update time: 2.689267873764038
+[32m[20221128 23:32:31 @agent_ppo.py:67][0m Evaluation time: 0.13140010833740234
+[32m[20221128 23:32:31 @pendulum_agent.py:126][0m Average TRAINING episode reward: 14.18
+[32m[20221128 23:32:31 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:32:31 @pendulum_agent.py:130][0m Total time: 3.563601016998291
+[32m[20221128 23:32:31 @pendulum_agent.py:132][0m 2550000 total steps have happened
+[32m[20221128 23:32:31 @pendulum_agent.py:122][0m #------------------------ Iteration 51 --------------------------#
+[32m[20221128 23:32:31 @agent_ppo.py:57][0m Sample time: 0.6448462009429932
+[32m[20221128 23:32:34 @agent_ppo.py:62][0m Update time: 2.687877893447876
+[32m[20221128 23:32:34 @agent_ppo.py:67][0m Evaluation time: 0.13474607467651367
+[32m[20221128 23:32:34 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.3
+[32m[20221128 23:32:34 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 57.0
+[32m[20221128 23:32:34 @pendulum_agent.py:130][0m Total time: 3.4809212684631348
+[32m[20221128 23:32:34 @pendulum_agent.py:132][0m 2600000 total steps have happened
+[32m[20221128 23:32:34 @pendulum_agent.py:122][0m #------------------------ Iteration 52 --------------------------#
+[32m[20221128 23:32:35 @agent_ppo.py:57][0m Sample time: 0.6358621120452881
+[32m[20221128 23:32:37 @agent_ppo.py:62][0m Update time: 2.708625078201294
+[32m[20221128 23:32:37 @agent_ppo.py:67][0m Evaluation time: 0.13707184791564941
+[32m[20221128 23:32:38 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:32:38 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:32:38 @pendulum_agent.py:130][0m Total time: 3.4948978424072266
+[32m[20221128 23:32:38 @pendulum_agent.py:132][0m 2650000 total steps have happened
+[32m[20221128 23:32:38 @pendulum_agent.py:122][0m #------------------------ Iteration 53 --------------------------#
+[32m[20221128 23:32:38 @agent_ppo.py:57][0m Sample time: 0.7126679420471191
+[32m[20221128 23:32:41 @agent_ppo.py:62][0m Update time: 2.726008176803589
+[32m[20221128 23:32:41 @agent_ppo.py:67][0m Evaluation time: 0.13201189041137695
+[32m[20221128 23:32:41 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:32:41 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:32:41 @pendulum_agent.py:130][0m Total time: 3.5850040912628174
+[32m[20221128 23:32:41 @pendulum_agent.py:132][0m 2700000 total steps have happened
+[32m[20221128 23:32:41 @pendulum_agent.py:122][0m #------------------------ Iteration 54 --------------------------#
+[32m[20221128 23:32:42 @agent_ppo.py:57][0m Sample time: 0.6372201442718506
+[32m[20221128 23:32:44 @agent_ppo.py:62][0m Update time: 2.7518839836120605
+[32m[20221128 23:32:45 @agent_ppo.py:67][0m Evaluation time: 0.13226604461669922
+[32m[20221128 23:32:45 @pendulum_agent.py:126][0m Average TRAINING episode reward: 24.1
+[32m[20221128 23:32:45 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:32:45 @pendulum_agent.py:130][0m Total time: 3.5365428924560547
+[32m[20221128 23:32:45 @pendulum_agent.py:132][0m 2750000 total steps have happened
+[32m[20221128 23:32:45 @pendulum_agent.py:122][0m #------------------------ Iteration 55 --------------------------#
+[32m[20221128 23:32:45 @agent_ppo.py:57][0m Sample time: 0.6262619495391846
+[32m[20221128 23:32:48 @agent_ppo.py:62][0m Update time: 2.7390990257263184
+[32m[20221128 23:32:48 @agent_ppo.py:67][0m Evaluation time: 0.12785005569458008
+[32m[20221128 23:32:48 @pendulum_agent.py:126][0m Average TRAINING episode reward: 39.02
+[32m[20221128 23:32:48 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:32:48 @pendulum_agent.py:130][0m Total time: 3.5063071250915527
+[32m[20221128 23:32:48 @pendulum_agent.py:132][0m 2800000 total steps have happened
+[32m[20221128 23:32:48 @pendulum_agent.py:122][0m #------------------------ Iteration 56 --------------------------#
+[32m[20221128 23:32:49 @agent_ppo.py:57][0m Sample time: 0.7225570678710938
+[32m[20221128 23:32:52 @agent_ppo.py:62][0m Update time: 2.725454092025757
+[32m[20221128 23:32:52 @agent_ppo.py:67][0m Evaluation time: 0.1343998908996582
+[32m[20221128 23:32:52 @pendulum_agent.py:126][0m Average TRAINING episode reward: 10.96
+[32m[20221128 23:32:52 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:32:52 @pendulum_agent.py:130][0m Total time: 3.5971131324768066
+[32m[20221128 23:32:52 @pendulum_agent.py:132][0m 2850000 total steps have happened
+[32m[20221128 23:32:52 @pendulum_agent.py:122][0m #------------------------ Iteration 57 --------------------------#
+[32m[20221128 23:32:52 @agent_ppo.py:57][0m Sample time: 0.6305429935455322
+[32m[20221128 23:32:55 @agent_ppo.py:62][0m Update time: 2.73704195022583
+[32m[20221128 23:32:55 @agent_ppo.py:67][0m Evaluation time: 0.1259629726409912
+[32m[20221128 23:32:55 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.04
+[32m[20221128 23:32:55 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:32:55 @pendulum_agent.py:130][0m Total time: 3.508049726486206
+[32m[20221128 23:32:55 @pendulum_agent.py:132][0m 2900000 total steps have happened
+[32m[20221128 23:32:55 @pendulum_agent.py:122][0m #------------------------ Iteration 58 --------------------------#
+[32m[20221128 23:32:56 @agent_ppo.py:57][0m Sample time: 0.6191210746765137
+[32m[20221128 23:32:59 @agent_ppo.py:62][0m Update time: 2.736629009246826
+[32m[20221128 23:32:59 @agent_ppo.py:67][0m Evaluation time: 0.1362779140472412
+[32m[20221128 23:32:59 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.74
+[32m[20221128 23:32:59 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:32:59 @pendulum_agent.py:130][0m Total time: 3.5048630237579346
+[32m[20221128 23:32:59 @pendulum_agent.py:132][0m 2950000 total steps have happened
+[32m[20221128 23:32:59 @pendulum_agent.py:122][0m #------------------------ Iteration 59 --------------------------#
+[32m[20221128 23:32:59 @agent_ppo.py:57][0m Sample time: 0.680185079574585
+[32m[20221128 23:33:02 @agent_ppo.py:62][0m Update time: 2.7208359241485596
+[32m[20221128 23:33:02 @agent_ppo.py:67][0m Evaluation time: 0.12598109245300293
+[32m[20221128 23:33:02 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.18
+[32m[20221128 23:33:02 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:33:02 @pendulum_agent.py:130][0m Total time: 3.5410549640655518
+[32m[20221128 23:33:02 @pendulum_agent.py:132][0m 3000000 total steps have happened
+[32m[20221128 23:33:02 @pendulum_agent.py:122][0m #------------------------ Iteration 60 --------------------------#
+[32m[20221128 23:33:03 @agent_ppo.py:57][0m Sample time: 0.626323938369751
+[32m[20221128 23:33:06 @agent_ppo.py:62][0m Update time: 2.7627720832824707
+[32m[20221128 23:33:06 @agent_ppo.py:67][0m Evaluation time: 0.1287400722503662
+[32m[20221128 23:33:06 @pendulum_agent.py:126][0m Average TRAINING episode reward: 10.88
+[32m[20221128 23:33:06 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:33:06 @pendulum_agent.py:130][0m Total time: 3.5316219329833984
+[32m[20221128 23:33:06 @pendulum_agent.py:132][0m 3050000 total steps have happened
+[32m[20221128 23:33:06 @pendulum_agent.py:122][0m #------------------------ Iteration 61 --------------------------#
+[32m[20221128 23:33:06 @agent_ppo.py:57][0m Sample time: 0.619952917098999
+[32m[20221128 23:33:09 @agent_ppo.py:62][0m Update time: 2.734955072402954
+[32m[20221128 23:33:09 @agent_ppo.py:67][0m Evaluation time: 0.13028502464294434
+[32m[20221128 23:33:09 @pendulum_agent.py:126][0m Average TRAINING episode reward: 16.0
+[32m[20221128 23:33:09 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:33:09 @pendulum_agent.py:130][0m Total time: 3.4990429878234863
+[32m[20221128 23:33:09 @pendulum_agent.py:132][0m 3100000 total steps have happened
+[32m[20221128 23:33:09 @pendulum_agent.py:122][0m #------------------------ Iteration 62 --------------------------#
+[32m[20221128 23:33:10 @agent_ppo.py:57][0m Sample time: 0.69828200340271
+[32m[20221128 23:33:13 @agent_ppo.py:62][0m Update time: 2.7567498683929443
+[32m[20221128 23:33:13 @agent_ppo.py:67][0m Evaluation time: 0.13453888893127441
+[32m[20221128 23:33:13 @pendulum_agent.py:126][0m Average TRAINING episode reward: 26.82
+[32m[20221128 23:33:13 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:33:13 @pendulum_agent.py:130][0m Total time: 3.6024179458618164
+[32m[20221128 23:33:13 @pendulum_agent.py:132][0m 3150000 total steps have happened
+[32m[20221128 23:33:13 @pendulum_agent.py:122][0m #------------------------ Iteration 63 --------------------------#
+[32m[20221128 23:33:14 @agent_ppo.py:57][0m Sample time: 0.6231658458709717
+[32m[20221128 23:33:16 @agent_ppo.py:62][0m Update time: 2.6909470558166504
+[32m[20221128 23:33:16 @agent_ppo.py:67][0m Evaluation time: 0.1409769058227539
+[32m[20221128 23:33:16 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:33:16 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 56.0
+[32m[20221128 23:33:16 @pendulum_agent.py:130][0m Total time: 3.468008041381836
+[32m[20221128 23:33:16 @pendulum_agent.py:132][0m 3200000 total steps have happened
+[32m[20221128 23:33:16 @pendulum_agent.py:122][0m #------------------------ Iteration 64 --------------------------#
+[32m[20221128 23:33:17 @agent_ppo.py:57][0m Sample time: 0.6393980979919434
+[32m[20221128 23:33:20 @agent_ppo.py:62][0m Update time: 2.7248170375823975
+[32m[20221128 23:33:20 @agent_ppo.py:67][0m Evaluation time: 0.134552001953125
+[32m[20221128 23:33:20 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.14
+[32m[20221128 23:33:20 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:33:20 @pendulum_agent.py:130][0m Total time: 3.512917995452881
+[32m[20221128 23:33:20 @pendulum_agent.py:132][0m 3250000 total steps have happened
+[32m[20221128 23:33:20 @pendulum_agent.py:122][0m #------------------------ Iteration 65 --------------------------#
+[32m[20221128 23:33:21 @agent_ppo.py:57][0m Sample time: 0.7103197574615479
+[32m[20221128 23:33:23 @agent_ppo.py:62][0m Update time: 2.7191481590270996
+[32m[20221128 23:33:23 @agent_ppo.py:67][0m Evaluation time: 0.1327989101409912
+[32m[20221128 23:33:23 @pendulum_agent.py:126][0m Average TRAINING episode reward: 10.76
+[32m[20221128 23:33:23 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:33:23 @pendulum_agent.py:130][0m Total time: 3.576961040496826
+[32m[20221128 23:33:23 @pendulum_agent.py:132][0m 3300000 total steps have happened
+[32m[20221128 23:33:23 @pendulum_agent.py:122][0m #------------------------ Iteration 66 --------------------------#
+[32m[20221128 23:33:24 @agent_ppo.py:57][0m Sample time: 0.6233179569244385
+[32m[20221128 23:33:27 @agent_ppo.py:62][0m Update time: 2.7432398796081543
+[32m[20221128 23:33:27 @agent_ppo.py:67][0m Evaluation time: 0.13785219192504883
+[32m[20221128 23:33:27 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:33:27 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 54.0
+[32m[20221128 23:33:27 @pendulum_agent.py:130][0m Total time: 3.516160011291504
+[32m[20221128 23:33:27 @pendulum_agent.py:132][0m 3350000 total steps have happened
+[32m[20221128 23:33:27 @pendulum_agent.py:122][0m #------------------------ Iteration 67 --------------------------#
+[32m[20221128 23:33:28 @agent_ppo.py:57][0m Sample time: 0.6193451881408691
+[32m[20221128 23:33:30 @agent_ppo.py:62][0m Update time: 2.8058969974517822
+[32m[20221128 23:33:31 @agent_ppo.py:67][0m Evaluation time: 0.14496469497680664
+[32m[20221128 23:33:31 @pendulum_agent.py:126][0m Average TRAINING episode reward: 22.62
+[32m[20221128 23:33:31 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:33:31 @pendulum_agent.py:130][0m Total time: 3.584232807159424
+[32m[20221128 23:33:31 @pendulum_agent.py:132][0m 3400000 total steps have happened
+[32m[20221128 23:33:31 @pendulum_agent.py:122][0m #------------------------ Iteration 68 --------------------------#
+[32m[20221128 23:33:31 @agent_ppo.py:57][0m Sample time: 0.8033261299133301
+[32m[20221128 23:33:34 @agent_ppo.py:62][0m Update time: 2.7786478996276855
+[32m[20221128 23:33:34 @agent_ppo.py:67][0m Evaluation time: 0.1431269645690918
+[32m[20221128 23:33:34 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.5
+[32m[20221128 23:33:34 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:33:34 @pendulum_agent.py:130][0m Total time: 3.739845037460327
+[32m[20221128 23:33:34 @pendulum_agent.py:132][0m 3450000 total steps have happened
+[32m[20221128 23:33:34 @pendulum_agent.py:122][0m #------------------------ Iteration 69 --------------------------#
+[32m[20221128 23:33:35 @agent_ppo.py:57][0m Sample time: 0.671630859375
+[32m[20221128 23:33:38 @agent_ppo.py:62][0m Update time: 2.746485948562622
+[32m[20221128 23:33:38 @agent_ppo.py:67][0m Evaluation time: 0.13657712936401367
+[32m[20221128 23:33:38 @pendulum_agent.py:126][0m Average TRAINING episode reward: 12.0
+[32m[20221128 23:33:38 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:33:38 @pendulum_agent.py:130][0m Total time: 3.569227695465088
+[32m[20221128 23:33:38 @pendulum_agent.py:132][0m 3500000 total steps have happened
+[32m[20221128 23:33:38 @pendulum_agent.py:122][0m #------------------------ Iteration 70 --------------------------#
+[32m[20221128 23:33:39 @agent_ppo.py:57][0m Sample time: 0.6421937942504883
+[32m[20221128 23:33:41 @agent_ppo.py:62][0m Update time: 2.855591297149658
+[32m[20221128 23:33:42 @agent_ppo.py:67][0m Evaluation time: 0.13358592987060547
+[32m[20221128 23:33:42 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.34
+[32m[20221128 23:33:42 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:33:42 @pendulum_agent.py:130][0m Total time: 3.644484043121338
+[32m[20221128 23:33:42 @pendulum_agent.py:132][0m 3550000 total steps have happened
+[32m[20221128 23:33:42 @pendulum_agent.py:122][0m #------------------------ Iteration 71 --------------------------#
+[32m[20221128 23:33:42 @agent_ppo.py:57][0m Sample time: 0.7575407028198242
+[32m[20221128 23:33:45 @agent_ppo.py:62][0m Update time: 2.7410671710968018
+[32m[20221128 23:33:45 @agent_ppo.py:67][0m Evaluation time: 0.14528989791870117
+[32m[20221128 23:33:45 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:33:45 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:33:45 @pendulum_agent.py:130][0m Total time: 3.6574392318725586
+[32m[20221128 23:33:45 @pendulum_agent.py:132][0m 3600000 total steps have happened
+[32m[20221128 23:33:45 @pendulum_agent.py:122][0m #------------------------ Iteration 72 --------------------------#
+[32m[20221128 23:33:46 @agent_ppo.py:57][0m Sample time: 0.643322229385376
+[32m[20221128 23:33:49 @agent_ppo.py:62][0m Update time: 2.7937827110290527
+[32m[20221128 23:33:49 @agent_ppo.py:67][0m Evaluation time: 0.16103410720825195
+[32m[20221128 23:33:49 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:33:49 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:33:49 @pendulum_agent.py:130][0m Total time: 3.6123011112213135
+[32m[20221128 23:33:49 @pendulum_agent.py:132][0m 3650000 total steps have happened
+[32m[20221128 23:33:49 @pendulum_agent.py:122][0m #------------------------ Iteration 73 --------------------------#
+[32m[20221128 23:33:50 @agent_ppo.py:57][0m Sample time: 0.6804289817810059
+[32m[20221128 23:33:52 @agent_ppo.py:62][0m Update time: 2.8360989093780518
+[32m[20221128 23:33:52 @agent_ppo.py:67][0m Evaluation time: 0.13117408752441406
+[32m[20221128 23:33:52 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:33:52 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:33:52 @pendulum_agent.py:130][0m Total time: 3.6604511737823486
+[32m[20221128 23:33:52 @pendulum_agent.py:132][0m 3700000 total steps have happened
+[32m[20221128 23:33:52 @pendulum_agent.py:122][0m #------------------------ Iteration 74 --------------------------#
+[32m[20221128 23:33:53 @agent_ppo.py:57][0m Sample time: 0.7172529697418213
+[32m[20221128 23:33:56 @agent_ppo.py:62][0m Update time: 2.6933281421661377
+[32m[20221128 23:33:56 @agent_ppo.py:67][0m Evaluation time: 0.14539384841918945
+[32m[20221128 23:33:56 @pendulum_agent.py:126][0m Average TRAINING episode reward: 10.22
+[32m[20221128 23:33:56 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:33:56 @pendulum_agent.py:130][0m Total time: 3.5705440044403076
+[32m[20221128 23:33:56 @pendulum_agent.py:132][0m 3750000 total steps have happened
+[32m[20221128 23:33:56 @pendulum_agent.py:122][0m #------------------------ Iteration 75 --------------------------#
+[32m[20221128 23:33:57 @agent_ppo.py:57][0m Sample time: 0.705725908279419
+[32m[20221128 23:34:00 @agent_ppo.py:62][0m Update time: 2.8187341690063477
+[32m[20221128 23:34:00 @agent_ppo.py:67][0m Evaluation time: 0.13265490531921387
+[32m[20221128 23:34:00 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:34:00 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:34:00 @pendulum_agent.py:130][0m Total time: 3.669517993927002
+[32m[20221128 23:34:00 @pendulum_agent.py:132][0m 3800000 total steps have happened
+[32m[20221128 23:34:00 @pendulum_agent.py:122][0m #------------------------ Iteration 76 --------------------------#
+[32m[20221128 23:34:00 @agent_ppo.py:57][0m Sample time: 0.6181039810180664
+[32m[20221128 23:34:03 @agent_ppo.py:62][0m Update time: 2.8360371589660645
+[32m[20221128 23:34:03 @agent_ppo.py:67][0m Evaluation time: 0.1475846767425537
+[32m[20221128 23:34:03 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:34:03 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:34:03 @pendulum_agent.py:130][0m Total time: 3.6297569274902344
+[32m[20221128 23:34:03 @pendulum_agent.py:132][0m 3850000 total steps have happened
+[32m[20221128 23:34:03 @pendulum_agent.py:122][0m #------------------------ Iteration 77 --------------------------#
+[32m[20221128 23:34:04 @agent_ppo.py:57][0m Sample time: 1.1068041324615479
+[32m[20221128 23:34:07 @agent_ppo.py:62][0m Update time: 2.959351062774658
+[32m[20221128 23:34:08 @agent_ppo.py:67][0m Evaluation time: 0.16888070106506348
+[32m[20221128 23:34:08 @pendulum_agent.py:126][0m Average TRAINING episode reward: 10.58
+[32m[20221128 23:34:08 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:34:08 @pendulum_agent.py:130][0m Total time: 4.2489399909973145
+[32m[20221128 23:34:08 @pendulum_agent.py:132][0m 3900000 total steps have happened
+[32m[20221128 23:34:08 @pendulum_agent.py:122][0m #------------------------ Iteration 78 --------------------------#
+[32m[20221128 23:34:08 @agent_ppo.py:57][0m Sample time: 0.6265637874603271
+[32m[20221128 23:34:11 @agent_ppo.py:62][0m Update time: 2.6773219108581543
+[32m[20221128 23:34:11 @agent_ppo.py:67][0m Evaluation time: 0.13508820533752441
+[32m[20221128 23:34:11 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.58
+[32m[20221128 23:34:11 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:34:11 @pendulum_agent.py:130][0m Total time: 3.452550172805786
+[32m[20221128 23:34:11 @pendulum_agent.py:132][0m 3950000 total steps have happened
+[32m[20221128 23:34:11 @pendulum_agent.py:122][0m #------------------------ Iteration 79 --------------------------#
+[32m[20221128 23:34:12 @agent_ppo.py:57][0m Sample time: 0.645413875579834
+[32m[20221128 23:34:14 @agent_ppo.py:62][0m Update time: 2.705733060836792
+[32m[20221128 23:34:15 @agent_ppo.py:67][0m Evaluation time: 0.13869714736938477
+[32m[20221128 23:34:15 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:34:15 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:34:15 @pendulum_agent.py:130][0m Total time: 3.503566026687622
+[32m[20221128 23:34:15 @pendulum_agent.py:132][0m 4000000 total steps have happened
+[32m[20221128 23:34:15 @pendulum_agent.py:122][0m #------------------------ Iteration 80 --------------------------#
+[32m[20221128 23:34:15 @agent_ppo.py:57][0m Sample time: 0.7062549591064453
+[32m[20221128 23:34:18 @agent_ppo.py:62][0m Update time: 2.6914491653442383
+[32m[20221128 23:34:18 @agent_ppo.py:67][0m Evaluation time: 0.13382291793823242
+[32m[20221128 23:34:18 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:34:18 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:34:18 @pendulum_agent.py:130][0m Total time: 3.544077157974243
+[32m[20221128 23:34:18 @pendulum_agent.py:132][0m 4050000 total steps have happened
+[32m[20221128 23:34:18 @pendulum_agent.py:122][0m #------------------------ Iteration 81 --------------------------#
+[32m[20221128 23:34:19 @agent_ppo.py:57][0m Sample time: 0.6403419971466064
+[32m[20221128 23:34:21 @agent_ppo.py:62][0m Update time: 2.725956916809082
+[32m[20221128 23:34:22 @agent_ppo.py:67][0m Evaluation time: 0.14033722877502441
+[32m[20221128 23:34:22 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:34:22 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:34:22 @pendulum_agent.py:130][0m Total time: 3.521225929260254
+[32m[20221128 23:34:22 @pendulum_agent.py:132][0m 4100000 total steps have happened
+[32m[20221128 23:34:22 @pendulum_agent.py:122][0m #------------------------ Iteration 82 --------------------------#
+[32m[20221128 23:34:22 @agent_ppo.py:57][0m Sample time: 0.6141219139099121
+[32m[20221128 23:34:25 @agent_ppo.py:62][0m Update time: 2.6820359230041504
+[32m[20221128 23:34:25 @agent_ppo.py:67][0m Evaluation time: 0.12817001342773438
+[32m[20221128 23:34:25 @pendulum_agent.py:126][0m Average TRAINING episode reward: 37.96
+[32m[20221128 23:34:25 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:34:25 @pendulum_agent.py:130][0m Total time: 3.4391210079193115
+[32m[20221128 23:34:25 @pendulum_agent.py:132][0m 4150000 total steps have happened
+[32m[20221128 23:34:25 @pendulum_agent.py:122][0m #------------------------ Iteration 83 --------------------------#
+[32m[20221128 23:34:26 @agent_ppo.py:57][0m Sample time: 0.6964280605316162
+[32m[20221128 23:34:28 @agent_ppo.py:62][0m Update time: 2.6934547424316406
+[32m[20221128 23:34:29 @agent_ppo.py:67][0m Evaluation time: 0.13621902465820312
+[32m[20221128 23:34:29 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:34:29 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:34:29 @pendulum_agent.py:130][0m Total time: 3.5406548976898193
+[32m[20221128 23:34:29 @pendulum_agent.py:132][0m 4200000 total steps have happened
+[32m[20221128 23:34:29 @pendulum_agent.py:122][0m #------------------------ Iteration 84 --------------------------#
+[32m[20221128 23:34:29 @agent_ppo.py:57][0m Sample time: 0.63531494140625
+[32m[20221128 23:34:32 @agent_ppo.py:62][0m Update time: 2.701596975326538
+[32m[20221128 23:34:32 @agent_ppo.py:67][0m Evaluation time: 0.13050103187561035
+[32m[20221128 23:34:32 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.0
+[32m[20221128 23:34:32 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:34:32 @pendulum_agent.py:130][0m Total time: 3.4818339347839355
+[32m[20221128 23:34:32 @pendulum_agent.py:132][0m 4250000 total steps have happened
+[32m[20221128 23:34:32 @pendulum_agent.py:122][0m #------------------------ Iteration 85 --------------------------#
+[32m[20221128 23:34:33 @agent_ppo.py:57][0m Sample time: 0.6113259792327881
+[32m[20221128 23:34:35 @agent_ppo.py:62][0m Update time: 2.721831798553467
+[32m[20221128 23:34:36 @agent_ppo.py:67][0m Evaluation time: 0.12241530418395996
+[32m[20221128 23:34:36 @pendulum_agent.py:126][0m Average TRAINING episode reward: 22.04
+[32m[20221128 23:34:36 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:34:36 @pendulum_agent.py:130][0m Total time: 3.470432996749878
+[32m[20221128 23:34:36 @pendulum_agent.py:132][0m 4300000 total steps have happened
+[32m[20221128 23:34:36 @pendulum_agent.py:122][0m #------------------------ Iteration 86 --------------------------#
+[32m[20221128 23:34:36 @agent_ppo.py:57][0m Sample time: 0.68302321434021
+[32m[20221128 23:34:39 @agent_ppo.py:62][0m Update time: 2.7253339290618896
+[32m[20221128 23:34:39 @agent_ppo.py:67][0m Evaluation time: 0.1334819793701172
+[32m[20221128 23:34:39 @pendulum_agent.py:126][0m Average TRAINING episode reward: 12.0
+[32m[20221128 23:34:39 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:34:39 @pendulum_agent.py:130][0m Total time: 3.5555012226104736
+[32m[20221128 23:34:39 @pendulum_agent.py:132][0m 4350000 total steps have happened
+[32m[20221128 23:34:39 @pendulum_agent.py:122][0m #------------------------ Iteration 87 --------------------------#
+[32m[20221128 23:34:40 @agent_ppo.py:57][0m Sample time: 0.6508100032806396
+[32m[20221128 23:34:42 @agent_ppo.py:62][0m Update time: 2.7148149013519287
+[32m[20221128 23:34:43 @agent_ppo.py:67][0m Evaluation time: 0.13694500923156738
+[32m[20221128 23:34:43 @pendulum_agent.py:126][0m Average TRAINING episode reward: 12.78
+[32m[20221128 23:34:43 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:34:43 @pendulum_agent.py:130][0m Total time: 3.516788959503174
+[32m[20221128 23:34:43 @pendulum_agent.py:132][0m 4400000 total steps have happened
+[32m[20221128 23:34:43 @pendulum_agent.py:122][0m #------------------------ Iteration 88 --------------------------#
+[32m[20221128 23:34:43 @agent_ppo.py:57][0m Sample time: 0.6388950347900391
+[32m[20221128 23:34:46 @agent_ppo.py:62][0m Update time: 2.7152109146118164
+[32m[20221128 23:34:46 @agent_ppo.py:67][0m Evaluation time: 0.13599324226379395
+[32m[20221128 23:34:46 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.6
+[32m[20221128 23:34:46 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:34:46 @pendulum_agent.py:130][0m Total time: 3.5043246746063232
+[32m[20221128 23:34:46 @pendulum_agent.py:132][0m 4450000 total steps have happened
+[32m[20221128 23:34:46 @pendulum_agent.py:122][0m #------------------------ Iteration 89 --------------------------#
+[32m[20221128 23:34:47 @agent_ppo.py:57][0m Sample time: 0.6816210746765137
+[32m[20221128 23:34:50 @agent_ppo.py:62][0m Update time: 2.7164878845214844
+[32m[20221128 23:34:50 @agent_ppo.py:67][0m Evaluation time: 0.12698006629943848
+[32m[20221128 23:34:50 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:34:50 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:34:50 @pendulum_agent.py:130][0m Total time: 3.538969039916992
+[32m[20221128 23:34:50 @pendulum_agent.py:132][0m 4500000 total steps have happened
+[32m[20221128 23:34:50 @pendulum_agent.py:122][0m #------------------------ Iteration 90 --------------------------#
+[32m[20221128 23:34:50 @agent_ppo.py:57][0m Sample time: 0.6290481090545654
+[32m[20221128 23:34:53 @agent_ppo.py:62][0m Update time: 2.7136409282684326
+[32m[20221128 23:34:53 @agent_ppo.py:67][0m Evaluation time: 0.1258702278137207
+[32m[20221128 23:34:53 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.4
+[32m[20221128 23:34:53 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:34:53 @pendulum_agent.py:130][0m Total time: 3.4806368350982666
+[32m[20221128 23:34:53 @pendulum_agent.py:132][0m 4550000 total steps have happened
+[32m[20221128 23:34:53 @pendulum_agent.py:122][0m #------------------------ Iteration 91 --------------------------#
+[32m[20221128 23:34:54 @agent_ppo.py:57][0m Sample time: 0.6216318607330322
+[32m[20221128 23:34:56 @agent_ppo.py:62][0m Update time: 2.676720142364502
+[32m[20221128 23:34:57 @agent_ppo.py:67][0m Evaluation time: 0.13361191749572754
+[32m[20221128 23:34:57 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:34:57 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:34:57 @pendulum_agent.py:130][0m Total time: 3.4448330402374268
+[32m[20221128 23:34:57 @pendulum_agent.py:132][0m 4600000 total steps have happened
+[32m[20221128 23:34:57 @pendulum_agent.py:122][0m #------------------------ Iteration 92 --------------------------#
+[32m[20221128 23:34:57 @agent_ppo.py:57][0m Sample time: 0.6832101345062256
+[32m[20221128 23:35:00 @agent_ppo.py:62][0m Update time: 2.743330955505371
+[32m[20221128 23:35:00 @agent_ppo.py:67][0m Evaluation time: 0.1302328109741211
+[32m[20221128 23:35:00 @pendulum_agent.py:126][0m Average TRAINING episode reward: 10.88
+[32m[20221128 23:35:00 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:35:00 @pendulum_agent.py:130][0m Total time: 3.5707948207855225
+[32m[20221128 23:35:00 @pendulum_agent.py:132][0m 4650000 total steps have happened
+[32m[20221128 23:35:00 @pendulum_agent.py:122][0m #------------------------ Iteration 93 --------------------------#
+[32m[20221128 23:35:01 @agent_ppo.py:57][0m Sample time: 0.6244199275970459
+[32m[20221128 23:35:04 @agent_ppo.py:62][0m Update time: 2.739489793777466
+[32m[20221128 23:35:04 @agent_ppo.py:67][0m Evaluation time: 0.11889219284057617
+[32m[20221128 23:35:04 @pendulum_agent.py:126][0m Average TRAINING episode reward: 25.16
+[32m[20221128 23:35:04 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:35:04 @pendulum_agent.py:130][0m Total time: 3.4999029636383057
+[32m[20221128 23:35:04 @pendulum_agent.py:132][0m 4700000 total steps have happened
+[32m[20221128 23:35:04 @pendulum_agent.py:122][0m #------------------------ Iteration 94 --------------------------#
+[32m[20221128 23:35:04 @agent_ppo.py:57][0m Sample time: 0.61568284034729
+[32m[20221128 23:35:07 @agent_ppo.py:62][0m Update time: 2.726004123687744
+[32m[20221128 23:35:07 @agent_ppo.py:67][0m Evaluation time: 0.13006377220153809
+[32m[20221128 23:35:07 @pendulum_agent.py:126][0m Average TRAINING episode reward: 10.16
+[32m[20221128 23:35:07 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:35:07 @pendulum_agent.py:130][0m Total time: 3.4849419593811035
+[32m[20221128 23:35:07 @pendulum_agent.py:132][0m 4750000 total steps have happened
+[32m[20221128 23:35:07 @pendulum_agent.py:122][0m #------------------------ Iteration 95 --------------------------#
+[32m[20221128 23:35:08 @agent_ppo.py:57][0m Sample time: 0.6866247653961182
+[32m[20221128 23:35:11 @agent_ppo.py:62][0m Update time: 2.7117862701416016
+[32m[20221128 23:35:11 @agent_ppo.py:67][0m Evaluation time: 0.1350247859954834
+[32m[20221128 23:35:11 @pendulum_agent.py:126][0m Average TRAINING episode reward: 12.8
+[32m[20221128 23:35:11 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:35:11 @pendulum_agent.py:130][0m Total time: 3.547775983810425
+[32m[20221128 23:35:11 @pendulum_agent.py:132][0m 4800000 total steps have happened
+[32m[20221128 23:35:11 @pendulum_agent.py:122][0m #------------------------ Iteration 96 --------------------------#
+[32m[20221128 23:35:11 @agent_ppo.py:57][0m Sample time: 0.6131460666656494
+[32m[20221128 23:35:14 @agent_ppo.py:62][0m Update time: 2.713340997695923
+[32m[20221128 23:35:14 @agent_ppo.py:67][0m Evaluation time: 0.12880611419677734
+[32m[20221128 23:35:14 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.18
+[32m[20221128 23:35:14 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 69.0
+[32m[20221128 23:35:14 @pendulum_agent.py:109][0m [4m[34mCRITICAL[0m Get the best episode reward: 69.0
+[32m[20221128 23:35:14 @pendulum_agent.py:113][0m [4m[34mCRITICAL[0m Saving the best checkpoint with rewards 69.00
+[32m[20221128 23:35:14 @pendulum_agent.py:130][0m Total time: 3.4698262214660645
+[32m[20221128 23:35:14 @pendulum_agent.py:132][0m 4850000 total steps have happened
+[32m[20221128 23:35:14 @pendulum_agent.py:122][0m #------------------------ Iteration 97 --------------------------#
+[32m[20221128 23:35:15 @agent_ppo.py:57][0m Sample time: 0.6190872192382812
+[32m[20221128 23:35:18 @agent_ppo.py:62][0m Update time: 2.7388548851013184
+[32m[20221128 23:35:18 @agent_ppo.py:67][0m Evaluation time: 0.12479472160339355
+[32m[20221128 23:35:18 @pendulum_agent.py:126][0m Average TRAINING episode reward: 22.78
+[32m[20221128 23:35:18 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:35:18 @pendulum_agent.py:130][0m Total time: 3.4970221519470215
+[32m[20221128 23:35:18 @pendulum_agent.py:132][0m 4900000 total steps have happened
+[32m[20221128 23:35:18 @pendulum_agent.py:122][0m #------------------------ Iteration 98 --------------------------#
+[32m[20221128 23:35:18 @agent_ppo.py:57][0m Sample time: 0.6883752346038818
+[32m[20221128 23:35:21 @agent_ppo.py:62][0m Update time: 2.744588851928711
+[32m[20221128 23:35:21 @agent_ppo.py:67][0m Evaluation time: 0.1293041706085205
+[32m[20221128 23:35:21 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.34
+[32m[20221128 23:35:21 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:35:21 @pendulum_agent.py:130][0m Total time: 3.576387882232666
+[32m[20221128 23:35:21 @pendulum_agent.py:132][0m 4950000 total steps have happened
+[32m[20221128 23:35:21 @pendulum_agent.py:122][0m #------------------------ Iteration 99 --------------------------#
+[32m[20221128 23:35:22 @agent_ppo.py:57][0m Sample time: 0.6147630214691162
+[32m[20221128 23:35:25 @agent_ppo.py:62][0m Update time: 2.738809108734131
+[32m[20221128 23:35:25 @agent_ppo.py:67][0m Evaluation time: 0.15758991241455078
+[32m[20221128 23:35:25 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:35:25 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:35:25 @pendulum_agent.py:103][0m [4m[34mCRITICAL[0m Saving the interval checkpoint with rewards 69.00
+[32m[20221128 23:35:25 @pendulum_agent.py:130][0m Total time: 3.526128053665161
+[32m[20221128 23:35:25 @pendulum_agent.py:132][0m 5000000 total steps have happened
+[32m[20221128 23:35:25 @pendulum_agent.py:122][0m #------------------------ Iteration 100 --------------------------#
+[32m[20221128 23:35:25 @agent_ppo.py:57][0m Sample time: 0.6478610038757324
+[32m[20221128 23:35:28 @agent_ppo.py:62][0m Update time: 2.7466189861297607
+[32m[20221128 23:35:28 @agent_ppo.py:67][0m Evaluation time: 0.12993907928466797
+[32m[20221128 23:35:28 @pendulum_agent.py:126][0m Average TRAINING episode reward: 21.0
+[32m[20221128 23:35:28 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:35:28 @pendulum_agent.py:130][0m Total time: 3.539144992828369
+[32m[20221128 23:35:28 @pendulum_agent.py:132][0m 5050000 total steps have happened
+[32m[20221128 23:35:28 @pendulum_agent.py:122][0m #------------------------ Iteration 101 --------------------------#
+[32m[20221128 23:35:29 @agent_ppo.py:57][0m Sample time: 0.742203950881958
+[32m[20221128 23:35:32 @agent_ppo.py:62][0m Update time: 2.6432371139526367
+[32m[20221128 23:35:32 @agent_ppo.py:67][0m Evaluation time: 0.13032174110412598
+[32m[20221128 23:35:32 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:35:32 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:35:32 @pendulum_agent.py:130][0m Total time: 3.5293807983398438
+[32m[20221128 23:35:32 @pendulum_agent.py:132][0m 5100000 total steps have happened
+[32m[20221128 23:35:32 @pendulum_agent.py:122][0m #------------------------ Iteration 102 --------------------------#
+[32m[20221128 23:35:32 @agent_ppo.py:57][0m Sample time: 0.6075019836425781
+[32m[20221128 23:35:35 @agent_ppo.py:62][0m Update time: 2.712756872177124
+[32m[20221128 23:35:35 @agent_ppo.py:67][0m Evaluation time: 0.12705516815185547
+[32m[20221128 23:35:35 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.22
+[32m[20221128 23:35:35 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 73.0
+[32m[20221128 23:35:35 @pendulum_agent.py:109][0m [4m[34mCRITICAL[0m Get the best episode reward: 73.0
+[32m[20221128 23:35:35 @pendulum_agent.py:113][0m [4m[34mCRITICAL[0m Saving the best checkpoint with rewards 73.00
+[32m[20221128 23:35:35 @pendulum_agent.py:130][0m Total time: 3.459778070449829
+[32m[20221128 23:35:35 @pendulum_agent.py:132][0m 5150000 total steps have happened
+[32m[20221128 23:35:35 @pendulum_agent.py:122][0m #------------------------ Iteration 103 --------------------------#
+[32m[20221128 23:35:36 @agent_ppo.py:57][0m Sample time: 0.6163771152496338
+[32m[20221128 23:35:39 @agent_ppo.py:62][0m Update time: 2.6929819583892822
+[32m[20221128 23:35:39 @agent_ppo.py:67][0m Evaluation time: 0.13576078414916992
+[32m[20221128 23:35:39 @pendulum_agent.py:126][0m Average TRAINING episode reward: 22.6
+[32m[20221128 23:35:39 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:35:39 @pendulum_agent.py:130][0m Total time: 3.459062099456787
+[32m[20221128 23:35:39 @pendulum_agent.py:132][0m 5200000 total steps have happened
+[32m[20221128 23:35:39 @pendulum_agent.py:122][0m #------------------------ Iteration 104 --------------------------#
+[32m[20221128 23:35:39 @agent_ppo.py:57][0m Sample time: 0.6901829242706299
+[32m[20221128 23:35:42 @agent_ppo.py:62][0m Update time: 2.688330888748169
+[32m[20221128 23:35:42 @agent_ppo.py:67][0m Evaluation time: 0.12957119941711426
+[32m[20221128 23:35:42 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:35:42 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:35:42 @pendulum_agent.py:130][0m Total time: 3.5221729278564453
+[32m[20221128 23:35:42 @pendulum_agent.py:132][0m 5250000 total steps have happened
+[32m[20221128 23:35:42 @pendulum_agent.py:122][0m #------------------------ Iteration 105 --------------------------#
+[32m[20221128 23:35:43 @agent_ppo.py:57][0m Sample time: 0.6696197986602783
+[32m[20221128 23:35:46 @agent_ppo.py:62][0m Update time: 2.6843960285186768
+[32m[20221128 23:35:46 @agent_ppo.py:67][0m Evaluation time: 0.12916302680969238
+[32m[20221128 23:35:46 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.8
+[32m[20221128 23:35:46 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:35:46 @pendulum_agent.py:130][0m Total time: 3.4974842071533203
+[32m[20221128 23:35:46 @pendulum_agent.py:132][0m 5300000 total steps have happened
+[32m[20221128 23:35:46 @pendulum_agent.py:122][0m #------------------------ Iteration 106 --------------------------#
+[32m[20221128 23:35:46 @agent_ppo.py:57][0m Sample time: 0.6458408832550049
+[32m[20221128 23:35:49 @agent_ppo.py:62][0m Update time: 2.722369909286499
+[32m[20221128 23:35:49 @agent_ppo.py:67][0m Evaluation time: 0.12761712074279785
+[32m[20221128 23:35:49 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.98
+[32m[20221128 23:35:49 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 58.0
+[32m[20221128 23:35:49 @pendulum_agent.py:130][0m Total time: 3.510633945465088
+[32m[20221128 23:35:49 @pendulum_agent.py:132][0m 5350000 total steps have happened
+[32m[20221128 23:35:49 @pendulum_agent.py:122][0m #------------------------ Iteration 107 --------------------------#
+[32m[20221128 23:35:50 @agent_ppo.py:57][0m Sample time: 0.6919350624084473
+[32m[20221128 23:35:53 @agent_ppo.py:62][0m Update time: 2.687743902206421
+[32m[20221128 23:35:53 @agent_ppo.py:67][0m Evaluation time: 0.13117599487304688
+[32m[20221128 23:35:53 @pendulum_agent.py:126][0m Average TRAINING episode reward: 25.22
+[32m[20221128 23:35:53 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:35:53 @pendulum_agent.py:130][0m Total time: 3.525279998779297
+[32m[20221128 23:35:53 @pendulum_agent.py:132][0m 5400000 total steps have happened
+[32m[20221128 23:35:53 @pendulum_agent.py:122][0m #------------------------ Iteration 108 --------------------------#
+[32m[20221128 23:35:53 @agent_ppo.py:57][0m Sample time: 0.6242339611053467
+[32m[20221128 23:35:56 @agent_ppo.py:62][0m Update time: 2.6896111965179443
+[32m[20221128 23:35:56 @agent_ppo.py:67][0m Evaluation time: 0.12317204475402832
+[32m[20221128 23:35:56 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:35:56 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:35:56 @pendulum_agent.py:130][0m Total time: 3.450896978378296
+[32m[20221128 23:35:56 @pendulum_agent.py:132][0m 5450000 total steps have happened
+[32m[20221128 23:35:56 @pendulum_agent.py:122][0m #------------------------ Iteration 109 --------------------------#
+[32m[20221128 23:35:57 @agent_ppo.py:57][0m Sample time: 0.6353590488433838
+[32m[20221128 23:36:00 @agent_ppo.py:62][0m Update time: 2.6697959899902344
+[32m[20221128 23:36:00 @agent_ppo.py:67][0m Evaluation time: 0.1327071189880371
+[32m[20221128 23:36:00 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:36:00 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:36:00 @pendulum_agent.py:130][0m Total time: 3.451958179473877
+[32m[20221128 23:36:00 @pendulum_agent.py:132][0m 5500000 total steps have happened
+[32m[20221128 23:36:00 @pendulum_agent.py:122][0m #------------------------ Iteration 110 --------------------------#
+[32m[20221128 23:36:00 @agent_ppo.py:57][0m Sample time: 0.6858749389648438
+[32m[20221128 23:36:03 @agent_ppo.py:62][0m Update time: 2.6928279399871826
+[32m[20221128 23:36:03 @agent_ppo.py:67][0m Evaluation time: 0.12852096557617188
+[32m[20221128 23:36:03 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:36:03 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:36:03 @pendulum_agent.py:130][0m Total time: 3.5193378925323486
+[32m[20221128 23:36:03 @pendulum_agent.py:132][0m 5550000 total steps have happened
+[32m[20221128 23:36:03 @pendulum_agent.py:122][0m #------------------------ Iteration 111 --------------------------#
+[32m[20221128 23:36:04 @agent_ppo.py:57][0m Sample time: 0.6410501003265381
+[32m[20221128 23:36:07 @agent_ppo.py:62][0m Update time: 2.6775848865509033
+[32m[20221128 23:36:07 @agent_ppo.py:67][0m Evaluation time: 0.13366913795471191
+[32m[20221128 23:36:07 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.2
+[32m[20221128 23:36:07 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 57.0
+[32m[20221128 23:36:07 @pendulum_agent.py:130][0m Total time: 3.46553373336792
+[32m[20221128 23:36:07 @pendulum_agent.py:132][0m 5600000 total steps have happened
+[32m[20221128 23:36:07 @pendulum_agent.py:122][0m #------------------------ Iteration 112 --------------------------#
+[32m[20221128 23:36:07 @agent_ppo.py:57][0m Sample time: 0.6094241142272949
+[32m[20221128 23:36:10 @agent_ppo.py:62][0m Update time: 2.7766079902648926
+[32m[20221128 23:36:10 @agent_ppo.py:67][0m Evaluation time: 0.13573694229125977
+[32m[20221128 23:36:10 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.2
+[32m[20221128 23:36:10 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:36:10 @pendulum_agent.py:130][0m Total time: 3.535482883453369
+[32m[20221128 23:36:10 @pendulum_agent.py:132][0m 5650000 total steps have happened
+[32m[20221128 23:36:10 @pendulum_agent.py:122][0m #------------------------ Iteration 113 --------------------------#
+[32m[20221128 23:36:11 @agent_ppo.py:57][0m Sample time: 0.6737630367279053
+[32m[20221128 23:36:14 @agent_ppo.py:62][0m Update time: 2.7195167541503906
+[32m[20221128 23:36:14 @agent_ppo.py:67][0m Evaluation time: 0.13530206680297852
+[32m[20221128 23:36:14 @pendulum_agent.py:126][0m Average TRAINING episode reward: 13.0
+[32m[20221128 23:36:14 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:36:14 @pendulum_agent.py:130][0m Total time: 3.5427629947662354
+[32m[20221128 23:36:14 @pendulum_agent.py:132][0m 5700000 total steps have happened
+[32m[20221128 23:36:14 @pendulum_agent.py:122][0m #------------------------ Iteration 114 --------------------------#
+[32m[20221128 23:36:14 @agent_ppo.py:57][0m Sample time: 0.6310269832611084
+[32m[20221128 23:36:17 @agent_ppo.py:62][0m Update time: 2.6991400718688965
+[32m[20221128 23:36:17 @agent_ppo.py:67][0m Evaluation time: 0.1294872760772705
+[32m[20221128 23:36:17 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:36:17 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 57.0
+[32m[20221128 23:36:17 @pendulum_agent.py:130][0m Total time: 3.4736859798431396
+[32m[20221128 23:36:17 @pendulum_agent.py:132][0m 5750000 total steps have happened
+[32m[20221128 23:36:17 @pendulum_agent.py:122][0m #------------------------ Iteration 115 --------------------------#
+[32m[20221128 23:36:18 @agent_ppo.py:57][0m Sample time: 0.6080820560455322
+[32m[20221128 23:36:21 @agent_ppo.py:62][0m Update time: 2.6873319149017334
+[32m[20221128 23:36:21 @agent_ppo.py:67][0m Evaluation time: 0.1279468536376953
+[32m[20221128 23:36:21 @pendulum_agent.py:126][0m Average TRAINING episode reward: 33.0
+[32m[20221128 23:36:21 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:36:21 @pendulum_agent.py:130][0m Total time: 3.4366352558135986
+[32m[20221128 23:36:21 @pendulum_agent.py:132][0m 5800000 total steps have happened
+[32m[20221128 23:36:21 @pendulum_agent.py:122][0m #------------------------ Iteration 116 --------------------------#
+[32m[20221128 23:36:21 @agent_ppo.py:57][0m Sample time: 0.6635911464691162
+[32m[20221128 23:36:24 @agent_ppo.py:62][0m Update time: 2.683177947998047
+[32m[20221128 23:36:24 @agent_ppo.py:67][0m Evaluation time: 0.12906098365783691
+[32m[20221128 23:36:24 @pendulum_agent.py:126][0m Average TRAINING episode reward: 34.2
+[32m[20221128 23:36:24 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:36:24 @pendulum_agent.py:130][0m Total time: 3.4887359142303467
+[32m[20221128 23:36:24 @pendulum_agent.py:132][0m 5850000 total steps have happened
+[32m[20221128 23:36:24 @pendulum_agent.py:122][0m #------------------------ Iteration 117 --------------------------#
+[32m[20221128 23:36:25 @agent_ppo.py:57][0m Sample time: 0.6472311019897461
+[32m[20221128 23:36:28 @agent_ppo.py:62][0m Update time: 2.72261905670166
+[32m[20221128 23:36:28 @agent_ppo.py:67][0m Evaluation time: 0.12520885467529297
+[32m[20221128 23:36:28 @pendulum_agent.py:126][0m Average TRAINING episode reward: 12.2
+[32m[20221128 23:36:28 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 54.0
+[32m[20221128 23:36:28 @pendulum_agent.py:130][0m Total time: 3.5092051029205322
+[32m[20221128 23:36:28 @pendulum_agent.py:132][0m 5900000 total steps have happened
+[32m[20221128 23:36:28 @pendulum_agent.py:122][0m #------------------------ Iteration 118 --------------------------#
+[32m[20221128 23:36:28 @agent_ppo.py:57][0m Sample time: 0.6025981903076172
+[32m[20221128 23:36:31 @agent_ppo.py:62][0m Update time: 2.6855790615081787
+[32m[20221128 23:36:31 @agent_ppo.py:67][0m Evaluation time: 0.12456607818603516
+[32m[20221128 23:36:31 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:36:31 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:36:31 @pendulum_agent.py:130][0m Total time: 3.425153970718384
+[32m[20221128 23:36:31 @pendulum_agent.py:132][0m 5950000 total steps have happened
+[32m[20221128 23:36:31 @pendulum_agent.py:122][0m #------------------------ Iteration 119 --------------------------#
+[32m[20221128 23:36:32 @agent_ppo.py:57][0m Sample time: 0.6701769828796387
+[32m[20221128 23:36:35 @agent_ppo.py:62][0m Update time: 2.701284885406494
+[32m[20221128 23:36:35 @agent_ppo.py:67][0m Evaluation time: 0.14786791801452637
+[32m[20221128 23:36:35 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:36:35 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:36:35 @pendulum_agent.py:130][0m Total time: 3.5325961112976074
+[32m[20221128 23:36:35 @pendulum_agent.py:132][0m 6000000 total steps have happened
+[32m[20221128 23:36:35 @pendulum_agent.py:122][0m #------------------------ Iteration 120 --------------------------#
+[32m[20221128 23:36:35 @agent_ppo.py:57][0m Sample time: 0.6183269023895264
+[32m[20221128 23:36:38 @agent_ppo.py:62][0m Update time: 2.6798901557922363
+[32m[20221128 23:36:38 @agent_ppo.py:67][0m Evaluation time: 0.12178683280944824
+[32m[20221128 23:36:38 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:36:38 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:36:38 @pendulum_agent.py:130][0m Total time: 3.4346539974212646
+[32m[20221128 23:36:38 @pendulum_agent.py:132][0m 6050000 total steps have happened
+[32m[20221128 23:36:38 @pendulum_agent.py:122][0m #------------------------ Iteration 121 --------------------------#
+[32m[20221128 23:36:39 @agent_ppo.py:57][0m Sample time: 0.6331980228424072
+[32m[20221128 23:36:41 @agent_ppo.py:62][0m Update time: 2.696133852005005
+[32m[20221128 23:36:42 @agent_ppo.py:67][0m Evaluation time: 0.13213014602661133
+[32m[20221128 23:36:42 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:36:42 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:36:42 @pendulum_agent.py:130][0m Total time: 3.475119113922119
+[32m[20221128 23:36:42 @pendulum_agent.py:132][0m 6100000 total steps have happened
+[32m[20221128 23:36:42 @pendulum_agent.py:122][0m #------------------------ Iteration 122 --------------------------#
+[32m[20221128 23:36:42 @agent_ppo.py:57][0m Sample time: 0.6655309200286865
+[32m[20221128 23:36:45 @agent_ppo.py:62][0m Update time: 2.676724910736084
+[32m[20221128 23:36:45 @agent_ppo.py:67][0m Evaluation time: 0.12691617012023926
+[32m[20221128 23:36:45 @pendulum_agent.py:126][0m Average TRAINING episode reward: 16.0
+[32m[20221128 23:36:45 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 64.0
+[32m[20221128 23:36:45 @pendulum_agent.py:130][0m Total time: 3.4831149578094482
+[32m[20221128 23:36:45 @pendulum_agent.py:132][0m 6150000 total steps have happened
+[32m[20221128 23:36:45 @pendulum_agent.py:122][0m #------------------------ Iteration 123 --------------------------#
+[32m[20221128 23:36:46 @agent_ppo.py:57][0m Sample time: 0.6222348213195801
+[32m[20221128 23:36:48 @agent_ppo.py:62][0m Update time: 2.708575963973999
+[32m[20221128 23:36:49 @agent_ppo.py:67][0m Evaluation time: 0.12834620475769043
+[32m[20221128 23:36:49 @pendulum_agent.py:126][0m Average TRAINING episode reward: 14.64
+[32m[20221128 23:36:49 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:36:49 @pendulum_agent.py:130][0m Total time: 3.473555088043213
+[32m[20221128 23:36:49 @pendulum_agent.py:132][0m 6200000 total steps have happened
+[32m[20221128 23:36:49 @pendulum_agent.py:122][0m #------------------------ Iteration 124 --------------------------#
+[32m[20221128 23:36:49 @agent_ppo.py:57][0m Sample time: 0.6261630058288574
+[32m[20221128 23:36:52 @agent_ppo.py:62][0m Update time: 2.702816963195801
+[32m[20221128 23:36:52 @agent_ppo.py:67][0m Evaluation time: 0.13223600387573242
+[32m[20221128 23:36:52 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:36:52 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:36:52 @pendulum_agent.py:130][0m Total time: 3.474263906478882
+[32m[20221128 23:36:52 @pendulum_agent.py:132][0m 6250000 total steps have happened
+[32m[20221128 23:36:52 @pendulum_agent.py:122][0m #------------------------ Iteration 125 --------------------------#
+[32m[20221128 23:36:53 @agent_ppo.py:57][0m Sample time: 0.6892600059509277
+[32m[20221128 23:36:55 @agent_ppo.py:62][0m Update time: 2.717618227005005
+[32m[20221128 23:36:56 @agent_ppo.py:67][0m Evaluation time: 0.1290607452392578
+[32m[20221128 23:36:56 @pendulum_agent.py:126][0m Average TRAINING episode reward: 12.0
+[32m[20221128 23:36:56 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 57.0
+[32m[20221128 23:36:56 @pendulum_agent.py:130][0m Total time: 3.5499680042266846
+[32m[20221128 23:36:56 @pendulum_agent.py:132][0m 6300000 total steps have happened
+[32m[20221128 23:36:56 @pendulum_agent.py:122][0m #------------------------ Iteration 126 --------------------------#
+[32m[20221128 23:36:56 @agent_ppo.py:57][0m Sample time: 0.6185081005096436
+[32m[20221128 23:36:59 @agent_ppo.py:62][0m Update time: 2.7017312049865723
+[32m[20221128 23:36:59 @agent_ppo.py:67][0m Evaluation time: 0.13568687438964844
+[32m[20221128 23:36:59 @pendulum_agent.py:126][0m Average TRAINING episode reward: 9.8
+[32m[20221128 23:36:59 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:36:59 @pendulum_agent.py:130][0m Total time: 3.4695799350738525
+[32m[20221128 23:36:59 @pendulum_agent.py:132][0m 6350000 total steps have happened
+[32m[20221128 23:36:59 @pendulum_agent.py:122][0m #------------------------ Iteration 127 --------------------------#
+[32m[20221128 23:37:00 @agent_ppo.py:57][0m Sample time: 0.60573410987854
+[32m[20221128 23:37:02 @agent_ppo.py:62][0m Update time: 2.7367589473724365
+[32m[20221128 23:37:03 @agent_ppo.py:67][0m Evaluation time: 0.12727594375610352
+[32m[20221128 23:37:03 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:37:03 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:37:03 @pendulum_agent.py:130][0m Total time: 3.4838380813598633
+[32m[20221128 23:37:03 @pendulum_agent.py:132][0m 6400000 total steps have happened
+[32m[20221128 23:37:03 @pendulum_agent.py:122][0m #------------------------ Iteration 128 --------------------------#
+[32m[20221128 23:37:03 @agent_ppo.py:57][0m Sample time: 0.6754350662231445
+[32m[20221128 23:37:06 @agent_ppo.py:62][0m Update time: 2.7404720783233643
+[32m[20221128 23:37:06 @agent_ppo.py:67][0m Evaluation time: 0.12685275077819824
+[32m[20221128 23:37:06 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:37:06 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 56.0
+[32m[20221128 23:37:06 @pendulum_agent.py:130][0m Total time: 3.557029962539673
+[32m[20221128 23:37:06 @pendulum_agent.py:132][0m 6450000 total steps have happened
+[32m[20221128 23:37:06 @pendulum_agent.py:122][0m #------------------------ Iteration 129 --------------------------#
+[32m[20221128 23:37:07 @agent_ppo.py:57][0m Sample time: 0.6097753047943115
+[32m[20221128 23:37:09 @agent_ppo.py:62][0m Update time: 2.7174079418182373
+[32m[20221128 23:37:10 @agent_ppo.py:67][0m Evaluation time: 0.14095783233642578
+[32m[20221128 23:37:10 @pendulum_agent.py:126][0m Average TRAINING episode reward: 10.4
+[32m[20221128 23:37:10 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:37:10 @pendulum_agent.py:130][0m Total time: 3.4814939498901367
+[32m[20221128 23:37:10 @pendulum_agent.py:132][0m 6500000 total steps have happened
+[32m[20221128 23:37:10 @pendulum_agent.py:122][0m #------------------------ Iteration 130 --------------------------#
+[32m[20221128 23:37:10 @agent_ppo.py:57][0m Sample time: 0.6141691207885742
+[32m[20221128 23:37:13 @agent_ppo.py:62][0m Update time: 2.696074962615967
+[32m[20221128 23:37:13 @agent_ppo.py:67][0m Evaluation time: 0.12956595420837402
+[32m[20221128 23:37:13 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:37:13 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:37:13 @pendulum_agent.py:130][0m Total time: 3.454318046569824
+[32m[20221128 23:37:13 @pendulum_agent.py:132][0m 6550000 total steps have happened
+[32m[20221128 23:37:13 @pendulum_agent.py:122][0m #------------------------ Iteration 131 --------------------------#
+[32m[20221128 23:37:14 @agent_ppo.py:57][0m Sample time: 0.6791849136352539
+[32m[20221128 23:37:16 @agent_ppo.py:62][0m Update time: 2.6647629737854004
+[32m[20221128 23:37:17 @agent_ppo.py:67][0m Evaluation time: 0.13170695304870605
+[32m[20221128 23:37:17 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.8
+[32m[20221128 23:37:17 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:37:17 @pendulum_agent.py:130][0m Total time: 3.4879937171936035
+[32m[20221128 23:37:17 @pendulum_agent.py:132][0m 6600000 total steps have happened
+[32m[20221128 23:37:17 @pendulum_agent.py:122][0m #------------------------ Iteration 132 --------------------------#
+[32m[20221128 23:37:17 @agent_ppo.py:57][0m Sample time: 0.6335880756378174
+[32m[20221128 23:37:20 @agent_ppo.py:62][0m Update time: 2.697314977645874
+[32m[20221128 23:37:20 @agent_ppo.py:67][0m Evaluation time: 0.1268751621246338
+[32m[20221128 23:37:20 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.2
+[32m[20221128 23:37:20 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 59.0
+[32m[20221128 23:37:20 @pendulum_agent.py:130][0m Total time: 3.471177816390991
+[32m[20221128 23:37:20 @pendulum_agent.py:132][0m 6650000 total steps have happened
+[32m[20221128 23:37:20 @pendulum_agent.py:122][0m #------------------------ Iteration 133 --------------------------#
+[32m[20221128 23:37:21 @agent_ppo.py:57][0m Sample time: 0.6143550872802734
+[32m[20221128 23:37:23 @agent_ppo.py:62][0m Update time: 2.699369192123413
+[32m[20221128 23:37:23 @agent_ppo.py:67][0m Evaluation time: 0.12855768203735352
+[32m[20221128 23:37:23 @pendulum_agent.py:126][0m Average TRAINING episode reward: 25.6
+[32m[20221128 23:37:23 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:37:23 @pendulum_agent.py:130][0m Total time: 3.4559528827667236
+[32m[20221128 23:37:23 @pendulum_agent.py:132][0m 6700000 total steps have happened
+[32m[20221128 23:37:23 @pendulum_agent.py:122][0m #------------------------ Iteration 134 --------------------------#
+[32m[20221128 23:37:24 @agent_ppo.py:57][0m Sample time: 0.7072548866271973
+[32m[20221128 23:37:27 @agent_ppo.py:62][0m Update time: 2.7234561443328857
+[32m[20221128 23:37:27 @agent_ppo.py:67][0m Evaluation time: 0.12439084053039551
+[32m[20221128 23:37:27 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:37:27 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:37:27 @pendulum_agent.py:130][0m Total time: 3.5681068897247314
+[32m[20221128 23:37:27 @pendulum_agent.py:132][0m 6750000 total steps have happened
+[32m[20221128 23:37:27 @pendulum_agent.py:122][0m #------------------------ Iteration 135 --------------------------#
+[32m[20221128 23:37:28 @agent_ppo.py:57][0m Sample time: 0.6430702209472656
+[32m[20221128 23:37:30 @agent_ppo.py:62][0m Update time: 2.699399948120117
+[32m[20221128 23:37:30 @agent_ppo.py:67][0m Evaluation time: 0.1264641284942627
+[32m[20221128 23:37:31 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:37:31 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 59.0
+[32m[20221128 23:37:31 @pendulum_agent.py:130][0m Total time: 3.4819159507751465
+[32m[20221128 23:37:31 @pendulum_agent.py:132][0m 6800000 total steps have happened
+[32m[20221128 23:37:31 @pendulum_agent.py:122][0m #------------------------ Iteration 136 --------------------------#
+[32m[20221128 23:37:31 @agent_ppo.py:57][0m Sample time: 0.6226692199707031
+[32m[20221128 23:37:34 @agent_ppo.py:62][0m Update time: 2.690717935562134
+[32m[20221128 23:37:34 @agent_ppo.py:67][0m Evaluation time: 0.12587404251098633
+[32m[20221128 23:37:34 @pendulum_agent.py:126][0m Average TRAINING episode reward: 21.8
+[32m[20221128 23:37:34 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 73.0
+[32m[20221128 23:37:34 @pendulum_agent.py:130][0m Total time: 3.454090118408203
+[32m[20221128 23:37:34 @pendulum_agent.py:132][0m 6850000 total steps have happened
+[32m[20221128 23:37:34 @pendulum_agent.py:122][0m #------------------------ Iteration 137 --------------------------#
+[32m[20221128 23:37:35 @agent_ppo.py:57][0m Sample time: 0.6810102462768555
+[32m[20221128 23:37:37 @agent_ppo.py:62][0m Update time: 2.7010178565979004
+[32m[20221128 23:37:37 @agent_ppo.py:67][0m Evaluation time: 0.13301897048950195
+[32m[20221128 23:37:37 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:37:37 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:37:37 @pendulum_agent.py:130][0m Total time: 3.528433084487915
+[32m[20221128 23:37:37 @pendulum_agent.py:132][0m 6900000 total steps have happened
+[32m[20221128 23:37:37 @pendulum_agent.py:122][0m #------------------------ Iteration 138 --------------------------#
+[32m[20221128 23:37:38 @agent_ppo.py:57][0m Sample time: 0.6194612979888916
+[32m[20221128 23:37:41 @agent_ppo.py:62][0m Update time: 2.7069549560546875
+[32m[20221128 23:37:41 @agent_ppo.py:67][0m Evaluation time: 0.12508797645568848
+[32m[20221128 23:37:41 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:37:41 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 68.0
+[32m[20221128 23:37:41 @pendulum_agent.py:130][0m Total time: 3.466728925704956
+[32m[20221128 23:37:41 @pendulum_agent.py:132][0m 6950000 total steps have happened
+[32m[20221128 23:37:41 @pendulum_agent.py:122][0m #------------------------ Iteration 139 --------------------------#
+[32m[20221128 23:37:42 @agent_ppo.py:57][0m Sample time: 0.6123819351196289
+[32m[20221128 23:37:44 @agent_ppo.py:62][0m Update time: 2.6766011714935303
+[32m[20221128 23:37:44 @agent_ppo.py:67][0m Evaluation time: 0.12748408317565918
+[32m[20221128 23:37:44 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.0
+[32m[20221128 23:37:44 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:37:44 @pendulum_agent.py:130][0m Total time: 3.4314019680023193
+[32m[20221128 23:37:44 @pendulum_agent.py:132][0m 7000000 total steps have happened
+[32m[20221128 23:37:44 @pendulum_agent.py:122][0m #------------------------ Iteration 140 --------------------------#
+[32m[20221128 23:37:45 @agent_ppo.py:57][0m Sample time: 0.6811892986297607
+[32m[20221128 23:37:48 @agent_ppo.py:62][0m Update time: 2.7258918285369873
+[32m[20221128 23:37:48 @agent_ppo.py:67][0m Evaluation time: 0.12990713119506836
+[32m[20221128 23:37:48 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:37:48 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:37:48 @pendulum_agent.py:130][0m Total time: 3.5502572059631348
+[32m[20221128 23:37:48 @pendulum_agent.py:132][0m 7050000 total steps have happened
+[32m[20221128 23:37:48 @pendulum_agent.py:122][0m #------------------------ Iteration 141 --------------------------#
+[32m[20221128 23:37:49 @agent_ppo.py:57][0m Sample time: 0.6816351413726807
+[32m[20221128 23:37:51 @agent_ppo.py:62][0m Update time: 2.7255821228027344
+[32m[20221128 23:37:51 @agent_ppo.py:67][0m Evaluation time: 0.12307286262512207
+[32m[20221128 23:37:51 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:37:51 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:37:51 @pendulum_agent.py:130][0m Total time: 3.5435478687286377
+[32m[20221128 23:37:51 @pendulum_agent.py:132][0m 7100000 total steps have happened
+[32m[20221128 23:37:51 @pendulum_agent.py:122][0m #------------------------ Iteration 142 --------------------------#
+[32m[20221128 23:37:52 @agent_ppo.py:57][0m Sample time: 0.6132442951202393
+[32m[20221128 23:37:55 @agent_ppo.py:62][0m Update time: 2.7492218017578125
+[32m[20221128 23:37:55 @agent_ppo.py:67][0m Evaluation time: 0.13496184349060059
+[32m[20221128 23:37:55 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.2
+[32m[20221128 23:37:55 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 64.0
+[32m[20221128 23:37:55 @pendulum_agent.py:130][0m Total time: 3.5118119716644287
+[32m[20221128 23:37:55 @pendulum_agent.py:132][0m 7150000 total steps have happened
+[32m[20221128 23:37:55 @pendulum_agent.py:122][0m #------------------------ Iteration 143 --------------------------#
+[32m[20221128 23:37:56 @agent_ppo.py:57][0m Sample time: 0.6860828399658203
+[32m[20221128 23:37:58 @agent_ppo.py:62][0m Update time: 2.69909405708313
+[32m[20221128 23:37:59 @agent_ppo.py:67][0m Evaluation time: 0.13431119918823242
+[32m[20221128 23:37:59 @pendulum_agent.py:126][0m Average TRAINING episode reward: 14.8
+[32m[20221128 23:37:59 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 57.0
+[32m[20221128 23:37:59 @pendulum_agent.py:130][0m Total time: 3.5323851108551025
+[32m[20221128 23:37:59 @pendulum_agent.py:132][0m 7200000 total steps have happened
+[32m[20221128 23:37:59 @pendulum_agent.py:122][0m #------------------------ Iteration 144 --------------------------#
+[32m[20221128 23:37:59 @agent_ppo.py:57][0m Sample time: 0.6193490028381348
+[32m[20221128 23:38:02 @agent_ppo.py:62][0m Update time: 2.689556121826172
+[32m[20221128 23:38:02 @agent_ppo.py:67][0m Evaluation time: 0.1236257553100586
+[32m[20221128 23:38:02 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:38:02 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:38:02 @pendulum_agent.py:130][0m Total time: 3.446038007736206
+[32m[20221128 23:38:02 @pendulum_agent.py:132][0m 7250000 total steps have happened
+[32m[20221128 23:38:02 @pendulum_agent.py:122][0m #------------------------ Iteration 145 --------------------------#
+[32m[20221128 23:38:03 @agent_ppo.py:57][0m Sample time: 0.6087710857391357
+[32m[20221128 23:38:05 @agent_ppo.py:62][0m Update time: 2.6376848220825195
+[32m[20221128 23:38:05 @agent_ppo.py:67][0m Evaluation time: 0.1350572109222412
+[32m[20221128 23:38:05 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.4
+[32m[20221128 23:38:05 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:38:05 @pendulum_agent.py:130][0m Total time: 3.3950719833374023
+[32m[20221128 23:38:05 @pendulum_agent.py:132][0m 7300000 total steps have happened
+[32m[20221128 23:38:05 @pendulum_agent.py:122][0m #------------------------ Iteration 146 --------------------------#
+[32m[20221128 23:38:06 @agent_ppo.py:57][0m Sample time: 0.6913230419158936
+[32m[20221128 23:38:09 @agent_ppo.py:62][0m Update time: 2.6903610229492188
+[32m[20221128 23:38:09 @agent_ppo.py:67][0m Evaluation time: 0.13208293914794922
+[32m[20221128 23:38:09 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:38:09 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:38:09 @pendulum_agent.py:130][0m Total time: 3.527379035949707
+[32m[20221128 23:38:09 @pendulum_agent.py:132][0m 7350000 total steps have happened
+[32m[20221128 23:38:09 @pendulum_agent.py:122][0m #------------------------ Iteration 147 --------------------------#
+[32m[20221128 23:38:10 @agent_ppo.py:57][0m Sample time: 0.6176848411560059
+[32m[20221128 23:38:12 @agent_ppo.py:62][0m Update time: 2.6947803497314453
+[32m[20221128 23:38:12 @agent_ppo.py:67][0m Evaluation time: 0.12700176239013672
+[32m[20221128 23:38:12 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:38:12 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:38:12 @pendulum_agent.py:130][0m Total time: 3.4517440795898438
+[32m[20221128 23:38:12 @pendulum_agent.py:132][0m 7400000 total steps have happened
+[32m[20221128 23:38:12 @pendulum_agent.py:122][0m #------------------------ Iteration 148 --------------------------#
+[32m[20221128 23:38:13 @agent_ppo.py:57][0m Sample time: 0.6099069118499756
+[32m[20221128 23:38:16 @agent_ppo.py:62][0m Update time: 2.7050561904907227
+[32m[20221128 23:38:16 @agent_ppo.py:67][0m Evaluation time: 0.1423029899597168
+[32m[20221128 23:38:16 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.2
+[32m[20221128 23:38:16 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:38:16 @pendulum_agent.py:130][0m Total time: 3.469761610031128
+[32m[20221128 23:38:16 @pendulum_agent.py:132][0m 7450000 total steps have happened
+[32m[20221128 23:38:16 @pendulum_agent.py:122][0m #------------------------ Iteration 149 --------------------------#
+[32m[20221128 23:38:17 @agent_ppo.py:57][0m Sample time: 0.6822900772094727
+[32m[20221128 23:38:19 @agent_ppo.py:62][0m Update time: 2.715211868286133
+[32m[20221128 23:38:19 @agent_ppo.py:67][0m Evaluation time: 0.12857818603515625
+[32m[20221128 23:38:19 @pendulum_agent.py:126][0m Average TRAINING episode reward: 15.4
+[32m[20221128 23:38:19 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:38:19 @pendulum_agent.py:103][0m [4m[34mCRITICAL[0m Saving the interval checkpoint with rewards 73.00
+[32m[20221128 23:38:19 @pendulum_agent.py:130][0m Total time: 3.54066801071167
+[32m[20221128 23:38:19 @pendulum_agent.py:132][0m 7500000 total steps have happened
+[32m[20221128 23:38:19 @pendulum_agent.py:122][0m #------------------------ Iteration 150 --------------------------#
+[32m[20221128 23:38:20 @agent_ppo.py:57][0m Sample time: 0.6246049404144287
+[32m[20221128 23:38:23 @agent_ppo.py:62][0m Update time: 2.693145990371704
+[32m[20221128 23:38:23 @agent_ppo.py:67][0m Evaluation time: 0.13548612594604492
+[32m[20221128 23:38:23 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:38:23 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:38:23 @pendulum_agent.py:130][0m Total time: 3.466696262359619
+[32m[20221128 23:38:23 @pendulum_agent.py:132][0m 7550000 total steps have happened
+[32m[20221128 23:38:23 @pendulum_agent.py:122][0m #------------------------ Iteration 151 --------------------------#
+[32m[20221128 23:38:23 @agent_ppo.py:57][0m Sample time: 0.6233620643615723
+[32m[20221128 23:38:26 @agent_ppo.py:62][0m Update time: 2.692877769470215
+[32m[20221128 23:38:26 @agent_ppo.py:67][0m Evaluation time: 0.12997913360595703
+[32m[20221128 23:38:26 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.0
+[32m[20221128 23:38:26 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:38:26 @pendulum_agent.py:130][0m Total time: 3.4598307609558105
+[32m[20221128 23:38:26 @pendulum_agent.py:132][0m 7600000 total steps have happened
+[32m[20221128 23:38:26 @pendulum_agent.py:122][0m #------------------------ Iteration 152 --------------------------#
+[32m[20221128 23:38:27 @agent_ppo.py:57][0m Sample time: 0.6906068325042725
+[32m[20221128 23:38:30 @agent_ppo.py:62][0m Update time: 2.7315173149108887
+[32m[20221128 23:38:30 @agent_ppo.py:67][0m Evaluation time: 0.13385701179504395
+[32m[20221128 23:38:30 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.8
+[32m[20221128 23:38:30 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 57.0
+[32m[20221128 23:38:30 @pendulum_agent.py:130][0m Total time: 3.5679211616516113
+[32m[20221128 23:38:30 @pendulum_agent.py:132][0m 7650000 total steps have happened
+[32m[20221128 23:38:30 @pendulum_agent.py:122][0m #------------------------ Iteration 153 --------------------------#
+[32m[20221128 23:38:31 @agent_ppo.py:57][0m Sample time: 0.6286880970001221
+[32m[20221128 23:38:33 @agent_ppo.py:62][0m Update time: 2.691570997238159
+[32m[20221128 23:38:33 @agent_ppo.py:67][0m Evaluation time: 0.12526893615722656
+[32m[20221128 23:38:33 @pendulum_agent.py:126][0m Average TRAINING episode reward: 12.4
+[32m[20221128 23:38:33 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:38:33 @pendulum_agent.py:130][0m Total time: 3.458918809890747
+[32m[20221128 23:38:33 @pendulum_agent.py:132][0m 7700000 total steps have happened
+[32m[20221128 23:38:33 @pendulum_agent.py:122][0m #------------------------ Iteration 154 --------------------------#
+[32m[20221128 23:38:34 @agent_ppo.py:57][0m Sample time: 0.6043031215667725
+[32m[20221128 23:38:37 @agent_ppo.py:62][0m Update time: 2.6070070266723633
+[32m[20221128 23:38:37 @agent_ppo.py:67][0m Evaluation time: 0.1342170238494873
+[32m[20221128 23:38:37 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:38:37 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 69.0
+[32m[20221128 23:38:37 @pendulum_agent.py:130][0m Total time: 3.3589160442352295
+[32m[20221128 23:38:37 @pendulum_agent.py:132][0m 7750000 total steps have happened
+[32m[20221128 23:38:37 @pendulum_agent.py:122][0m #------------------------ Iteration 155 --------------------------#
+[32m[20221128 23:38:37 @agent_ppo.py:57][0m Sample time: 0.6857988834381104
+[32m[20221128 23:38:40 @agent_ppo.py:62][0m Update time: 2.665613889694214
+[32m[20221128 23:38:40 @agent_ppo.py:67][0m Evaluation time: 0.1318371295928955
+[32m[20221128 23:38:40 @pendulum_agent.py:126][0m Average TRAINING episode reward: 12.6
+[32m[20221128 23:38:40 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 79.0
+[32m[20221128 23:38:40 @pendulum_agent.py:109][0m [4m[34mCRITICAL[0m Get the best episode reward: 79.0
+[32m[20221128 23:38:40 @pendulum_agent.py:113][0m [4m[34mCRITICAL[0m Saving the best checkpoint with rewards 79.00
+[32m[20221128 23:38:40 @pendulum_agent.py:130][0m Total time: 3.4979989528656006
+[32m[20221128 23:38:40 @pendulum_agent.py:132][0m 7800000 total steps have happened
+[32m[20221128 23:38:40 @pendulum_agent.py:122][0m #------------------------ Iteration 156 --------------------------#
+[32m[20221128 23:38:41 @agent_ppo.py:57][0m Sample time: 0.6144912242889404
+[32m[20221128 23:38:44 @agent_ppo.py:62][0m Update time: 2.7149689197540283
+[32m[20221128 23:38:44 @agent_ppo.py:67][0m Evaluation time: 0.14438295364379883
+[32m[20221128 23:38:44 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:38:44 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:38:44 @pendulum_agent.py:130][0m Total time: 3.4861810207366943
+[32m[20221128 23:38:44 @pendulum_agent.py:132][0m 7850000 total steps have happened
+[32m[20221128 23:38:44 @pendulum_agent.py:122][0m #------------------------ Iteration 157 --------------------------#
+[32m[20221128 23:38:44 @agent_ppo.py:57][0m Sample time: 0.6019158363342285
+[32m[20221128 23:38:47 @agent_ppo.py:62][0m Update time: 2.7180960178375244
+[32m[20221128 23:38:47 @agent_ppo.py:67][0m Evaluation time: 0.1306462287902832
+[32m[20221128 23:38:47 @pendulum_agent.py:126][0m Average TRAINING episode reward: 23.66
+[32m[20221128 23:38:47 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:38:47 @pendulum_agent.py:130][0m Total time: 3.464124917984009
+[32m[20221128 23:38:47 @pendulum_agent.py:132][0m 7900000 total steps have happened
+[32m[20221128 23:38:47 @pendulum_agent.py:122][0m #------------------------ Iteration 158 --------------------------#
+[32m[20221128 23:38:48 @agent_ppo.py:57][0m Sample time: 0.7021670341491699
+[32m[20221128 23:38:51 @agent_ppo.py:62][0m Update time: 2.6916158199310303
+[32m[20221128 23:38:51 @agent_ppo.py:67][0m Evaluation time: 0.13597726821899414
+[32m[20221128 23:38:51 @pendulum_agent.py:126][0m Average TRAINING episode reward: 13.4
+[32m[20221128 23:38:51 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:38:51 @pendulum_agent.py:130][0m Total time: 3.5431149005889893
+[32m[20221128 23:38:51 @pendulum_agent.py:132][0m 7950000 total steps have happened
+[32m[20221128 23:38:51 @pendulum_agent.py:122][0m #------------------------ Iteration 159 --------------------------#
+[32m[20221128 23:38:51 @agent_ppo.py:57][0m Sample time: 0.6215970516204834
+[32m[20221128 23:38:54 @agent_ppo.py:62][0m Update time: 2.722532033920288
+[32m[20221128 23:38:54 @agent_ppo.py:67][0m Evaluation time: 0.1336350440979004
+[32m[20221128 23:38:54 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.2
+[32m[20221128 23:38:54 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 77.0
+[32m[20221128 23:38:54 @pendulum_agent.py:130][0m Total time: 3.4915378093719482
+[32m[20221128 23:38:54 @pendulum_agent.py:132][0m 8000000 total steps have happened
+[32m[20221128 23:38:54 @pendulum_agent.py:122][0m #------------------------ Iteration 160 --------------------------#
+[32m[20221128 23:38:55 @agent_ppo.py:57][0m Sample time: 0.6153740882873535
+[32m[20221128 23:38:57 @agent_ppo.py:62][0m Update time: 2.7005927562713623
+[32m[20221128 23:38:58 @agent_ppo.py:67][0m Evaluation time: 0.12917423248291016
+[32m[20221128 23:38:58 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.0
+[32m[20221128 23:38:58 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:38:58 @pendulum_agent.py:130][0m Total time: 3.460233211517334
+[32m[20221128 23:38:58 @pendulum_agent.py:132][0m 8050000 total steps have happened
+[32m[20221128 23:38:58 @pendulum_agent.py:122][0m #------------------------ Iteration 161 --------------------------#
+[32m[20221128 23:38:58 @agent_ppo.py:57][0m Sample time: 0.699970006942749
+[32m[20221128 23:39:01 @agent_ppo.py:62][0m Update time: 2.6221938133239746
+[32m[20221128 23:39:01 @agent_ppo.py:67][0m Evaluation time: 0.12604427337646484
+[32m[20221128 23:39:01 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:39:01 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:39:01 @pendulum_agent.py:130][0m Total time: 3.4616072177886963
+[32m[20221128 23:39:01 @pendulum_agent.py:132][0m 8100000 total steps have happened
+[32m[20221128 23:39:01 @pendulum_agent.py:122][0m #------------------------ Iteration 162 --------------------------#
+[32m[20221128 23:39:02 @agent_ppo.py:57][0m Sample time: 0.6224141120910645
+[32m[20221128 23:39:04 @agent_ppo.py:62][0m Update time: 2.6781671047210693
+[32m[20221128 23:39:05 @agent_ppo.py:67][0m Evaluation time: 0.1272890567779541
+[32m[20221128 23:39:05 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:39:05 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:39:05 @pendulum_agent.py:130][0m Total time: 3.4419190883636475
+[32m[20221128 23:39:05 @pendulum_agent.py:132][0m 8150000 total steps have happened
+[32m[20221128 23:39:05 @pendulum_agent.py:122][0m #------------------------ Iteration 163 --------------------------#
+[32m[20221128 23:39:05 @agent_ppo.py:57][0m Sample time: 0.6169421672821045
+[32m[20221128 23:39:08 @agent_ppo.py:62][0m Update time: 2.720879077911377
+[32m[20221128 23:39:08 @agent_ppo.py:67][0m Evaluation time: 0.13851499557495117
+[32m[20221128 23:39:08 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:39:08 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:39:08 @pendulum_agent.py:130][0m Total time: 3.490372896194458
+[32m[20221128 23:39:08 @pendulum_agent.py:132][0m 8200000 total steps have happened
+[32m[20221128 23:39:08 @pendulum_agent.py:122][0m #------------------------ Iteration 164 --------------------------#
+[32m[20221128 23:39:09 @agent_ppo.py:57][0m Sample time: 0.6748650074005127
+[32m[20221128 23:39:11 @agent_ppo.py:62][0m Update time: 2.659170150756836
+[32m[20221128 23:39:11 @agent_ppo.py:67][0m Evaluation time: 0.12739872932434082
+[32m[20221128 23:39:12 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:39:12 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:39:12 @pendulum_agent.py:130][0m Total time: 3.474717140197754
+[32m[20221128 23:39:12 @pendulum_agent.py:132][0m 8250000 total steps have happened
+[32m[20221128 23:39:12 @pendulum_agent.py:122][0m #------------------------ Iteration 165 --------------------------#
+[32m[20221128 23:39:12 @agent_ppo.py:57][0m Sample time: 0.6156101226806641
+[32m[20221128 23:39:15 @agent_ppo.py:62][0m Update time: 2.6795248985290527
+[32m[20221128 23:39:15 @agent_ppo.py:67][0m Evaluation time: 0.129302978515625
+[32m[20221128 23:39:15 @pendulum_agent.py:126][0m Average TRAINING episode reward: 24.8
+[32m[20221128 23:39:15 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:39:15 @pendulum_agent.py:130][0m Total time: 3.439112901687622
+[32m[20221128 23:39:15 @pendulum_agent.py:132][0m 8300000 total steps have happened
+[32m[20221128 23:39:15 @pendulum_agent.py:122][0m #------------------------ Iteration 166 --------------------------#
+[32m[20221128 23:39:16 @agent_ppo.py:57][0m Sample time: 0.6224861145019531
+[32m[20221128 23:39:18 @agent_ppo.py:62][0m Update time: 2.635118007659912
+[32m[20221128 23:39:18 @agent_ppo.py:67][0m Evaluation time: 0.1397700309753418
+[32m[20221128 23:39:18 @pendulum_agent.py:126][0m Average TRAINING episode reward: 10.2
+[32m[20221128 23:39:18 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 60.0
+[32m[20221128 23:39:18 @pendulum_agent.py:130][0m Total time: 3.4117002487182617
+[32m[20221128 23:39:18 @pendulum_agent.py:132][0m 8350000 total steps have happened
+[32m[20221128 23:39:18 @pendulum_agent.py:122][0m #------------------------ Iteration 167 --------------------------#
+[32m[20221128 23:39:19 @agent_ppo.py:57][0m Sample time: 0.673471212387085
+[32m[20221128 23:39:22 @agent_ppo.py:62][0m Update time: 2.668536901473999
+[32m[20221128 23:39:22 @agent_ppo.py:67][0m Evaluation time: 0.13176584243774414
+[32m[20221128 23:39:22 @pendulum_agent.py:126][0m Average TRAINING episode reward: 22.8
+[32m[20221128 23:39:22 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:39:22 @pendulum_agent.py:130][0m Total time: 3.4875080585479736
+[32m[20221128 23:39:22 @pendulum_agent.py:132][0m 8400000 total steps have happened
+[32m[20221128 23:39:22 @pendulum_agent.py:122][0m #------------------------ Iteration 168 --------------------------#
+[32m[20221128 23:39:22 @agent_ppo.py:57][0m Sample time: 0.630267858505249
+[32m[20221128 23:39:25 @agent_ppo.py:62][0m Update time: 2.6858222484588623
+[32m[20221128 23:39:25 @agent_ppo.py:67][0m Evaluation time: 0.13316893577575684
+[32m[20221128 23:39:25 @pendulum_agent.py:126][0m Average TRAINING episode reward: 34.4
+[32m[20221128 23:39:25 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:39:25 @pendulum_agent.py:130][0m Total time: 3.461275815963745
+[32m[20221128 23:39:25 @pendulum_agent.py:132][0m 8450000 total steps have happened
+[32m[20221128 23:39:25 @pendulum_agent.py:122][0m #------------------------ Iteration 169 --------------------------#
+[32m[20221128 23:39:26 @agent_ppo.py:57][0m Sample time: 0.637902021408081
+[32m[20221128 23:39:29 @agent_ppo.py:62][0m Update time: 2.7119140625
+[32m[20221128 23:39:29 @agent_ppo.py:67][0m Evaluation time: 0.12987589836120605
+[32m[20221128 23:39:29 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.0
+[32m[20221128 23:39:29 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:39:29 @pendulum_agent.py:130][0m Total time: 3.4933218955993652
+[32m[20221128 23:39:29 @pendulum_agent.py:132][0m 8500000 total steps have happened
+[32m[20221128 23:39:29 @pendulum_agent.py:122][0m #------------------------ Iteration 170 --------------------------#
+[32m[20221128 23:39:30 @agent_ppo.py:57][0m Sample time: 0.7109458446502686
+[32m[20221128 23:39:32 @agent_ppo.py:62][0m Update time: 2.7113630771636963
+[32m[20221128 23:39:32 @agent_ppo.py:67][0m Evaluation time: 0.135847806930542
+[32m[20221128 23:39:32 @pendulum_agent.py:126][0m Average TRAINING episode reward: 25.4
+[32m[20221128 23:39:32 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:39:32 @pendulum_agent.py:130][0m Total time: 3.5712969303131104
+[32m[20221128 23:39:32 @pendulum_agent.py:132][0m 8550000 total steps have happened
+[32m[20221128 23:39:32 @pendulum_agent.py:122][0m #------------------------ Iteration 171 --------------------------#
+[32m[20221128 23:39:33 @agent_ppo.py:57][0m Sample time: 0.6072738170623779
+[32m[20221128 23:39:36 @agent_ppo.py:62][0m Update time: 2.693324089050293
+[32m[20221128 23:39:36 @agent_ppo.py:67][0m Evaluation time: 0.1310279369354248
+[32m[20221128 23:39:36 @pendulum_agent.py:126][0m Average TRAINING episode reward: 24.6
+[32m[20221128 23:39:36 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:39:36 @pendulum_agent.py:130][0m Total time: 3.4455130100250244
+[32m[20221128 23:39:36 @pendulum_agent.py:132][0m 8600000 total steps have happened
+[32m[20221128 23:39:36 @pendulum_agent.py:122][0m #------------------------ Iteration 172 --------------------------#
+[32m[20221128 23:39:36 @agent_ppo.py:57][0m Sample time: 0.6206169128417969
+[32m[20221128 23:39:39 @agent_ppo.py:62][0m Update time: 2.667196035385132
+[32m[20221128 23:39:39 @agent_ppo.py:67][0m Evaluation time: 0.132796049118042
+[32m[20221128 23:39:39 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.2
+[32m[20221128 23:39:39 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:39:39 @pendulum_agent.py:130][0m Total time: 3.434246063232422
+[32m[20221128 23:39:39 @pendulum_agent.py:132][0m 8650000 total steps have happened
+[32m[20221128 23:39:39 @pendulum_agent.py:122][0m #------------------------ Iteration 173 --------------------------#
+[32m[20221128 23:39:40 @agent_ppo.py:57][0m Sample time: 0.7121882438659668
+[32m[20221128 23:39:43 @agent_ppo.py:62][0m Update time: 2.678433895111084
+[32m[20221128 23:39:43 @agent_ppo.py:67][0m Evaluation time: 0.12862610816955566
+[32m[20221128 23:39:43 @pendulum_agent.py:126][0m Average TRAINING episode reward: 12.1
+[32m[20221128 23:39:43 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:39:43 @pendulum_agent.py:130][0m Total time: 3.532952070236206
+[32m[20221128 23:39:43 @pendulum_agent.py:132][0m 8700000 total steps have happened
+[32m[20221128 23:39:43 @pendulum_agent.py:122][0m #------------------------ Iteration 174 --------------------------#
+[32m[20221128 23:39:43 @agent_ppo.py:57][0m Sample time: 0.609661340713501
+[32m[20221128 23:39:46 @agent_ppo.py:62][0m Update time: 2.684581756591797
+[32m[20221128 23:39:46 @agent_ppo.py:67][0m Evaluation time: 0.12799525260925293
+[32m[20221128 23:39:46 @pendulum_agent.py:126][0m Average TRAINING episode reward: 46.86
+[32m[20221128 23:39:46 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:39:46 @pendulum_agent.py:130][0m Total time: 3.4353771209716797
+[32m[20221128 23:39:46 @pendulum_agent.py:132][0m 8750000 total steps have happened
+[32m[20221128 23:39:46 @pendulum_agent.py:122][0m #------------------------ Iteration 175 --------------------------#
+[32m[20221128 23:39:47 @agent_ppo.py:57][0m Sample time: 0.611638069152832
+[32m[20221128 23:39:50 @agent_ppo.py:62][0m Update time: 2.6936330795288086
+[32m[20221128 23:39:50 @agent_ppo.py:67][0m Evaluation time: 0.1335768699645996
+[32m[20221128 23:39:50 @pendulum_agent.py:126][0m Average TRAINING episode reward: 12.24
+[32m[20221128 23:39:50 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:39:50 @pendulum_agent.py:130][0m Total time: 3.4522571563720703
+[32m[20221128 23:39:50 @pendulum_agent.py:132][0m 8800000 total steps have happened
+[32m[20221128 23:39:50 @pendulum_agent.py:122][0m #------------------------ Iteration 176 --------------------------#
+[32m[20221128 23:39:50 @agent_ppo.py:57][0m Sample time: 0.6766829490661621
+[32m[20221128 23:39:53 @agent_ppo.py:62][0m Update time: 2.705148935317993
+[32m[20221128 23:39:53 @agent_ppo.py:67][0m Evaluation time: 0.13222503662109375
+[32m[20221128 23:39:53 @pendulum_agent.py:126][0m Average TRAINING episode reward: 10.8
+[32m[20221128 23:39:53 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:39:53 @pendulum_agent.py:130][0m Total time: 3.5285422801971436
+[32m[20221128 23:39:53 @pendulum_agent.py:132][0m 8850000 total steps have happened
+[32m[20221128 23:39:53 @pendulum_agent.py:122][0m #------------------------ Iteration 177 --------------------------#
+[32m[20221128 23:39:54 @agent_ppo.py:57][0m Sample time: 0.6144199371337891
+[32m[20221128 23:39:57 @agent_ppo.py:62][0m Update time: 2.6876699924468994
+[32m[20221128 23:39:57 @agent_ppo.py:67][0m Evaluation time: 0.12933897972106934
+[32m[20221128 23:39:57 @pendulum_agent.py:126][0m Average TRAINING episode reward: 10.4
+[32m[20221128 23:39:57 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 77.0
+[32m[20221128 23:39:57 @pendulum_agent.py:130][0m Total time: 3.4443161487579346
+[32m[20221128 23:39:57 @pendulum_agent.py:132][0m 8900000 total steps have happened
+[32m[20221128 23:39:57 @pendulum_agent.py:122][0m #------------------------ Iteration 178 --------------------------#
+[32m[20221128 23:39:57 @agent_ppo.py:57][0m Sample time: 0.6266438961029053
+[32m[20221128 23:40:00 @agent_ppo.py:62][0m Update time: 2.671861171722412
+[32m[20221128 23:40:00 @agent_ppo.py:67][0m Evaluation time: 0.13133478164672852
+[32m[20221128 23:40:00 @pendulum_agent.py:126][0m Average TRAINING episode reward: 13.0
+[32m[20221128 23:40:00 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 66.0
+[32m[20221128 23:40:00 @pendulum_agent.py:130][0m Total time: 3.442938804626465
+[32m[20221128 23:40:00 @pendulum_agent.py:132][0m 8950000 total steps have happened
+[32m[20221128 23:40:00 @pendulum_agent.py:122][0m #------------------------ Iteration 179 --------------------------#
+[32m[20221128 23:40:01 @agent_ppo.py:57][0m Sample time: 0.7156620025634766
+[32m[20221128 23:40:04 @agent_ppo.py:62][0m Update time: 2.7084341049194336
+[32m[20221128 23:40:04 @agent_ppo.py:67][0m Evaluation time: 0.12978577613830566
+[32m[20221128 23:40:04 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.2
+[32m[20221128 23:40:04 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 63.0
+[32m[20221128 23:40:04 @pendulum_agent.py:130][0m Total time: 3.5663437843322754
+[32m[20221128 23:40:04 @pendulum_agent.py:132][0m 9000000 total steps have happened
+[32m[20221128 23:40:04 @pendulum_agent.py:122][0m #------------------------ Iteration 180 --------------------------#
+[32m[20221128 23:40:04 @agent_ppo.py:57][0m Sample time: 0.6237912178039551
+[32m[20221128 23:40:07 @agent_ppo.py:62][0m Update time: 2.727867841720581
+[32m[20221128 23:40:07 @agent_ppo.py:67][0m Evaluation time: 0.13043618202209473
+[32m[20221128 23:40:07 @pendulum_agent.py:126][0m Average TRAINING episode reward: 23.3
+[32m[20221128 23:40:07 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:40:07 @pendulum_agent.py:130][0m Total time: 3.493933916091919
+[32m[20221128 23:40:07 @pendulum_agent.py:132][0m 9050000 total steps have happened
+[32m[20221128 23:40:07 @pendulum_agent.py:122][0m #------------------------ Iteration 181 --------------------------#
+[32m[20221128 23:40:08 @agent_ppo.py:57][0m Sample time: 0.6078441143035889
+[32m[20221128 23:40:10 @agent_ppo.py:62][0m Update time: 2.6675379276275635
+[32m[20221128 23:40:11 @agent_ppo.py:67][0m Evaluation time: 0.12629079818725586
+[32m[20221128 23:40:11 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:40:11 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:40:11 @pendulum_agent.py:130][0m Total time: 3.414919137954712
+[32m[20221128 23:40:11 @pendulum_agent.py:132][0m 9100000 total steps have happened
+[32m[20221128 23:40:11 @pendulum_agent.py:122][0m #------------------------ Iteration 182 --------------------------#
+[32m[20221128 23:40:11 @agent_ppo.py:57][0m Sample time: 0.6729919910430908
+[32m[20221128 23:40:14 @agent_ppo.py:62][0m Update time: 2.7034430503845215
+[32m[20221128 23:40:14 @agent_ppo.py:67][0m Evaluation time: 0.13931989669799805
+[32m[20221128 23:40:14 @pendulum_agent.py:126][0m Average TRAINING episode reward: 10.6
+[32m[20221128 23:40:14 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:40:14 @pendulum_agent.py:130][0m Total time: 3.528512954711914
+[32m[20221128 23:40:14 @pendulum_agent.py:132][0m 9150000 total steps have happened
+[32m[20221128 23:40:14 @pendulum_agent.py:122][0m #------------------------ Iteration 183 --------------------------#
+[32m[20221128 23:40:15 @agent_ppo.py:57][0m Sample time: 0.6473979949951172
+[32m[20221128 23:40:17 @agent_ppo.py:62][0m Update time: 2.6901330947875977
+[32m[20221128 23:40:18 @agent_ppo.py:67][0m Evaluation time: 0.12365078926086426
+[32m[20221128 23:40:18 @pendulum_agent.py:126][0m Average TRAINING episode reward: 23.2
+[32m[20221128 23:40:18 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:40:18 @pendulum_agent.py:130][0m Total time: 3.4745028018951416
+[32m[20221128 23:40:18 @pendulum_agent.py:132][0m 9200000 total steps have happened
+[32m[20221128 23:40:18 @pendulum_agent.py:122][0m #------------------------ Iteration 184 --------------------------#
+[32m[20221128 23:40:18 @agent_ppo.py:57][0m Sample time: 0.62811279296875
+[32m[20221128 23:40:21 @agent_ppo.py:62][0m Update time: 2.672945022583008
+[32m[20221128 23:40:21 @agent_ppo.py:67][0m Evaluation time: 0.12790799140930176
+[32m[20221128 23:40:21 @pendulum_agent.py:126][0m Average TRAINING episode reward: 10.6
+[32m[20221128 23:40:21 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:40:21 @pendulum_agent.py:130][0m Total time: 3.4428229331970215
+[32m[20221128 23:40:21 @pendulum_agent.py:132][0m 9250000 total steps have happened
+[32m[20221128 23:40:21 @pendulum_agent.py:122][0m #------------------------ Iteration 185 --------------------------#
+[32m[20221128 23:40:22 @agent_ppo.py:57][0m Sample time: 0.6762003898620605
+[32m[20221128 23:40:24 @agent_ppo.py:62][0m Update time: 2.627105712890625
+[32m[20221128 23:40:24 @agent_ppo.py:67][0m Evaluation time: 0.1280219554901123
+[32m[20221128 23:40:24 @pendulum_agent.py:126][0m Average TRAINING episode reward: 37.74
+[32m[20221128 23:40:24 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:40:24 @pendulum_agent.py:130][0m Total time: 3.443272113800049
+[32m[20221128 23:40:24 @pendulum_agent.py:132][0m 9300000 total steps have happened
+[32m[20221128 23:40:24 @pendulum_agent.py:122][0m #------------------------ Iteration 186 --------------------------#
+[32m[20221128 23:40:25 @agent_ppo.py:57][0m Sample time: 0.6292905807495117
+[32m[20221128 23:40:28 @agent_ppo.py:62][0m Update time: 2.666520118713379
+[32m[20221128 23:40:28 @agent_ppo.py:67][0m Evaluation time: 0.12614130973815918
+[32m[20221128 23:40:28 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.0
+[32m[20221128 23:40:28 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 55.0
+[32m[20221128 23:40:28 @pendulum_agent.py:130][0m Total time: 3.4347379207611084
+[32m[20221128 23:40:28 @pendulum_agent.py:132][0m 9350000 total steps have happened
+[32m[20221128 23:40:28 @pendulum_agent.py:122][0m #------------------------ Iteration 187 --------------------------#
+[32m[20221128 23:40:29 @agent_ppo.py:57][0m Sample time: 0.5920581817626953
+[32m[20221128 23:40:31 @agent_ppo.py:62][0m Update time: 2.6434590816497803
+[32m[20221128 23:40:31 @agent_ppo.py:67][0m Evaluation time: 0.13248896598815918
+[32m[20221128 23:40:31 @pendulum_agent.py:126][0m Average TRAINING episode reward: 22.0
+[32m[20221128 23:40:31 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:40:31 @pendulum_agent.py:130][0m Total time: 3.3822221755981445
+[32m[20221128 23:40:31 @pendulum_agent.py:132][0m 9400000 total steps have happened
+[32m[20221128 23:40:31 @pendulum_agent.py:122][0m #------------------------ Iteration 188 --------------------------#
+[32m[20221128 23:40:32 @agent_ppo.py:57][0m Sample time: 0.6806561946868896
+[32m[20221128 23:40:35 @agent_ppo.py:62][0m Update time: 2.6203689575195312
+[32m[20221128 23:40:35 @agent_ppo.py:67][0m Evaluation time: 0.12387394905090332
+[32m[20221128 23:40:35 @pendulum_agent.py:126][0m Average TRAINING episode reward: 10.6
+[32m[20221128 23:40:35 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:40:35 @pendulum_agent.py:130][0m Total time: 3.43877911567688
+[32m[20221128 23:40:35 @pendulum_agent.py:132][0m 9450000 total steps have happened
+[32m[20221128 23:40:35 @pendulum_agent.py:122][0m #------------------------ Iteration 189 --------------------------#
+[32m[20221128 23:40:35 @agent_ppo.py:57][0m Sample time: 0.6386771202087402
+[32m[20221128 23:40:38 @agent_ppo.py:62][0m Update time: 2.6632399559020996
+[32m[20221128 23:40:38 @agent_ppo.py:67][0m Evaluation time: 0.14072799682617188
+[32m[20221128 23:40:38 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.2
+[32m[20221128 23:40:38 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:40:38 @pendulum_agent.py:130][0m Total time: 3.4549450874328613
+[32m[20221128 23:40:38 @pendulum_agent.py:132][0m 9500000 total steps have happened
+[32m[20221128 23:40:38 @pendulum_agent.py:122][0m #------------------------ Iteration 190 --------------------------#
+[32m[20221128 23:40:39 @agent_ppo.py:57][0m Sample time: 0.601146936416626
+[32m[20221128 23:40:41 @agent_ppo.py:62][0m Update time: 2.673488140106201
+[32m[20221128 23:40:42 @agent_ppo.py:67][0m Evaluation time: 0.1372370719909668
+[32m[20221128 23:40:42 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:40:42 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:40:42 @pendulum_agent.py:130][0m Total time: 3.425676107406616
+[32m[20221128 23:40:42 @pendulum_agent.py:132][0m 9550000 total steps have happened
+[32m[20221128 23:40:42 @pendulum_agent.py:122][0m #------------------------ Iteration 191 --------------------------#
+[32m[20221128 23:40:42 @agent_ppo.py:57][0m Sample time: 0.6969530582427979
+[32m[20221128 23:40:45 @agent_ppo.py:62][0m Update time: 2.639833688735962
+[32m[20221128 23:40:45 @agent_ppo.py:67][0m Evaluation time: 0.12731528282165527
+[32m[20221128 23:40:45 @pendulum_agent.py:126][0m Average TRAINING episode reward: 33.0
+[32m[20221128 23:40:45 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:40:45 @pendulum_agent.py:130][0m Total time: 3.476391077041626
+[32m[20221128 23:40:45 @pendulum_agent.py:132][0m 9600000 total steps have happened
+[32m[20221128 23:40:45 @pendulum_agent.py:122][0m #------------------------ Iteration 192 --------------------------#
+[32m[20221128 23:40:46 @agent_ppo.py:57][0m Sample time: 0.6568658351898193
+[32m[20221128 23:40:48 @agent_ppo.py:62][0m Update time: 2.685230016708374
+[32m[20221128 23:40:49 @agent_ppo.py:67][0m Evaluation time: 0.12670016288757324
+[32m[20221128 23:40:49 @pendulum_agent.py:126][0m Average TRAINING episode reward: 35.6
+[32m[20221128 23:40:49 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:40:49 @pendulum_agent.py:130][0m Total time: 3.4824697971343994
+[32m[20221128 23:40:49 @pendulum_agent.py:132][0m 9650000 total steps have happened
+[32m[20221128 23:40:49 @pendulum_agent.py:122][0m #------------------------ Iteration 193 --------------------------#
+[32m[20221128 23:40:49 @agent_ppo.py:57][0m Sample time: 0.6189491748809814
+[32m[20221128 23:40:52 @agent_ppo.py:62][0m Update time: 2.664766788482666
+[32m[20221128 23:40:52 @agent_ppo.py:67][0m Evaluation time: 0.12526607513427734
+[32m[20221128 23:40:52 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:40:52 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:40:52 @pendulum_agent.py:130][0m Total time: 3.4220478534698486
+[32m[20221128 23:40:52 @pendulum_agent.py:132][0m 9700000 total steps have happened
+[32m[20221128 23:40:52 @pendulum_agent.py:122][0m #------------------------ Iteration 194 --------------------------#
+[32m[20221128 23:40:53 @agent_ppo.py:57][0m Sample time: 0.7049181461334229
+[32m[20221128 23:40:55 @agent_ppo.py:62][0m Update time: 2.671271800994873
+[32m[20221128 23:40:56 @agent_ppo.py:67][0m Evaluation time: 0.13938617706298828
+[32m[20221128 23:40:56 @pendulum_agent.py:126][0m Average TRAINING episode reward: 11.4
+[32m[20221128 23:40:56 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:40:56 @pendulum_agent.py:130][0m Total time: 3.5290260314941406
+[32m[20221128 23:40:56 @pendulum_agent.py:132][0m 9750000 total steps have happened
+[32m[20221128 23:40:56 @pendulum_agent.py:122][0m #------------------------ Iteration 195 --------------------------#
+[32m[20221128 23:40:56 @agent_ppo.py:57][0m Sample time: 0.6329658031463623
+[32m[20221128 23:40:59 @agent_ppo.py:62][0m Update time: 2.668335199356079
+[32m[20221128 23:40:59 @agent_ppo.py:67][0m Evaluation time: 0.1252279281616211
+[32m[20221128 23:40:59 @pendulum_agent.py:126][0m Average TRAINING episode reward: 12.2
+[32m[20221128 23:40:59 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:40:59 @pendulum_agent.py:130][0m Total time: 3.439154863357544
+[32m[20221128 23:40:59 @pendulum_agent.py:132][0m 9800000 total steps have happened
+[32m[20221128 23:40:59 @pendulum_agent.py:122][0m #------------------------ Iteration 196 --------------------------#
+[32m[20221128 23:41:00 @agent_ppo.py:57][0m Sample time: 0.6182742118835449
+[32m[20221128 23:41:02 @agent_ppo.py:62][0m Update time: 2.6675238609313965
+[32m[20221128 23:41:02 @agent_ppo.py:67][0m Evaluation time: 0.1328420639038086
+[32m[20221128 23:41:02 @pendulum_agent.py:126][0m Average TRAINING episode reward: 25.0
+[32m[20221128 23:41:02 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:41:02 @pendulum_agent.py:130][0m Total time: 3.431440830230713
+[32m[20221128 23:41:02 @pendulum_agent.py:132][0m 9850000 total steps have happened
+[32m[20221128 23:41:02 @pendulum_agent.py:122][0m #------------------------ Iteration 197 --------------------------#
+[32m[20221128 23:41:03 @agent_ppo.py:57][0m Sample time: 0.710486888885498
+[32m[20221128 23:41:06 @agent_ppo.py:62][0m Update time: 2.6424739360809326
+[32m[20221128 23:41:06 @agent_ppo.py:67][0m Evaluation time: 0.13604307174682617
+[32m[20221128 23:41:06 @pendulum_agent.py:126][0m Average TRAINING episode reward: 23.46
+[32m[20221128 23:41:06 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:41:06 @pendulum_agent.py:130][0m Total time: 3.50195574760437
+[32m[20221128 23:41:06 @pendulum_agent.py:132][0m 9900000 total steps have happened
+[32m[20221128 23:41:06 @pendulum_agent.py:122][0m #------------------------ Iteration 198 --------------------------#
+[32m[20221128 23:41:07 @agent_ppo.py:57][0m Sample time: 0.6449418067932129
+[32m[20221128 23:41:09 @agent_ppo.py:62][0m Update time: 2.6972341537475586
+[32m[20221128 23:41:09 @agent_ppo.py:67][0m Evaluation time: 0.12227988243103027
+[32m[20221128 23:41:09 @pendulum_agent.py:126][0m Average TRAINING episode reward: 14.0
+[32m[20221128 23:41:09 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:41:09 @pendulum_agent.py:130][0m Total time: 3.4776062965393066
+[32m[20221128 23:41:09 @pendulum_agent.py:132][0m 9950000 total steps have happened
+[32m[20221128 23:41:09 @pendulum_agent.py:122][0m #------------------------ Iteration 199 --------------------------#
+[32m[20221128 23:41:10 @agent_ppo.py:57][0m Sample time: 0.6200299263000488
+[32m[20221128 23:41:13 @agent_ppo.py:62][0m Update time: 2.693826198577881
+[32m[20221128 23:41:13 @agent_ppo.py:67][0m Evaluation time: 0.13076400756835938
+[32m[20221128 23:41:13 @pendulum_agent.py:126][0m Average TRAINING episode reward: 46.18
+[32m[20221128 23:41:13 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:41:13 @pendulum_agent.py:103][0m [4m[34mCRITICAL[0m Saving the interval checkpoint with rewards 79.00
+[32m[20221128 23:41:13 @pendulum_agent.py:130][0m Total time: 3.4578518867492676
+[32m[20221128 23:41:13 @pendulum_agent.py:132][0m 10000000 total steps have happened
+[32m[20221128 23:41:13 @pendulum_agent.py:122][0m #------------------------ Iteration 200 --------------------------#
+[32m[20221128 23:41:14 @agent_ppo.py:57][0m Sample time: 0.6923739910125732
+[32m[20221128 23:41:17 @agent_ppo.py:62][0m Update time: 2.9719111919403076
+[32m[20221128 23:41:17 @agent_ppo.py:67][0m Evaluation time: 0.19580483436584473
+[32m[20221128 23:41:17 @pendulum_agent.py:126][0m Average TRAINING episode reward: 35.68
+[32m[20221128 23:41:17 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 56.0
+[32m[20221128 23:41:17 @pendulum_agent.py:130][0m Total time: 3.8736798763275146
+[32m[20221128 23:41:17 @pendulum_agent.py:132][0m 10050000 total steps have happened
+[32m[20221128 23:41:17 @pendulum_agent.py:122][0m #------------------------ Iteration 201 --------------------------#
+[32m[20221128 23:41:18 @agent_ppo.py:57][0m Sample time: 1.5171442031860352
+[32m[20221128 23:41:21 @agent_ppo.py:62][0m Update time: 2.6552016735076904
+[32m[20221128 23:41:21 @agent_ppo.py:67][0m Evaluation time: 0.19536828994750977
+[32m[20221128 23:41:21 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:41:21 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:41:21 @pendulum_agent.py:130][0m Total time: 4.382313013076782
+[32m[20221128 23:41:21 @pendulum_agent.py:132][0m 10100000 total steps have happened
+[32m[20221128 23:41:21 @pendulum_agent.py:122][0m #------------------------ Iteration 202 --------------------------#
+[32m[20221128 23:41:22 @agent_ppo.py:57][0m Sample time: 0.6960852146148682
+[32m[20221128 23:41:24 @agent_ppo.py:62][0m Update time: 2.5796639919281006
+[32m[20221128 23:41:25 @agent_ppo.py:67][0m Evaluation time: 0.13635492324829102
+[32m[20221128 23:41:25 @pendulum_agent.py:126][0m Average TRAINING episode reward: 26.2
+[32m[20221128 23:41:25 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:41:25 @pendulum_agent.py:130][0m Total time: 3.425671100616455
+[32m[20221128 23:41:25 @pendulum_agent.py:132][0m 10150000 total steps have happened
+[32m[20221128 23:41:25 @pendulum_agent.py:122][0m #------------------------ Iteration 203 --------------------------#
+[32m[20221128 23:41:25 @agent_ppo.py:57][0m Sample time: 0.7483301162719727
+[32m[20221128 23:41:28 @agent_ppo.py:62][0m Update time: 2.6003010272979736
+[32m[20221128 23:41:28 @agent_ppo.py:67][0m Evaluation time: 0.14171171188354492
+[32m[20221128 23:41:28 @pendulum_agent.py:126][0m Average TRAINING episode reward: 24.0
+[32m[20221128 23:41:28 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:41:28 @pendulum_agent.py:130][0m Total time: 3.5075478553771973
+[32m[20221128 23:41:28 @pendulum_agent.py:132][0m 10200000 total steps have happened
+[32m[20221128 23:41:28 @pendulum_agent.py:122][0m #------------------------ Iteration 204 --------------------------#
+[32m[20221128 23:41:29 @agent_ppo.py:57][0m Sample time: 0.6858820915222168
+[32m[20221128 23:41:31 @agent_ppo.py:62][0m Update time: 2.704969882965088
+[32m[20221128 23:41:32 @agent_ppo.py:67][0m Evaluation time: 0.14536404609680176
+[32m[20221128 23:41:32 @pendulum_agent.py:126][0m Average TRAINING episode reward: 26.6
+[32m[20221128 23:41:32 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:41:32 @pendulum_agent.py:130][0m Total time: 3.548895835876465
+[32m[20221128 23:41:32 @pendulum_agent.py:132][0m 10250000 total steps have happened
+[32m[20221128 23:41:32 @pendulum_agent.py:122][0m #------------------------ Iteration 205 --------------------------#
+[32m[20221128 23:41:32 @agent_ppo.py:57][0m Sample time: 0.6199290752410889
+[32m[20221128 23:41:35 @agent_ppo.py:62][0m Update time: 2.6098082065582275
+[32m[20221128 23:41:35 @agent_ppo.py:67][0m Evaluation time: 0.14343881607055664
+[32m[20221128 23:41:35 @pendulum_agent.py:126][0m Average TRAINING episode reward: 12.6
+[32m[20221128 23:41:35 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 65.0
+[32m[20221128 23:41:35 @pendulum_agent.py:130][0m Total time: 3.3869240283966064
+[32m[20221128 23:41:35 @pendulum_agent.py:132][0m 10300000 total steps have happened
+[32m[20221128 23:41:35 @pendulum_agent.py:122][0m #------------------------ Iteration 206 --------------------------#
+[32m[20221128 23:41:36 @agent_ppo.py:57][0m Sample time: 0.7128548622131348
+[32m[20221128 23:41:38 @agent_ppo.py:62][0m Update time: 2.6664459705352783
+[32m[20221128 23:41:38 @agent_ppo.py:67][0m Evaluation time: 0.12417411804199219
+[32m[20221128 23:41:38 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:41:38 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:41:38 @pendulum_agent.py:130][0m Total time: 3.517606735229492
+[32m[20221128 23:41:38 @pendulum_agent.py:132][0m 10350000 total steps have happened
+[32m[20221128 23:41:38 @pendulum_agent.py:122][0m #------------------------ Iteration 207 --------------------------#
+[32m[20221128 23:41:39 @agent_ppo.py:57][0m Sample time: 0.6230752468109131
+[32m[20221128 23:41:42 @agent_ppo.py:62][0m Update time: 2.7044479846954346
+[32m[20221128 23:41:42 @agent_ppo.py:67][0m Evaluation time: 0.13476991653442383
+[32m[20221128 23:41:42 @pendulum_agent.py:126][0m Average TRAINING episode reward: 23.72
+[32m[20221128 23:41:42 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:41:42 @pendulum_agent.py:130][0m Total time: 3.4756879806518555
+[32m[20221128 23:41:42 @pendulum_agent.py:132][0m 10400000 total steps have happened
+[32m[20221128 23:41:42 @pendulum_agent.py:122][0m #------------------------ Iteration 208 --------------------------#
+[32m[20221128 23:41:43 @agent_ppo.py:57][0m Sample time: 0.6267969608306885
+[32m[20221128 23:41:45 @agent_ppo.py:62][0m Update time: 2.6448569297790527
+[32m[20221128 23:41:45 @agent_ppo.py:67][0m Evaluation time: 0.12786102294921875
+[32m[20221128 23:41:45 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:41:45 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:41:45 @pendulum_agent.py:130][0m Total time: 3.413965940475464
+[32m[20221128 23:41:45 @pendulum_agent.py:132][0m 10450000 total steps have happened
+[32m[20221128 23:41:45 @pendulum_agent.py:122][0m #------------------------ Iteration 209 --------------------------#
+[32m[20221128 23:41:46 @agent_ppo.py:57][0m Sample time: 0.7137777805328369
+[32m[20221128 23:41:49 @agent_ppo.py:62][0m Update time: 2.6650681495666504
+[32m[20221128 23:41:49 @agent_ppo.py:67][0m Evaluation time: 0.12343692779541016
+[32m[20221128 23:41:49 @pendulum_agent.py:126][0m Average TRAINING episode reward: 22.44
+[32m[20221128 23:41:49 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:41:49 @pendulum_agent.py:130][0m Total time: 3.51444411277771
+[32m[20221128 23:41:49 @pendulum_agent.py:132][0m 10500000 total steps have happened
+[32m[20221128 23:41:49 @pendulum_agent.py:122][0m #------------------------ Iteration 210 --------------------------#
+[32m[20221128 23:41:50 @agent_ppo.py:57][0m Sample time: 0.639472246170044
+[32m[20221128 23:41:52 @agent_ppo.py:62][0m Update time: 2.710641860961914
+[32m[20221128 23:41:52 @agent_ppo.py:67][0m Evaluation time: 0.13754701614379883
+[32m[20221128 23:41:52 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:41:52 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 71.0
+[32m[20221128 23:41:52 @pendulum_agent.py:130][0m Total time: 3.499582052230835
+[32m[20221128 23:41:52 @pendulum_agent.py:132][0m 10550000 total steps have happened
+[32m[20221128 23:41:52 @pendulum_agent.py:122][0m #------------------------ Iteration 211 --------------------------#
+[32m[20221128 23:41:53 @agent_ppo.py:57][0m Sample time: 0.621182918548584
+[32m[20221128 23:41:56 @agent_ppo.py:62][0m Update time: 2.616647958755493
+[32m[20221128 23:41:56 @agent_ppo.py:67][0m Evaluation time: 0.12259793281555176
+[32m[20221128 23:41:56 @pendulum_agent.py:126][0m Average TRAINING episode reward: 15.0
+[32m[20221128 23:41:56 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:41:56 @pendulum_agent.py:130][0m Total time: 3.3723928928375244
+[32m[20221128 23:41:56 @pendulum_agent.py:132][0m 10600000 total steps have happened
+[32m[20221128 23:41:56 @pendulum_agent.py:122][0m #------------------------ Iteration 212 --------------------------#
+[32m[20221128 23:41:56 @agent_ppo.py:57][0m Sample time: 0.7208371162414551
+[32m[20221128 23:41:59 @agent_ppo.py:62][0m Update time: 2.652972936630249
+[32m[20221128 23:41:59 @agent_ppo.py:67][0m Evaluation time: 0.1389632225036621
+[32m[20221128 23:41:59 @pendulum_agent.py:126][0m Average TRAINING episode reward: 0.0
+[32m[20221128 23:41:59 @pendulum_agent.py:127][0m Average EVALUATION episode reward: 0.0
+[32m[20221128 23:41:59 @pendulum_agent.py:130][0m Total time: 3.5267932415008545
+[32m[20221128 23:41:59 @pendulum_agent.py:132][0m 10650000 total steps have happened
+[32m[20221128 23:41:59 @pendulum_agent.py:122][0m #------------------------ Iteration 213 --------------------------#
+[32m[20221128 23:42:00 @agent_ppo.py:57][0m Sample time: 0.6464130878448486

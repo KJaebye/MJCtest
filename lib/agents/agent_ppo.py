@@ -104,9 +104,11 @@ class AgentPPO(Agent):
             values_pred = self.value_net(states)
             value_loss = (values_pred - returns).pow(2).mean()
             # print(value_loss)
-            # # weight decay
-            # for param in self.value_net.parameters():
-            #     value_loss += param.pow(2).sum() * self.l2_reg
+
+            # weight decay
+            for param in self.value_net.parameters():
+                value_loss += param.pow(2).sum() * self.l2_reg
+
             self.optimizer_value.zero_grad()
             value_loss.backward()
             self.optimizer_value.step()
