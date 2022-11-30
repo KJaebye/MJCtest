@@ -1,3 +1,9 @@
+# ------------------------------------------------------------------------------------------------------------------- #
+#   @description: Class Policy
+#   @author: Modified from khrylib by Ye Yuan, modified by Kangyao Huang
+#   @created date: 28.Nov.2022
+# ------------------------------------------------------------------------------------------------------------------- #
+
 import torch.nn as nn
 import torch
 import math
