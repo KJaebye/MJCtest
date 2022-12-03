@@ -33,12 +33,13 @@ value_weight_decay: 0.0
 
 l2_reg: 1e-3
 clip_epsilon: 0.2
-batch_size: 50000
-mini_batch_size: 2048
+entropy_coeff: 1.e-4
+batch_size: 5000
+mini_batch_size: 64
 optim_num_epoch: 10
-max_iter_num: 20000
+max_iter_num: 2000
 seed: 1
-save_model_interval: 50
+save_model_interval: 500
 
 
 obs_spec:

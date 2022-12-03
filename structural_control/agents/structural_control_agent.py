@@ -4,7 +4,7 @@
 #   @created date: 03.Nov.2022
 # ------------------------------------------------------------------------------------------------------------------- #
 
-from lib.agents.agent_ppo import AgentPPO
+from lib.agents.agent_ppo2 import AgentPPO
 from structural_control.envs.centipede import CentipedeEnv
 from lib.core.logger_rl import LoggerRL
 from lib.core.traj_batch import TrajBatch

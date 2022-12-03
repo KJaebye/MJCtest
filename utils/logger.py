@@ -50,7 +50,7 @@ class Logger(logging.Logger):
         self.args = args
         self.cfg = cfg
         # log output dir
-        self.output_dir = './tmp' if cfg.tmp else './results'
+        self.output_dir = './tmp'
         self.sub_dir = '/%s/%s' % (cfg.domain, cfg.task)
         self.time_str = datetime.now().strftime("%Y%m%d_%H%M%S")
         self.target_dir = '/' + self.time_str

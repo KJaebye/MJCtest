@@ -65,6 +65,7 @@ class Config:
 
         self.adv_clip = cfg.get('adv_clip', np.inf)
         self.l2_reg = cfg.get('l2_reg', 1e-3)
+        self.entropy_coeff = cfg.get('entropy_coeff', )
         self.clip_epsilon = cfg.get('clip_epsilon', 0.2)
         self.optim_num_epoch = cfg.get('optim_num_epoch', 10)
         self.batch_size = cfg.get('batch_size', 50000)

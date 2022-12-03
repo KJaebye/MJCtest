@@ -14,7 +14,7 @@ import time
 import numpy as np
 import torch
 
-from lib.agents.agent_ppo import AgentPPO
+from lib.agents.agent_ppo2 import AgentPPO2
 from lib.core.logger_rl import LoggerRL
 from lib.core.common import estimate_advantages
 from lib.core.memory import Memory
@@ -23,9 +23,10 @@ from structural_control.envs.pendulum import PendulumEnv
 from structural_control.networks.policy import Policy
 from structural_control.networks.value import Value
 from torch.utils.tensorboard import SummaryWriter
+from torch.autograd import Variable
 
 
-class PendulumAgent(AgentPPO):
+class PendulumAgent(AgentPPO2):
     def __init__(self, cfg, logger, dtype, device, num_threads, training=True, checkpoint=0):
         self.cfg = cfg
         self.logger = logger
@@ -45,13 +46,13 @@ class PendulumAgent(AgentPPO):
             self.load_checkpoint(checkpoint)
 
     def setup_env(self):
-        self.env = PendulumEnv(self.cfg, flat_observation=False)
+        # self.env = PendulumEnv(self.cfg, flat_observation=False)
 
-        # from dm_control import suite
-        # seed = 0
-        # np.random.seed(seed)
-        # torch.manual_seed(seed)
-        # self.env = suite.load(domain_name="pendulum", task_name="swingup", task_kwargs={'random': seed})
+        from dm_control import suite
+        seed = 0
+        np.random.seed(seed)
+        torch.manual_seed(seed)
+        self.env = suite.load(domain_name="pendulum", task_name="swingup", task_kwargs={'random': seed})
 
         observation_flat_dim = 0
         for k, v in self.env.task.get_observation(self.env.physics).items():
@@ -170,7 +171,6 @@ class PendulumAgent(AgentPPO):
             values_pred = self.value_net(states)
             value_loss = (values_pred - returns).pow(2).mean()
             self.tb_logger.add_scalar('value_loss', value_loss, iter)
-            # print(value_loss)
             # # weight decay
             # for param in self.value_net.parameters():
             #     value_loss += param.pow(2).sum() * self.l2_reg
@@ -180,10 +180,13 @@ class PendulumAgent(AgentPPO):
 
         """update policy"""
         log_probs = self.policy_net.get_log_prob(states, actions)
+        probs = torch.exp(log_probs)
+        entropy = torch.sum(-(log_probs * probs))
         ratio = torch.exp(log_probs - fixed_log_probs)
         surr1 = ratio * advantages
         surr2 = torch.clamp(ratio, 1.0 - self.clip_epsilon, 1.0 + self.clip_epsilon) * advantages
-        policy_surr = -torch.min(surr1, surr2).mean()
+        policy_surr = - torch.min(surr1, surr2).mean()
+        # policy_surr = - torch.min(surr1, surr2).mean() - self.cfg.entropy_coeff * entropy
         self.tb_logger.add_scalar('policy_loss', policy_surr, iter)
         self.optimizer_policy.zero_grad()
         policy_surr.backward()

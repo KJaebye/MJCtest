@@ -1,0 +1,3 @@
+[32m[20221203 20:29:33 @logger.py:105][0m Log file set to ./tmp/pendulum/swingup/20221203_202933/log/pendulum_swingup-20221203_202933.log
+[32m[20221203 20:29:33 @pendulum_trpo_agent.py:121][0m #------------------------ Iteration 0 --------------------------#
+[32m[20221203 20:29:33 @agent_trpo.py:164][0m Sample time: 0.35990095138549805

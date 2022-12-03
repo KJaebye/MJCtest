@@ -13,7 +13,7 @@ import time
 import numpy as np
 import torch
 
-from lib.agents.agent_ppo import AgentPPO
+from lib.agents.agent_ppo2 import AgentPPO
 from lib.core.logger_rl import LoggerRL
 from lib.core.traj_batch import TrajBatch
 from lib.core import torch_wrapper as torper
