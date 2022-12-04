@@ -65,13 +65,13 @@ class Config:
 
         self.adv_clip = cfg.get('adv_clip', np.inf)
         self.l2_reg = cfg.get('l2_reg', 1e-3)
-        self.entropy_coeff = cfg.get('entropy_coeff', )
+        self.entropy_coeff = cfg.get('entropy_coeff', 1.e-2)
         self.clip_epsilon = cfg.get('clip_epsilon', 0.2)
         self.optim_num_epoch = cfg.get('optim_num_epoch', 10)
-        self.batch_size = cfg.get('batch_size', 50000)
-        self.mini_batch_size = cfg.get('mini_batch_size', 2048)
-        self.eval_batch_size = cfg.get('eval_batch_size', 10000)
-        self.max_iter_num = cfg.get('max_iter_num', 100)
+        self.batch_size = cfg.get('batch_size', 2048)
+        self.eval_batch_size = cfg.get('eval_batch_size', 2048)
+        self.mini_batch_size = cfg.get('mini_batch_size', 64)
+        self.max_iter_num = cfg.get('max_iter_num', 1000)
         self.save_model_interval = cfg.get('save_model_interval', 100)
         self.seed = cfg.get('seed', 1)
 

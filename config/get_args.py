@@ -17,11 +17,9 @@ def get_args():
     parser.add_argument('--algo', type=str, default='PPO', help='algorithm to train the agent')
     parser.add_argument('--tmp', type=bool, default=True)
     parser.add_argument('--use_cuda', type=bool, default=False)
-    parser.add_argument('--render', type=bool, default=False)
 
     # training configuration
     parser.add_argument('--start_iter', default='0')
-    parser.add_argument('--gamma', type=float, default=.99, help='discount factor for value function')
     parser.add_argument('--num_threads', type=int, default=1)
 
     # settings for networks

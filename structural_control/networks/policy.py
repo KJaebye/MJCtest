@@ -4,10 +4,9 @@
 #   @created date: 28.Nov.2022
 # ------------------------------------------------------------------------------------------------------------------- #
 
+import math
 import torch.nn as nn
 import torch
-import math
-
 
 def normal_entropy(std):
     var = std.pow(2)

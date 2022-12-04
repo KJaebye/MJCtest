@@ -14,13 +14,8 @@ from structural_control.agents.pendulum_agent import PendulumAgent
 
 if __name__ == "__main__":
     args = get_args()
-
-    if args.render:
-        args.num_threads = 1
-
     """ load env configs and training settings """
     cfg = Config(args.domain, args.task, tmp=True, cfg_dict=None)
-
     """ set torch and cuda """
     dtype = torch.float64
     torch.set_default_dtype(dtype)

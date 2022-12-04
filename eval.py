@@ -45,8 +45,8 @@ if __name__ == "__main__":
     # only training generates log file
     logger.critical('Type of current running: Evaluation. No log file will be created')
 
-    # iter = 'best'
-    iter = 5900
+    iter = 'best'
+    # iter = 5000
 
     """ create agent """
     # agent = HopperAgent(cfg, logger, dtype=dtype, device=device, seed=cfg.seed, num_threads=1,
