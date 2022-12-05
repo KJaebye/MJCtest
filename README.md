@@ -4,7 +4,7 @@ This repo is for MuJoCo learning and PPO algorithm testing.
 ### Brief description:
 - RL algorithm kernal is wrapped in `/lib`; customized environment defined in `/structural_control`.
 - PPO2 algorithm is wrapped in `/lib/agents/agent_ppo2.py`, containing networks definition and parameters updating.
-- RL sampling part is wrapped in `/lib/agents/agent.py`, providing a multiprocessing method to sample data from MoJoCo.
+- RL sampling part is wrapped in `/lib/agents/agent.py`, providing a multiprocessing method to sample data from MuJoCo.
 - Mujoco dm_control environment is wrapped in `/lib/envs/mujoco_env.py`. To create a customized environment, inheriting
 and editing class `MujocoEnv`, `MujocoPhysics`, `MujocoTask`.
 
@@ -13,25 +13,25 @@ and editing class `MujocoEnv`, `MujocoPhysics`, `MujocoTask`.
 - Using .yml config file to manage hyperparameters.
 - Using argparse module to manage frequently changed variables.
 - Using tensorboard module for supervision.
-- Providing a well organized `/lib` module for PPO reinforcement learning realised by the newest version of pytorch 
+- Providing a well organized `lib` module for PPO reinforcement learning realised by the newest version of pytorch 
 (until 01.Dec.2022).
 - Providing a native `dm_control.viewer` method for visualization.
 
 ----
 # Folder Structure
 
-**/assets** directory includes all robots models in .urdf, .xml, .mjb, .txt formats.
+`/assets` directory includes all robots models in .urdf, .xml, .mjb, .txt formats.
 
-**/config** directory include settings .yml files for training, located at **/config/cfg**. Besides, **get_args.py** 
+`/config` directory include settings .yml files for training, located at **/config/cfg**. Besides, **get_args.py** 
 parses commands from terminal, **config.py** loads .yml files.
 
-**/utils** includes formatted logger, and other useful modules but less related to RL core algorithm.
+`/utils` includes formatted logger, and other useful modules but less related to RL core algorithm.
 
-**/lib** includes all RL related core modules.
+`/lib` includes all RL related core modules.
 
-**/tmp** is the logging file directory, including log file, saved models, and `/tb` directory.
+`/tmp` is the logging file directory, including log file, saved models, and `/tb` directory.
 
-**/structural_control** is the customized agent and env that inherits from lib.
+`/structural_control` includes the customized agent and env that inherits from `lib`.
 
 > Please note that: results are generated in **/tmp** in default, classified by domain and task.
 ----------------------
@@ -41,11 +41,13 @@ Training:
 ```commandline
 python train.py --domain pendulum --task swingup --num_threads 10
 ```
+![avatar](utils/logging.jpg)
 Evaluation and visualization:
 ```commandline
 python eval.py --domain pendulum --task swingup --rec 20221205_110244 --iter best
 ```
-
+![avatar](utils/eval_logging.jpg)
+![avatar](utils/pendulum.jpg)
 ----------------------
 # Environment
 

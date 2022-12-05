@@ -34,7 +34,7 @@ class PendulumAgent(AgentPPO2):
         # seed = 0
         # np.random.seed(seed)
         # torch.manual_seed(seed)
-        # self.env = suite.load(domain_name="pendulum", task_name="swingup", task_kwargs={'random': seed})
+        # self.env = suite.load(domain_name="pendulum.jpg", task_name="swingup", task_kwargs={'random': seed})
 
         observation_flat_dim = 0
         for k, v in self.env.task.get_observation(self.env.physics).items():

@@ -1,0 +1,47 @@
+[32m[20221205 20:28:38 @logger.py:105][0m Log file set to ./tmp/pendulum/swingup/20221205_202838/log/pendulum_swingup-20221205_202838.log
+[32m[20221205 20:28:38 @agent_ppo2.py:116][0m #------------------------ Iteration 0 --------------------------#
+[32m[20221205 20:28:39 @agent_ppo2.py:122][0m Sampling time: 0.24 s by 1 slaves
+[32m[20221205 20:28:39 @agent_ppo2.py:156][0m |      policy_loss |       value_loss |          entropy |
+[32m[20221205 20:28:39 @agent_ppo2.py:180][0m |          -0.0007 |           0.0845 |          21.1147 |
+[32m[20221205 20:28:39 @agent_ppo2.py:180][0m |          -0.0040 |           0.0671 |          21.1094 |
+[32m[20221205 20:28:39 @agent_ppo2.py:180][0m |          -0.0040 |           0.0551 |          21.0990 |
+[32m[20221205 20:28:39 @agent_ppo2.py:180][0m |          -0.0047 |           0.0468 |          21.0830 |
+[32m[20221205 20:28:39 @agent_ppo2.py:180][0m |          -0.0053 |           0.0409 |          21.0768 |
+[32m[20221205 20:28:39 @agent_ppo2.py:180][0m |          -0.0046 |           0.0364 |          21.0770 |
+[32m[20221205 20:28:39 @agent_ppo2.py:180][0m |          -0.0054 |           0.0329 |          21.0681 |
+[32m[20221205 20:28:39 @agent_ppo2.py:180][0m |          -0.0063 |           0.0300 |          21.0459 |
+[32m[20221205 20:28:39 @agent_ppo2.py:180][0m |          -0.0064 |           0.0276 |          21.0638 |
+[32m[20221205 20:28:39 @agent_ppo2.py:180][0m |          -0.0059 |           0.0254 |          21.0366 |
+[32m[20221205 20:28:39 @agent_ppo2.py:125][0m Policy update time: 0.70 s
+[32m[20221205 20:28:39 @agent_ppo2.py:133][0m Average TRAINING episode reward: 0.00
+[32m[20221205 20:28:39 @agent_ppo2.py:134][0m Maximum TRAINING episode reward: 0.00
+[32m[20221205 20:28:39 @agent_ppo2.py:135][0m Average EVALUATION episode reward: 0.00
+[32m[20221205 20:28:39 @agent_ppo2.py:104][0m [4m[34mCRITICAL[0m Get the best episode reward: 0.00
+[32m[20221205 20:28:39 @agent_ppo2.py:108][0m [4m[34mCRITICAL[0m Saving the best checkpoint with rewards 0.00
+[32m[20221205 20:28:39 @agent_ppo2.py:138][0m Total time:       0.02 min
+[32m[20221205 20:28:39 @agent_ppo2.py:140][0m 2048 total steps have happened
+[32m[20221205 20:28:39 @agent_ppo2.py:116][0m #------------------------ Iteration 1 --------------------------#
+[32m[20221205 20:28:40 @agent_ppo2.py:122][0m Sampling time: 0.22 s by 1 slaves
+[32m[20221205 20:28:40 @agent_ppo2.py:156][0m |      policy_loss |       value_loss |          entropy |
+[32m[20221205 20:28:40 @agent_ppo2.py:180][0m |          -0.0005 |           0.0234 |          20.9746 |
+[32m[20221205 20:28:40 @agent_ppo2.py:180][0m |          -0.0017 |           0.0216 |          20.9658 |
+[32m[20221205 20:28:40 @agent_ppo2.py:180][0m |          -0.0011 |           0.0199 |          20.9420 |
+[32m[20221205 20:28:40 @agent_ppo2.py:180][0m |          -0.0029 |           0.0184 |          20.9380 |
+[32m[20221205 20:28:40 @agent_ppo2.py:180][0m |          -0.0014 |           0.0169 |          20.9281 |
+[32m[20221205 20:28:40 @agent_ppo2.py:180][0m |          -0.0028 |           0.0156 |          20.9172 |
+[32m[20221205 20:28:40 @agent_ppo2.py:180][0m |          -0.0035 |           0.0143 |          20.8988 |
+[32m[20221205 20:28:40 @agent_ppo2.py:180][0m |          -0.0033 |           0.0132 |          20.8989 |
+[32m[20221205 20:28:40 @agent_ppo2.py:180][0m |          -0.0029 |           0.0121 |          20.8824 |
+[32m[20221205 20:28:40 @agent_ppo2.py:180][0m |          -0.0035 |           0.0111 |          20.8623 |
+[32m[20221205 20:28:40 @agent_ppo2.py:125][0m Policy update time: 0.66 s
+[32m[20221205 20:28:41 @agent_ppo2.py:133][0m Average TRAINING episode reward: 0.00
+[32m[20221205 20:28:41 @agent_ppo2.py:134][0m Maximum TRAINING episode reward: 0.00
+[32m[20221205 20:28:41 @agent_ppo2.py:135][0m Average EVALUATION episode reward: 0.00
+[32m[20221205 20:28:41 @agent_ppo2.py:138][0m Total time:       0.04 min
+[32m[20221205 20:28:41 @agent_ppo2.py:140][0m 4096 total steps have happened
+[32m[20221205 20:28:41 @agent_ppo2.py:116][0m #------------------------ Iteration 2 --------------------------#
+[32m[20221205 20:28:41 @agent_ppo2.py:122][0m Sampling time: 0.25 s by 1 slaves
+[32m[20221205 20:28:41 @agent_ppo2.py:156][0m |      policy_loss |       value_loss |          entropy |
+[32m[20221205 20:28:41 @agent_ppo2.py:180][0m |           0.0004 |           0.0101 |          21.1425 |
+[32m[20221205 20:28:41 @agent_ppo2.py:180][0m |          -0.0008 |           0.0093 |          21.1279 |
+[32m[20221205 20:28:41 @agent_ppo2.py:180][0m |          -0.0019 |           0.0085 |          21.1280 |

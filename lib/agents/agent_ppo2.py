@@ -69,7 +69,6 @@ class AgentPPO2(Agent):
             assert isinstance(checkpoint, str)
             checkpoint_path = './tmp/%s/%s/%s/models/%s.p' % (self.cfg.domain, self.cfg.task, self.cfg.rec, checkpoint)
 
-        print(checkpoint_path)
         model_checkpoint = pickle.load(open(checkpoint_path, "rb"))
         self.logger.critical('Loading model from checkpoint: %s' % checkpoint_path)
 

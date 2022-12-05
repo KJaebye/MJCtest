@@ -18,7 +18,7 @@ _COSINE_BOUND = np.cos(np.deg2rad(_ANGLE_BOUND))
 
 class PendulumEnv(MujocoEnv):
     def __init__(self, cfg, **kwargs):
-        # self.mujoco_xml_path = './assets/robot_models/mjcf/pendulum.xml'
+        # self.mujoco_xml_path = './assets/robot_models/mjcf/pendulum.jpg.xml'
         self.mujoco_xml_path = '/Users/kjaebye/EvoTest/MJCtest/assets/robot_models/mjcf/pendulum.xml'
         self.cfg = cfg
         physics = PendulumPhysics.from_xml_path(self.mujoco_xml_path)
