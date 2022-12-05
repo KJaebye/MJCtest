@@ -53,7 +53,8 @@ python eval.py --domain pendulum --task swingup --rec 20221205_110244 --iter bes
 
 Deepmind MuJoCo python bindings `dm_control` is used.
 
-> Important: OpenAI gym, mujoco-py are not required in this work.
+> Important: OpenAI gym, mujoco-py are not used in this work because mujoco-py was no longer maintained
+> since MuJoCo was acquired by deepmind...Pity...
 
 - python==3.9
 - mujoco==2.3.0
