@@ -26,7 +26,7 @@ python train.py --domain pendulum --task swingup --num_threads 10
 ```
 Evaluation:
 ```commandline
-python eval.py --domain pendulum --task swingup
+python eval.py --domain pendulum --task swingup --rec 20221205_110244 --iter best
 ```
 ----------------------
 # Environment
