@@ -1,14 +1,14 @@
 # Introduction
 This repo is for MuJoCo learning and PPO algorithm testing.
 
-Brief description:
+### Brief description:
 - RL algorithm kernal is wrapped in `/lib`; customized environment defined in `/structural_control`.
 - PPO2 algorithm is wrapped in `/lib/agents/agent_ppo2.py`, containing networks definition and parameters updating.
 - RL sampling part is wrapped in `/lib/agents/agent.py`, providing a multiprocessing method to sample data from MoJoCo.
 - Mujoco dm_control environment is wrapped in `/lib/envs/mujoco_env.py`. To create a customized environment, inheriting
 and editing class `MujocoEnv`, `MujocoPhysics`, `MujocoTask`.
 
-Some features are realised:
+### Some features are realised:
 - Using formatted logger makes better visualization and data monitoring.
 - Using .yml config file to manage hyperparameters.
 - Using argparse module to manage frequently changed variables.
