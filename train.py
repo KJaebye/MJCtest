@@ -15,7 +15,7 @@ from structural_control.agents.pendulum_agent import PendulumAgent
 if __name__ == "__main__":
     args = get_args()
     """ load env configs and training settings """
-    cfg = Config(args.domain, args.task, tmp=True, cfg_dict=None)
+    cfg = Config(args.domain, args.task)
     """ set torch and cuda """
     dtype = torch.float64
     torch.set_default_dtype(dtype)
@@ -43,8 +43,6 @@ if __name__ == "__main__":
     start_iter = int(args.start_iter) if args.start_iter.isnumeric() else args.start_iter
 
     """ create agent """
-    # agent = HopperAgent(cfg, logger, dtype=dtype, device=device, seed=cfg.seed, num_threads=args.num_threads,
-    #                     render=args.render, training=True, checkpoint=start_epoch)
 
     agent = PendulumAgent(cfg, logger, dtype=dtype, device=device,
                           num_threads=args.num_threads, training=True, checkpoint=start_iter)

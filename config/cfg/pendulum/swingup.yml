@@ -7,7 +7,6 @@ tau: 0.95
 
 policy_spec:
   htype: tanh
-#  pre_mlp: [512, 512]
   mlp: [64, 64]
   log_std: 0
   fix_control_std: False
@@ -20,11 +19,6 @@ policy_weight_decay: 0.0
 value_spec:
   htype: tanh
   mlp: [64, 64]
-#  gnn_spec:
-#    layer_type: graph_conv
-#    hdims: [64, 64, 64]
-#    aggr: add
-#    bias: True
 
 value_optimizer: 'Adam'
 value_lr: 3.e-4

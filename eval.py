@@ -13,18 +13,19 @@ from config.config import Config
 from utils.logger import Logger
 from structural_control.agents.pendulum_agent import PendulumAgent
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--domain', type=str, default='hopper', help='mujoco domain')
-    parser.add_argument('--task', type=str, default='easy', help='task complexity')
-    parser.add_argument('--cfg', default=None)
-    parser.add_argument('--epoch', default='best')
-    parser.add_argument('--save_video', action='store_true', default=False)
+    parser.add_argument('--domain', type=str, help='mujoco domain, must be specified to load the cfg file.',
+                        required=True)
+    parser.add_argument('--task', type=str, help='task, must be specified to load the cfg file.', required=True)
+    parser.add_argument('--rec', type=str, help='rec directory name', required=True)
+    parser.add_argument('--iter', default='best')
 
     args = parser.parse_args()
 
     """ load env configs and training settings """
-    cfg = Config(args.domain, args.task, tmp=True, cfg_dict=None)
+    cfg = Config(args.domain, args.task, rec=args.rec)
 
     """ set torch and cuda """
     dtype = torch.float64
@@ -45,13 +46,10 @@ if __name__ == "__main__":
     # only training generates log file
     logger.critical('Type of current running: Evaluation. No log file will be created')
 
-    iter = 'best'
-    # iter = 5000
+    iter = int(args.iter) if args.iter.isdigit() else args.iter
 
     """ create agent """
-    # agent = HopperAgent(cfg, logger, dtype=dtype, device=device, seed=cfg.seed, num_threads=1,
-    #                     render=True, training=False, checkpoint=epoch)
     agent = PendulumAgent(cfg, logger, dtype=dtype, device=device, num_threads=1, training=False, checkpoint=iter)
 
-    agent.visualize_agent(num_episode=1, save_video=args.save_video)
+    agent.visualize_agent()
 

@@ -14,8 +14,8 @@ import numpy as np
 import torch
 
 from lib.agents.agent import Agent
-from structural_control.networks.policy import Policy
-from structural_control.networks.value import Value
+from lib.core.policy import Policy
+from lib.core.value import Value
 from lib.core.zfilter import ZFilter
 from lib.core.common import estimate_advantages
 from torch.utils.tensorboard import SummaryWriter
@@ -41,6 +41,8 @@ class AgentPPO2(Agent):
         self.save_best_flag = False
 
         super().__init__(self.env, self.policy_net, self.device, running_state=self.running_state, num_threads=1)
+        if checkpoint != 0 or not training:
+            self.load_checkpoint(checkpoint)
 
     def setup_networks(self):
         self.running_state = ZFilter((self.env.state_dim,), clip=5)
@@ -62,12 +64,12 @@ class AgentPPO2(Agent):
 
     def load_checkpoint(self, checkpoint):
         if isinstance(checkpoint, int):
-            checkpoint_path = './results/%s/%s/epoch_%04d.p' % (self.cfg.domain, self.cfg.task, checkpoint)
-            epoch = checkpoint
+            checkpoint_path = './tmp/%s/%s/%s/models/iter_%04d.p' % (self.cfg.domain, self.cfg.task, self.cfg.rec, checkpoint)
         else:
             assert isinstance(checkpoint, str)
-            checkpoint_path = './results/%s/%s/%s.p' % (self.cfg.domain, self.cfg.task, checkpoint)
+            checkpoint_path = './tmp/%s/%s/%s/models/%s.p' % (self.cfg.domain, self.cfg.task, self.cfg.rec, checkpoint)
 
+        print(checkpoint_path)
         model_checkpoint = pickle.load(open(checkpoint_path, "rb"))
         self.logger.critical('Loading model from checkpoint: %s' % checkpoint_path)
 
@@ -75,10 +77,7 @@ class AgentPPO2(Agent):
         self.value_net.load_state_dict(model_checkpoint['value_dict'])
         self.running_state = model_checkpoint['running_state']
 
-        if 'epoch' in model_checkpoint:
-            epoch = model_checkpoint['epoch']
-
-    def save_checkpoint(self, epoch, log, log_eval):
+    def save_checkpoint(self, iter, log, log_eval):
         def save(checkpoint_path):
             to_device(torch.device('cpu'), self.policy_net, self.value_net)
             model_checkpoint = \
@@ -87,17 +86,17 @@ class AgentPPO2(Agent):
                     'value_dict': self.value_net.state_dict(),
                     'running_state': self.running_state,
                     'best_reward': self.best_reward,
-                    'epoch': epoch
+                    'iter': iter
                 }
             pickle.dump(model_checkpoint, open(checkpoint_path, 'wb'))
             to_device(self.device, self.policy_net, self.value_net)
 
         cfg = self.cfg
 
-        if cfg.save_model_interval > 0 and (epoch + 1) % cfg.save_model_interval == 0:
+        if cfg.save_model_interval > 0 and (iter + 1) % cfg.save_model_interval == 0:
             self.tb_logger.flush()
             self.logger.critical(f'Saving the interval checkpoint with rewards {self.best_reward:.2f}')
-            save('%s/epoch_%04d.p' % (cfg.model_dir, epoch + 1))
+            save('%s/iter_%04d.p' % (cfg.model_dir, iter + 1))
 
         if log_eval['avg_reward'] > self.best_reward:
             self.best_reward = log_eval['avg_reward']

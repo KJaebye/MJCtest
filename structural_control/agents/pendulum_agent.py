@@ -24,9 +24,8 @@ class PendulumAgent(AgentPPO2):
 
         self.setup_env()
 
-        super().__init__(self.cfg, self.env, self.logger, self.dtype, self.device, self.num_threads, training=self.training)
-        if checkpoint != 0 or not training:
-            self.load_checkpoint(checkpoint)
+        super().__init__(self.cfg, self.env, self.logger, self.dtype, self.device, self.num_threads,
+                         training=self.training, checkpoint=checkpoint)
 
     def setup_env(self):
         self.env = PendulumEnv(self.cfg, flat_observation=False)
@@ -43,7 +42,7 @@ class PendulumAgent(AgentPPO2):
         self.env.state_dim = observation_flat_dim
         self.env.action_dim = self.env.action_spec().shape[0]
 
-    def visualize_agent(self, num_episode=1, mean_action=False, save_video=False):
+    def visualize_agent(self, save_video=False):
         env = self.env
 
         from dm_control import viewer

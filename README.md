@@ -1,19 +1,8 @@
 # Introduction
-This repo is for MuJoCo learning and testing (based on the architecture of **Transform2Act** and **NerveNet** works)
-
-
-Learning records and tips are located at Notion https://www.notion.so/huangkangyao/Transform2Act-Reconstruction-6edeb95a2aea449fa016282a7f990e22
+This repo is for MuJoCo learning and PPO algorithm testing.
 
 ----
 # Description
-
-**/mujoco_native_tests** directory provides examples using **MuJoCo official python bindings** API.
-
-**/mujoco_py_tests** directory provides examples that use the third-party python binding **mujoco-py** API. (Unmaintained, maintained by OpenAI before acquisition)
-
-**/dm_control_tests** directory provides examples using dm_control.
-
----
 
 **/assets** directory includes all robots models in .urdf, .xml, .mjb, .txt formats.
 
@@ -25,15 +14,26 @@ Learning records and tips are located at Notion https://www.notion.so/huangkangy
 
 **/tmp** is the logging file directory.
 
+**/structural_control** is the customized agent and env that inherits from lib.
 
 > Please note that: results are generated in **/tmp** in default, but well-trained results will be moved to **/results** manually.
+----------------------
+
+# Usage
+Training:
+```commandline
+python train.py --domain pendulum --task swingup --num_threads 10
+```
+Evaluation:
+```commandline
+python eval.py --domain pendulum --task swingup
+```
 ----------------------
 # Environment
 - python==3.9
 - mujoco==2.3.0
 - dm_control==1.0.8
 - glfw==2.5.5
-- mujoco-python-viewer==0.1.2
 - numpy==1.23.3
 - gym==0.26.2
 - tensorboard==2.11.0

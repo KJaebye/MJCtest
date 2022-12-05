@@ -16,9 +16,9 @@ import platform
 
 os.environ["OMP_NUM_THREADS"] = "1"
 
-# if platform.system() != "Linux":
-#     from multiprocessing import set_start_method
-#     set_start_method("fork")
+if platform.system() != "Linux":
+    from multiprocessing import set_start_method
+    set_start_method("fork")
 
 
 def collect_samples(pid, queue, env, policy, custom_reward, mean_action, render, running_state, min_batch_size):
