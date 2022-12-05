@@ -32,7 +32,7 @@ batch_size: 2048
 eval_batch_size: 2048
 mini_batch_size: 64
 optim_num_epoch: 10
-max_iter_num: 6000
+max_iter_num: 1500
 seed: 1
 save_model_interval: 500
 
