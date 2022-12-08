@@ -12,7 +12,7 @@ import argparse
 from config.config import Config
 from utils.logger import Logger
 from structural_control.agents.pendulum_agent import PendulumAgent
-
+from structural_control.agents.walker_agent import WalkerAgent
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -49,7 +49,8 @@ if __name__ == "__main__":
     iter = int(args.iter) if args.iter.isdigit() else args.iter
 
     """ create agent """
-    agent = PendulumAgent(cfg, logger, dtype=dtype, device=device, num_threads=1, training=False, checkpoint=iter)
+    # agent = PendulumAgent(cfg, logger, dtype=dtype, device=device, num_threads=1, training=False, checkpoint=iter)
+    agent = WalkerAgent(cfg, logger, dtype=dtype, device=device, num_threads=1, training=False, checkpoint=iter)
 
     agent.visualize_agent()
 
