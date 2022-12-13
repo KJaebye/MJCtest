@@ -1,0 +1,49 @@
+env_name: finger_spin
+agent_spec:
+  batch_design: False
+# training parameters
+gamma: 0.995
+tau: 0.95
+
+policy_spec:
+  htype: tanh
+  mlp: [64, 64]
+  log_std: 0
+  fix_control_std: False
+
+policy_optimizer: 'Adam'
+policy_lr: 5.e-5
+policy_momentum: 0.0
+policy_weight_decay: 0.0
+
+value_spec:
+  htype: tanh
+  mlp: [64, 64]
+
+value_optimizer: 'Adam'
+value_lr: 3.e-4
+value_momentum: 0.0
+value_weight_decay: 0.0
+
+l2_reg: 1e-3
+clip_epsilon: 0.2
+entropy_coeff: 1.e-4
+batch_size: 2048
+eval_batch_size: 2048
+mini_batch_size: 64
+optim_num_epoch: 10
+max_iter_num: 2000
+seed: 1
+save_model_interval: 500
+
+
+obs_spec:
+  attr: ['depth']
+  sim: []
+  design: True
+  clip_qvel: True
+  use_projected_params: True
+  use_body_ind: True
+max_body_depth: 4
+
+

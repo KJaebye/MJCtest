@@ -18,6 +18,7 @@ def get_args():
     parser.add_argument('--use_cuda', type=bool, default=False)
 
     # training configuration
+    parser.add_argument('--rec', type=str)
     parser.add_argument('--start_iter', default='0')
     parser.add_argument('--num_threads', type=int, default=1)
 

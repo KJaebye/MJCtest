@@ -10,14 +10,13 @@ import numpy as np
 from config.get_args import get_args
 from config.config import Config
 from utils.logger import Logger
-from structural_control.agents.pendulum_agent import PendulumAgent
-from structural_control.agents.walker_agent import WalkerAgent
 from structural_control.agents.general_agent import GeneralAgent
 
 if __name__ == "__main__":
     args = get_args()
     """ load env configs and training settings """
-    cfg = Config(args.domain, args.task)
+    cfg = Config(args.domain, args.task, rec=args.rec)
+
     """ set torch and cuda """
     dtype = torch.float64
     torch.set_default_dtype(dtype)
@@ -48,7 +47,7 @@ if __name__ == "__main__":
     agent = GeneralAgent(args.domain, args.task, cfg, logger, dtype=dtype, device=device,
                          num_threads=args.num_threads, training=True, checkpoint=start_iter)
 
-    for iter in range(start_iter, cfg.max_iter_num):
+    for iter in range(start_iter, start_iter + cfg.max_iter_num):
         agent.optimize(iter)
         # clean up GPU memory
         torch.cuda.empty_cache()
