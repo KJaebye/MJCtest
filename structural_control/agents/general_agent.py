@@ -4,7 +4,7 @@
 #   @created date: 24.Nov.2022
 # ------------------------------------------------------------------------------------------------------------------- #
 """
-    This agent is an example for training a Pendulum.
+    This agent is for all dm_control suite domains and tasks.
 """
 
 import numpy as np
