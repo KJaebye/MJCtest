@@ -12,6 +12,7 @@ from config.config import Config
 from utils.logger import Logger
 from structural_control.agents.pendulum_agent import PendulumAgent
 from structural_control.agents.walker_agent import WalkerAgent
+from structural_control.agents.general_agent import GeneralAgent
 
 if __name__ == "__main__":
     args = get_args()
@@ -44,12 +45,8 @@ if __name__ == "__main__":
     start_iter = int(args.start_iter) if args.start_iter.isnumeric() else args.start_iter
 
     """ create agent """
-
-    # agent = PendulumAgent(cfg, logger, dtype=dtype, device=device,
-    #                       num_threads=args.num_threads, training=True, checkpoint=start_iter)
-
-    agent = WalkerAgent(cfg, logger, dtype=dtype, device=device,
-                          num_threads=args.num_threads, training=True, checkpoint=start_iter)
+    agent = GeneralAgent(args.domain, args.task, cfg, logger, dtype=dtype, device=device,
+                         num_threads=args.num_threads, training=True, checkpoint=start_iter)
 
     for iter in range(start_iter, cfg.max_iter_num):
         agent.optimize(iter)

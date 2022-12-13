@@ -28,7 +28,7 @@ class WalkerAgent(AgentPPO2):
         seed = 0
         np.random.seed(seed)
         torch.manual_seed(seed)
-        self.env = suite.load(domain_name="walker", task_name="run", task_kwargs={'random': seed})
+        self.env = suite.load(domain_name="walker", task_name="stand", task_kwargs={'random': seed})
 
         observation_flat_dim = 0
         for k, v in self.env.task.get_observation(self.env.physics).items():
