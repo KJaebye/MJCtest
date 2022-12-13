@@ -48,8 +48,14 @@ class AgentPPO2(Agent):
         self.running_state = ZFilter((self.env.state_dim,), clip=5)
 
         """define actor and critic"""
-        self.policy_net = Policy(self.env.state_dim, self.env.action_dim)
-        self.value_net = Value(self.env.state_dim)
+        self.policy_net = Policy(self.env.state_dim,
+                                 self.env.action_dim,
+                                 hidden_size=self.cfg.policy_spec['mlp'],
+                                 activation=self.cfg.policy_spec['htype'],
+                                 log_std=self.cfg.policy_spec['log_std'])
+        self.value_net = Value(self.env.state_dim,
+                               hidden_size=self.cfg.value_spec['mlp'],
+                               activation=self.cfg.value_spec['htype'])
 
         self.policy_net.to(self.device)
         self.value_net.to(self.device)
